@@ -156,12 +156,7 @@
 		00E92A72202AE2C100A399E2 /* ConstantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E929C5202AE2C000A399E2 /* ConstantData.swift */; };
 		00E92A73202AE2C100A399E2 /* WebserviceClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E929C6202AE2C000A399E2 /* WebserviceClasses.swift */; };
 		00E92A74202AE2C100A399E2 /* WebserviceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E929C7202AE2C000A399E2 /* WebserviceMethods.swift */; };
-		00E92A76202AE2C100A399E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E929CA202AE2C100A399E2 /* LaunchScreen.storyboard */; };
-		00E92A77202AE2C100A399E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E929CB202AE2C100A399E2 /* Main.storyboard */; };
-		00E92A78202AE2C100A399E2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E929CC202AE2C100A399E2 /* Profile.storyboard */; };
-		00E92A79202AE2C100A399E2 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E929CD202AE2C100A399E2 /* Registration.storyboard */; };
 		00EB9E4F1F90D6C1008DB2DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EB9E4E1F90D6C1008DB2DE /* CoreLocation.framework */; };
-		1110D3BA2075FC6C00CC8C1F /* TripToDestination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1110D3B92075FC6C00CC8C1F /* TripToDestination.storyboard */; };
 		1110D3BD2075FD1700CC8C1F /* TripToDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */; };
 		2101CD0E216F2CBA007B9680 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2101CD0D216F2CBA007B9680 /* ThemeButton.swift */; };
 		212FA5B320D7BF530057CE58 /* ShareRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212FA5B220D7BF530057CE58 /* ShareRideViewController.swift */; };
@@ -232,6 +227,12 @@
 		63F23F77218890D300FB629F /* LegalWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F23F76218890D300FB629F /* LegalWebView.swift */; };
 		995205863EC5B77312C6C248 /* Pods_TanTaxi_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA70C7471345D085861AE3F /* Pods_TanTaxi_Driver.framework */; };
 		EECDB7D9203D48AE0079F78B /* MeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDB7D8203D48AE0079F78B /* MeterViewController.swift */; };
+		EEFEA5942211839600D88655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFEA5962211839600D88655 /* Main.storyboard */; };
+		EEFEA599221183DB00D88655 /* TripToDestination.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFEA59B221183DB00D88655 /* TripToDestination.storyboard */; };
+		EEFEA59E221183F700D88655 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFEA5A0221183F700D88655 /* Profile.storyboard */; };
+		EEFEA5A32211840700D88655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFEA5A52211840700D88655 /* LaunchScreen.storyboard */; };
+		EEFEA5A82211841000D88655 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFEA5AA2211841000D88655 /* Registration.storyboard */; };
+		EEFEA5B1221184F900D88655 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEFEA5AF221184F900D88655 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -395,13 +396,8 @@
 		00E929C5202AE2C000A399E2 /* ConstantData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantData.swift; sourceTree = "<group>"; };
 		00E929C6202AE2C000A399E2 /* WebserviceClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceClasses.swift; sourceTree = "<group>"; };
 		00E929C7202AE2C000A399E2 /* WebserviceMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceMethods.swift; sourceTree = "<group>"; };
-		00E929CA202AE2C100A399E2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		00E929CB202AE2C100A399E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		00E929CC202AE2C100A399E2 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		00E929CD202AE2C100A399E2 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		00EB9E4E1F90D6C1008DB2DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		00FAEEE31F9F770E00D5F5C4 /* TZSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TZSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1110D3B92075FC6C00CC8C1F /* TripToDestination.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TripToDestination.storyboard; sourceTree = "<group>"; };
 		1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationViewController.swift; sourceTree = "<group>"; };
 		2101CD0D216F2CBA007B9680 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		212FA5B220D7BF530057CE58 /* ShareRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareRideViewController.swift; sourceTree = "<group>"; };
@@ -517,6 +513,17 @@
 		D0C5C9AD80887164E8079598 /* Pods-TanTaxi-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TanTaxi-Driver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TanTaxi-Driver/Pods-TanTaxi-Driver.debug.xcconfig"; sourceTree = "<group>"; };
 		EECDB7D8203D48AE0079F78B /* MeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterViewController.swift; sourceTree = "<group>"; };
 		EEF2E7D1206BC2220013A2B4 /* Pods_PickNGo_Driver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pods_PickNGo_Driver.framework; sourceTree = "<group>"; };
+		EEFEA5952211839600D88655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEFEA598221183B600D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		EEFEA59A221183DB00D88655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TripToDestination.storyboard; sourceTree = "<group>"; };
+		EEFEA59D221183DE00D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TripToDestination.strings; sourceTree = "<group>"; };
+		EEFEA59F221183F700D88655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		EEFEA5A2221183FD00D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Profile.strings; sourceTree = "<group>"; };
+		EEFEA5A42211840700D88655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEFEA5A72211840900D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EEFEA5A92211841000D88655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Registration.storyboard; sourceTree = "<group>"; };
+		EEFEA5AC2211841500D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Registration.strings; sourceTree = "<group>"; };
+		EEFEA5B0221184F900D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Storyboard/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,6 +552,7 @@
 			children = (
 				3A6DECF521B9216B002501FA /* TanTaxi-Driver.entitlements */,
 				21A5A2CA1FBC61950047E9AA /* Location.gpx */,
+				EEFEA5AF221184F900D88655 /* Localizable.strings */,
 				00E929BC202AE2C000A399E2 /* Classes */,
 				00E929C8202AE2C100A399E2 /* Storyboard */,
 				00E928E3202AE2BF00A399E2 /* ViewControllers */,
@@ -1225,11 +1233,11 @@
 		00E929C8202AE2C100A399E2 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				00E929CA202AE2C100A399E2 /* LaunchScreen.storyboard */,
-				00E929CB202AE2C100A399E2 /* Main.storyboard */,
-				1110D3B92075FC6C00CC8C1F /* TripToDestination.storyboard */,
-				00E929CC202AE2C100A399E2 /* Profile.storyboard */,
-				00E929CD202AE2C100A399E2 /* Registration.storyboard */,
+				EEFEA5A52211840700D88655 /* LaunchScreen.storyboard */,
+				EEFEA5962211839600D88655 /* Main.storyboard */,
+				EEFEA59B221183DB00D88655 /* TripToDestination.storyboard */,
+				EEFEA5A0221183F700D88655 /* Profile.storyboard */,
+				EEFEA5AA2211841000D88655 /* Registration.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -1620,19 +1628,20 @@
 				21A65EE0216614630037E40E /* proxima-nova-light-italic.otf in Resources */,
 				00E92A6F202AE2C100A399E2 /* ringTone.mp3 in Resources */,
 				00E929F1202AE2C100A399E2 /* ExpandDispatchedJobsViewController.xib in Resources */,
+				EEFEA5B1221184F900D88655 /* Localizable.strings in Resources */,
 				00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */,
 				3A5F1BCC21CE0872000007AE /* GoogleService-Info.plist in Resources */,
 				21A5A2CB1FBC61960047E9AA /* Location.gpx in Resources */,
 				005CC1912037F9720090CAED /* PickNGo.mp3 in Resources */,
-				00E92A77202AE2C100A399E2 /* Main.storyboard in Resources */,
+				EEFEA5942211839600D88655 /* Main.storyboard in Resources */,
 				00E929E2202AE2C100A399E2 /* HeaderView.xib in Resources */,
 				00E92A6E202AE2C100A399E2 /* RequestConfirm.mp3 in Resources */,
 				00E92A56202AE2C100A399E2 /* WWCalendarTimeSelector.storyboard in Resources */,
-				00E92A78202AE2C100A399E2 /* Profile.storyboard in Resources */,
+				EEFEA59E221183F700D88655 /* Profile.storyboard in Resources */,
 				3AFADCF8219E98CC0009E3D2 /* SVProgressHUD.bundle in Resources */,
-				00E92A79202AE2C100A399E2 /* Registration.storyboard in Resources */,
-				1110D3BA2075FC6C00CC8C1F /* TripToDestination.storyboard in Resources */,
-				00E92A76202AE2C100A399E2 /* LaunchScreen.storyboard in Resources */,
+				EEFEA5A82211841000D88655 /* Registration.storyboard in Resources */,
+				EEFEA599221183DB00D88655 /* TripToDestination.storyboard in Resources */,
+				EEFEA5A32211840700D88655 /* LaunchScreen.storyboard in Resources */,
 				00E929D3202AE2C100A399E2 /* Main.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1947,6 +1956,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EEFEA5962211839600D88655 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFEA5952211839600D88655 /* Base */,
+				EEFEA598221183B600D88655 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EEFEA59B221183DB00D88655 /* TripToDestination.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFEA59A221183DB00D88655 /* Base */,
+				EEFEA59D221183DE00D88655 /* en */,
+			);
+			name = TripToDestination.storyboard;
+			sourceTree = "<group>";
+		};
+		EEFEA5A0221183F700D88655 /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFEA59F221183F700D88655 /* Base */,
+				EEFEA5A2221183FD00D88655 /* en */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
+		EEFEA5A52211840700D88655 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFEA5A42211840700D88655 /* Base */,
+				EEFEA5A72211840900D88655 /* en */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EEFEA5AA2211841000D88655 /* Registration.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFEA5A92211841000D88655 /* Base */,
+				EEFEA5AC2211841500D88655 /* en */,
+			);
+			name = Registration.storyboard;
+			sourceTree = "<group>";
+		};
+		EEFEA5AF221184F900D88655 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEFEA5B0221184F900D88655 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00E5CEC91F8B402D004409A4 /* Debug */ = {
