@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3069"
             endingLineNumber = "3069"
-            landmarkName = "getDirectionsSeconMethod(origin:destination:waypoints:travelMode:completionHandler:)"
+            landmarkName = "btnHoldWaiting(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3072"
             endingLineNumber = "3072"
-            landmarkName = "getDirectionsSeconMethod(origin:destination:waypoints:travelMode:completionHandler:)"
+            landmarkName = "btnHoldWaiting(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3088"
             endingLineNumber = "3088"
-            landmarkName = "getDirectionsSeconMethod(origin:destination:waypoints:travelMode:completionHandler:)"
+            landmarkName = "btnHoldWaiting(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
