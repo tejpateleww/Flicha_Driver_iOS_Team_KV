@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>TanTaxi-Driver</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.2</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.9</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>14a43f19af433e25667bd2c0d03a5aa6e886a728</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fb</string>
+		<string>twitter</string>
+		<string>whatsapp</string>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access required for capturing photos!</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>App would like to use your current location to journal places you go.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>App would like to use your current location to journal places you go.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App would like to use your current location to journal places you go.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Library access required for using photos!</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>proxima-nova-black.otf</string>
+		<string>proxima-nova-bold-italic.otf</string>
+		<string>proxima-nova-bold.otf</string>
+		<string>proxima-nova-condensed-light-italic.otf</string>
+		<string>proxima-nova-condensed-light.otf</string>
+		<string>proxima-nova-condensed-regular-italic.otf</string>
+		<string>proxima-nova-condensed-semibold-italic.otf</string>
+		<string>proxima-nova-condensed-semibold.otf</string>
+		<string>proxima-nova-condensed.otf</string>
+		<string>proxima-nova-extrabold.otf</string>
+		<string>proxima-nova-light-italic.otf</string>
+		<string>proxima-nova-light.otf</string>
+		<string>proxima-nova-regular-italic.otf</string>
+		<string>proxima-nova-semibold-italic.otf</string>
+		<string>proxima-nova-semibold.otf</string>
+		<string>proxima-nova.otf</string>
+	</array>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>

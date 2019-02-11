@@ -1,0 +1,174 @@
+PODS:
+  - ACFloatingTextfield-Swift (1.7)
+  - ACProgressHUD-Swift (1.3)
+  - Alamofire (4.6.0)
+  - BFKit-Swift (3.2.1)
+  - CardIO (5.4.1)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - CreditCardForm (0.1.7)
+  - DropDown (2.3.1)
+  - Fabric (1.7.3)
+  - Firebase/Core (4.8.2):
+    - FirebaseAnalytics (= 4.0.9)
+    - FirebaseCore (= 4.0.14)
+  - Firebase/Messaging (4.8.2):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.8)
+  - FirebaseAnalytics (4.0.9):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.14):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (2.0.8):
+    - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.8):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - FloatRatingView (3.0)
+  - FormTextField (2.0.0)
+  - GoogleAnalytics (3.17.0)
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.5.0):
+    - GoogleMaps (= 2.5.0)
+    - GooglePlaces (= 2.5.0)
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/Logger (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - IQDropDownTextField (1.1.1)
+  - IQKeyboardManagerSwift (5.0.7)
+  - M13Checkbox (3.2.2)
+  - MarqueeLabel/Swift (3.1.4)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.1.1):
+    - NVActivityIndicatorView/Presenter (= 4.1.1)
+  - NVActivityIndicatorView/Presenter (4.1.1)
+  - Protobuf (3.5.0)
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
+  - SideMenuController (0.2.4)
+  - Socket.IO-Client-Swift (11.1.3):
+    - StarscreamSocketIO (~> 8.0.5)
+  - SRCountdownTimer (1.1)
+  - StarscreamSocketIO (8.0.7)
+
+DEPENDENCIES:
+  - ACFloatingTextfield-Swift
+  - ACProgressHUD-Swift
+  - Alamofire
+  - BFKit-Swift
+  - CardIO
+  - Crashlytics
+  - CreditCardForm
+  - DropDown
+  - Fabric
+  - Firebase/Core
+  - Firebase/Messaging
+  - FloatRatingView
+  - FormTextField
+  - GoogleAnalytics
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
+  - IQDropDownTextField
+  - IQKeyboardManagerSwift
+  - M13Checkbox
+  - MarqueeLabel/Swift
+  - NVActivityIndicatorView
+  - SDWebImage
+  - SideMenuController
+  - Socket.IO-Client-Swift
+  - SRCountdownTimer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ACFloatingTextfield-Swift
+    - ACProgressHUD-Swift
+    - Alamofire
+    - BFKit-Swift
+    - CardIO
+    - Crashlytics
+    - CreditCardForm
+    - DropDown
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - FloatRatingView
+    - FormTextField
+    - GoogleAnalytics
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+    - GoogleToolboxForMac
+    - IQDropDownTextField
+    - IQKeyboardManagerSwift
+    - M13Checkbox
+    - MarqueeLabel
+    - nanopb
+    - NVActivityIndicatorView
+    - Protobuf
+    - SDWebImage
+    - SideMenuController
+    - Socket.IO-Client-Swift
+    - SRCountdownTimer
+    - StarscreamSocketIO
+
+SPEC CHECKSUMS:
+  ACFloatingTextfield-Swift: df075d5ed5d441d8603f985fc106ec7ebe0c673f
+  ACProgressHUD-Swift: d973934a517312593015c78413f2de7bcc10c715
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BFKit-Swift: 26e366ace73555835f4c142b95b4c2ffa7dd9af4
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  CreditCardForm: 66f0ce5a12182000a457d56f5630049efd3432df
+  DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
+  Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
+  Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
+  FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
+  FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
+  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
+  FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
+  FloatRatingView: 0f7b45733124516ac6b8f535e5b5f4fa2e122180
+  FormTextField: 40016d44fc3371410be6c5a0c968498e43f00d33
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  IQDropDownTextField: 3d2e5728a2b83ff5dbb14cb9b497a80005124cbe
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  M13Checkbox: a8c2491cfbbca10797925fd0b9154a782bf40d89
+  MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
+  Socket.IO-Client-Swift: b8e59ddc16bc3609ca2f49a4b50253f095d535c8
+  SRCountdownTimer: 9c92e444b5403c92f01dd6610299b8c634bc8562
+  StarscreamSocketIO: 00b54e4208481ca5cef089545353aaf126bae16d
+
+PODFILE CHECKSUM: f45065310ffda5f3be199546d6f1524c2bd4d4dc
+
+COCOAPODS: 1.5.3
