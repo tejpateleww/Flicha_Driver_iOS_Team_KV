@@ -288,10 +288,8 @@ func webserviceForCompanyList(_ dictParams: AnyObject, completion: @escaping(_ r
 
 func webserviceForBookingHistry(_ dictParams: AnyObject, completion: @escaping(_ result: AnyObject, _ success: Bool) -> Void)
 {
-   
     let url = BookingHistory + (dictParams as! String)
     getDataOfHistory("" as AnyObject, nsURL: url, completion: completion)
-    
 }
 
 //-------------------------------------------------------------

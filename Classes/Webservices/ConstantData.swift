@@ -11,7 +11,7 @@ import Foundation
 //let helpLineNumber = "1234567890"
 
 struct WebSupport {
-    static let HelplineNumber = "1234567890"
+    static let HelplineNumber = "0777115054"
     static let SupportURL = "https://www.tantaxitanzania.com/page/support-tantaxi"
     static let TermsNConditionsURL = "https://www.tantaxitanzania.com/page/terms-conditions-drivers"
     static let PrivacyPolicyURL = "https://www.tantaxitanzania.com/page/privacy-policy"

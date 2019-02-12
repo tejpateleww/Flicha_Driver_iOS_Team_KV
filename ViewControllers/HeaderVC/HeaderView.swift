@@ -105,6 +105,7 @@ class HeaderView: UIView {
         
         delegate?.didSideMenuClicked()
     }
+    
     @IBAction func btnCallHelpDesk(_ sender: Any) {
         
      delegate?.didCallClicked()

@@ -27,15 +27,15 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
     }
 
     
-     var aryData = [[String:AnyObject]]()
+    var aryData = [[String:AnyObject]]()
     @IBOutlet var viewTopUp: UIView!
     @IBOutlet var viewTransfer: UIView!
     @IBOutlet var viewHistory: UIView!
     
-    
     @IBOutlet var imgTopUp: UIImageView!
     @IBOutlet var imgTransfer: UIImageView!
     @IBOutlet var imgHistory: UIImageView!
+    
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
