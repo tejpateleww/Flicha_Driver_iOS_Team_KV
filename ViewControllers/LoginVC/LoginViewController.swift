@@ -37,6 +37,9 @@
     @IBOutlet weak var btnForgotPassWord: UIButton!
     @IBOutlet var btnSignIn: UIButton!
     @IBOutlet var btnSignUp: UIButton!
+    
+    @IBOutlet var lblLaungageName: UILabel!
+    
     //
     //    @IBOutlet weak var constraintHeightOfLogo: NSLayoutConstraint! // 140
     //    @IBOutlet weak var constraintHeightOfTextFields: NSLayoutConstraint! // 50
@@ -46,6 +49,15 @@
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
+    
+    func setLocalization() {
+        self.txtMobile.placeholder = "Mobile Number".localized
+        self.txtPassword.placeholder = "Password".localized
+        self.btnForgotPassWord.setTitle("Forgot Password?".localized, for: .normal)
+        self.btnSignIn.setTitle("Sign In".localized, for: .normal)
+        self.btnSignUp.setTitle("Sign Up".localized, for: .normal)
+        self.lblDonTHaveAnyAccount.text = "Don't have an Account?".localized
+    }
     
         override func loadViewIfNeeded() {
             super.loadViewIfNeeded()
@@ -80,6 +92,18 @@
         super.viewDidLoad()
         
         txtMobile.delegate = self
+        lblLaungageName.layer.cornerRadius = 5
+        lblLaungageName.backgroundColor = ThemeYellowColor
+        lblLaungageName.layer.borderColor = UIColor.black.cgColor
+        lblLaungageName.layer.borderWidth = 0.5
+        
+        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+            if SelectedLanguage == "en" {
+                lblLaungageName.text = "EN"
+            } else if SelectedLanguage == "sw" {
+                    lblLaungageName.text = "SW"
+            }
+        }
         
 //        txtMobile.text = "1111111111"
 //        txtPassword.text = "123456"
@@ -138,6 +162,7 @@
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        self.setLocalization()
     }
     
     override func viewDidLayoutSubviews()
@@ -162,6 +187,21 @@
     //-------------------------------------------------------------
     // MARK: - Actions
     //-------------------------------------------------------------
+    
+    @IBAction func btnLaungageClicked(_ sender: Any)
+    {
+        
+        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+            if SelectedLanguage == "en" {
+                setLayoutForswahilLanguage()
+                lblLaungageName.text = "EN"
+            } else if SelectedLanguage == "sw" {
+                setLayoutForenglishLanguage()
+                lblLaungageName.text = "SW"
+            }
+        }
+        self.setLocalization()
+    }
     
     @IBAction func btnSignIn(_ sender: UIButton) {
         //        CustomSideMenuViewController

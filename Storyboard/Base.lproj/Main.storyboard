@@ -66,6 +66,23 @@
                                                                     <constraint firstAttribute="height" constant="180" id="y3e-jy-xqS"/>
                                                                 </constraints>
                                                             </imageView>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETl-kg-YZM">
+                                                                <rect key="frame" x="252" y="185" width="40" height="30"/>
+                                                                <color key="backgroundColor" red="0.61960784310000006" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="InE-OQ-xGC"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="M9N-YX-K2F"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4f-2L-aFG">
+                                                                <rect key="frame" x="252" y="185" width="40" height="30"/>
+                                                                <connections>
+                                                                    <action selector="btnLaungageClicked:" destination="8wK-Cw-PhN" eventType="touchUpInside" id="XK1-Kh-goH"/>
+                                                                </connections>
+                                                            </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xfh-2D-1dv">
                                                                 <rect key="frame" x="20" y="225" width="280" height="95"/>
                                                                 <subviews>
@@ -196,10 +213,14 @@
                                                             <constraint firstAttribute="trailing" secondItem="M9j-m7-OmA" secondAttribute="trailing" constant="10" id="I7T-D6-wpq"/>
                                                             <constraint firstAttribute="trailing" secondItem="1cL-MA-oI1" secondAttribute="trailing" constant="20" id="R9d-XE-UUD"/>
                                                             <constraint firstItem="eRq-zg-l9r" firstAttribute="centerX" secondItem="Zbf-tC-vpE" secondAttribute="centerX" id="TXB-Gv-svE"/>
+                                                            <constraint firstItem="ETl-kg-YZM" firstAttribute="leading" secondItem="eRq-zg-l9r" secondAttribute="trailing" constant="2" id="Uao-Xt-3mT"/>
                                                             <constraint firstAttribute="trailing" secondItem="xfh-2D-1dv" secondAttribute="trailing" constant="20" id="Xdz-jk-p2U"/>
+                                                            <constraint firstItem="e4f-2L-aFG" firstAttribute="height" secondItem="ETl-kg-YZM" secondAttribute="height" id="XhS-Jz-bXT"/>
                                                             <constraint firstItem="3b6-UB-1o2" firstAttribute="top" secondItem="1cL-MA-oI1" secondAttribute="bottom" id="aba-1m-6Nf"/>
                                                             <constraint firstAttribute="trailing" secondItem="3b6-UB-1o2" secondAttribute="trailing" constant="60" id="cPw-r3-Jja"/>
+                                                            <constraint firstItem="e4f-2L-aFG" firstAttribute="width" secondItem="ETl-kg-YZM" secondAttribute="width" id="hTb-Db-gkq"/>
                                                             <constraint firstItem="3b6-UB-1o2" firstAttribute="centerX" secondItem="Zbf-tC-vpE" secondAttribute="centerX" id="i1u-Qw-hax"/>
+                                                            <constraint firstItem="e4f-2L-aFG" firstAttribute="top" secondItem="ETl-kg-YZM" secondAttribute="top" id="ldh-WQ-XXT"/>
                                                             <constraint firstItem="eRq-zg-l9r" firstAttribute="top" secondItem="Zbf-tC-vpE" secondAttribute="top" constant="45" id="pdx-eU-ApM">
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="preciseConstant">
@@ -207,7 +228,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </constraint>
+                                                            <constraint firstItem="ETl-kg-YZM" firstAttribute="bottom" secondItem="eRq-zg-l9r" secondAttribute="bottom" constant="-10" id="r64-cY-eR7"/>
                                                             <constraint firstItem="M9j-m7-OmA" firstAttribute="top" secondItem="xfh-2D-1dv" secondAttribute="bottom" constant="10" id="rh7-Wc-Re4"/>
+                                                            <constraint firstItem="e4f-2L-aFG" firstAttribute="leading" secondItem="ETl-kg-YZM" secondAttribute="leading" id="x0Z-Xn-yeO"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -257,6 +280,7 @@
                         <outlet property="btnSignIn" destination="4to-WZ-9Ps" id="REQ-S7-RXs"/>
                         <outlet property="btnSignUp" destination="3b6-UB-1o2" id="uw5-xn-yIi"/>
                         <outlet property="lblDonTHaveAnyAccount" destination="sUE-9n-MzA" id="gX7-jU-rat"/>
+                        <outlet property="lblLaungageName" destination="ETl-kg-YZM" id="Tgy-P7-MYB"/>
                         <outlet property="txtMobile" destination="awt-8r-335" id="TjZ-wP-XC5"/>
                         <outlet property="txtPassword" destination="fJG-f7-pUe" id="qTL-yY-DUF"/>
                         <outlet property="viewLogin" destination="vcS-NH-QaM" id="fRn-2k-pFe"/>
@@ -1443,26 +1467,30 @@ EE15IEpvYnM
                                         <connections>
                                             <outlet property="btnInviteFriend" destination="6xG-78-Bw5" id="zaD-ZH-l18"/>
                                             <outlet property="btnLegal" destination="Cey-pt-o7F" id="Rmz-Hq-afm"/>
+                                            <outlet property="btnLogOut" destination="5k6-ND-LcR" id="DRG-gt-4OZ"/>
                                             <outlet property="btnLogOuts" destination="bzF-Ne-uGx" id="xLM-vw-DWF"/>
                                             <outlet property="btnMyJob" destination="pA5-sQ-tEX" id="1w2-Y1-jQV"/>
                                             <outlet property="btnMyRating" destination="xRU-b4-BSU" id="Opx-M2-qtA"/>
                                             <outlet property="btnPaymentOption" destination="7OA-Yy-HGR" id="VAN-SZ-H8g"/>
-                                            <outlet property="btnSetting" destination="6uE-8j-xw5" id="UdN-Yp-UPs"/>
                                             <outlet property="btnSupport" destination="L4o-Fk-plz" id="FNp-r5-T9c"/>
+                                            <outlet property="btnTripToDestination" destination="6uE-8j-xw5" id="ELf-Aq-1n5"/>
                                             <outlet property="btnWallet" destination="Txt-Lz-WE6" id="i0y-Jq-PQl"/>
                                             <outlet property="iconInviteFrnd" destination="hs3-0u-bdd" id="N7j-1w-k9a"/>
-                                            <outlet property="iconMyRaitng" destination="K1q-zg-ExG" id="5zd-gc-lbA"/>
+                                            <outlet property="iconLegal" destination="Ix4-Gd-doC" id="gMa-bh-DbC"/>
                                             <outlet property="iconPaymentOption" destination="Rns-cg-7fA" id="7EO-9r-10f"/>
                                             <outlet property="iconRating" destination="qoj-DI-rPS" id="vBH-GN-ad8"/>
-                                            <outlet property="iconSetting" destination="Oad-wx-erN" id="Ocj-36-q8H"/>
+                                            <outlet property="iconSupport" destination="Vtc-hR-sgi" id="Tqh-dS-Bbd"/>
+                                            <outlet property="iconTripToDestination" destination="Oad-wx-erN" id="dNr-Uz-jkT"/>
                                             <outlet property="iconWallet" destination="jap-3j-oAX" id="Ogk-LI-HgG"/>
                                             <outlet property="imgJob" destination="XNy-nQ-ti7" id="7rS-g5-hbH"/>
                                             <outlet property="imgLogout" destination="uz2-bf-X3s" id="Jaz-Be-5JW"/>
                                             <outlet property="lblInviteFrnd" destination="H51-XR-OaO" id="wBX-iV-2xU"/>
-                                            <outlet property="lblMyJob" destination="ztg-vA-oET" id="Bw4-Mg-a45"/>
+                                            <outlet property="lblLegal" destination="Ak7-z1-etX" id="Jvn-UG-2rg"/>
                                             <outlet property="lblMyJobs" destination="ztg-vA-oET" id="dkT-TH-Xxs"/>
+                                            <outlet property="lblMyRaitng" destination="K1q-zg-ExG" id="GD7-NR-haQ"/>
                                             <outlet property="lblPaymentOption" destination="zFj-fa-cBK" id="ZPo-Rs-j3o"/>
-                                            <outlet property="lblSetting" destination="Eei-k9-aYb" id="NxT-0A-znn"/>
+                                            <outlet property="lblSupport" destination="kTz-bD-Kbu" id="hTS-pv-AfO"/>
+                                            <outlet property="lblTripToDestination" destination="Eei-k9-aYb" id="vZO-Ym-YzJ"/>
                                             <outlet property="lblWallet" destination="RhS-bN-CPz" id="aRY-Eo-fKX"/>
                                             <outlet property="viewMyJobs" destination="A0U-Sp-roK" id="dJs-Ff-NCh"/>
                                             <outlet property="viewPaymentOption" destination="Pci-aM-lu1" id="EoL-he-XTU"/>
