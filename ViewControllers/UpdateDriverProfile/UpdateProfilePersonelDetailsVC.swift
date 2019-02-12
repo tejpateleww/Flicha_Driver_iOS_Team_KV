@@ -15,17 +15,41 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     var aryCompanyIDS = [[String:AnyObject]]()
     var companyID = String()
     
-    @IBOutlet weak var lblmail: UILabel!
+    @IBOutlet weak var lblmale: UILabel!
     var dictData = [String:AnyObject]()
 
-    @IBOutlet weak var lblFemail: UILabel!
+    @IBOutlet weak var lblFemale: UILabel!
     let thePicker = UIPickerView()
     let datePicker = UIDatePicker()
+    
+    //-------------------------------------------------------------
+    // MARK: - Outlets
+    //-------------------------------------------------------------
+    
+    @IBOutlet var lblEmail: UILabel!
+    @IBOutlet var lblName: UILabel!
+    @IBOutlet weak var imgProfile: UIImageView!
+    @IBOutlet var btnMale: UIButton!
+    @IBOutlet var btnFemale: UIButton!
+    @IBOutlet var btnOthers: UIButton!
+    @IBOutlet weak var viewGenders: UIView!
+    @IBOutlet weak var btnChangePass: ThemeButton!
+    @IBOutlet weak var btnSave: ThemeButton!
+    @IBOutlet weak var txtCompanyID: UITextField!
+    @IBOutlet weak var txtMobile: ACFloatingTextfield!
+    @IBOutlet weak var txtFullName: ACFloatingTextfield!
+    @IBOutlet weak var txtDOB: UITextField!
+    @IBOutlet weak var txtAddress: ACFloatingTextfield!
+    @IBOutlet weak var txtPostCode: UITextField!
+    @IBOutlet weak var txtCity: UITextField!
+    @IBOutlet weak var txtState: UITextField!
+    @IBOutlet weak var txtCountry: UITextField!
+    @IBOutlet weak var txtSuburb: UITextField!
+    
+    @IBOutlet weak var btnEditProfileIPic: UIButton!
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         thePicker.delegate = self
@@ -95,33 +119,26 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         super.viewWillAppear(animated)
         thePicker.reloadAllComponents()
         thePicker.reloadInputViews()
+        setLocalizable()
     }
     
-    //-------------------------------------------------------------
-    // MARK: - Outlets
-    //-------------------------------------------------------------
-    
-    @IBOutlet var lblEmail: UILabel!
-    @IBOutlet var lblName: UILabel!
-    @IBOutlet weak var imgProfile: UIImageView!
-    @IBOutlet var btnMale: UIButton!
-    @IBOutlet var btnFemale: UIButton!
-    @IBOutlet var btnOthers: UIButton!
-    @IBOutlet weak var viewGenders: UIView!
-    
-    @IBOutlet weak var txtCompanyID: UITextField!
-    @IBOutlet weak var txtMobile: ACFloatingTextfield!
-    @IBOutlet weak var txtFullName: ACFloatingTextfield!
-    @IBOutlet weak var txtDOB: UITextField!
-    @IBOutlet weak var txtAddress: ACFloatingTextfield!
-    @IBOutlet weak var txtPostCode: UITextField!
-    @IBOutlet weak var txtCity: UITextField!
-    @IBOutlet weak var txtState: UITextField!
-    @IBOutlet weak var txtCountry: UITextField!
-    @IBOutlet weak var txtSuburb: UITextField!
-    
-    @IBOutlet weak var btnEditProfileIPic: UIButton!
+    func setLocalizable()
+    {
+        txtFullName.placeholder = "Full Name".localized
+        txtAddress.placeholder = "Address".localized
+        txtMobile.placeholder = "Mobile Number".localized
+        lblGender.text = "Gender".localized
+        lblmale.text = "Male".localized
+        lblFemale.text = "Female".localized
+        btnChangePass.setTitle("Change Password".localized, for: .normal)
+        btnSave.setTitle("Save".localized, for: .normal)
+        
+        
+    }
+
    
+    @IBOutlet weak var lblGender: UILabel!
+    
     //-------------------------------------------------------------
     // MARK: - Custom Methods
     //-------------------------------------------------------------

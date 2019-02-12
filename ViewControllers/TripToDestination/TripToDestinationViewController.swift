@@ -65,6 +65,18 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setLocalizable()
+    }
+    func  setLocalizable()
+    {
+        
+//        btnSelectDestination.setTitle("".localized, for: .normal)
+        btnDone.setTitle("Done".localized, for: .normal)
+            txtDestination.placeholder = "Destination Location".localized
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
