@@ -68,16 +68,16 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
  
     func setLocalizable()
     {
-        txtDriverLicence.placeholder = ""
-        lblDriverLicence.text = ""
-        txtAccreditation.placeholder = ""
-        lblAccreditation.text = ""
-        txtCarRegistraion.placeholder = ""
-        txtVehicleInsurance.placeholder = ""
-        lblVehicleInsurance.text = ""
-        btnDone.setTitle("", for: .normal)
-        lblHaveAnAccount.text = ""
-        btnLogin.setTitle("", for: .normal)
+        txtDriverLicence.placeholder = "Driver Licence (Front only)".localized
+        lblDriverLicence.text = "Select driver licence expiry date".localized
+        txtAccreditation.placeholder = "Revenue Licence".localized
+        lblAccreditation.text = "Select revenue licence expiry date".localized
+        txtCarRegistraion.placeholder = "Vehicle Registration Document".localized
+        txtVehicleInsurance.placeholder = "Vehicle Insurance Policy/Certificate".localized
+        lblVehicleInsurance.text = "Select vehicle insurance/policy expiry date".localized
+        btnDone.setTitle("Done".localized, for: .normal)
+//        lblHaveAnAccount.text = "".localized
+//        btnLogin.setTitle("".localized, for: .normal)
         
     }
 

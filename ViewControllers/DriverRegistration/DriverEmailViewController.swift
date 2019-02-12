@@ -82,11 +82,11 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     }
     func setLocalization()
     {
-        txtMobile.placeholder = "Mobile Number"//.localized
-        txtEmail.placeholder = "Email"//.localized
-        txtPassword.placeholder = "Password"//.localized
-        txtConPassword.placeholder = "Confirm Password"//.localized
-//        btnNext.setTitle("Next".localized, for: normal)
+        txtMobile.placeholder = "Mobile Number".localized
+        txtEmail.placeholder = "Email".localized
+        txtPassword.placeholder = "Password".localized
+        txtConPassword.placeholder = "Confirm Password".localized
+        btnNext.setTitle("Next".localized, for: .normal)
 //        lblHaveAccount.text = "".localized
 //        btnLogin.setTitle("".localized, for: normal)
     }

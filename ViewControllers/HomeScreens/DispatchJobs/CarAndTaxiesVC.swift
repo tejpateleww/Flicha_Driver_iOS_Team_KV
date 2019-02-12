@@ -94,8 +94,8 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        btnOK.setTitle("", for: .normal)
-        lblSelectModel.text = ""
+        btnOK.setTitle("Done".localized, for: .normal)
+        lblSelectModel.text = "Select Card".localized
     }
 
     override func didReceiveMemoryWarning()
@@ -119,13 +119,14 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.selectionStyle = .none
         
         
-        cell.lblCarModelClass.text = ""
-        cell.lblCarModelDescription.text = ""
+//        cell.lblCarModelClass.text = "".localized
+//        cell.lblCarModelDescription.text = "".localized
         
         let dictData = aryData.object(at: indexPath.row) as! NSDictionary
         
         cell.lblCarModelClass.text = dictData.object(forKey: "Name") as? String
-        cell.lblCarModelDescription.text = ""//dictData.object(forKey: "Description") as? String
+//        cell.lblCarModelDescription.text = "".localized
+        //dictData.object(forKey: "Description") as? String
         
         cell.btnTickMark.imageView?.contentMode = .scaleAspectFit
         cell.btnTickMark.setImage(UIImage.init(named: "Unchecked"), for: .normal)

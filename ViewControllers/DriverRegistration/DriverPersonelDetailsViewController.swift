@@ -60,15 +60,14 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     func SetLocalizable()
     {
-        txtFullName.placeholder = ""
-        txtAddress.placeholder = ""
-        lblMale.text = ""
-        lblFemale.text = ""
-        txtInviteCode.placeholder = ""
-        btnNext.setTitle("", for: .normal)
-        txtInviteCode.placeholder = ""
-        btnNext.setTitle("", for: .normal)
-        lblHaveAnAccount.text = ""
+        txtFullName.placeholder = "User Name".localized
+        txtAddress.placeholder = "Address".localized
+        lblMale.text = "Male".localized
+        lblFemale.text = "Female".localized
+        txtInviteCode.placeholder = "Invite Code (Optional)".localized
+        btnNext.setTitle("Next".localized, for: .normal)
+//        bntLogin.setTitle("".localized, for: .normal)
+//        lblHaveAnAccount.text = "".localized
         
         
     }

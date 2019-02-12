@@ -140,12 +140,12 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
         cellDetails.selectionStyle = .none
         cellBottom.selectionStyle = .none
         
-        cellTop.lblTopDetails.text = ""
-        cellTop.btnDriverTermsandConditions.setTitle("", for: .normal)
-        cellTop.btnDriverTermsandConditions.setTitle("", for: .normal)
-        
-        cellDetails.lblVehicleName.text = ""
-        cellDetails.btnNext.setTitle("", for: .normal)
+//        cellTop.lblTopDetails.text = "Please select which vehicle classes you are a part of.You must be 18 years of age or over as per".localized
+//        cellTop.lblTopDetails.text = "".localized
+        cellTop.btnDriverTermsandConditions.setTitle("Driver term and condition.".localized, for: .normal)
+       cellTop.lblSelectupTo3Vehicles.text = "Select up to three vehicles.".localized
+//        cellDetails.lblVehicleName.text = "".localized
+        cellDetails.btnNext.setTitle("Next".localized, for: .normal)
         
         if indexPath.section == 0 {
             

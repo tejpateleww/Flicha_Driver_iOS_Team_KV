@@ -42,13 +42,13 @@ class DriverBankDetailsViewController: UIViewController
     }
     func setLocalizable()
     {
-        txtAccountHolderName.placeholder = ""
-        txtBankName.placeholder = ""
-        txtBankBranch.placeholder = ""
-        txtAccountNumber.placeholder = ""
-        btnNext.setTitle("", for: .normal)
-        lblHaveAnAccount.text = ""
-        btnLogin.setTitle("", for: .normal)
+        txtAccountHolderName.placeholder = "Account Holder Name".localized
+        txtBankName.placeholder = "Bank Name".localized
+        txtBankBranch.placeholder = "Bank Branch".localized
+        txtAccountNumber.placeholder = "Account Number".localized
+        btnNext.setTitle("Next".localized, for: .normal)
+//        lblHaveAnAccount.text = "".localized
+//        btnLogin.setTitle("".localized, for: .normal)
     }
     
     @IBOutlet weak var btnLogin: UIButton!

@@ -48,14 +48,14 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
     
     func setLocalizable()
     {
-        txtVehicleRegistrationNumber.placeholder = ""
-        txtCompany.placeholder = ""
-        txtVehicleMake.placeholder = ""
-        txtCarType.placeholder = ""
-        txtNumberPassenger.placeholder = ""
-        btnNext.setTitle("", for: .normal)
-        lblHaveAnAccount.text = ""
-        btnLogin.setTitle("", for: .normal)
+        txtVehicleRegistrationNumber.placeholder = "Vehicle Plate Number".localized
+        txtCompany.placeholder = "Vehicle Model".localized
+        txtVehicleMake.placeholder = "Vehicle Make".localized
+        txtCarType.placeholder = "Vehicle Type".localized
+        txtNumberPassenger.placeholder = "Number Of Passenger".localized
+        btnNext.setTitle("Next".localized, for: .normal)
+//        lblHaveAnAccount.text = "".localized
+//        btnLogin.setTitle("".localized, for: .normal)
         
     }
     
