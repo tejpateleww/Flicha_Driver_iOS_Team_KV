@@ -106,6 +106,8 @@ class updateDriverVehiclesViewController: UIViewController, UITableViewDataSourc
         
         cellTop.selectionStyle = .none
         cellDetails.selectionStyle = .none
+        cellTop.btnDriverTermsandConditions.setTitle("Driver term and condition.".localized, for: .normal)
+        cellTop.lblSelectupTo3Vehicles.text = "Select up to three vehicles." .localized
         
         
         if indexPath.section == 0 {

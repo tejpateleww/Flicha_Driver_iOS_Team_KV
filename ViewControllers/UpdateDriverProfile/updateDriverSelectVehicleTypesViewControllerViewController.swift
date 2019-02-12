@@ -88,6 +88,17 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         let stringToArrayOFVehicleModel = stringOFVehicleModel.components(separatedBy: ",")
         
         Singletons.sharedInstance.arrVehicleClass = NSMutableArray(array: stringToArrayOFVehicleModel.map { Int($0)!})
+        setLocalizable()
+    }
+    @IBOutlet weak var btnSave: ThemeButton!
+    func setLocalizable()
+    {
+        txtVehicleRegistrationNumber.placeholder = "Vehicle Plate Number".localized
+        txtVehicleModel.placeholder = "Vehicle Model".localized
+//        txtCompany.placeholder = "".localized
+        txtCarType.placeholder = "Vehicle Type".localized
+        txtNoOfPassenger.placeholder = "Number Of Passenger".localized
+        btnSave.setTitle("Save".localized, for: .normal)
         
     }
     

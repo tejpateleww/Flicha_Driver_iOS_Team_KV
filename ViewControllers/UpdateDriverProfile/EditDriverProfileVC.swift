@@ -45,7 +45,22 @@ class EditDriverProfileVC: ParentViewController {
         self.giveCornorRadiosToView(view: viewLogout)
         // Do any additional setup after loading the view.
     }
-
+    @IBOutlet weak var lblLogout: UILabel!
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(true)
+        setLocalizable()
+    }
+    func setLocalizable()
+    {
+        
+        lblEditProfile.text = "Edit Profile".localized
+        lblAccount.text = "Account".localized
+        lblVehicleOption.text = "Vehicle Option".localized
+        lblDocument.text = "Documents".localized
+        lblLogout.text = "Logout".localized
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

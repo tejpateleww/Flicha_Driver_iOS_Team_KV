@@ -66,8 +66,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         lblFemale.text = "Female".localized
         txtInviteCode.placeholder = "Invite Code (Optional)".localized
         btnNext.setTitle("Next".localized, for: .normal)
-//        bntLogin.setTitle("".localized, for: .normal)
-//        lblHaveAnAccount.text = "".localized
+
         
         
     }

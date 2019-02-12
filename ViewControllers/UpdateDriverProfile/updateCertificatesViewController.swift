@@ -47,9 +47,22 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         imagePicker.delegate = self
         
         setData()
-        
+        setLocalizable()
+    }
+    func setLocalizable()
+    {
+        lblDriverLicence.text = "Driver Licence (Front only)".localized
+        lblDriverLicenceExpiryDate.text = "Select driver licence expiry date".localized
+        lblAccreditationCerti.text = "Revenue Licence".localized
+        lblAccreditationCertiExpiryDate.text = "Select revenue licence expiry date".localized
+        lblCarRegistration.text = "Vehicle Registration Document".localized
+        lblCarRegistrationExpiryDate.text = "Select car registration expiry date".localized
+        lblVehicleInsurance.text = "Vehicle Insurance Policy/Certificate".localized
+        lblVehicleInsuranceExpiryDate.text = "Select vehicle insurance/policy expiry date".localized
+        btnSave.setTitle("Save".localized, for: .normal)
     }
 
+    @IBOutlet weak var btnSave: ThemeButton!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

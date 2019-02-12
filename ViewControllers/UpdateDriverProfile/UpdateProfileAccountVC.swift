@@ -40,6 +40,20 @@ class UpdateProfileAccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLocalizable()
+    }
+    func setLocalizable(){
+        txtAccountHolderName.placeholder = "".localized
+        txtBankName.placeholder = "".localized
+        txtBSB.placeholder = "".localized
+        txtBankAcNo.placeholder = "".localized
+        btnSave.setTitle("Save".localized, for: .normal)
+    }
+  
+
+    @IBOutlet weak var btnSave: ThemeButton!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

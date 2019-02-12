@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -295,6 +295,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSave" destination="v1i-Cc-hna" id="aMz-ef-c30"/>
                         <outlet property="txtABN" destination="UK1-90-cPx" id="pVv-Lo-Ncb"/>
                         <outlet property="txtAccountHolderName" destination="yeQ-xd-Fkg" id="UVZ-uJ-EPS"/>
                         <outlet property="txtBSB" destination="CQe-Nz-YuH" id="Xv6-xf-Qu4"/>
@@ -747,9 +748,6 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                                                 <state key="normal" title="Change Password"/>
-                                                                <connections>
-                                                                    <action selector="btnChangePasswordClicked:" destination="ed2-r5-hVe" eventType="touchUpInside" id="kZu-zw-pFN"/>
-                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf1-DP-qxs" customClass="ThemeButton" customModule="TanTaxi_Driver" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="75" width="315" height="45"/>
@@ -893,15 +891,18 @@
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="btnChangePass" destination="BCM-aS-iAz" id="DdO-ZX-IQx"/>
                         <outlet property="btnEditProfileIPic" destination="1v3-7m-T1t" id="Dkq-mS-tcz"/>
                         <outlet property="btnFemale" destination="oBB-lo-ba1" id="WoK-rs-dJc"/>
                         <outlet property="btnMale" destination="vg9-1I-qEs" id="5N6-rO-NtX"/>
                         <outlet property="btnOthers" destination="x03-Oa-x0a" id="SkR-4F-Kvl"/>
+                        <outlet property="btnSave" destination="Mf1-DP-qxs" id="Etn-Cc-5G6"/>
                         <outlet property="imgProfile" destination="Gry-u0-gI0" id="aRs-Uh-Rg5"/>
                         <outlet property="lblEmail" destination="iSj-G4-LMx" id="n4v-fk-5af"/>
-                        <outlet property="lblFemail" destination="83s-wj-6gh" id="CWx-fF-rwv"/>
+                        <outlet property="lblFemale" destination="83s-wj-6gh" id="Se7-XW-p5p"/>
+                        <outlet property="lblGender" destination="oha-UW-sm0" id="n0c-xc-FZk"/>
                         <outlet property="lblName" destination="0t9-hL-zF5" id="Hax-KW-cBd"/>
-                        <outlet property="lblmail" destination="e7i-cT-yul" id="C7r-aD-3gd"/>
+                        <outlet property="lblmale" destination="e7i-cT-yul" id="hB3-o0-cTl"/>
                         <outlet property="txtAddress" destination="Fsi-Ug-1IT" id="5fr-Vj-ysE"/>
                         <outlet property="txtCity" destination="TCt-sR-pOM" id="kpV-JH-1ci"/>
                         <outlet property="txtCompanyID" destination="Dua-zl-tgH" id="a41-oM-HZB"/>
@@ -1352,6 +1353,7 @@
                         <outlet property="lblAccount" destination="UJu-iV-zxi" id="UYN-qo-nQn"/>
                         <outlet property="lblDocument" destination="VO5-tD-Cqn" id="xOJ-4T-PsQ"/>
                         <outlet property="lblEditProfile" destination="3JN-VD-Flu" id="4YK-7z-WLh"/>
+                        <outlet property="lblLogout" destination="V9Y-Pu-nLc" id="ZQ8-dI-G38"/>
                         <outlet property="lblVehicleOption" destination="grT-Ri-JxB" id="LDR-Gj-SDe"/>
                         <outlet property="viewAccount" destination="goK-Gs-qtG" id="Wk4-e8-Jf2"/>
                         <outlet property="viewDocument" destination="ffb-TD-onf" id="A9x-V4-b8p"/>
@@ -1752,6 +1754,7 @@
                     </view>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="btnSave" destination="4VW-i9-RSC" id="j99-8v-Deh"/>
                         <outlet property="imgAccreditationCerti" destination="t88-N5-eqk" id="9H2-gi-82E"/>
                         <outlet property="imgCarRegistration" destination="XaO-4b-37Y" id="Z83-iB-n2L"/>
                         <outlet property="imgDriverLicence" destination="38I-ak-O3D" id="Qgf-J1-YGc"/>
@@ -2602,6 +2605,7 @@ You must be 21 years of age or over.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSave" destination="dgA-Id-ZOf" id="S3o-PC-APB"/>
                         <outlet property="imgVehicle" destination="Ukz-MO-OCt" id="vyI-km-oir"/>
                         <outlet property="txtCarType" destination="fAC-yP-EJb" id="bAY-E1-bO4"/>
                         <outlet property="txtCompany" destination="NU2-lS-aTs" id="CCn-ph-1tJ"/>
