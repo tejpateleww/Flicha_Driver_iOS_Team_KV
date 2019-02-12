@@ -36,7 +36,23 @@ class DriverBankDetailsViewController: UIViewController
             constraintTopOfNextButton.constant = 10
         }
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLocalizable()
+    }
+    func setLocalizable()
+    {
+        txtAccountHolderName.placeholder = "Account Holder Name".localized
+        txtBankName.placeholder = "Bank Name".localized
+        txtBankBranch.placeholder = "Bank Branch".localized
+        txtAccountNumber.placeholder = "Account Number".localized
+        btnNext.setTitle("Next".localized, for: .normal)
+//        lblHaveAnAccount.text = "".localized
+//        btnLogin.setTitle("".localized, for: .normal)
+    }
+    
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var lblHaveAnAccount: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

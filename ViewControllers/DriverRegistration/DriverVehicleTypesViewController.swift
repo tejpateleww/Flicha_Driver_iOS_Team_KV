@@ -46,14 +46,13 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         webserviceForVehicleTypes()
-    }
     
+    }
 
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
-    
     
     //-------------------------------------------------------------
     // MARK: - Outlets
@@ -112,6 +111,10 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
         cellTop.selectionStyle = .none
         cellDetails.selectionStyle = .none
         cellBottom.selectionStyle = .none
+//        cellTop.lblTopDetails.text = "".localized
+//        cellDetails.lblTitlesOFClass.text = "".localized
+//        cellDetails.lblClassDetails.text = "".localized
+        cellBottom.btnNext.setTitle("Next".localized, for: .normal)
         
 //        cellDetails.layoutIfNeeded()
         

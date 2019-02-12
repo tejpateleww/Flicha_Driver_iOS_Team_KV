@@ -20,7 +20,9 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
     @IBOutlet weak var constraintHeightOfImage: NSLayoutConstraint!
     @IBOutlet weak var constraintTopOfNextButton: NSLayoutConstraint!
     
+    @IBOutlet weak var btnLogin: UIButton!
     
+    @IBOutlet weak var lblHaveAnAccount: UILabel!
     var userDefault = UserDefaults.standard
     var aryDataCarsAndTaxi = [[String : AnyObject]]()
     
@@ -38,6 +40,24 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setLocalizable()
+    }
+    
+    func setLocalizable()
+    {
+        txtVehicleRegistrationNumber.placeholder = "Vehicle Plate Number".localized
+        txtCompany.placeholder = "Vehicle Model".localized
+        txtVehicleMake.placeholder = "Vehicle Make".localized
+        txtCarType.placeholder = "Vehicle Type".localized
+        txtNumberPassenger.placeholder = "Number Of Passenger".localized
+        btnNext.setTitle("Next".localized, for: .normal)
+//        lblHaveAnAccount.text = "".localized
+//        btnLogin.setTitle("".localized, for: .normal)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,12 +130,7 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-       
-        
-    }
+   
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
