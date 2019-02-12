@@ -1686,8 +1686,6 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     func didAcceptedRequest() {
         
-        
-        
         manager.startUpdatingLocation()
         if self.driverID != "" && self.defaultLocation.coordinate.latitude != 0 && self.defaultLocation.coordinate.longitude != 0 {
             self.UpdateDriverLocation()
@@ -1805,7 +1803,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 //                if SingletonClass.sharedInstance.passengerPaymentType == "cash" || SingletonClass.sharedInstance.passengerPaymentType == "Cash"
                 //                {
                 //
-                self.completeTripFinalSubmit()
+//                self.completeTripFinalSubmit()
+                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 //                }
@@ -1907,7 +1906,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 //                if SingletonClass.sharedInstance.passengerPaymentType == "cash" || SingletonClass.sharedInstance.passengerPaymentType == "Cash"
                 //                {
                 //
-                self.completeTripFinalSubmit()
+//                self.completeTripFinalSubmit()
+                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 //                }
@@ -2672,8 +2672,6 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             if self.driverID == Singletons.sharedInstance.strDriverID
             {
-                
-                
                 if self.isAdvanceBooking
                 {
                     self.getSocketCallforGetingTipForBooklater(self.driverID, self.advanceBookingID)
@@ -2723,7 +2721,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
                 
                 //                self.completeTripButtonAction()
-                self.completeTripFinalSubmit()
+//                self.completeTripFinalSubmit()
+                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 
@@ -2733,7 +2732,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             else
             {
                 //                self.completeTripButtonAction()
-                self.completeTripFinalSubmit()
+//                self.completeTripFinalSubmit()
+                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 self.tollFee = "0"
@@ -2746,7 +2746,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         //        }
     }
     
-    func completeTripFinalSubmit() {
+    func completeTripFinalSubmit(LastAddress:String) {
         
         //        if sumOfFinalDistance != 0 {
         
@@ -2768,6 +2768,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             dictOFParam["lat"] = "\(pickupCordinate)" as AnyObject
             dictOFParam["long"] = "\(destinationCordinate)" as AnyObject
         }
+        
+        dictOFParam["DropoffLocation"] = LastAddress as AnyObject
         Utilities.hideActivityIndicator()
         if isAdvanceBooking {
             
@@ -2917,7 +2919,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                         self.sumOfFinalDistance = (JSON as AnyObject).object(forKey:("distance")) as! Double
                         DispatchQueue.main.async {
                             //                                        UtilityClass.hideACProgressHUD()
-                            self.completeTripFinalSubmit()
+//                            self.completeTripFinalSubmit()
+                            self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
                             
                             //                            print("Function: \(#function), line: \(#line)")
                             
@@ -3640,8 +3643,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                                         self.sumOfFinalDistance = finalDistance
                                         DispatchQueue.main.async {
                                             //                                        UtilityClass.hideACProgressHUD()
-                                            self.completeTripFinalSubmit()
-                                            
+//                                            self.completeTripFinalSubmit()
+                                            self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
                                             //                                            print("Function: \(#function), line: \(#line)")
                                             
                                         }
@@ -3951,14 +3954,52 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                         addressString = "\(SubLocality), \(City), \(State) \(Postalcode), \(country)"
                     }
                 }
-                
-                 self.lblLocationOnMap.text = addressString
-                
+              self.lblLocationOnMap.text = addressString
             } else {
                 //                lblStartPoint.text = "No Address Found"
             }
         }
     }
+    
+    
+    func getLastAddressForLatLng(DropOffAddress:CLLocation) {
+        //        self.StartingPointLatitude = Double(latitude)!
+        //        self.StartingPointLongitude = Double(Longintude)!
+        
+//        let location = CLLocation(latitude: Double(latitude)!, longitude: Double(Longintude)!)
+        geocoder.reverseGeocodeLocation(DropOffAddress) { (placemarks, error) in
+            self.processDropOffLocationResponse(withPlacemarks: placemarks, error: error)
+        }
+        
+    }
+    
+    private func processDropOffLocationResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+        // Update View
+        if let error = error {
+            print("Unable to Reverse Geocode Location (\(error))")
+            //            lblStartPoint.text = "Unable to Find Address for Location"
+            
+        } else {
+            if let placemarks = placemarks, let placemark = placemarks.first {
+                var addressString:String = ""
+                if let Address = placemark.addressDictionary as? [String:Any] {
+                    addressString =  (Address["FormattedAddressLines"] as! [String]).joined(separator: ", ")
+                }
+                else {
+                    if let SubLocality = placemark.subLocality, let City = placemark.locality, let State = placemark.administrativeArea, let Postalcode = placemark.postalCode , let country = placemark.country {
+                        addressString = "\(SubLocality), \(City), \(State) \(Postalcode), \(country)"
+                    }
+                }
+                print("Got DropOff location:- \(addressString)")
+                self.completeTripFinalSubmit(LastAddress: addressString)
+            } else {
+                //                lblStartPoint.text = "No Address Found"
+            }
+        }
+    }
+    
+    
+    
     
 //    func getAddressForLatLng(latitude: String, longitude: String) {
 //

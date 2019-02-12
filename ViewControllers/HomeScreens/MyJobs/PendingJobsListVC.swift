@@ -158,10 +158,10 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         //        checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupLocation", isNotHave: strNotAvailable) //
         
         //        cell.lblDropoffLocation.text = ""
-        cell.lblDropoffLocationDescription.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupLocation", isNotHave: strNotAvailable) // data.object(forKey: "PickupLocation") as? String // DropoffLocation
+        cell.lblDropoffLocationDescription.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "DropoffLocation", isNotHave: strNotAvailable) // data.object(forKey: "PickupLocation") as? String // DropoffLocation
         cell.lblDateAndTime.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "CreatedDate", isNotHave: strNotAvailable) //data.object(forKey: "CreatedDate") as? String
         
-        cell.lblPickUpLocation.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "DropoffLocation", isNotHave: strNotAvailable)
+        cell.lblPickUpLocation.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupLocation", isNotHave: strNotAvailable)
         // data.object(forKey: "DropoffLocation") as? String // PickupLocation
         cell.lblpassengerEmailDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PassengerEmail", isNotHave: strNotAvailable) // data.object(forKey: "PassengerEmail") as? String
         cell.lblPassengerNoDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PassengerContact", isNotHave: strNotAvailable) // data.object(forKey: "PassengerContact") as? String
@@ -211,9 +211,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
             //            }
         }
         
-        
-        
-        cell.lblTripDetails.text = "\(checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "TripDistance", isNotHave: strNotAvailable)) km" //
+        cell.lblTripDetails.text = "\("N/A" != checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "TripDistance", isNotHave: strNotAvailable) ? checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "TripDistance", isNotHave: strNotAvailable) : "0") km" //
         
         cell.lblDispatcherName.text = ""
         cell.lblDispatcherEmail.text = ""
@@ -221,7 +219,6 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         cell.lblDispatcherName.text = ""
         cell.lblDispatcherEmailTitle.text = ""
         cell.lblDispatcherNumber.text = ""
-        
         
         cell.stackViewEmail.isHidden = true
         cell.stackViewName.isHidden = true

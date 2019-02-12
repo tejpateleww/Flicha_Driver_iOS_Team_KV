@@ -175,7 +175,7 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         //                cell.lblPickupTime.text = data.object(forKey: "PickupTime") as? String
         
         
-        let pickupTime = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupTime", isNotHave: strNotAvailable)
+        let pickupTime = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupDateTime", isNotHave: strNotAvailable)
         let strDropoffTime = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "DropTime", isNotHave: strNotAvailable)
         
         
@@ -183,8 +183,10 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.lblPickupTime.text = pickupTime
             cell.lblDateTime.text = pickupTime
         } else {
-            cell.lblPickupTime.text = setTimeStampToDate(timeStamp: pickupTime)
-            cell.lblDateTime.text = setTimeStampToOnlyDate(timeStamp: pickupTime)
+            cell.lblPickupTime.text = pickupTime
+//                setTimeStampToDate(timeStamp: pickupTime)
+            cell.lblDateTime.text = pickupTime.components(separatedBy: " ")[0]
+//                setTimeStampToOnlyDate(timeStamp: pickupTime)
         }
         
         if strDropoffTime == strNotAvailable {
@@ -223,7 +225,8 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         if strTripDistance == "" {
-            strTripDistance = strNotAvailable
+            strTripDistance = "0"
+//            strNotAvailable
         }
         
         
@@ -261,7 +264,7 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         
-        cell.lblTripDistanceDesc.text = "\(strTripDistance) km" // data.object(forKey: "TripDistance") as? String
+        cell.lblTripDistanceDesc.text =  "\(strTripDistance) km" // data.object(forKey: "TripDistance") as? String
         cell.lbltripDurationDesc.text = strTripDuration // data.object(forKey: "TripDuration") as? String
         cell.lblCarModelDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Model", isNotHave: strNotAvailable) //  data.object(forKey: "Model") as? String
         cell.lblNightFareDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "NightFare", isNotHave: strNotAvailable) //  data.object(forKey: "NightFare") as? String
@@ -343,10 +346,29 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         //            cell.textLabel?.text = "No Data Found"
         //        }
         if self.checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Status", isNotHave: strNotAvailable) == "canceled" {
-            
+            cell.PickupTimeStackView.isHidden = true
+            cell.DropOffTimeStackView.isHidden = true
+            cell.WaitingTimeStackView.isHidden = true
+            cell.WaitingTimeCostStackView.isHidden = true
+            cell.DiscountStackView.isHidden = true
+            cell.BookingFareStackView.isHidden = true
+            cell.TripFareStackView.isHidden = true
+            cell.SubTotalStackView.isHidden = true
+            cell.TaxStackView.isHidden = true
+            cell.TotalStackView.isHidden = true
         } else {
-            
+            cell.PickupTimeStackView.isHidden = false
+            cell.DropOffTimeStackView.isHidden = false
+            cell.WaitingTimeStackView.isHidden = false
+            cell.WaitingTimeCostStackView.isHidden = false
+            cell.DiscountStackView.isHidden = false
+            cell.BookingFareStackView.isHidden = false
+            cell.TripFareStackView.isHidden = false
+            cell.SubTotalStackView.isHidden = false
+            cell.TaxStackView.isHidden = false
+            cell.TotalStackView.isHidden = false
         }
+      
         
         return cell
         //        }
@@ -486,7 +508,6 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
             if strHistoryType == "Past" {
                 self.aryPastJobs.add(dataOfAry)
             }
-            
         }
     }
     

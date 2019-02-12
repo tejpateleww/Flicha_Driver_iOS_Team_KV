@@ -9,54 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControllers/HomeScreens/MyJobsViewController.swift"
-            timestampString = "571059488.0583349"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "btnDispatchedJobs(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TanTaxi_Driver.MyJobsViewController.btnDispatchedJobs(__C.UIButton) -&gt; ()"
-                  moduleName = "TanTaxi-Driver"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baps/Documents/Bhautik/Projects/TanTaxi/TanTaxi_Driver/Code/TanTaxi%20Driver/ViewControllers/HomeScreens/MyJobsViewController.swift"
-                  timestampString = "571559525.5637029"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TanTaxi_Driver.MyJobsViewController.btnDispatchedJobs(__C.UIButton) -&gt; ()"
-                  moduleName = "TanTaxi-Driver"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baps/Documents/Bhautik/Projects/TanTaxi/TanTaxi_Driver/Code/TanTaxi%20Driver/ViewControllers/HomeScreens/MyJobsViewController.swift"
-                  timestampString = "571559525.5662611"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "528">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ViewControllers/DriverRegistration/DriverRegistrationViewController.swift"
             timestampString = "571059488.058544"
             startingColumnNumber = "9223372036854775807"
@@ -89,8 +41,8 @@
                   symbolName = "TanTaxi_Driver.PassengerInfoViewController.setDataToAllFileds() -&gt; ()"
                   moduleName = "TanTaxi-Driver"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baps/Documents/Bhautik/Projects/TanTaxi/TanTaxi_Driver/Code/TanTaxi%20Driver/ViewControllers/PassengerInfoVC/PassengerInfoViewController.swift"
-                  timestampString = "571559525.579095"
+                  urlString = "file:///Users/baps/Documents/Bhautik/Bit_Bucket_Projects/TanTaxi%20Driver/ViewControllers/PassengerInfoVC/PassengerInfoViewController.swift"
+                  timestampString = "571640193.380461"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "119"
@@ -104,8 +56,8 @@
                   symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;, Swift.Optional&lt;Swift.Error&gt;, __C.SDImageCacheType, Swift.Optional&lt;Foundation.URL&gt;) -&gt; () in TanTaxi_Driver.PassengerInfoViewController.setDataToAllFileds() -&gt; ()"
                   moduleName = "TanTaxi-Driver"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/baps/Documents/Bhautik/Projects/TanTaxi/TanTaxi_Driver/Code/TanTaxi%20Driver/ViewControllers/PassengerInfoVC/PassengerInfoViewController.swift"
-                  timestampString = "571559525.581965"
+                  urlString = "file:///Users/baps/Documents/Bhautik/Bit_Bucket_Projects/TanTaxi%20Driver/ViewControllers/PassengerInfoVC/PassengerInfoViewController.swift"
+                  timestampString = "571640193.38336"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -122,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
-            timestampString = "571563439.01326"
+            timestampString = "571640192.581609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1890"
-            endingLineNumber = "1890"
+            startingLineNumber = "1889"
+            endingLineNumber = "1889"
             landmarkName = "getNotificationforReceiveTip()"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
-            timestampString = "571563439.013428"
+            timestampString = "571640192.582701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1957"
@@ -154,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
-            timestampString = "571563439.013502"
+            timestampString = "571640192.583141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2108"
@@ -170,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
-            timestampString = "571563439.013569"
+            timestampString = "571640192.583559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2135"
@@ -186,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
-            timestampString = "571563439.013636"
+            timestampString = "571640192.583968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1185"
@@ -202,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
-            timestampString = "571563439.013702"
+            timestampString = "571640192.584373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2210"
@@ -218,12 +170,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
-            timestampString = "571563439.013769"
+            timestampString = "571640192.5848401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2215"
             endingLineNumber = "2215"
             landmarkName = "btnStartTrip(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
+            timestampString = "571640192.5852669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2753"
+            endingLineNumber = "2753"
+            landmarkName = "completeTripFinalSubmit(LastAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
+            timestampString = "571640192.5856839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2667"
+            endingLineNumber = "2667"
+            landmarkName = "completeTripButtonAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
+            timestampString = "571640192.586032"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2673"
+            endingLineNumber = "2673"
+            landmarkName = "completeTripButtonAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewControllers/HomeScreens/HomeViewController.swift"
+            timestampString = "571640192.586424"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2720"
+            endingLineNumber = "2720"
+            landmarkName = "completeTripButtonAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

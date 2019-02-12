@@ -161,11 +161,11 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
 //         checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PaymentType", isNotHave: strNotAvailable)
 
-                cell.lblDropOffLocationDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupLocation", isNotHave: strNotAvailable) //data.object(forKey: "PickupLocation") as? String // DropoffLocation
+                cell.lblDropOffLocationDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "DropoffLocation", isNotHave: strNotAvailable) //data.object(forKey: "PickupLocation") as? String // DropoffLocation
                 cell.lblDateAndTime.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupDateTime", isNotHave: strNotAvailable)
                 cell.lblPickupTimeValue.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupDateTime", isNotHave: strNotAvailable)
                 //data.object(forKey: "PickupDateTime") as? String
-                cell.lblPickupLocation.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "DropoffLocation", isNotHave: strNotAvailable) // data.object(forKey: "DropoffLocation") as? String  // PickupLocation
+                cell.lblPickupLocation.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupLocation", isNotHave: strNotAvailable) // data.object(forKey: "DropoffLocation") as? String  // PickupLocation
                 cell.lblPassengerNoDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PassengerContact", isNotHave: strNotAvailable) //data.object(forKey: "PassengerContact") as? String
                 cell.lblTripDestanceDesc.text = "\(checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "TripDistance", isNotHave: strNotAvailable)) km" //data.object(forKey: "TripDistance") as? String
                 cell.lblCarModelDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Model", isNotHave: strNotAvailable) //data.object(forKey: "Model") as? String
