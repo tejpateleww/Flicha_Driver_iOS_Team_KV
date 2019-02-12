@@ -524,6 +524,12 @@
 		EEFEA5A92211841000D88655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Registration.storyboard; sourceTree = "<group>"; };
 		EEFEA5AC2211841500D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Registration.strings; sourceTree = "<group>"; };
 		EEFEA5B0221184F900D88655 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Storyboard/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EEFEA5B22211A16900D88655 /* sw */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sw; path = sw.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EEFEA5B32211A16900D88655 /* sw */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sw; path = sw.lproj/Main.strings; sourceTree = "<group>"; };
+		EEFEA5B42211A16A00D88655 /* sw */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sw; path = sw.lproj/TripToDestination.strings; sourceTree = "<group>"; };
+		EEFEA5B52211A16A00D88655 /* sw */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sw; path = sw.lproj/Profile.strings; sourceTree = "<group>"; };
+		EEFEA5B62211A16B00D88655 /* sw */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sw; path = sw.lproj/Registration.strings; sourceTree = "<group>"; };
+		EEFEA5B72211A16B00D88655 /* sw */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sw; path = Storyboard/sw.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1596,6 +1602,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sw,
 			);
 			mainGroup = 00E5CE9A1F8B402C004409A4;
 			productRefGroup = 00E5CEA41F8B402C004409A4 /* Products */;
@@ -1963,6 +1970,7 @@
 			children = (
 				EEFEA5952211839600D88655 /* Base */,
 				EEFEA598221183B600D88655 /* en */,
+				EEFEA5B32211A16900D88655 /* sw */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1972,6 +1980,7 @@
 			children = (
 				EEFEA59A221183DB00D88655 /* Base */,
 				EEFEA59D221183DE00D88655 /* en */,
+				EEFEA5B42211A16A00D88655 /* sw */,
 			);
 			name = TripToDestination.storyboard;
 			sourceTree = "<group>";
@@ -1981,6 +1990,7 @@
 			children = (
 				EEFEA59F221183F700D88655 /* Base */,
 				EEFEA5A2221183FD00D88655 /* en */,
+				EEFEA5B52211A16A00D88655 /* sw */,
 			);
 			name = Profile.storyboard;
 			sourceTree = "<group>";
@@ -1990,6 +2000,7 @@
 			children = (
 				EEFEA5A42211840700D88655 /* Base */,
 				EEFEA5A72211840900D88655 /* en */,
+				EEFEA5B22211A16900D88655 /* sw */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1999,6 +2010,7 @@
 			children = (
 				EEFEA5A92211841000D88655 /* Base */,
 				EEFEA5AC2211841500D88655 /* en */,
+				EEFEA5B62211A16B00D88655 /* sw */,
 			);
 			name = Registration.storyboard;
 			sourceTree = "<group>";
@@ -2007,6 +2019,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EEFEA5B0221184F900D88655 /* en */,
+				EEFEA5B72211A16B00D88655 /* sw */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2018,6 +2031,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2077,6 +2091,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

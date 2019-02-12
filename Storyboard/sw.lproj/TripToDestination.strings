@@ -1,0 +1,9 @@
+
+/* Class = "UITextField"; placeholder = "Destination Location"; ObjectID = "Qvp-f6-uVb"; */
+"Qvp-f6-uVb.placeholder" = "Destination Location";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Zgj-fe-but"; */
+"Zgj-fe-but.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Destination Trip"; ObjectID = "j9G-vq-8v6"; */
+"j9G-vq-8v6.text" = "Destination Trip";
