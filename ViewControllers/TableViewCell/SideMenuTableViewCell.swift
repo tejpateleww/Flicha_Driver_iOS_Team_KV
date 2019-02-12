@@ -49,27 +49,32 @@ class SideMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var btnLegal: UIButton!
     @IBOutlet weak var viewWallet: UIView!
     @IBOutlet weak var viewPaymentOption: UIView!
-    @IBOutlet weak var btnSetting: UIButton!
+    @IBOutlet weak var btnTripToDestination: UIButton!
     @IBOutlet weak var lblMyJobs: UILabel!
-    @IBOutlet weak var iconMyRaitng: UILabel!
+    @IBOutlet weak var lblMyRaitng: UILabel!
     @IBOutlet weak var iconPaymentOption: UIButton!
+    @IBOutlet weak var lblLegal: UILabel!
     
     @IBOutlet weak var iconInviteFrnd: UIImageView!
     @IBOutlet weak var iconRating: UIImageView!
     @IBOutlet weak var iconWallet: UIImageView!
     @IBOutlet weak var lblWallet: UILabel!
+    @IBOutlet weak var lblSupport: UILabel!
+    
+    @IBOutlet weak var iconLegal: UIImageView!
+    @IBOutlet weak var iconSupport: UIImageView!
     
     @IBOutlet weak var imgLogout: UIImageView!
     @IBOutlet weak var lblInviteFrnd: UILabel!
-    @IBOutlet weak var iconSetting: UIImageView!
+    @IBOutlet weak var iconTripToDestination: UIImageView!
     // SideMenuItemsList
     @IBOutlet var imgItems: UIImageView!
     @IBOutlet var lblItemNames: UILabel!
     @IBOutlet weak var lblGmail: UILabel!
-    @IBOutlet weak var lblSetting: UILabel!
+    @IBOutlet weak var lblTripToDestination: UILabel!
     @IBOutlet weak var btnLogOuts: UIButton!
     
     @IBOutlet weak var imgJob: UIImageView!
-    @IBOutlet weak var lblMyJob: UILabel!
+//    @IBOutlet weak var lblMyJob: UILabel!
 
 }

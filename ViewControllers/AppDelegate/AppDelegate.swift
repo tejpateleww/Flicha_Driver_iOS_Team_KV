@@ -43,6 +43,11 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         UserDefaults.standard.set(false, forKey: kIsSocketEmited)
         UserDefaults.standard.synchronize()
         
+        if UserDefaults.standard.value(forKey: "i18n_language") == nil {
+            UserDefaults.standard.set("en", forKey: "i18n_language")
+            UserDefaults.standard.synchronize()
+        }
+        
         Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
@@ -471,3 +476,15 @@ extension String {
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
     }
 }
+
+func setLayoutForswahilLanguage()
+{
+    UserDefaults.standard.set("sw", forKey: "i18n_language")
+    UserDefaults.standard.synchronize()
+}
+func setLayoutForenglishLanguage()
+{
+    UserDefaults.standard.set("en", forKey: "i18n_language")
+    UserDefaults.standard.synchronize()
+}
+

@@ -31,6 +31,7 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         
         strSelectedLaungage = KEnglish
+        
         aryItemNames = [kMyJobs,kPaymentOption,kWallet,kMyRating,kInviteFriend,kSettings,kLegal,kSupport,kLogout]
         
         aryItemIcons = [kiconMyJobs,kiconPaymentOption,kiconWallet,kiconMyRating,kiconInviteFriend,kiconSettings,klegal
@@ -135,7 +136,15 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
             cellProfile.lblLaungageName.layer.borderColor = UIColor.black.cgColor
             cellProfile.lblLaungageName.layer.borderWidth = 0.5
             
-            cellProfile.lblLaungageName.text = strSelectedLaungage
+            if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+                if SelectedLanguage == "en" {
+                    cellProfile.lblLaungageName.text = "SW"
+                } else if SelectedLanguage == "sw" {
+                    cellProfile.lblLaungageName.text = "EN"
+                }
+            }
+//            cellProfile.lblLaungageName.text = strSelectedLaungage
+            
             cellProfile.btnLaungageChange.addTarget(self, action: #selector(btnLaungageClicked(_:)), for: .touchUpInside)
             //            .layer.cornerRadius = btnHome.frame.size.height / 2
             //            btnMyJob.clipsToBounds = true
@@ -146,13 +155,21 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
             //            cellItemList.lblItemNames.text = aryItemNames[indexPath.row]
             //            cellItemList.imgItems.image = UIImage(named: aryItemIcons[indexPath.row])
             
+            cellItemList.lblMyJobs.text = "My Jobs".localized
+            cellItemList.lblMyRaitng.text = "My Ratings".localized
+            cellItemList.lblInviteFrnd.text = "Invite Friends".localized
+            cellItemList.lblTripToDestination.text = "Trip to Destination".localized
+            cellItemList.lblLegal.text = "Legal".localized
+            cellItemList.lblSupport.text = "Support".localized
+            cellItemList.btnLogOut.setTitle("Log Out".localized, for: .normal)
+            
             cellItemList.btnMyJob.addTarget(self, action: #selector(self.MyJob), for: .touchUpInside)
             //            cellItemList.btnMyJob.tag = indexPath.row
             cellItemList.btnPaymentOption.addTarget(self, action: #selector(self.PayMentOption), for: .touchUpInside)
             cellItemList.btnWallet.addTarget(self, action: #selector(self.Wallet), for: .touchUpInside)
             cellItemList.btnMyRating.addTarget(self, action: #selector(self.MyRating), for: .touchUpInside)
             cellItemList.btnInviteFriend.addTarget(self, action: #selector(self.InviteFriend), for: .touchUpInside)
-            cellItemList.btnSetting.addTarget(self, action: #selector(self.setting), for: .touchUpInside)
+            cellItemList.btnTripToDestination.addTarget(self, action: #selector(self.setting), for: .touchUpInside)
             cellItemList.btnLegal.addTarget(self, action: #selector(self.Legal), for: .touchUpInside)
             cellItemList.btnSupport.addTarget(self, action: #selector(self.Support), for: .touchUpInside)
             cellItemList.btnLogOuts.addTarget(self, action: #selector(self.LogOut), for: .touchUpInside)
@@ -172,9 +189,9 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
             cellItemList.btnInviteFriend.layer.shadowOpacity = 0.7
             cellItemList.btnInviteFriend.layer.shadowRadius = 15.0
             cellItemList.btnInviteFriend.layer.shadowColor = UIColor.black.cgColor
-            cellItemList.btnSetting.layer.shadowOpacity = 0.7
-            cellItemList.btnSetting.layer.shadowRadius = 15.0
-            cellItemList.btnSetting.layer.shadowColor = UIColor.black.cgColor
+            cellItemList.btnTripToDestination.layer.shadowOpacity = 0.7
+            cellItemList.btnTripToDestination.layer.shadowRadius = 15.0
+            cellItemList.btnTripToDestination.layer.shadowColor = UIColor.black.cgColor
             cellItemList.btnLegal.layer.shadowOpacity = 0.7
             cellItemList.btnLegal.layer.shadowRadius = 15.0
             cellItemList.btnLegal.layer.shadowColor = UIColor.black.cgColor
@@ -195,19 +212,32 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         //        sender.isSelected = !sender.isSelected
         
-        if strSelectedLaungage == KEnglish
-        {
-            strSelectedLaungage = KSwiley
-        }
-        else
-        {
-            strSelectedLaungage = KEnglish
-        }
+//        if strSelectedLaungage == KEnglish
+//        {
+//            strSelectedLaungage = KSwiley
+//        }
+//        else
+//        {
+//            strSelectedLaungage = KEnglish
+//        }
+//
+//        self.tableView.reloadData()
         
-        self.tableView.reloadData()
-        
+        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+            if SelectedLanguage == "en" {
+                setLayoutForswahilLanguage()
+                
+            } else if SelectedLanguage == "sw" {
+                setLayoutForenglishLanguage()
+            }
+        }
+            
+            self.navigationController?.loadViewIfNeeded()
+            
+            self.tableView.reloadData()
         
     }
+        
     @objc func MyJob(){
         //
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MyJobsViewController") as!    MyJobsViewController
@@ -431,6 +461,7 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
+   
     //-------------------------------------------------------------
     // MARK: - Custom Methods
     //-------------------------------------------------------------
