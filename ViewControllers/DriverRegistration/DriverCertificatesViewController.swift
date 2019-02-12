@@ -15,7 +15,8 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     @IBOutlet var btnDone: UIButton!
     @IBOutlet weak var constraintHeightOfSmallView: NSLayoutConstraint! // 50
     @IBOutlet weak var constraintBottomOfButton: NSLayoutConstraint! // 128
-    
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var lblHaveAnAccount: UILabel!
     
     
     let datePicker: UIDatePicker = UIDatePicker()
@@ -61,9 +62,24 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+       setLocalizable()
     }
     
+ 
+    func setLocalizable()
+    {
+        txtDriverLicence.placeholder = ""
+        lblDriverLicence.text = ""
+        txtAccreditation.placeholder = ""
+        lblAccreditation.text = ""
+        txtCarRegistraion.placeholder = ""
+        txtVehicleInsurance.placeholder = ""
+        lblVehicleInsurance.text = ""
+        btnDone.setTitle("", for: .normal)
+        lblHaveAnAccount.text = ""
+        btnLogin.setTitle("", for: .normal)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

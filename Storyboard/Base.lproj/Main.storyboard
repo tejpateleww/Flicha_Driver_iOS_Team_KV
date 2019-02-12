@@ -4494,7 +4494,7 @@ EE15IEpvYnM
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfX-WP-arM">
-                                                    <rect key="frame" x="92.5" y="11.5" width="135" height="20.5"/>
+                                                    <rect key="frame" x="92.5" y="12" width="135" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -14553,6 +14553,6 @@ EE15IEpvYnM
     <inferredMetricsTieBreakers>
         <segue reference="IpS-zx-juy"/>
         <segue reference="nmM-gN-k9b"/>
-        <segue reference="8CO-DQ-u8J"/>
+        <segue reference="6yW-Rk-jW0"/>
     </inferredMetricsTieBreakers>
 </document>

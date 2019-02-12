@@ -92,6 +92,11 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        btnOK.setTitle("", for: .normal)
+        lblSelectModel.text = ""
+    }
 
     override func didReceiveMemoryWarning()
     {
@@ -112,6 +117,10 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarAndTaxiesTableViewCell") as! CarAndTaxiesTableViewCell
         cell.selectionStyle = .none
+        
+        
+        cell.lblCarModelClass.text = ""
+        cell.lblCarModelDescription.text = ""
         
         let dictData = aryData.object(at: indexPath.row) as! NSDictionary
         

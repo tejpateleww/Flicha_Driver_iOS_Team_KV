@@ -98,8 +98,12 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             //            self.pushAfterReceiveNotification(typeKey: "")
             
         }
-        
-        
+        //Default English set
+        if UserDefaults.standard.value(forKey: "i18n_language") == nil {
+            UserDefaults.standard.set("en", forKey: "i18n_language")
+            UserDefaults.standard.synchronize()
+        }
+
         UNUserNotificationCenter.current().delegate = self
         
         return true
@@ -451,5 +455,19 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             
         }
         
+    }
+}
+
+extension String {
+    var localized: String {
+        
+        
+        let lang = UserDefaults.standard.string(forKey: "i18n_language")
+        print(lang)
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        print(path ?? "")
+        print(bundle ?? "")
+        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
     }
 }

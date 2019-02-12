@@ -9,7 +9,29 @@
 import UIKit
 
 class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    //-------------------------------------------------------------
+    // MARK: - Outlets
+    //-------------------------------------------------------------
+    
+    @IBOutlet var BicycleView: UIView!
+    @IBOutlet var motorBikeView: UIView!
+    @IBOutlet var CarDeliveryView: UIView!
+    @IBOutlet var VanView: UIView!
+    @IBOutlet var T2View: UIView!
+    @IBOutlet var T3View: UIView!
+    // ------------------------------------------------------------
+    
+    @IBOutlet var btnBicycle: UIButton!
+    @IBOutlet var btnMotorbike: UIButton!
+    @IBOutlet var btnCarDelivery: UIButton!
+    @IBOutlet var btnVanTrays: UIButton!
+    @IBOutlet var btn2Ttruck: UIButton!
+    @IBOutlet var btn3Ttruck: UIButton!
+    
+    
+    @IBOutlet var tableView: UITableView!
+    
+    
     
     var strTitle = String()
     var strTermsAndCondition = String()
@@ -42,40 +64,19 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     override func viewWillAppear(_ animated: Bool)
-    
     {
         super.viewWillAppear(animated)
         webserviceForVehicleTypes()
+      
     }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
-    //-------------------------------------------------------------
-    // MARK: - Outlets
-    //-------------------------------------------------------------
 
-    @IBOutlet var BicycleView: UIView!
-    @IBOutlet var motorBikeView: UIView!
-    @IBOutlet var CarDeliveryView: UIView!
-    @IBOutlet var VanView: UIView!
-    @IBOutlet var T2View: UIView!
-    @IBOutlet var T3View: UIView!
-    // ------------------------------------------------------------
-    
-    @IBOutlet var btnBicycle: UIButton!
-    @IBOutlet var btnMotorbike: UIButton!
-    @IBOutlet var btnCarDelivery: UIButton!
-    @IBOutlet var btnVanTrays: UIButton!
-    @IBOutlet var btn2Ttruck: UIButton!
-    @IBOutlet var btn3Ttruck: UIButton!
-  
-    
-    @IBOutlet var tableView: UITableView!
-    
-    
     // ------------------------------------------------------------
 
     //-------------------------------------------------------------
@@ -139,7 +140,12 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
         cellDetails.selectionStyle = .none
         cellBottom.selectionStyle = .none
         
+        cellTop.lblTopDetails.text = ""
+        cellTop.btnDriverTermsandConditions.setTitle("", for: .normal)
+        cellTop.btnDriverTermsandConditions.setTitle("", for: .normal)
         
+        cellDetails.lblVehicleName.text = ""
+        cellDetails.btnNext.setTitle("", for: .normal)
         
         if indexPath.section == 0 {
             

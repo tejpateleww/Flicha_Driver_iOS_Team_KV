@@ -703,7 +703,7 @@
                     </constraints>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="2038" y="-268"/>
+            <point key="canvasLocation" x="1976" y="-268"/>
         </scene>
         <!--DriverBankDetailsViewController-->
         <scene sceneID="B94-6l-Xej">
@@ -920,10 +920,12 @@
                     </view>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="btnLogin" destination="Yuh-f6-iTX" id="Rox-R0-rT2"/>
                         <outlet property="btnNext" destination="nN4-t0-2Zd" id="Dl0-Ej-7pp"/>
                         <outlet property="constraintHeightOfImage" destination="Fmn-7a-OfB" id="S3T-Wo-8FH"/>
                         <outlet property="constraintHeightOfTextFields" destination="LiT-Po-JVy" id="WeJ-RQ-Ghx"/>
                         <outlet property="constraintTopOfNextButton" destination="DFi-0D-4OH" id="S18-Jt-e2S"/>
+                        <outlet property="lblHaveAnAccount" destination="0PK-7W-D42" id="Rf8-xb-8mP"/>
                         <outlet property="txtAccountHolderName" destination="KMq-oc-SBu" id="FyB-RY-rEp"/>
                         <outlet property="txtAccountNumber" destination="XyD-e8-SNq" id="IFe-ws-x2H"/>
                         <outlet property="txtBankBranch" destination="tcC-fN-R9g" id="rPz-8M-FsT"/>
@@ -1301,7 +1303,7 @@
                                                     <color key="titleColor" red="0.89338213209999995" green="0.51630395650000005" blue="0.15679338570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="btnLogin:" destination="JTk-re-dVi" eventType="touchUpInside" id="Ih8-jn-op2"/>
+                                                    <action selector="btnLogin:" destination="JTk-re-dVi" eventType="touchUpInside" id="3ca-6i-FKV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1353,12 +1355,16 @@
                     </view>
                     <size key="freeformSize" width="320" height="750"/>
                     <connections>
+                        <outlet property="bntLogin" destination="XY7-1I-Y3g" id="Fkh-xl-Ww6"/>
                         <outlet property="btnFemale" destination="Bit-vS-nNd" id="gjp-Rn-Wnt"/>
                         <outlet property="btnMale" destination="Stx-E4-3HN" id="mIG-YR-Vve"/>
                         <outlet property="btnNext" destination="fGb-AL-JhV" id="ubg-Fy-NCA"/>
                         <outlet property="constraintHeightOfAllTextFields" destination="3dR-UQ-Nxm" id="aNe-Dn-Ndq"/>
                         <outlet property="constraintHeightOfProfileImage" destination="1QC-75-Df5" id="Ldb-9B-2Bp"/>
                         <outlet property="imgProfile" destination="Ym0-Ss-fim" id="qu6-fO-SYy"/>
+                        <outlet property="lblFemale" destination="88X-71-0HJ" id="G3Q-at-zFJ"/>
+                        <outlet property="lblHaveAnAccount" destination="rU0-5Y-Xup" id="iLa-rh-L1Z"/>
+                        <outlet property="lblMale" destination="u2i-BJ-gP5" id="GHU-xU-x3u"/>
                         <outlet property="txtAddress" destination="NTL-r1-Edy" id="dAP-8e-h7S"/>
                         <outlet property="txtDOB" destination="vRX-dc-mgo" id="taS-tm-n2j"/>
                         <outlet property="txtFullName" destination="lij-DB-raE" id="T4a-zO-2H4"/>
@@ -2123,6 +2129,7 @@ You must be 21 years of age or over.</string>
                         <outlet property="DriverLicenceView" destination="9E2-wI-ycr" id="0Mq-4j-5NI"/>
                         <outlet property="VehicleInsuView" destination="LvP-oY-JLe" id="6pl-fT-qvy"/>
                         <outlet property="btnDone" destination="RXE-UN-TOk" id="XFQ-Ce-xF6"/>
+                        <outlet property="btnLogin" destination="sA6-Nv-0rz" id="vn3-15-Hvr"/>
                         <outlet property="carRegisView" destination="Ef5-mv-6dd" id="c7f-fO-0ui"/>
                         <outlet property="imgAccreditationCertifi" destination="eOS-Il-ugZ" id="8e0-E6-gWH"/>
                         <outlet property="imgCarRegistration" destination="QCY-iu-0xM" id="gss-IC-w3b"/>
@@ -2131,6 +2138,7 @@ You must be 21 years of age or over.</string>
                         <outlet property="lblAccreditation" destination="WeW-7U-eK4" id="28e-pb-3ZS"/>
                         <outlet property="lblCarRegistraion" destination="noP-2G-faB" id="yEs-t6-Ebq"/>
                         <outlet property="lblDriverLicence" destination="nj1-K0-iWR" id="ICg-Xf-97d"/>
+                        <outlet property="lblHaveAnAccount" destination="zMg-VH-hVF" id="NBc-zL-fW3"/>
                         <outlet property="lblVehicleInsurance" destination="Ztb-jb-vfK" id="ggZ-nA-I4A"/>
                         <outlet property="txtAccreditation" destination="V5W-Xu-mKi" id="ffx-cn-sUl"/>
                         <outlet property="txtCarRegistraion" destination="wuq-e0-Kdu" id="JmU-jC-UYo"/>
@@ -2429,8 +2437,10 @@ You must be 21 years of age or over.</string>
                     <connections>
                         <outlet property="btnCarsAndTexis" destination="1AQ-21-Nje" id="bg6-mO-YZk"/>
                         <outlet property="btnDeliveryService" destination="lSj-rd-4ex" id="ip0-td-E2Y"/>
+                        <outlet property="btnLogin" destination="nGP-HA-xpB" id="zP2-ku-00S"/>
                         <outlet property="btnNext" destination="rLs-vR-dZd" id="sUj-rx-IUG"/>
                         <outlet property="imgVehicle" destination="XCg-Sj-V3g" id="Tmr-J7-CqC"/>
+                        <outlet property="lblHaveAnAccount" destination="zvs-xj-xLf" id="hcO-s0-8mS"/>
                         <outlet property="txtCarType" destination="ZXK-gF-63u" id="UFT-hY-SKc"/>
                         <outlet property="txtCompany" destination="7fX-8O-UhY" id="N6g-iT-dvR"/>
                         <outlet property="txtNumberPassenger" destination="hVh-sd-lep" id="BKg-4g-n0F"/>

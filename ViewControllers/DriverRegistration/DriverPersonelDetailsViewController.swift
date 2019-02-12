@@ -23,7 +23,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
      let datePicker = UIDatePicker()
     var companyID = String()
-    
+     var emailID = String()
     var aryCompanyIDS = [[String:AnyObject]]()
 //        let myDatePicker: UIDatePicker = UIDatePicker()
 
@@ -47,8 +47,32 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     @IBOutlet weak var constraintHeightOfAllTextFields: NSLayoutConstraint! // 45
     @IBOutlet weak var constraintHeightOfProfileImage: NSLayoutConstraint! // 75
     
+    @IBOutlet weak var lblMale: UILabel!
+    @IBOutlet weak var lblFemale: UILabel!
+    @IBOutlet weak var lblHaveAnAccount: UILabel!
+    @IBOutlet weak var bntLogin: UIButton!
     
-    var emailID = String()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SetLocalizable()
+    }
+    
+    func SetLocalizable()
+    {
+        txtFullName.placeholder = ""
+        txtAddress.placeholder = ""
+        lblMale.text = ""
+        lblFemale.text = ""
+        txtInviteCode.placeholder = ""
+        btnNext.setTitle("", for: .normal)
+        txtInviteCode.placeholder = ""
+        btnNext.setTitle("", for: .normal)
+        lblHaveAnAccount.text = ""
+        
+        
+    }
+   
 
     
     //-------------------------------------------------------------
@@ -129,16 +153,12 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         //dismiss date picker dialog
         self.view.endEditing(true)
     }
+
     @objc func cancelDatePicker()
     {
         //cancel button dismiss datepicker dialog
         self.view.endEditing(true)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
