@@ -183,7 +183,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
   
     }
     
-    func didCallClicked()        //  SignOut
+    func didCallClicked()        //  did Call
     {
         CallButtonClicked()
     }
@@ -243,8 +243,6 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
         var frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: screenWidth, height: CGFloat(heightWithoutLabel))
         hView.bottomView.isHidden = !showTitleLabelView
         
-        
-        
         hView.backgroundColor = UIColor.clear
         if (showTitleLabelView)
         {
@@ -281,9 +279,6 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
         hView.btnBack.isHidden = !showsBackButton
         hView.btnMenu.isHidden = showsBackButton
         hView.btnSwitch.isHidden = !hideSwitchButton
-        
-     
-        
         
         hView.btnSignOut.isHidden = !hideSignOut
         

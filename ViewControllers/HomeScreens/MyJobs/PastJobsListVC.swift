@@ -28,13 +28,16 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     //-------------------------------------------------------------
     
     var aryData = NSMutableArray()
-    var aryPastJobs = NSMutableArray()
+//    var aryPastJobs = NSMutableArray()
     
     var strNotAvailable: String = "N/A"
     
     var selectedCellIndexPath: IndexPath?
     let selectedCellHeight: CGFloat = 350.5
     let unselectedCellHeight: CGFloat = 86.5
+    
+    var NeedToReload:Bool = false
+    var PageNumber:Int = 1
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -46,6 +49,30 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         return refreshControl
     }()
     
+    
+    func reloadTableView()
+    {
+        if self.aryData.count > 0 {
+            self.lblNodataFound.isHidden = true
+        } else {
+            self.lblNodataFound.isHidden = false
+        }
+        self.tableView.reloadData()
+    }
+    
+    
+    @objc func ReloadNewData(){
+        self.PageNumber = 1
+        self.NeedToReload = false
+        self.aryData.removeAllObjects()
+        self.tableView.reloadData()
+        self.webserviceOfPastbookingpagination(index: self.PageNumber)
+    }
+    
+    func reloadMoreHistory() {
+        self.PageNumber += 1
+        self.webserviceOfPastbookingpagination(index: self.PageNumber)
+    }
     
     func dismissSelf() {
         
@@ -89,15 +116,15 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
         //        aryPastJobs.removeAllObjects()
-        
-        self.webserviceOfPastbookingpagination(index: 1)
-        if self.aryPastJobs.count > 0 {
-            self.lblNodataFound.isHidden = true
-            self.tableView.isHidden = false
-        } else {
-            self.lblNodataFound.isHidden = false
-        }
-        tableView.reloadData()
+        self.ReloadNewData()
+//        self.webserviceOfPastbookingpagination(index: 1)
+//        if self.aryPastJobs.count > 0 {
+//            self.lblNodataFound.isHidden = true
+//            self.tableView.isHidden = false
+//        } else {
+//            self.lblNodataFound.isHidden = false
+//        }
+//        tableView.reloadData()
         
         
     }
@@ -134,7 +161,7 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         //            return 1
         //        }
         
-        return aryPastJobs.count
+        return self.aryData.count
         
     }
     
@@ -151,7 +178,7 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         //
         //            if indexPath.section == 0 {
         
-        let data = aryPastJobs.object(at: indexPath.row) as! NSDictionary
+        let data = self.aryData.object(at: indexPath.row) as! NSDictionary
         
         //        cell.viewAllDetails.isHidden = true
         //                cell.selectionStyle = .none
@@ -454,16 +481,28 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
                     
                     let tempPastData = ((result as! NSDictionary).object(forKey: "history") as! NSArray)
                     
-                    for i in 0..<tempPastData.count {
-                        
-                        let dataOfAry = (tempPastData.object(at: i) as! NSDictionary)
-                        
-                        let strHistoryType = dataOfAry.object(forKey: "HistoryType") as? String
-                        
-                        if strHistoryType == "Past" {
-                            self.aryData.add(dataOfAry)
-                        }
+                    if tempPastData.count == 10 {
+                        self.NeedToReload = true
+                    } else {
+                        self.NeedToReload = false
                     }
+                    
+                    if self.aryData.count == 0 {
+                        self.aryData.addObjects(from: tempPastData as! [Any])
+                    } else {
+                        self.aryData.addObjects(from: tempPastData as! [Any])
+                    }
+                    
+//                    for i in 0..<tempPastData.count {
+//
+//                        let dataOfAry = (tempPastData.object(at: i) as! NSDictionary)
+//
+//                        let strHistoryType = dataOfAry.object(forKey: "HistoryType") as? String
+//
+//                        if strHistoryType == "Past" {
+//                            self.aryData.add(dataOfAry)
+//                        }
+//                    }
                     
 //                    if(self.aryData.count == 0) {
 //                        self.labelNoData.text = "No data found."
@@ -474,9 +513,10 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
 //                        self.tableView.isHidden = false
 //                    }
                     
-                    self.getPostJobs()
+//                    self.getPostJobs()
+                   
                     self.refreshControl.endRefreshing()
-                    if self.aryPastJobs.count > 0 {
+                    if self.aryData.count > 0 {
                         self.lblNodataFound.isHidden = true
                         self.tableView.isHidden = false
                     } else {
@@ -494,22 +534,22 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func getPostJobs() {
-        
-        aryPastJobs.removeAllObjects()
-        
-        refreshControl.endRefreshing()
-        for i in 0..<aryData.count {
-            
-            let dataOfAry = (aryData.object(at: i) as! NSDictionary)
-            
-            let strHistoryType = dataOfAry.object(forKey: "HistoryType") as? String
-            
-            if strHistoryType == "Past" {
-                self.aryPastJobs.add(dataOfAry)
-            }
-        }
-    }
+//    func getPostJobs() {
+//
+//        aryPastJobs.removeAllObjects()
+//
+//        refreshControl.endRefreshing()
+//        for i in 0..<aryData.count {
+//
+//            let dataOfAry = (aryData.object(at: i) as! NSDictionary)
+//
+//            let strHistoryType = dataOfAry.object(forKey: "HistoryType") as? String
+//
+//            if strHistoryType == "Past" {
+//                self.aryPastJobs.add(dataOfAry)
+//            }
+//        }
+//    }
     
     var isDataLoading:Bool=false
     var pageNo:Int = 0
@@ -536,12 +576,13 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if indexPath.row == (self.aryData.count - 5) {
-            if !isDataLoading{
-                isDataLoading = true
-                self.pageNo = self.pageNo + 1
-                webserviceOfPastbookingpagination(index: self.pageNo)
-            }
+        if self.NeedToReload == true && indexPath.row == (self.aryData.count - 5) {
+            self.reloadMoreHistory()
+//            if !isDataLoading{
+//                isDataLoading = true
+//                self.pageNo = self.pageNo + 1
+//                webserviceOfPastbookingpagination(index: self.pageNo)
+//            }
         }
     }
 }

@@ -129,12 +129,9 @@ func getData(_ dictParams: AnyObject, nsURL: String,  completion: @escaping (_ r
 func getDataOfHistory(_ dictParams: AnyObject, nsURL: String,  completion: @escaping (_ result: AnyObject, _ success: Bool) -> Void)
 {
  
-     let url = BaseURL + nsURL
-    
-    
+    let url = BaseURL + nsURL
     DispatchQueue.main.async {
         UtilityClass.showACProgressHUD()
-        
     }
    
     print("The webservice call is\(url) and the params are \(dictParams)")
