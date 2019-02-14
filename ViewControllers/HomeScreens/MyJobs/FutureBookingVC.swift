@@ -49,7 +49,7 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+       
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -70,8 +70,15 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     {
         super.viewWillAppear(animated)
 //        webserviceOFFurureBooking()
-        
+        setLocalizable()
     }
+    
+    func setLocalizable()
+    {
+        self.lblNodataFound.text = "No data found.".localized
+         self.title = "My Job".localized
+    }
+
     override func loadView() {
         super.loadView()
         
@@ -134,6 +141,11 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 //        let cell2 = tableView.dequeueReusableCell(withIdentifier: "NoDataFound") as! FutureBookingTableViewCell
         
         cell.selectionStyle = .none
+        
+        cell.lblPickUpTimeTitle.text = "Pick Up Time :".localized
+        cell.lblTripDistance.text = "Distance Travel :".localized
+        cell.lblPaymentType.text = "Payment Type :".localized
+       
         cell.viewCell.layer.cornerRadius = 10
         cell.viewCell.clipsToBounds = true
 //        cell2.selectionStyle = .none
@@ -154,9 +166,9 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 //                cell.lblTimeAndDateAtTop.text = strNotAvailable
 //            }
         
-        cell.lblBookingId.text = "Booking ID: \(checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Id", isNotHave: strNotAvailable))"
+        cell.lblBookingId.text = "\("Booking Id".localized): \(checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Id", isNotHave: strNotAvailable))"
     
-        
+
         cell.lblDate.text = (checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupDateTime", isNotHave: strNotAvailable)).components(separatedBy: " ")[0]
         
 //         checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PaymentType", isNotHave: strNotAvailable)

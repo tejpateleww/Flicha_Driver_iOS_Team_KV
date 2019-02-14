@@ -27,7 +27,7 @@ class PastJobsListTableViewCell: UITableViewCell {
     //-------------------------------------------------------------
     
     // First View height is : 86.5
-    
+    @IBOutlet weak var lblTripStatusTitle: UILabel!
     @IBOutlet var lblDateTime: UILabel!
     // Total cell Height is : 301.5
     @IBOutlet weak var lblGrandTotalTitle: UILabel!

@@ -40,7 +40,7 @@
     
     @IBOutlet var lblLaungageName: UILabel!
     
-    //
+   
     //    @IBOutlet weak var constraintHeightOfLogo: NSLayoutConstraint! // 140
     //    @IBOutlet weak var constraintHeightOfTextFields: NSLayoutConstraint! // 50
     //    @IBOutlet weak var constraintTopOfLogo: NSLayoutConstraint! // 60
@@ -51,12 +51,21 @@
     //-------------------------------------------------------------
     
     func setLocalization() {
+        
+        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+            if SelectedLanguage == "en" {
+                lblLaungageName.text = "SW"
+            } else if SelectedLanguage == "sw" {
+                lblLaungageName.text = "EN"
+            }
+        }
         self.txtMobile.placeholder = "Mobile Number".localized
         self.txtPassword.placeholder = "Password".localized
-        self.btnForgotPassWord.setTitle("Forgot Password?".localized, for: .normal)
+        self.btnForgotPassWord.setTitle("Forgot Password".localized, for: .normal)
         self.btnSignIn.setTitle("Sign In".localized, for: .normal)
         self.btnSignUp.setTitle("Sign Up".localized, for: .normal)
         self.lblDonTHaveAnyAccount.text = "Don't have an Account?".localized
+        
     }
     
         override func loadViewIfNeeded() {
@@ -163,6 +172,7 @@
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
         self.setLocalization()
+//        self.title = "Ingia".localized
     }
     
     override func viewDidLayoutSubviews()
@@ -267,7 +277,7 @@
     
     @objc func showAlertForPasswordWrong() {
         
-        UtilityClass.showAlert(appName.kAPPName, message: "Enter your mobile number", vc: self)
+        UtilityClass.showAlert(appName.kAPPName, message: "Please enter mobile number".localized, vc: self)
         
     }
     
@@ -540,7 +550,7 @@
         
         if txtMobile.text!.count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter phone number.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter mobile number".localized, vc: self)
             return false
         }
 //        else if txtMobile.text!.count != 10 {
@@ -550,7 +560,7 @@
         else if txtPassword.text!.count == 0
         {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter password", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter password".localized, vc: self)
             
             return false
         }

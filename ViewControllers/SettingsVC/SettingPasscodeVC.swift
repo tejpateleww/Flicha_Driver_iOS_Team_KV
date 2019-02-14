@@ -18,10 +18,13 @@ class SettingPasscodeVC: ParentViewController {
     var boolChangePasscode = Bool()
   
     
+    @IBOutlet weak var btnSetPassword: UIButton!
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
+    @IBOutlet weak var btnChangePasssworld: UIButton!
     
+    @IBOutlet weak var btnProfile: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +39,17 @@ class SettingPasscodeVC: ParentViewController {
         }
         
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLocalizable()
+    }
+    func setLocalizable(){
+//        btnSetPassword.setTitle("".localized, for: .normal)
+        btnChangePasssworld.setTitle("Change Password".localized, for: .normal)
+        btnProfile.setTitle("Profile".localized, for: .normal)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

@@ -34,6 +34,9 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     @IBOutlet weak var constraintHeightOfLogo: NSLayoutConstraint! // 80
     @IBOutlet weak var constraintHeightOfAllTextFields: NSLayoutConstraint! // 48
     
+    
+    var isOTPSent:Bool = false
+    
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
@@ -43,7 +46,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         
         self.viewEmailData.isHidden = false
         constrainViewOTPLeadingPosition.constant = 0//self.view.frame.size.width
-        self.btnNext.setTitle("SEND OTP", for: .normal)
+//        self.btnNext.setTitle("Send OTP".localized, for: .normal)
         self.lblHaveAccount.isHidden = false
         self.btnLogin.isHidden = false
         txtOTP.isEnabled = false
@@ -78,7 +81,9 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setLocalization()
-        
+      
+        self.title = "App Name".localized
+
     }
     func setLocalization()
     {
@@ -86,7 +91,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         txtEmail.placeholder = "Email".localized
         txtPassword.placeholder = "Password".localized
         txtConPassword.placeholder = "Confirm Password".localized
-        btnNext.setTitle("Next".localized, for: .normal)
+        btnNext.setTitle("Send OTP".localized, for: .normal)
 //        lblHaveAccount.text = "".localized
 //        btnLogin.setTitle("".localized, for: normal)
     }
@@ -95,7 +100,8 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     {
         
 //        performSegue(withIdentifier: "SegueToDriverPErsonelnfo", sender: self)
-        if btnNext.titleLabel?.text == "SUBMIT"
+        
+        if self.isOTPSent == true
         {
             if CompareOTP()
             {
@@ -105,7 +111,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
                 }) { (done) in
                     
                     self.constrainViewOTPLeadingPosition.constant = 0//self.view.frame.size.width
-                    self.btnNext.setTitle("SEND OTP", for: .normal)
+                    self.btnNext.setTitle("Send OTP".localized, for: .normal)
                     self.lblHaveAccount.isHidden = false
                     self.btnLogin.isHidden = false
                     self.txtOTP.isEnabled = false
@@ -150,43 +156,43 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         
         if txtMobile.text!.count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter mobile number.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter mobile number".localized, vc: self)
             return false
         }
         else if txtMobile.text!.count != 10
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid mobile number.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid mobile number".localized, vc: self)
             return false
         }
         
         else if txtEmail.text!.count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter email.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter email".localized, vc: self)
             return false
         }
         else if (!isEmailAddressValid)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid email", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid email".localized, vc: self)
             
             return false
         }
         else if txtPassword.text!.count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter password.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter password".localized, vc: self)
             return false
         }else if txtPassword.text!.count < 6
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Password must contain atleast 6 characters.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Password must contain at least 6 characters".localized, vc: self)
             return false
         }
         else if txtConPassword.text!.count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter confirm password", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter confirm password".localized, vc: self)
             return false
         }
         else if txtConPassword.text! != txtPassword.text
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Password and confirm password must be same.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Password and confirm password must be same".localized, vc: self)
             return false
         }
         
@@ -227,7 +233,6 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     {
         var dictData = [String:AnyObject]()
         dictData["Email"] = txtEmail.text as AnyObject
-//        kMobileNo
         dictData[RegistrationFinalKeys.kMobileNo] = txtMobile.text as AnyObject
         
         webserviceForOTPDriverRegister(dictData as AnyObject) { (result, status) in
@@ -238,13 +243,13 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
                 
                 let otp = result.object(forKey: "otp") as! Int
                 self.aryOfCompany = result.object(forKey: "company") as! [[String : AnyObject]]
-                
+                self.isOTPSent = true
                 self.userDefault.set(otp, forKey: OTPCodeStruct.kOTPCode)
                 self.userDefault.set(self.aryOfCompany, forKey: OTPCodeStruct.kCompanyList)
                 
                 let alert = UIAlertController(title: appName.kAPPName, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
                 
-                let ok = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
+                let ok = UIAlertAction(title: "OK".localized, style: .default, handler: { ACTION in
                     //
                     let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
 //                    driverVC.viewDidLayoutSubviews()
@@ -260,7 +265,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
                             self.txtOTP.isEnabled = true
                             self.view.layoutIfNeeded()
                             
-                            self.btnNext.setTitle("SUBMIT", for: .normal)
+                            self.btnNext.setTitle("Submit".localized, for: .normal)
                     })
                     { (done) in
                         
@@ -296,7 +301,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         
         if Utilities.isEmpty(str: txtOTP.text)
         {
-            Utilities.showAlert("", message: "Please Enter OTP.", vc: (UIApplication.shared.keyWindow?.rootViewController)!)
+            Utilities.showAlert("", message: "Please enter OTP".localized, vc: (UIApplication.shared.keyWindow?.rootViewController)!)
             return false
         }
         else
@@ -326,9 +331,9 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             }
             else
             {
-                let alert = UIAlertController(title: "Wrong OTP", message: "Please enter correct OTP.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Wrong OTP", message: "Please enter correct OTP".localized, preferredStyle: .alert)
                 
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
                 
                 alert.addAction(ok)
                 

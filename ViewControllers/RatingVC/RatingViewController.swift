@@ -32,14 +32,14 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
     var strBookingID = String()
     var dictData : NSDictionary!
     var dictPassengerInfo : NSDictionary!
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 //        viewStarsRating.rating = 0.0
         viewStarsRating.value = 0.0
 //        viewStarsRating.delegate = self
         strBookingID = (dictData["details"]! as! [String : AnyObject])["Id"] as! String
-        lblDetail.text = "How was your experience with \((dictPassengerInfo!.object(forKey: "Fullname") as! String))?"// (dictPassengerInfo!.object(forKey: "Fullname") as! String)
+        lblDetail.text = "\("How was your Ride with".localized) \((dictPassengerInfo!.object(forKey: "Fullname") as! String))?"// (dictPassengerInfo!.object(forKey: "Fullname") as! String)
         // Do any additional setup after loading the view.
 //
 //        btnSubmit.layer.cornerRadius = 5
@@ -48,7 +48,12 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
         Utilities.setCornerRadiusButton(button: btnSubmit, borderColor: ThemeYellowColor, bgColor: ThemeYellowColor, textColor: UIColor.white)
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        lblDetail.text = "".localized
+//        txtFeedback.placeholder = "".localized
+          btnSubmit.setTitle("Submit".localized, for: .normal)
+    }
  
     
     @IBAction func btnGiveRating(_ sender: Any)

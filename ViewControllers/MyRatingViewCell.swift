@@ -13,6 +13,7 @@ class MyRatingViewCell: UITableViewCell {
 
     
     
+    @IBOutlet weak var lblComments: UILabel!
     @IBOutlet var imgProfile: UIImageView!
     @IBOutlet var viewCell: UIView!
     
@@ -22,7 +23,7 @@ class MyRatingViewCell: UITableViewCell {
 //    @IBOutlet var viewRating: FloatRatingView!//HCSStarRatingView!
     @IBOutlet var lblPassengerName: UILabel!
     
-    @IBOutlet var lblComments: UILabel!
+ 
     
     @IBOutlet var lblPickUpAddress: UILabel!
     

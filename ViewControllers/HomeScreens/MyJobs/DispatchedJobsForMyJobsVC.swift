@@ -26,7 +26,10 @@ class DispatchedJobsForMyJobsVC: ParentViewController, UITableViewDataSource, UI
         
         return refreshControl
     }()
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewWillAppear(true)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,7 +124,11 @@ class DispatchedJobsForMyJobsVC: ParentViewController, UITableViewDataSource, UI
         
         cell.selectionStyle = .none
 //        cell2.selectionStyle = .none
-        
+        cell.lblPickUpLocationInFo.text = "Current Location".localized
+        cell.lblDropLocationInFo.text = "Drop off location".localized
+//        cell.lblPassengerEmail.text = "".localized
+        cell.lblPassengerNumber.text = "Number Of Passenger".localized
+        cell.lblPassengerFlightNo.text = "".localized
         
 //        if indexPath.section == 0 {
 //

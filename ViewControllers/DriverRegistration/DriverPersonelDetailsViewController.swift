@@ -60,6 +60,8 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     func SetLocalizable()
     {
+        self.title = "App Name".localized
+
         txtFullName.placeholder = "User Name".localized
         txtAddress.placeholder = "Address".localized
         lblMale.text = "Male".localized
@@ -132,9 +134,9 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.bordered, target: self, action: #selector(donedatePicker))//"donedatePicker"
+        let doneButton = UIBarButtonItem(title: "Done".localized, style: UIBarButtonItem.Style.bordered, target: self, action: #selector(donedatePicker))//"donedatePicker"
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.bordered, target: self, action: #selector(cancelDatePicker))
+        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: UIBarButtonItem.Style.bordered, target: self, action: #selector(cancelDatePicker))
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
@@ -215,7 +217,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     @IBAction func TapToProfilePicture(_ sender: UITapGestureRecognizer) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
@@ -223,7 +225,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -310,13 +312,13 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
 //        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
 
         if txtFullName.text == "" {
-            sb.createWithAction(text: "Please enter username.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter user name".localized, actionTitle: "OK".localized, action: { print("Button is push") })
         }
 //        else if txtDOB.text == "" {
 //            sb.createWithAction(text: "Enter Date of Birth", actionTitle: "OK", action: { print("Button is push") })
 //        }
         else if txtAddress.text == "" {
-             sb.createWithAction(text: "Please enter address.", actionTitle: "OK", action: { print("Button is push") })
+             sb.createWithAction(text: "Please enter address".localized, actionTitle: "OK".localized, action: { print("Button is push") })
         }
       
 //        else if txtPostCode.text == "" {
@@ -324,7 +326,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
 //        }
       
         else if imgProfile.image == UIImage(named: "iconProfileLocation") {
-            sb.createWithAction(text: "Please choose image.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "OK".localized, action: { print("Button is push") })
         }
         else {
             setData()

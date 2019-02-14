@@ -46,7 +46,8 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         webserviceForVehicleTypes()
-    
+        self.title = "App Name".localized
+
     }
 
    
@@ -155,7 +156,7 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
 //                UtilityClass.showAlert(appName.kAPPName, message: "Please select car model", vc: self)
             }
             else if Singletons.sharedInstance.isDriverVehicleTypesViewControllerFilled == false {
-                UtilityClass.showAlert(appName.kAPPName, message: "All fields are required", vc: self)
+                UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
             }
             else {
                 cellBottom.btnNext.addTarget(self, action: #selector(self.MoveToNext), for: .touchUpInside)
@@ -183,7 +184,7 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
             else
             {
                 let sb = Snackbar()
-                sb.createWithAction(text: "You can select only three types.", actionTitle: "DISMISS", action: { print("Button is push") })
+                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
                 sb.show()
             }
             

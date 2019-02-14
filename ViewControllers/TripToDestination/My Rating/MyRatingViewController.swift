@@ -12,14 +12,12 @@ import FloatRatingView
 
 class MyRatingViewController : ParentViewController,UITableViewDataSource, UITableViewDelegate
 {
-    
+    var aryData = NSArray()
+    //    var labelNoData = UILabel()
     
     @IBOutlet var tblview: UITableView!
     @IBOutlet weak var lblNodataFound: UILabel!
     
-    
-    var aryData = NSArray()
-//    var labelNoData = UILabel()
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -44,6 +42,8 @@ class MyRatingViewController : ParentViewController,UITableViewDataSource, UITab
     {
         super.viewWillAppear(animated)
         self.webserviceForMyFeedbackList()
+        
+        self.title = "My Ratings".localized
         
     }
     override func didReceiveMemoryWarning()
@@ -97,6 +97,9 @@ class MyRatingViewController : ParentViewController,UITableViewDataSource, UITab
         //        let cell2 = tableView.dequeueReusableCell(withIdentifier: "NoDataFound") as! FutureBookingTableViewCell
         
         cell.selectionStyle = .none
+        cell.lblComments.text = "Comment".localized
+        cell.lblPickUpAddress.text = "Pick Up Time".localized
+        cell.lblDropUpAddress.text = "Drop off location".localized
         
         cell.viewCell.layer.cornerRadius = 10
 //        cell.viewCell.clipsToBounds = true

@@ -22,7 +22,8 @@ class DriverOTPViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
-        
+        self.title = "App Name".localized
+
 
     }
     

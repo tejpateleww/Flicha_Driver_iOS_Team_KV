@@ -68,6 +68,8 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
  
     func setLocalizable()
     {
+        self.title = "App Name".localized
+
         txtDriverLicence.placeholder = "Driver Licence (Front only)".localized
         lblDriverLicence.text = "Select driver licence expiry date".localized
         txtAccreditation.placeholder = "Revenue Licence".localized
@@ -466,22 +468,22 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         if imgDriverLicence.image == UIImage(named: "iconPlaceholderVehicle") {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please fill all Document details.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
             
         }
         else if imgCarRegistration.image == UIImage(named: "iconPlaceholderVehicle") {
             
-             UtilityClass.showAlert(appName.kAPPName, message: "Please fill all Document details.", vc: self)
+             UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
             
         }
         else if imgVehicleInsurience.image == UIImage(named: "iconPlaceholderVehicle") {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please fill all Document details.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
 
         }
         else if imgAccreditationCertifi.image == UIImage(named: "iconPlaceholderVehicle") {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please fill all Document details.", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
             
         }
         else

@@ -9,7 +9,6 @@ import UIKit
 import SideMenuController
 import SDWebImage
 
-
 let KEnglish : String = "EN"
 let KSwiley : String = "SW"
 class  MenuController: UIViewController, UITableViewDataSource, UITableViewDelegate
@@ -28,7 +27,6 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         
         strSelectedLaungage = KEnglish
         

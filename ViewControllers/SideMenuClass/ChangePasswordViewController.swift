@@ -16,6 +16,7 @@ class ChangePasswordViewController: ParentViewController {
     
 //    @IBOutlet var iconPassword: UIImageView!
     @IBOutlet var btnSubmit: UIButton!
+    @IBOutlet weak var txtConfirmPass: ThemeTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +29,17 @@ class ChangePasswordViewController: ParentViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLicalization()
+    }
+    func setLicalization()
+    {
+        self.headerView?.lblTitle.text = "Change Password".localized
+        txtNewPassword.placeholder = "New Password".localized
+        txtConfirmPass.placeholder = "Confirm Password".localized
+        btnSubmit.setTitle("Submit".localized, for: .normal)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

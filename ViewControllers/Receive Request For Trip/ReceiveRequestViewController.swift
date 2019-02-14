@@ -85,7 +85,22 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
         
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLocalization()
+    }
+    
+    func setLocalization(){
+        lblReceiveRequest.text = "Receive Request".localized
+        lblMessage.text = "New booking request arrived".localized
+        lblGrandTotal.text = "Grand Total is".localized
+        lblPickupLocation.text = "Pick up location".localized
+        lblDropoffLocation.text = "Drop off location".localized
+        btnReject.setTitle("Reject".localized, for: .normal)
+        btnAccepted.setTitle("Accept".localized, for: .normal)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

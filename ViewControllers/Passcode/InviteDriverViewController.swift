@@ -78,7 +78,30 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var lblWhenAFrindRidesWithYourCode: UILabel!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLocalization()
+        
+    }
+    @IBOutlet weak var btnShare: UIButton!
+    
+    @IBOutlet weak var lblShareYourInviteCode: UILabel!
+    func setLocalization()
+    {
+        
+        lblReferalAmount.text = "Referral Amount".localized
+        lblWhenAFrindRidesWithYourCode.text = "When a friend rides with your code".localized
+        lblShareYourInviteCode.text =   "Share Your Invite Code".localized
+        btnShare.setTitle("Share".localized, for: .normal)
+  
+        self.headerView?.lblTitle.text = "My Ratings".localized
+        
+        
+        
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

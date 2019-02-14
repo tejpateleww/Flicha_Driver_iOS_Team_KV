@@ -1,11 +1,11 @@
-/* 
-  Localizable.strings
-  TanTaxi-Driver
-
-  Created by Mayur iMac on 11/02/19.
-  Copyright © 2019 Excellent Webworld. All rights reserved.
-*/
-
+///*
+//  Localizable.strings
+//  TanTaxi-Driver
+//
+//  Created by Mayur iMac on 11/02/19.
+//  Copyright © 2019 Excellent Webworld. All rights reserved.
+//*/
+//
 "App Name" = "Dereva wa TanTax";
 "Currency" = "TZS";
 "Internet Error" = "Internet Error";
@@ -29,9 +29,10 @@
 "Password" = "Password";
 "Forgot Password?" = "Umesahau Password?";
 "Sign In" = "Ingia";
+//"Login" = "Ingia";
 "Don't have an Account?" = "Huna akaunti?";
-"Sign Up" = "Ingia";
-"Forgot Password" = "Umesahau Password";
+"Sign Up" = "Jisajili";
+"Forgot Password" = "Umesahau Password!";
 "Please enter mobile number" = "Tafadhali ingiza namba ya simu";
 "Please enter valid mobile number" = "Tafadhali ingiza namba sahihi ya simu";
 "Please enter email" = "Tafadhali ingiza email";
@@ -120,7 +121,7 @@
 "Trip Distance" = "Umbali wa Safari";
 "Distance Fare" = "Bei ya Umbali";
 "Special Extra Charge" = "SGharama za ziada";
-"Booking Charge" = "Bei ya Kuomba Safari";
+"Booking Charge" = "Bei ya Kuomba Safari:";
 "Grand Total" = "Jumla Kuu";
 "Current Location" = "Eneo la sasa";
 "Get online First." = "Ingia hewani kwanza.";
@@ -156,7 +157,7 @@
 "Share Your Invite Code" = "Sambaza code yako";
 "Share" = "Sambaza";
 "has invited you to become a" = "amekukuaribisha wewe kuwa";
-"Your invite code is :" = "Code yako ya Ukaribisho ni :";
+"Your invite code is :" = "Code yako ya Ukaribisho ni:";
 "Need camera permission!" = "Ruhusa inatakiwa ya Kamera!";
 "This App need camera permission!" = "App hii inataka ruhusa ya Kamera!";
 "Granted" = "Imeruhusiwa";
@@ -186,7 +187,7 @@
 "Comment" = "Maoni";
 "Please ensure you have entered your payment detail correctly." = "Tafadhali hakikisha umeingiza taarifa za malipo sawasawa";
 "Invalid card number." = "Namba ya kadi si sahihi";
-"Card Number" = "Namba ya kadi<";
+"Card Number" = "Namba ya kadi";
 "Expiry Date (MM/YY)" = "Tarehe ya Mwisho (Mwezi/Mwaka)";
 "CVV" = "CVV";
 "Reset Password" = "Rekebisha Password";
@@ -195,25 +196,26 @@
 "Future Booking" = "Maombi ya baadae";
 "Pending Jobs" = "Kazi zinazosubiri";
 "Past Jobs" = "Kazi za zamani";
-"No data found." = "No data found.";////////////////////
+"No data found." = "Hakuna taarifa zilizopatikana.";
 "Booking Id" = "Kitambulisho cha Maombi";
-"Pick Up Time :" = "Muda wa Kuchukua :";
-"Dropoff Time :" = "Muda wa Kushusha :";
-"Distance Travel :" = "Umbali wa Safari :";
-"Booking Fee :" = "Bei ya Maombi :";
-"Base Fare :" = "Bei ya Kwanza :";
-"Time Cost :" = "Gharama ya Muda :";
-"Sub Total :" = "Nusu Jumla :";
-"Plus Extra Charges :" = "Jumlisha Gharama za ziada :";
-"Cancellation Charge :" = "Tozo za kusitisha Safari :";
-"Payment Type :" = "Aina ya Njia ya Malipo :";
-"Promo credit used:" = "Promo code iliyotumika :";
-"Total Paid to Driver :" = "Jumla ya kiasi kilicholipwa kwa Dereva :";
-"Tax :" = "Ushuru :";
-"Waiting Time :" = "Muda wa Kusubiri :";
-"Waiting Cost :" = "Gharama za Muda wa Kusubir :";
-"Discount :" = "Punguzo :";
-"Trip Status :" = "Hali ya Safari :";
+"Pick Up Time :" = "Muda wa Kuchukua:";
+"Pick Up Time" = "Muda wa Kuchukua";
+"Dropoff Time :" = "Muda wa Kushusha:";
+"Distance Travel :" = "Umbali wa Safari:";
+"Booking Fee :" = "Bei ya Maombi:";
+"Base Fare :" = "Bei ya Kwanza:";
+"Time Cost :" = "Gharama ya Muda:";
+"Sub Total :" = "Nusu Jumla:";
+"Plus Extra Charges :" = "Jumlisha Gharama za ziada:";
+"Cancellation Charge :" = "Tozo za kusitisha Safari:";
+"Payment Type :" = "Aina ya Njia ya Malipo:";
+"Promo credit used:" = "Promo code iliyotumika:";
+"Total Paid to Driver :" = "Jumla ya kiasi kilicholipwa kwa Dereva:";
+"Tax :" = "Ushuru:";
+"Waiting Time :" = "Muda wa Kusubiri:";
+"Waiting Cost :" = "Gharama za Muda wa Kusubir:";
+"Discount :" = "Punguzo:";
+"Trip Status :" = "Hali ya Safari:";
 "Select Vehicle Type" = "Chagua Aina ya Safari";
 "Weekly Earning" = "Mapato ya Wiki";
 "Email" = "Email";
@@ -282,6 +284,7 @@
 "Yes" = "Ndio";
 "Direction" = "Maelekezo";
 "Estimate Fare" = "Tathmini Fare";
-"Tip by Passenger" = "Kidokezo na Abiria";
-
+"Tip by Passenger" = "Kidokezo na Abiria:";
+"Tip" = "Kidokezo";
+"ETA" = "ETA";
 

@@ -124,6 +124,7 @@ class TripInfoCompletedTripVC: UIViewController {
 //    @IBOutlet weak var lblSpecialExtraCharge: UILabel!
    
     
+    @IBOutlet weak var lblTripDetail: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -148,7 +149,29 @@ class TripInfoCompletedTripVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLocalization()
+    }
+    func setLocalization()
+    {
+        lblTripDetail.text = "".localized
+        lblPickupLocation.text =  "Address".localized
+        lblDropOffLocation.text = "Address".localized
+        lblTripFareTitle.text = "Base Fare".localized
+        lblDistanceTravelledTitle.text = "Trip Distance".localized
+        lblDistanceFareTitle.text  = "Distance Fare".localized
+        lblWaitingCostTitle.text  = "Waiting Cost :".localized
+        lblWaitingTimeTitle.text  = "Waiting Time :".localized
+        lblTipAmountTitle.text  = "Tip by Passenger".localized
+        lblBookingFeeTitle.text  = "Booking Charge".localized
+        lblPromoCodeTitle.text  = "Discount :".localized
+        lblTaxTitle.text  = "Tax" .localized
+        lblTotlaAmountTitle.text  = "Grand Total :".localized
+        lblLessTitle.text  = "(incl tax)".localized
+        btnOK.setTitle("OK".localized, for: .normal) 
     
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

@@ -151,7 +151,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Home"
+//       self.title = "Home"
+        self.headerView?.lblTitle.text = "Home".localized
         btnMyJob.layer.cornerRadius = btnHome.frame.size.height - 30
         btnMyJob.clipsToBounds = true
         btnHome.layer.cornerRadius = btnHome.frame.size.height - 30
@@ -326,8 +327,16 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     {
         super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = true
-        
+        setLocalization()
     }
+     func setLocalization()
+     {
+        btnHome.setTitle("Home".localized, for: .normal)
+        btnMyJob.setTitle("My Job".localized, for: .normal)
+        btnStartTrip.setTitle("Start Trip".localized, for: .normal)
+        btnPassengerInfo.setTitle("Passenger Info".localized, for: .normal)
+        lblPickUpLocation.text = "Current Location".localized
+     }
     
     @IBAction func btnSidemenuClicked(_ sender: Any)
     {
@@ -866,7 +875,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 if let RequestMessage = ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: "message") as? String {
                     next.strRequestMessage = RequestMessage
                 }
-                
+                self.addLocalNotification()
                 (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(next, animated: true, completion: nil)
                 
                 return
@@ -1804,7 +1813,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 //                {
                 //
 //                self.completeTripFinalSubmit()
-                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
+                self.getLastAddressForLatLng(DropOffAddress: (self.lastLocation != nil) ? self.lastLocation : self.defaultLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 //                }
@@ -1907,7 +1916,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 //                {
                 //
 //                self.completeTripFinalSubmit()
-                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
+                self.getLastAddressForLatLng(DropOffAddress: (self.lastLocation != nil) ? self.lastLocation : self.defaultLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 //                }
@@ -2722,7 +2731,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 
                 //                self.completeTripButtonAction()
 //                self.completeTripFinalSubmit()
-                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
+                self.getLastAddressForLatLng(DropOffAddress: (self.lastLocation != nil) ? self.lastLocation : self.defaultLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 
@@ -2733,7 +2742,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             {
                 //                self.completeTripButtonAction()
 //                self.completeTripFinalSubmit()
-                self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
+                self.getLastAddressForLatLng(DropOffAddress: (self.lastLocation != nil) ? self.lastLocation : self.defaultLocation)
                 Appdelegate.WaitingTimeCount = 0
                 Appdelegate.WaitingTime = "00:00:00"
                 self.tollFee = "0"
@@ -2920,7 +2929,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                         DispatchQueue.main.async {
                             //                                        UtilityClass.hideACProgressHUD()
 //                            self.completeTripFinalSubmit()
-                            self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
+                            self.getLastAddressForLatLng(DropOffAddress: (self.lastLocation != nil) ? self.lastLocation : self.defaultLocation)
                             
                             //                            print("Function: \(#function), line: \(#line)")
                             
@@ -3644,7 +3653,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                                         DispatchQueue.main.async {
                                             //                                        UtilityClass.hideACProgressHUD()
 //                                            self.completeTripFinalSubmit()
-                                            self.getLastAddressForLatLng(DropOffAddress: self.lastLocation)
+                                            self.getLastAddressForLatLng(DropOffAddress: (self.lastLocation != nil) ? self.lastLocation : self.defaultLocation)
                                             //                                            print("Function: \(#function), line: \(#line)")
                                             
                                         }

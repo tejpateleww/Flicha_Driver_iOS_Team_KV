@@ -45,10 +45,11 @@ class UpdateProfileAccountVC: UIViewController {
         setLocalizable()
     }
     func setLocalizable(){
-        txtAccountHolderName.placeholder = "".localized
-        txtBankName.placeholder = "".localized
-        txtBSB.placeholder = "".localized
-        txtBankAcNo.placeholder = "".localized
+        self.title = "Account".localized
+        txtAccountHolderName.placeholder = "Name".localized
+        txtBankName.placeholder = "Bank Name".localized
+        txtBSB.placeholder = "Bsb".localized
+        txtBankAcNo.placeholder = "Bank Account No.".localized
         btnSave.setTitle("Save".localized, for: .normal)
     }
   
@@ -103,19 +104,19 @@ class UpdateProfileAccountVC: UIViewController {
     func validationForAccount() -> Bool {
         
         if (txtAccountHolderName.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Name", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter user name".localized, vc: self)
             return false
         }
         else if (txtBankName.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Bank Name", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter bank name".localized, vc: self)
             return false
         }
         else if (txtBSB.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter BSB", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter bank branch".localized, vc: self)
             return false
         }
         else if (txtBankAcNo.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Bank Account Number", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter account number".localized, vc: self)
             return false
         }
 //        else if (txtABN.text!.count == 0) {

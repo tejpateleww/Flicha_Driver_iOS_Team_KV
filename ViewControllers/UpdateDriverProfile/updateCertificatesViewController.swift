@@ -101,7 +101,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     @IBAction func btnDriverLicenceExpiryDate(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
             
@@ -126,7 +126,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
             
             
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -139,7 +139,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     @IBAction func btnAccreditationCerti(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
             
@@ -163,7 +163,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
             
             
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -176,7 +176,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     @IBAction func btnCarRegistration(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized ,message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
             
@@ -200,7 +200,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
             
             
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -266,7 +266,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     @IBAction func btnVehicleInsurance(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Options".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
             
@@ -290,7 +290,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
             
             
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -317,7 +317,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     @IBAction func btnUploadVehicleImage(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title:  "Choose Options".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
            
@@ -331,7 +331,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
             self.PickingImageFromCamera()
             
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -421,7 +421,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
                 
                 // 2. You can then set delegate, and any customization options
                 //        selector.delegate = self
-                selector.optionTopPanelTitle = "Please add Expiry Date"
+                selector.optionTopPanelTitle = "Please add expiry date".localized
                 
                 // 3. Then you simply present it from your view controller when necessary!
                 self.present(selector, animated: true, completion: nil)
@@ -499,8 +499,8 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
                 UserDefaults.standard.set(true, forKey: driverProfileKeys.kKeyIsDriverLoggedIN)
                 
   
-                let alert = UIAlertController(title: appName.kAPPName, message: "Updated Successfully", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alert = UIAlertController(title: appName.kAPPName, message: "Updated successfully.".localized, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 

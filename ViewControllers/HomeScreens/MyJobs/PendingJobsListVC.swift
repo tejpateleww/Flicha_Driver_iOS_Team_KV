@@ -89,7 +89,8 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     {
         super.viewWillAppear(animated)
 //        webserviceofPendingJobs()
-        
+        setLocalizable()
+         self.title = "My Job".localized
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -108,7 +109,11 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         tableView.reloadData()
         
     }
-    
+    func setLocalizable()
+    {
+        self.lblNodataFound.text = "No data found.".localized
+        
+    }
     
     
     //-------------------------------------------------------------
@@ -128,6 +133,11 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         //        let cell2 = tableView.dequeueReusableCell(withIdentifier: "NoDataFound") as! PendingJobsListTableViewCell
         
         cell.selectionStyle = .none
+        cell.lblPickupTimeTitle.text = "Pick Up Time :".localized
+        cell.lblTripDetailsTitle.text = "Distance Travel :".localized
+        cell.lblPaymentTypeTitle.text = "Payment Type :".localized
+        cell.btnStartTrip.setTitle("Start Trip".localized, for: .normal)
+       
         cell.viewCell.layer.cornerRadius = 10
         cell.viewCell.clipsToBounds = true
         
@@ -152,7 +162,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
             //            cell.lblTimeAndDateAtTop.text = "\(timeStamp)"
         }
         
-        cell.lblBookingId.text = "Booking ID: \(checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Id", isNotHave: strNotAvailable))"
+        cell.lblBookingId.text = "\("Booking Id".localized): \(checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Id", isNotHave: strNotAvailable))"
         
         
         //        checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PickupLocation", isNotHave: strNotAvailable) //
@@ -354,6 +364,10 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         //        }
         //        else
         //        {
+        if(Singletons.sharedInstance.driverDuty != "1") {
+            UtilityClass.showAlert("Missing", message: "Get Online first.", vc: self)
+            return
+        }
         let bookingID = String((sender.tag))
         
         Singletons.sharedInstance.strPendinfTripData = bookingID

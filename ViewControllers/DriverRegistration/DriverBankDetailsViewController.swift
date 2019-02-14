@@ -39,6 +39,8 @@ class DriverBankDetailsViewController: UIViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setLocalizable()
+        self.title = "App Name".localized
+
     }
     func setLocalizable()
     {
@@ -106,24 +108,24 @@ class DriverBankDetailsViewController: UIViewController
 //        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
         
         if txtAccountHolderName.text == "" {
-            sb.createWithAction(text: "Please enter account holder name.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter account holder name".localized, actionTitle: "OK".localized, action: { print("Button is push") })
             return false
         }
         else if txtBankName.text == "" {
-            sb.createWithAction(text: "Please enter bank name.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter bank name".localized, actionTitle: "OK".localized, action: { print("Button is push") })
             return false
 
         }
             
             
         else if txtBankBranch.text == "" {
-            sb.createWithAction(text: "Please enter bank branch.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "OK".localized, action: { print("Button is push") })
             return false
 
         }
             
         else if txtAccountNumber.text == "" {
-            sb.createWithAction(text: "Please enter account number.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "OK".localized, action: { print("Button is push") })
             return false
         }
         

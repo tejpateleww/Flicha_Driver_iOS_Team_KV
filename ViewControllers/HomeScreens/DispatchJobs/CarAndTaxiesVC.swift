@@ -25,7 +25,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Outlets
     //-------------------------------------------------------------
     
-    @IBOutlet weak var lblSelectModel: UILabel!
+//    @IBOutlet weak var lblSelectModel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewMain: UIView!
     
@@ -94,8 +94,10 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.title = "App Name".localized
+
         btnOK.setTitle("Done".localized, for: .normal)
-        lblSelectModel.text = "Select Card".localized
+//        lblSelectModel.text = "Select Card".localized
     }
 
     override func didReceiveMemoryWarning()
@@ -165,7 +167,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
             else
             {
                 let sb = Snackbar()
-                sb.createWithAction(text: "You can select only three types.", actionTitle: "DISMISS", action: { print("Button is push") })
+                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
                 sb.show()
             }
             

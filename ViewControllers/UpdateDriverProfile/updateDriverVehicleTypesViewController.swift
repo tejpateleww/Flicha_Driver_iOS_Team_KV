@@ -166,7 +166,7 @@ class updateDriverVehicleTypesViewController: UIViewController , UITableViewDele
             else
             {
                 let sb = Snackbar()
-                sb.createWithAction(text: "You can select only three types.", actionTitle: "DISMISS", action: { print("Button is push") })
+                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
                 sb.show()
             }
             

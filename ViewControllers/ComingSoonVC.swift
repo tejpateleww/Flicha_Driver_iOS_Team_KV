@@ -9,10 +9,15 @@ import UIKit
 
 class ComingSoonVC: UIViewController {
 
+    @IBOutlet weak var lblUpComing: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        lblUpComing.text = "".localized
     }
 
     override func didReceiveMemoryWarning() {

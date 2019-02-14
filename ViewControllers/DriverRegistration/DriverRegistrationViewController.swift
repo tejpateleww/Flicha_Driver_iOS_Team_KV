@@ -276,7 +276,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         super.viewWillAppear(true)
 //        self.setNavigationBar()
 
-
+        self.title = "App Name".localized
     }
     
     func setNavigationBar()

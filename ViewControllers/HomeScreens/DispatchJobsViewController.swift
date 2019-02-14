@@ -33,8 +33,16 @@ class DispatchJobsViewController: ParentViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setLocalization()
+    }
 
+    func setLocalization()
+    {
+//        btnBookNow.setTitle("".localized, for: .normal)
+//        btnBookLater.setTitle("".localized, for: .normal)
+    }
     /*
     // MARK: - Navigation
 

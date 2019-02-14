@@ -69,6 +69,11 @@ class ShareRideViewController: ParentViewController, UITableViewDelegate, UITabl
         
         webserviceOfShareRideListing()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        lblShareRide.text = "".localized
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -106,6 +111,16 @@ class ShareRideViewController: ParentViewController, UITableViewDelegate, UITabl
         cell.lblPickupAddress.text = currentData["PickupLocation"] as? String
         cell.lblDropoffAddress.text = currentData["DropoffLocation"] as? String
         cell.lblNumberOfPassengers.text = currentData["NoOfPassenger"] as? String
+        
+        
+        cell.lblDriverName.text = "Passenger".localized
+        cell.lblBookingID.text = "Booking Id".localized
+        cell.lblPickUpLocation.text = "Pick up location".localized
+        cell.lblDropLocation.text = "Drop off location".localized
+        cell.lblStatus.text = "Trip Status :" .localized
+        cell.lblPaymentType.text = "Payment Type :".localized
+        cell.lblNumberOfPassengers.text = "Number Of Passenger".localized
+//        cell.btnTrackYourTrip.setTitle("".localized, for: .normal)
         
         cell.btnCallToPassenger.tag = indexPath.row
         cell.btnCallToPassenger.addTarget(self, action: #selector(self.callToPassenger(_:)), for: .touchUpInside)

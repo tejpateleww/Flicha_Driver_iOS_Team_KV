@@ -2689,7 +2689,6 @@ You must be 21 years of age or over.</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="btnTickMark" destination="4Ko-5N-RgF" id="uB7-VZ-JQQ"/>
-                                                    <outlet property="lblCarModelClass" destination="SvI-tl-LUO" id="ETD-aO-FKf"/>
                                                     <outlet property="lblCarModelDescription" destination="uKC-9g-jC8" id="DTD-6E-Gsc"/>
                                                     <outlet property="viewBackground" destination="0QC-HH-3pE" id="yGX-T9-6OA"/>
                                                 </connections>

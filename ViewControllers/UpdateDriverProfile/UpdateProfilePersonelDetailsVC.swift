@@ -120,6 +120,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         thePicker.reloadAllComponents()
         thePicker.reloadInputViews()
         setLocalizable()
+        self.title = "Profile".localized
     }
     
     func setLocalizable()
@@ -277,7 +278,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     }
     @IBAction func btnEditProfileIPic(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
@@ -285,7 +286,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -396,7 +397,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
 
         
         if imgProfile.image == nil {
-            UtilityClass.showAlert("Missing", message: "Profile picture is required", vc: self)
+            UtilityClass.showAlert("Missing", message: "Please select Profile pic".localized, vc: self)
         }
         else {
             

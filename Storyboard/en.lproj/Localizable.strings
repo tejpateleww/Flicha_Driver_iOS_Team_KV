@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   TanTaxi-Driver
 
@@ -29,9 +29,11 @@
 "Password" = "Password";
 "Forgot Password?" = "Forgot Password?";
 "Sign In" = "Sign In";
+//"Login" = "Login";
 "Don't have an Account?" = "Don't have an Account?";
 "Sign Up" = "Sign Up";
-"Forgot Password" = "Forgot Password";
+"Forgot Password" = "Forgot Password!";
+"Forgot Password?" = "Forgot Password?";
 "Please enter mobile number" = "Please enter mobile number";
 "Please enter valid mobile number" = "Please enter valid mobile number";
 "Please enter email" = "Please enter email";
@@ -73,6 +75,7 @@
 "You can only select three types" = "You can only select three types";
 "Please enter all document\'s detail." = "Please enter all document\'s detail.";
 "Please select vehicle registration document" = "Please select vehicle registration document";
+"ETA" = "ETA";
 "Please add expiry date" = "Please add expiry date";
 "Select driver licence expiry date" = "Select driver licence expiry date";
 "Select revenue licence expiry date" = "Select revenue licence expiry date";
@@ -114,13 +117,13 @@
 "Reject" = "Reject";
 "Accept" = "Accept";
 "New booking request arrived" = "New booking request arrived";
-"Grand Total :" = "Grand Total :";
+"Grand Total :" = "Grand Total:";
 "Trip Info" = "Trip Info";
 "Base Fare" = "Base Fare";
 "Trip Distance" = "Trip Distance";
 "Distance Fare" = "Distance Fare";
 "Special Extra Charge" = "Special Extra Charge";
-"Booking Charge" = "Booking Charge";
+"Booking Charge" = "Booking Charge:";
 "Grand Total" = "Grand Total";
 "Current Location" = "Current Location";
 "Get online First." = "Get online First.";
@@ -156,7 +159,7 @@
 "Share Your Invite Code" = "Share Your Invite Code";
 "Share" = "Share";
 "has invited you to become a" = "has invited you to become a";
-"Your invite code is :" = "Your invite code is :";
+"Your invite code is :" = "Your invite code is:";
 "Need camera permission!" = "Need camera permission!";
 "This App need camera permission!" = "This App need camera permission!";
 "Granted" = "Granted";
@@ -180,7 +183,7 @@
 "Send Money" = "Send Money";
 "Receive Money" = "Receive Money";
 "Name" = "Name";
-"MobileNo" = "MobileNo";
+"MobileNo" = "Mobile No";
 "Bar Scanner / Qr Scanner" = "Bar Scanner / Qr Scanner";
 "Tap to activate Scanner" = "Tap to activate Scanner";
 "Comment" = "Comment";
@@ -197,23 +200,24 @@
 "Past Jobs" = "Past Jobs";
 "No data found." = "No data found.";
 "Booking Id" = "Booking Id";
-"Pick Up Time :" = "Pick Up Time :";
-"Dropoff Time :" = "Dropoff Time :";
-"Distance Travel :" = "Distance Travel :";
-"Booking Fee :" = "Booking Fee :";
-"Base Fare :" = "Base Fare :";
-"Time Cost :" = "Time Cost :";
-"Sub Total :" = "Sub Total :";
-"Plus Extra Charges :" = "Plus Extra Charges :";
-"Cancellation Charge :" = "Cancellation Charge :";
-"Payment Type :" = "Payment Type :";
+"Pick Up Time :" = "Pick Up Time:";
+"Pick Up Time" = "Pick Up Time";
+"Dropoff Time :" = "Dropoff Time:";
+"Distance Travel :" = "Distance Travel:";
+"Booking Fee :" = "Booking Fee:";
+"Base Fare :" = "Base Fare:";
+"Time Cost :" = "Time Cost:";
+"Sub Total :" = "Sub Total:";
+"Plus Extra Charges :" = "Plus Extra Charges:";
+"Cancellation Charge :" = "Cancellation Charge:";
+"Payment Type :" = "Payment Type:";
 "Promo credit used:" = "Promo credit used:";
-"Total Paid to Driver :" = "Total Paid to Driver :";
-"Tax :" = "Tax :";
-"Waiting Time :" = "Waiting Time :";
-"Waiting Cost :" = "Waiting Cost :";
-"Discount :" = "Discount :";
-"Trip Status :" = "Trip Status :";
+"Total Paid to Driver :" = "Total Paid to Driver:";
+"Tax :" = "Tax:";
+"Waiting Time :" = "Waiting Time:";
+"Waiting Cost :" = "Waiting Cost:";
+"Discount :" = "Discount:";
+"Trip Status :" = "Trip Status:";
 "Select Vehicle Type" = "Select Vehicle Type";
 "Weekly Earning" = "Weekly Earning";
 "Email" = "Email";
@@ -282,6 +286,7 @@
 "Yes" = "Yes";
 "Direction" = "Direction";
 "Estimate Fare" = "Estimate Fare";
-"Tip by Passenger" = "Tip by Passenger";
+"Tip by Passenger" = "Tip by Passenger:";
+
 
 

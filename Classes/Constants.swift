@@ -134,7 +134,5 @@ let klegal : String = "iconlegall"
 let kiconSupport : String = "iconSupportInactive"
 let kIconLogout : String = "iconLogoutInactive"
 //let kiconLogout : String = "iconAddress"
-
-
 let NotificationTrackRunningTrip = NSNotification.Name("NotificationTrackRunningTrip")
 

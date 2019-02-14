@@ -13,7 +13,10 @@ class LegalWebView: ParentViewController, UIWebViewDelegate  {
     
     var headerName = String()
     var strURL = String()
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.headerView?.lblTitle.text = "Support".localized
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

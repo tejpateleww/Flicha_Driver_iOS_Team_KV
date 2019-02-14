@@ -18,7 +18,7 @@ protocol delegateWaitforTip
 class WaitForTipViewController: UIViewController,SRCountdownTimerDelegate
 {
     
-    
+    @IBOutlet weak var lblWaitForTip: UILabel!
     @IBOutlet var ViewClockCountDown: SRCountdownTimer!// BRCircularProgressView!
     var delegateWaitingTimeTip : delegateWaitforTip?
     
@@ -42,6 +42,10 @@ class WaitForTipViewController: UIViewController,SRCountdownTimerDelegate
         self.viewWhiteBG.clipsToBounds = true
         
         progressCompleted = 1
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        lblWaitForTip.text = "".localized
     }
     
     override func didReceiveMemoryWarning() {

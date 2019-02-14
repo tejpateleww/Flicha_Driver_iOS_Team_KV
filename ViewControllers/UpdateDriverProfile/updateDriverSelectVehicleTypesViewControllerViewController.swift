@@ -28,7 +28,12 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     
     override func viewDidLoad()
     {
+    
         super.viewDidLoad()
+ 
+        
+//    btnSave.layer.cornerRadius = btnSave.frame.height / 2
+//    btnSave.layer.masksToBounds = true
         
         Singletons.sharedInstance.isFromRegistration = false
         
@@ -99,6 +104,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         txtCarType.placeholder = "Vehicle Type".localized
         txtNoOfPassenger.placeholder = "Number Of Passenger".localized
         btnSave.setTitle("Save".localized, for: .normal)
+        self.title = "Vehicle Option".localized
         
     }
     
@@ -152,17 +158,17 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         
         if txtCompany.text == "" {
             
-            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtCarType.text == ""
         {
-            sb.createWithAction(text: "Enter Car Type", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Car Type", actionTitle: "OK".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtVehicleRegistrationNumber.text == "" {
             
-            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
             sb.show()
         }
         else {
@@ -186,17 +192,17 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         
         if txtCompany.text == "" {
             
-            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtCarType.text == "" {
             
-            sb.createWithAction(text: "Enter Car Type", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Vehicle Type".localized, actionTitle: "OK".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtVehicleRegistrationNumber.text == "" {
             
-            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
             sb.show()
         }
         else  {
@@ -290,7 +296,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     }
     @IBAction func btnChoosePicture(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
@@ -298,7 +304,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -359,7 +365,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         if (Validations()){
             
             if Singletons.sharedInstance.vehicleClass == "" {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please select at least one car type.", vc: self)
+                UtilityClass.showAlert(appName.kAPPName, message: "Please select at least one vehicle type.".localized, vc: self)
             }
             else {
                 
@@ -401,28 +407,28 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
 //        }
         if txtVehicleRegistrationNumber.text == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Vehicle Registration Number", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Plate Number".localized, vc: self)
             return false
         }
         else if txtCompany.text == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Company", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Model".localized, vc: self)
             return false
         }
         else if txtVehicleModel.text == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Car Model", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Model".localized, vc: self)
             return false
         }
         else if (txtCarType.text as! String) == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Car Type", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Type".localized, vc: self)
             return false
         }
         else if txtNoOfPassenger.selectedItem == nil ||  txtNoOfPassenger.selectedItem == "" || txtNoOfPassenger.selectedItem == "Number of Passenger"
         {
 
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Number of Passsenger", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Number Of Passenger".localized, vc: self)
             return false
         }
         
@@ -519,7 +525,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
                 
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
                 let alert = UIAlertController(title: appName.kAPPName, message: "Updated Successfully", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 

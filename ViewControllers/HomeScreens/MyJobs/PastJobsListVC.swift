@@ -111,6 +111,8 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+         setLocalizable()
+         self.title = "My Job".localized
 //        self.webserviceOfPastbookingpagination(index: 1)
     }
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
@@ -172,6 +174,20 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         //        let cell2 = tableView.dequeueReusableCell(withIdentifier: "NoDataFound") as! PastJobsListTableViewCell
         
         cell.selectionStyle = .none
+        cell.lblpickUpTime.text = "Pick Up Time :".localized
+        cell.lblDropTimeTitle.text = "Dropoff Time :".localized
+        cell.lblTripDistance.text = "Distance Travel :".localized
+        cell.lblWaitingTimes.text = "Waiting Time :".localized
+        cell.lblWaitingTimecosts.text = "Waiting Cost :".localized
+        cell.lblDiscountInFo.text = "Discount :".localized
+        cell.lblBookingFare.text = "Booking Fee :".localized
+        cell.lblTripFare.text = "Base Fare :".localized
+        cell.lblTollFees.text = "Tip :".localized
+        cell.lblSubTotalTitle.text = "Sub Total :".localized
+        cell.lblTaX.text = "Tax :".localized
+        cell.lblPaymentTypeInfo.text = "Payment Type :".localized
+        cell.lblGrandTotalTitle.text = "Total Paid to Driver :".localized
+        cell.lblTripStatusTitle.text = "Trip Status :".localized
         //        cell2.selectionStyle = .none
         
         //        if aryPastJobs.count != 0 {
@@ -194,7 +210,7 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.lblPickupLocationDesc.text = data.object(forKey: "PickupLocation") as? String // DropoffLocation
         
-        cell.lblBooingId.text = "Booking ID: \(data.object(forKey: "Id") as? String ?? strNotAvailable)"
+        cell.lblBooingId.text = "\("Booking Id".localized) : \(data.object(forKey: "Id") as? String ?? strNotAvailable)"// "Booking ID: \(data.object(forKey: "Id") as? String ?? strNotAvailable)"
         
         cell.lblDropoffLocation.text = data.object(forKey: "DropoffLocation") as? String // PickupLocation
         cell.lblpassengerEmail.text = data.object(forKey: "PassengerEmail") as? String
@@ -340,13 +356,13 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.viewAllDetails.isHidden = !expandedCellPaths.contains(indexPath)
         
         
-        cell.lblDispatcherName.text = ""
-        cell.lblDispatcherEmail.text = ""
-        cell.lblDispatcherNumber.text = ""
-        cell.lblDispatcherNameTitle.text = ""
-        cell.lblDispatcherEmailTitle.text = ""
-        cell.lblDispatcherNumberTitle.text = ""
-        
+//        cell.lblDispatcherName.text = ""
+//        cell.lblDispatcherEmail.text = ""
+//        cell.lblDispatcherNumber.text = ""
+//        cell.lblDispatcherNameTitle.text = ""
+//        cell.lblDispatcherEmailTitle.text = ""
+//        cell.lblDispatcherNumberTitle.text = ""
+//
         
         cell.stackViewEmail.isHidden = true
         cell.stackViewName.isHidden = true
@@ -408,6 +424,11 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    func setLocalizable()
+    {
+        self.lblNodataFound.text = "No data found.".localized
+        
+    }
     
     func setTimeStampToDate(timeStamp: String) -> String {
         

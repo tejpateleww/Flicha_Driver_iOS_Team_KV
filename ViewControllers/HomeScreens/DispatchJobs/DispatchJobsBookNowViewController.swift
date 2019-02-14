@@ -127,10 +127,30 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
         paymentType = "account"
 
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        Localization()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
       
+    }
+    func Localization()
+    {
+        txtContactName.placeholder = "User Name".localized
+        txtMobileNumber.placeholder = "MobileNo".localized
+        txtDropLocation.placeholder = "Pick Up Time".localized
+        txtSelectVehicleType.placeholder = "Select Vehicle Type".localized
+//        txtFareAmount.placeholder = "".localized
+        txtEta.placeholder = "ETA".localized
+        txtFlightNumber.text = "Flight No".localized
+        txtNotes.text = "Notes".localized
+        btnAccount.setTitle("Account".localized, for: .normal)
+//        btnCollect.setTitle("".localized, for: .normal)
+        btnCancel.setTitle("Cancel".localized, for: .normal)
+        btnSubmit.setTitle("".localized, for: .normal)
+        
+        
     }
     
     override func viewWillLayoutSubviews() {

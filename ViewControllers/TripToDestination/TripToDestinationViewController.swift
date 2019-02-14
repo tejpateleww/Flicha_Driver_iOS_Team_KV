@@ -72,6 +72,8 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
     }
     func  setLocalizable()
     {
+        self.headerView?.lblTitle.text = "Trip to Destination".localized
+        
         
 //        btnSelectDestination.setTitle("".localized, for: .normal)
         btnDone.setTitle("Done".localized, for: .normal)

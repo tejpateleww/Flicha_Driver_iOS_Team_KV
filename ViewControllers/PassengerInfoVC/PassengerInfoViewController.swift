@@ -75,7 +75,21 @@ class PassengerInfoViewController: UIViewController,MFMessageComposeViewControll
         
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setlocalization()
+    }
 
+    func setlocalization()
+    {
+        lblPassengerName.text = "Passenger Info".localized
+        lblPickUpLocationInFo.text = "Pick up location".localized
+        lblDroPoffLocationInFo.text = "Drop off location".localized
+        lblFlightNumber.text = "Flight No".localized
+        lblNotes.text = "Notes".localized
+        btnOK.setTitle("OK".localized, for: .normal)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
