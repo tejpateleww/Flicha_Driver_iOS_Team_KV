@@ -31,6 +31,7 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
     
     var aryCarModelID = [String]()
     
+    @IBOutlet weak var btnChoosePhoto: UIButton!
     var aryDataCarsAndTaxiIDs = [String]()
     var aryDataDeliveryServicesIDs = [String]()
     
@@ -44,6 +45,7 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setLocalizable()
+        
     }
     
     func setLocalizable()
@@ -69,7 +71,10 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
             constraintHeightOfTextFields.constant = 30
             constraintTopOfNextButton.constant = 10
         }
-
+        btnChoosePhoto.layer.cornerRadius = btnChoosePhoto.frame.size.width / 2
+        btnChoosePhoto.layer.masksToBounds = true
+        imgVehicle.layer.cornerRadius = imgVehicle.frame.size.width / 2
+        imgVehicle.layer.masksToBounds = true
 
 //        AppDelegate.isFromRegistration = true
         Singletons.sharedInstance.isFromRegistration = true
@@ -200,22 +205,22 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         
         if txtCompany.text == "" {
             
-            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtCarType.text == "" {
             
-            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtVehicleRegistrationNumber.text == "" {
             
-            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if imgVehicle.image == nil {
             
-            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         } else {
             self.view.endEditing(true)
@@ -242,34 +247,34 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         
         if txtVehicleRegistrationNumber.text == "" {
             
-            sb.createWithAction(text: "Please enter vehicle plate number".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter vehicle plate number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtCompany.text == "" {
             
-            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtVehicleMake.text == "" {
             
-            sb.createWithAction(text: "Please enter vehicle make".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter vehicle make".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
-        else if (txtCarType.text as! String) == "" {
+        else if (txtCarType.text as? String) == "" {
             
-            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtNumberPassenger.selectedItem == nil ||  txtNumberPassenger.selectedItem == "" || txtNumberPassenger.selectedItem == "Number Of Passenger".localized
         {
             
-            sb.createWithAction(text: "Please enter no of passenger".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter no of passenger".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if imgVehicle.image == UIImage(named: "iconCARPlaceholder") || imgVehicle.image == nil //UIImage.init(named: "") 
         {
 
-            sb.createWithAction(text: "Please select vehicle image".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please select vehicle image".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else
@@ -287,14 +292,13 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
             
         }
     }
-    func didgetIdAndName(id: String, Name: String) {
+    func didgetIdAndName(id: String, Name: String  ) {
         
         if id == "" || Name == "" {
             //            UtilityClass.showAlert(appName.kAPPName, message: "", vc: self)
         }
         else {
-            
-            
+        
             print(id)
             print(Name)
 //            vehicleTypeData.Id = id
@@ -317,22 +321,22 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         
         if txtCompany.text == "" {
             
-            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Company Name", actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtCarType.text == "" {
             
-            sb.createWithAction(text: "Enter Car Color", actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Car Color", actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if txtVehicleRegistrationNumber.text == "" {
             
-            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             sb.show()
         }
         else if imgVehicle.image == UIImage(named: "iconProfileLocation") {
             
-            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Choose Photo".localized, actionTitle:"Dismiss".localized, action: { print("Button is push") })
             sb.show()
         } else {
             DeliveryService()

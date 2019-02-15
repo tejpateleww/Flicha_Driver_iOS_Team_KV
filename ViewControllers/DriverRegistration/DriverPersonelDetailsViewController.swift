@@ -309,24 +309,24 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     func checkFields()
     {
         let sb = Snackbar()
-//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
+//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "Dismiss".localized, action: { print("Button is push") })
 
         if txtFullName.text == "" {
-            sb.createWithAction(text: "Please enter user name".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter user name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
 //        else if txtDOB.text == "" {
-//            sb.createWithAction(text: "Enter Date of Birth", actionTitle: "OK", action: { print("Button is push") })
+//            sb.createWithAction(text: "Enter Date of Birth", actionTitle: "Dismiss".localized, action: { print("Button is push") })
 //        }
         else if txtAddress.text == "" {
-             sb.createWithAction(text: "Please enter address".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+             sb.createWithAction(text: "Please enter address".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
       
 //        else if txtPostCode.text == "" {
-//            sb.createWithAction(text: "Enter Post Code", actionTitle: "OK", action: { print("Button is push") })
+//            sb.createWithAction(text: "Enter Post Code", actionTitle: "Dismiss".localized, action: { print("Button is push") })
 //        }
       
         else if imgProfile.image == UIImage(named: "iconProfileLocation") {
-            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
         else {
             setData()

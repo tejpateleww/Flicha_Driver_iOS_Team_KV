@@ -78,7 +78,7 @@
 "ETA" = "ETA";
 "Please add expiry date" = "Please add expiry date";
 "Select driver licence expiry date" = "Select driver licence expiry date";
-"Select revenue licence expiry date" = "Select revenue licence expiry date";
+"Select revenue licence expiry date" = "Select TIN Certificate expiry day";
 "Select car registration expiry date" = "Select car registration expiry date";
 "Select vehicle insurance/policy expiry date" = "Select vehicle insurance/policy expiry date";
 "My Jobs" = "My Jobs";
@@ -233,7 +233,7 @@
 "Vehicle Make" = "Vehicle Make";
 "Number Of Passenger" = "Number Of Passenger";
 "Driver Licence (Front only)" = "Driver Licence (Front only)";
-"Revenue Licence" = "Revenue Licence";
+"Revenue Licence" = " TIN Certificate";
 "Vehicle Registration Document" = "Vehicle Registration Document";
 "Vehicle Insurance Policy/Certificate" = "Vehicle Insurance Policy/Certificate";
 "New Password" = "New Password";
