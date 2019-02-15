@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c7w-q1-i5R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c7w-q1-i5R">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -150,6 +150,7 @@
                         <outlet property="btnDone" destination="Zgj-fe-but" id="p5q-PX-ci5"/>
                         <outlet property="btnSelectDestination" destination="Emp-AA-u7D" id="sd8-gF-tTF"/>
                         <outlet property="imgSwitchIcon" destination="v8W-Kx-YXW" id="ecx-as-i8z"/>
+                        <outlet property="lblDestinationTrip" destination="j9G-vq-8v6" id="she-Gl-ekd"/>
                         <outlet property="txtDestination" destination="Qvp-f6-uVb" id="vSV-vX-gAw"/>
                         <outlet property="viewSwitchButton" destination="I7c-Qs-RS9" id="D2S-sw-RDK"/>
                         <outlet property="viewTextfield" destination="sqU-z3-Jbe" id="1V3-KA-uot"/>

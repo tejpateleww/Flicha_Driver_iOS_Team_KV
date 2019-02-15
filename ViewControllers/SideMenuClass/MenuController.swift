@@ -229,10 +229,9 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
                 setLayoutForenglishLanguage()
             }
         }
-            
-            self.navigationController?.loadViewIfNeeded()
-            
-            self.tableView.reloadData()
+        self.navigationController?.loadViewIfNeeded()
+        self.tableView.reloadData()
+        NotificationCenter.default.post(name: NotificationChangeLanguage, object: nil)
         
     }
         
@@ -293,7 +292,7 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     @objc func  Support(){
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as! webViewVC
-        viewController.headerName = "Support"
+        viewController.headerName = "Support".localized
 //        viewController.headerName = "\(appName.kAPPName) - Terms & Conditions"
         viewController.strURL = WebSupport.SupportURL
 //        "https://www.tantaxitanzania.com/front/termsconditions"

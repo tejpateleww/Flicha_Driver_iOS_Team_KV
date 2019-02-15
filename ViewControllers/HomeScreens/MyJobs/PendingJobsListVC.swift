@@ -179,8 +179,11 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         cell.lblCarModelDesc.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Model", isNotHave: strNotAvailable) // data.object(forKey: "Model") as? String
         cell.lblFlightNumber.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "FlightNumber", isNotHave: strNotAvailable) //data.object(forKey: "FlightNumber") as? String
         cell.lblNotes.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Notes", isNotHave: strNotAvailable) //data.object(forKey: "Notes") as? String
-                cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PaymentType", isNotHave: strNotAvailable) //data.object(forKey: "PaymentType") as? String
         
+        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+            let KeyPaymentType = (SelectedLanguage == "en") ? "PaymentType" : "swahili_PaymentType"
+            cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyPaymentType, isNotHave: strNotAvailable)
+        }
         
         cell.btnStartTrip.tag = Int((data.object(forKey: "Id") as? String)!)!
         cell.btnStartTrip.addTarget(self, action: #selector(self.strtTrip(sender:)), for: .touchUpInside)

@@ -501,10 +501,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
                 for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
                     print("\(key) = \(value) \n")
                     
-                    if key == "Token" {
-                        
-                    }
-                    else {
+                    if(key != "Token" && key != "i18n_language") {
                         UserDefaults.standard.removeObject(forKey: key)
                     }
                 }

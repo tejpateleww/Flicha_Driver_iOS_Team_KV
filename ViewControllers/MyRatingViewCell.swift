@@ -13,6 +13,7 @@ class MyRatingViewCell: UITableViewCell {
 
     
     
+    @IBOutlet weak var lblCommentTitle: UILabel!
     @IBOutlet weak var lblComments: UILabel!
     @IBOutlet var imgProfile: UIImageView!
     @IBOutlet var viewCell: UIView!

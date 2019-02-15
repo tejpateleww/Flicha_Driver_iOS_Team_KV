@@ -82,11 +82,11 @@ class PassengerInfoViewController: UIViewController,MFMessageComposeViewControll
 
     func setlocalization()
     {
-        lblPassengerName.text = "Passenger Info".localized
+        lblPassengerInfo.text = "Passenger Info".localized
         lblPickUpLocationInFo.text = "Pick up location".localized
         lblDroPoffLocationInFo.text = "Drop off location".localized
-        lblFlightNumber.text = "Flight No".localized
-        lblNotes.text = "Notes".localized
+        lblFlightNumberInFo.text = "Flight No".localized
+        lblNotesInFo.text = "Notes".localized
         btnOK.setTitle("OK".localized, for: .normal)
         
     }

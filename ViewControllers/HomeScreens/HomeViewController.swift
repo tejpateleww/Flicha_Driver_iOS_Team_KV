@@ -152,7 +152,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         super.viewDidLoad()
         
 //       self.title = "Home"
-        self.headerView?.lblTitle.text = "Home".localized
+      
         btnMyJob.layer.cornerRadius = btnHome.frame.size.height - 30
         btnMyJob.clipsToBounds = true
         btnHome.layer.cornerRadius = btnHome.frame.size.height - 30
@@ -193,6 +193,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         NotificationCenter.default.addObserver(self, selector: #selector(btnCompleteTrip(_:)), name: NSNotification.Name(rawValue: "endTrip"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.webserviceOfRunningTripTrack), name: NotificationTrackRunningTrip, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.setLocalization), name: NotificationChangeLanguage, object: nil)
         
         setCar()
         
@@ -256,11 +258,12 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         }
         
         if Singletons.sharedInstance.isTripHolding {
-            
-            btnWaiting.setTitle("Stop Waiting",for: .normal)
+            self.btnWaiting.isSelected = true
+//            btnWaiting.setTitle("Stop Waiting".localized,for: .normal)
         }
         else {
-            btnWaiting.setTitle("Hold Trip",for: .normal)
+            self.btnWaiting.isSelected = false
+//            btnWaiting.setTitle("Hold Trip".localized,for: .normal)
         }
         
         //TODO: uncomment in production
@@ -272,9 +275,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         runTimer()
     }
     override func viewDidLayoutSubviews() {
+        self.headerView?.lblTitle.text = "Home".localized
+        btnWaiting.setTitle("Hold Trip".localized, for: .normal)
+        btnWaiting.setTitle("Stop waiting".localized, for: .selected)
         //        viewRoundForHome.layer.cornerRadius = viewRound.frame.size.height / 2
         //        viewRoundForHome.clipsToBounds = true
     }
+    
     override func viewDidDisappear(_ animated: Bool)
     {
         super.viewDidDisappear(animated)
@@ -329,13 +336,21 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         self.navigationController?.isNavigationBarHidden = true
         setLocalization()
     }
-     func setLocalization()
+    
+    @objc func setLocalization()
      {
-        btnHome.setTitle("Home".localized, for: .normal)
-        btnMyJob.setTitle("My Job".localized, for: .normal)
+        self.headerView?.lblTitle.text = "Home".localized
+        btnWaiting.setTitle("Hold Trip".localized, for: .normal)
+        btnWaiting.setTitle("Stop waiting".localized, for: .selected)
+//        btnHome.setTitle("Home".localized, for: .normal)
+//        btnMyJob.setTitle("My Job".localized, for: .normal)
         btnStartTrip.setTitle("Start Trip".localized, for: .normal)
         btnPassengerInfo.setTitle("Passenger Info".localized, for: .normal)
+        btnCancelTrip.setTitle("Cancel Trip".localized, for: .normal)
+        btnDirectionFourBTN.setTitle("Direction".localized, for: .normal)
         lblPickUpLocation.text = "Current Location".localized
+        btnCompleteTrip.setTitle("Complete Trip".localized, for: .normal)
+        btnDirection.setTitle("Direction".localized, for: .normal)
      }
     
     @IBAction func btnSidemenuClicked(_ sender: Any)
@@ -2972,19 +2987,15 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     // Holding Button
     @IBAction func btnHoldWaiting(_ sender: UIButton)
     {
-        
-        
         if isAdvanceBooking {
-            
             if advanceBookingID == "" {
-                
                 UtilityClass.showAlert("Missing", message: "Booking ID", vc: self)
-                
             }
             else {
-                if self.btnWaiting.currentTitle == "Hold Trip" {
-                  
-                    btnWaiting.setTitle("Stop Waiting",for: .normal)
+//                if self.btnWaiting.currentTitle == "Hold Trip".localized {
+                if self.btnWaiting.isSelected == false {
+                    self.btnWaiting.isSelected = true
+//                    btnWaiting.setTitle("Stop Waiting".localized,for: .normal)
                     Singletons.sharedInstance.isTripHolding = true
                     UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
                     self.AdvancedStartHoldTrip()
@@ -2993,22 +3004,21 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                         App_Delegate.RoadPickupTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:  #selector(HomeViewController.updateTime), userInfo: nil, repeats: true)
                     }
                     
-                    
-                } else if self.btnWaiting.currentTitle == "Stop Waiting" {
-                    
-                    btnWaiting.setTitle("Hold Trip",for: .normal)
+                } else if self.btnWaiting.isSelected == true {
+//                } else if self.btnWaiting.currentTitle == "Stop Waiting".localized {
+                    self.btnWaiting.isSelected = false
+//                    btnWaiting.setTitle("Hold Trip".localized,for: .normal)
                     Singletons.sharedInstance.isTripHolding = false
                     UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
                     self.AdvancedEndHoldTrip()
                     App_Delegate.RoadPickupTimer.invalidate()
-                    
                 }
                 
 // This code is commented in because of Hold Functionality
 //                if Singletons.sharedInstance.MeterStatus == meterStatus.kIsMeterOnHolding
 //                {
 //
-//                    btnWaiting.setTitle("Stop Waiting",for: .normal)
+//                    btnWaiting.setTitle("Stop Waiting".localized,for: .normal)
 //
 //                    Singletons.sharedInstance.isTripHolding = true
 //                    UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
@@ -3022,7 +3032,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
 //                else
 //                {
 //
-//                    btnWaiting.setTitle("Hold Trip",for: .normal)
+//                    btnWaiting.setTitle("Hold Trip".localized,for: .normal)
 //                    Singletons.sharedInstance.isTripHolding = false
 //                    UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
 //                    self.AdvancedEndHoldTrip()
@@ -3063,9 +3073,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             }
             else
             {
-                if self.btnWaiting.currentTitle == "Hold Trip" {
-
-                    btnWaiting.setTitle("Stop Waiting",for: .normal)
+//                if self.btnWaiting.currentTitle == "Hold Trip".localized {
+                if self.btnWaiting.isSelected == false {
+//                    btnWaiting.setTitle("Stop Waiting".localized,for: .normal)
+                    self.btnWaiting.isSelected = true
                     Singletons.sharedInstance.isTripHolding = true
                     UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
                     self.StartHoldTrip()
@@ -3073,9 +3084,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     {
                         App_Delegate.RoadPickupTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:  #selector(HomeViewController.updateTime), userInfo: nil, repeats: true)
                     }
-
-                } else if self.btnWaiting.currentTitle == "Stop Waiting" {
-                    btnWaiting.setTitle("Hold Trip",for: .normal)
+                } else if self.btnWaiting.isSelected == true {
+//                } else if self.btnWaiting.currentTitle == "Stop Waiting".localized {
+//                    btnWaiting.setTitle("Hold Trip".localized,for: .normal)
+                    self.btnWaiting.isSelected = false
                     //
                     Singletons.sharedInstance.isTripHolding = false
                     UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
@@ -3086,7 +3098,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
 // This code is commented in because of Hold Functionality
 //                if Singletons.sharedInstance.MeterStatus == meterStatus.kIsMeterOnHolding
 //                {
-//                    btnWaiting.setTitle("Stop Waiting",for: .normal)
+//                    btnWaiting.setTitle("Stop Waiting".localized,for: .normal)
 //
 //                    Singletons.sharedInstance.isTripHolding = true
 //                    UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
@@ -3098,7 +3110,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
 //                }
 //                else
 //                {
-//                    btnWaiting.setTitle("Hold Trip",for: .normal)
+//                    btnWaiting.setTitle("Hold Trip".localized,for: .normal)
 //
 //                    Singletons.sharedInstance.isTripHolding = false
 //                    UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
@@ -3107,7 +3119,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
 //                }
                 
                 
-                SingletonsForMeter.sharedInstance.isMeterOnHold = !sender.isSelected
+                SingletonsForMeter.sharedInstance.isMeterOnHold = sender.isSelected
                 
                 if(sender.isSelected)
                 {
@@ -3118,7 +3130,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     Singletons.sharedInstance.MeterStatus = meterStatus.kIsMeterStart
                 }
                 
-                sender.isSelected = !sender.isSelected
+//                sender.isSelected = !sender.isSelected
             }
         }
         NotificationCenter.default.removeObserver("HoldCurrentTrip")

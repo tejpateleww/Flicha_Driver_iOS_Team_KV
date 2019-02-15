@@ -122,6 +122,7 @@ class updateDriverVehiclesViewController: UIViewController, UITableViewDataSourc
             let dictData = aryData[indexPath.row]
             
 //            cellDetails.backgroundColor = UIColor.white
+            
             cellDetails.lblVehicleName.text = dictData["Name"] as? String
             //            cellDetails.dataView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
             

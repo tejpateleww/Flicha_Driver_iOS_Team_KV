@@ -30,13 +30,13 @@ class LegalViewController: ParentViewController {
     }
     func SetLocalazation()
     {
-        btnPrivacyAndPolicy.setTitle("Terms & Conditions".localized, for: .normal)
-        btnTermsandCondition.setTitle("Privacy Policy".localized, for: .normal)
+        btnPrivacyAndPolicy.setTitle("Privacy Policy".localized, for: .normal)
+        btnTermsandCondition.setTitle("Terms & Conditions".localized, for: .normal)
     }
     @IBAction func btnPrivacyPolice(_ sender: UIButton)
     {
         let next = self.storyboard?.instantiateViewController(withIdentifier: "LegalWebView") as! LegalWebView
-        next.headerName = "Privacy Policy"
+        next.headerName = "Privacy Policy".localized
         next.strURL = WebSupport.PrivacyPolicyURL
 //        "https://www.tantaxitanzania.com/front/privacypolicy"
         self.navigationController?.pushViewController(next, animated: false)
@@ -46,7 +46,7 @@ class LegalViewController: ParentViewController {
     @IBAction func btnTumsAndCondition(_ sender: UIButton)
     {
         let next = self.storyboard?.instantiateViewController(withIdentifier: "LegalWebView") as! LegalWebView
-        next.headerName = "Terms & Conditions"
+        next.headerName = "Terms & Conditions".localized
         next.strURL = WebSupport.TermsNConditionsURL
 //        "https://www.tantaxitanzania.com/front/termsconditions"
         self.navigationController?.pushViewController(next, animated: false)

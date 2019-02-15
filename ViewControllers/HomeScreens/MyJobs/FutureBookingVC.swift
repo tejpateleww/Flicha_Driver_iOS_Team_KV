@@ -186,7 +186,13 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 cell.btnAction.addTarget(self, action: #selector(self.btnActionForSelectRecord(sender:)), for: .touchUpInside)
                 cell.lblFlightNumber.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "FlightNumber", isNotHave: strNotAvailable) // data.object(forKey: "FlightNumber") as? String
                 cell.lblNotes.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Notes", isNotHave: strNotAvailable) //data.object(forKey: "Notes") as? String
-                cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PaymentType", isNotHave: strNotAvailable) // data.object(forKey: "PaymentType") as? String
+        
+                if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+                    let KeyPaymentType = (SelectedLanguage == "en") ? "PaymentType" : "swahili_PaymentType"
+                    cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyPaymentType, isNotHave: strNotAvailable)
+                }
+                 // data.object(forKey: "PaymentType") as? String
+        
                 cell.viewSecond.isHidden = !expandedCellPaths.contains(indexPath)
  
 //            }

@@ -51,10 +51,11 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     }
     func setLocalizable()
     {
+        lblTitle.text = "Documents".localized
         lblDriverLicence.text = "Driver Licence (Front only)".localized
         lblDriverLicenceExpiryDate.text = "Select driver licence expiry date".localized
-        lblAccreditationCerti.text = "Revenue Licence".localized
-        lblAccreditationCertiExpiryDate.text = "Select revenue licence expiry date".localized
+        lblAccreditationCerti.text = "TIN Certificate".localized
+        lblAccreditationCertiExpiryDate.text = "Select TIN Certificate expiry date".localized
         lblCarRegistration.text = "Vehicle Registration Document".localized
         lblCarRegistrationExpiryDate.text = "Select car registration expiry date".localized
         lblVehicleInsurance.text = "Vehicle Insurance Policy/Certificate".localized
@@ -96,6 +97,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     @IBOutlet weak var lblVehicleInsurance: UILabel!
     @IBOutlet weak var lblVehicleInsuranceExpiryDate: UILabel!
 
+    @IBOutlet weak var lblTitle: UILabel!
     
     // MARK:- Driver Licence Expire
     

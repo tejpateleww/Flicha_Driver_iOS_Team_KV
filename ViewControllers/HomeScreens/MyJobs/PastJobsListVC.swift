@@ -342,11 +342,13 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         let strGrandTotal = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "GrandTotal", isNotHave: strNotAvailable)
         cell.lblGrandTotalDesc.text = "\(strGrandTotal) \(currency)" // data.object(forKey: "GrandTotal") as? String
         
+        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
+            let KeyPaymentType = (SelectedLanguage == "en") ? "PaymentType" : "swahili_PaymentType"
+            let KeyTripStatus = (SelectedLanguage == "en") ? "Status" : "swahili_BookingStatus"
+            cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyPaymentType, isNotHave: strNotAvailable)
+            cell.lblTripStatusInfo.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyTripStatus, isNotHave: strNotAvailable)
+        }
         
-        cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PaymentType", isNotHave: strNotAvailable) // data.object(forKey: "PaymentType") as? String
-        
-        
-        cell.lblTripStatusInfo.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Status", isNotHave: strNotAvailable) // (data.object(forKey: "Status") as? String)?.uppercased()
         cell.lblFlightNumber.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "FlightNumber", isNotHave: strNotAvailable) // data.object(forKey: "FlightNumber") as? String
         cell.lblNotes.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Notes", isNotHave: strNotAvailable) //data.object(forKey: "Notes") as? String
 //        cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "PaymentType", isNotHave: strNotAvailable) //data.object(forKey: "PaymentType") as? String

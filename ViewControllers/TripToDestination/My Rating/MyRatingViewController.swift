@@ -42,10 +42,16 @@ class MyRatingViewController : ParentViewController,UITableViewDataSource, UITab
     {
         super.viewWillAppear(animated)
         self.webserviceForMyFeedbackList()
+        self.setLocalizable()
+    }
+    
+    func setLocalizable() {
         
-        self.title = "My Ratings".localized
+        self.headerView?.lblTitle.text = "My Ratings".localized
+        self.lblNodataFound.text = "No data found.".localized
         
     }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -97,7 +103,7 @@ class MyRatingViewController : ParentViewController,UITableViewDataSource, UITab
         //        let cell2 = tableView.dequeueReusableCell(withIdentifier: "NoDataFound") as! FutureBookingTableViewCell
         
         cell.selectionStyle = .none
-        cell.lblComments.text = "Comment".localized
+       
         cell.lblPickUpAddress.text = "Pick Up Time".localized
         cell.lblDropUpAddress.text = "Drop off location".localized
         
@@ -167,11 +173,13 @@ class MyRatingViewController : ParentViewController,UITableViewDataSource, UITab
 
         if Utilities.isEmpty(str: strComment)
         {
-            cell.lblComments.text = "N/A"
+            cell.lblComments.text = ""
+            cell.lblCommentTitle.text = ""
         }
         else
         {
             cell.lblComments.text = strComment
+             cell.lblCommentTitle.text = "Comment".localized
         }
         cell.viewRating.value = CGFloat(intRating)//CGFloat((data.object(forKey: "Rating") as? String)!)
         cell.lblPickUpAddress.text = (data.object(forKey: "PickupLocation") as? String)  // PickupLocation

@@ -135,4 +135,5 @@ let kiconSupport : String = "iconSupportInactive"
 let kIconLogout : String = "iconLogoutInactive"
 //let kiconLogout : String = "iconAddress"
 let NotificationTrackRunningTrip = NSNotification.Name("NotificationTrackRunningTrip")
+let NotificationChangeLanguage = NSNotification.Name("ChangeLanguageNotification")
 

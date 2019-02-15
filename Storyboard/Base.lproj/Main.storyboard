@@ -1668,7 +1668,7 @@ EE15IEpvYnM
         <!--HomeViewController-->
         <scene sceneID="iGk-nZ-YPR">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="guc-ME-SBQ" userLabel="HomeViewController" customClass="HomeViewController" customModule="TanTaxi_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="guc-ME-SBQ" userLabel="HomeViewController" customClass="HomeViewController" customModule="TanTaxi_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7El-cf-3IY"/>
                         <viewControllerLayoutGuide type="bottom" id="Iin-IP-JwY"/>
@@ -11555,7 +11555,8 @@ EE15IEpvYnM
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="imgProfile" destination="AHO-1l-0P1" id="ZAr-5U-SbU"/>
-                                                    <outlet property="lblComments" destination="L9V-ly-muV" id="W3D-eO-6Cf"/>
+                                                    <outlet property="lblCommentTitle" destination="L9V-ly-muV" id="RUK-ti-0X5"/>
+                                                    <outlet property="lblComments" destination="Li9-bM-M0n" id="SGb-mk-4KU"/>
                                                     <outlet property="lblDateTime" destination="iED-Ho-iOQ" id="9sq-xU-MF0"/>
                                                     <outlet property="lblDropUpAddress" destination="0iH-3x-n0K" id="BO2-7B-i1O"/>
                                                     <outlet property="lblPassengerName" destination="DbU-YE-ku9" id="7TZ-mH-29C"/>

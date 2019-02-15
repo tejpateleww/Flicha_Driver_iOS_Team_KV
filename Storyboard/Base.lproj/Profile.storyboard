@@ -1521,8 +1521,8 @@
                                                     <constraint firstAttribute="width" constant="31" id="HPE-sU-x8m"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revenue Licence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II6-i0-T4c">
-                                                <rect key="frame" x="8" y="8" width="116.5" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIN Certificate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II6-i0-T4c">
+                                                <rect key="frame" x="8" y="8" width="100" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Wjb-66-eCr"/>
                                                 </constraints>
@@ -1530,8 +1530,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Accreditation Certificate Expiry date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vt-Ia-re5">
-                                                <rect key="frame" x="8" y="31.5" width="226.5" height="13.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select TIN Certificate Expiry date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vt-Ia-re5">
+                                                <rect key="frame" x="8" y="31.5" width="175" height="13.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="13.5" id="hbF-xD-Whe"/>
                                                 </constraints>
@@ -1766,6 +1766,7 @@
                         <outlet property="lblCarRegistrationExpiryDate" destination="8eB-3T-g6T" id="Rdj-h9-jDO"/>
                         <outlet property="lblDriverLicence" destination="qah-PT-ZvS" id="Nhm-7Z-y9R"/>
                         <outlet property="lblDriverLicenceExpiryDate" destination="1Pz-bz-7r0" id="CE7-h1-O4H"/>
+                        <outlet property="lblTitle" destination="tx7-ua-5u4" id="Dwu-eF-Szs"/>
                         <outlet property="lblVehicleInsurance" destination="HrD-Uk-ot0" id="8Ta-jT-BJ8"/>
                         <outlet property="lblVehicleInsuranceExpiryDate" destination="el1-p2-ulC" id="PzS-CI-Pim"/>
                         <outlet property="viewAccreditationCertificate" destination="yKc-JQ-KGb" id="rm8-T5-A0B"/>
@@ -2607,6 +2608,7 @@ You must be 21 years of age or over.</string>
                     <connections>
                         <outlet property="btnSave" destination="dgA-Id-ZOf" id="S3o-PC-APB"/>
                         <outlet property="imgVehicle" destination="Ukz-MO-OCt" id="vyI-km-oir"/>
+                        <outlet property="lblTitle" destination="Uq3-2U-QLh" id="CXI-qf-2Ox"/>
                         <outlet property="txtCarType" destination="fAC-yP-EJb" id="bAY-E1-bO4"/>
                         <outlet property="txtCompany" destination="NU2-lS-aTs" id="CCn-ph-1tJ"/>
                         <outlet property="txtNoOfPassenger" destination="jL9-Dh-XTY" id="Dgc-nw-CAU"/>

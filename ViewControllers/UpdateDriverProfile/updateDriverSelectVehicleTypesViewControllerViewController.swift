@@ -96,15 +96,18 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         setLocalizable()
     }
     @IBOutlet weak var btnSave: ThemeButton!
+    
     func setLocalizable()
     {
         txtVehicleRegistrationNumber.placeholder = "Vehicle Plate Number".localized
         txtVehicleModel.placeholder = "Vehicle Model".localized
+        txtCompany.placeholder = "Car Company".localized
+        
 //        txtCompany.placeholder = "".localized
         txtCarType.placeholder = "Vehicle Type".localized
         txtNoOfPassenger.placeholder = "Number Of Passenger".localized
         btnSave.setTitle("Save".localized, for: .normal)
-        self.title = "Vehicle Option".localized
+        self.lblTitle.text = "Vehicle Option".localized
         
     }
     
@@ -131,6 +134,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     @IBOutlet weak var txtCompany: UITextField!
     @IBOutlet weak var txtCarType: UITextField!
 
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet var txtNoOfPassenger: IQDropDownTextField!
     @IBOutlet var txtVehicleModel: UITextField!
     

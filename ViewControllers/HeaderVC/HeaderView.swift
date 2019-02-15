@@ -99,6 +99,8 @@ class HeaderView: UIView {
     
     @IBAction func btnBack(_ sender: UIButton) {
         delegate?.didBackButtonClicked()
+        
+        
     }
     
     @IBAction func btnSideMenu(_ sender: UIButton) {

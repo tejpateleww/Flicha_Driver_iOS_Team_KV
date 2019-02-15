@@ -203,7 +203,7 @@
                 <outlet property="viewCallIcon" destination="9Na-lf-rIM" id="QMe-P9-mJF"/>
                 <outlet property="viewSwitchIcon" destination="goq-og-y7y" id="6O3-ut-iT2"/>
             </connections>
-            <point key="canvasLocation" x="25.600000000000001" y="-459.67016491754129"/>
+            <point key="canvasLocation" x="25.600000000000001" y="-460.11994002998506"/>
         </view>
     </objects>
     <resources>

@@ -329,8 +329,7 @@ class Utilities: NSObject
     class func removeUserDefaultsValue()
     {
         for key in UserDefaults.standard.dictionaryRepresentation().keys {
-            if (key != "Token")
-            {
+            if(key != "Token" && key != "i18n_language") {
                 UserDefaults.standard.removeObject(forKey: key.description)
             }
         }

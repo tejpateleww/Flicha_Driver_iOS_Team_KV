@@ -72,13 +72,14 @@
 "Please enter no of passenger" = "Tafadhali ingiza idadi ya abiria";
 "You have to select vehicle type" = "Unatakiwa kuchagua aina ya gari";
 "You can only select three types" = "Unaruhusiwa kuchagua aina tatu tu";
-"Please enter all document\'s detail." = "Please enter all document\'s detail.";////////////////////////////////
-"Please select vehicle registration document" = "Please select vehicle registration document";
-"Please add expiry date" = "Please add expiry date";
-"Select driver licence expiry date" = "Select driver licence expiry date";
-"Select revenue licence expiry date" = "Select revenue licence expiry date";
-"Select car registration expiry date" = "Select car registration expiry date";
-"Select vehicle insurance/policy expiry date" = "Select vehicle insurance/policy expiry date";////////////////////////////////
+"Please enter all document\'s detail." = "Tafadhali ingiza taarifa za nyaraka zote";
+"Please select vehicle registration document" = "Tafadhali ingiza nyaraka za usajili wa gari";
+"Please add expiry date" = "Tafadhali ingiza tarehe ya mwisho";
+"Select driver licence expiry date" = "Tafadhali ingiza tarehe ya mwisho ya leseni";
+"Select revenue licence expiry date" = "Chagua tarehe ya mwisho wa leseni";
+"Select car registration expiry date" = "Chagua tarehe ya mwisho wa usajili wa gari";
+"Select vehicle insurance/policy expiry date" = "Chagua tarehe ya mwisho wa Bima";
+"Select TIN Certificate expiry date" = "Chagua tarehe ya kumalizika kwa Cheti cha TIN";
 "My Jobs" = "Kazi zangu";
 "Payment Options" = "Aina za kulipa";
 "Wallet" = "Wallet";
@@ -232,6 +233,7 @@
 "Number Of Passenger" = "Idadi ya Abiria";
 "Driver Licence (Front only)" = "Leseni ya Dereva (Kwa mbele tu)";
 "Revenue Licence" = "Kadi ya Mlipa Kodi";
+"TIN Certificate" = "Cheti cha TIN";
 "Vehicle Registration Document" = "Nyaraka za Usajili wa Gari";
 "Vehicle Insurance Policy/Certificate" = "Kadi ya Bima ya Gari";
 "New Password" = "Password Mpya";
@@ -287,4 +289,6 @@
 "Tip by Passenger" = "Kidokezo na Abiria:";
 "Tip" = "Kidokezo";
 "ETA" = "ETA";
+"Car Company" = "Car Company";
+"Destination Trip" = "Destination Trip";
 

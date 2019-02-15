@@ -19,6 +19,7 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
     @IBOutlet var imgSwitchIcon: UIImageView!
     @IBOutlet var txtDestination: UITextField!
     @IBOutlet var viewTextfield: UIView!
+    @IBOutlet weak var lblDestinationTrip: UILabel!
     
     @IBOutlet var btnDone: UIButton!
     var doubleLat = Double()
@@ -70,15 +71,16 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
         
         setLocalizable()
     }
+    
     func  setLocalizable()
     {
         self.headerView?.lblTitle.text = "Trip to Destination".localized
-        
-        
-//        btnSelectDestination.setTitle("".localized, for: .normal)
+        self.lblDestinationTrip.text = "Destination Trip".localized
         btnDone.setTitle("Done".localized, for: .normal)
             txtDestination.placeholder = "Destination Location".localized
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

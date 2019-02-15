@@ -155,9 +155,10 @@ class TripInfoCompletedTripVC: UIViewController {
     }
     func setLocalization()
     {
-        lblTripDetail.text = "".localized
-        lblPickupLocation.text =  "Address".localized
-        lblDropOffLocation.text = "Address".localized
+        lblTripDetail.text = "Trip Info".localized
+//        lblPickupLocation.text =  "Address".localized
+//        lblDropOffLocation.text = "Address".localized
+        
         lblTripFareTitle.text = "Base Fare".localized
         lblDistanceTravelledTitle.text = "Trip Distance".localized
         lblDistanceFareTitle.text  = "Distance Fare".localized
@@ -280,7 +281,8 @@ class TripInfoCompletedTripVC: UIViewController {
         }
         
         if let WaitingCost = dictData.object(forKey: "WaitingTimeCost") as? String {
-            lblWaitingCost.text = "\(String(format: "%.2f", Double(WaitingCost)!)) \(currency)"
+            lblWaitingCost.text = "\(WaitingCost) \(currency)"
+//            "\(String(format: "%.2f", Double(WaitingCost)!)) \(currency)"
         }
         
         if let Tip = dictData.object(forKey: "TollFee") as? String {

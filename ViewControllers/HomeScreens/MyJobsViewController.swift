@@ -108,6 +108,7 @@ class MyJobsViewController: ParentViewController
     
     func setLocalization()
     {
+        self.headerView?.lblTitle.text = "My Jobs".localized
         btnFutureBooking.setTitle( "Future Booking".localized, for: .normal)
         btnPastJobs.setTitle("Pending Jobs".localized, for: .normal)
         btnPendingJobs.setTitle("Past Jobs".localized, for: .normal)
