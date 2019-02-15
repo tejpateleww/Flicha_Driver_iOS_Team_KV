@@ -45,9 +45,9 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         super.viewWillAppear(animated)
         
         imagePicker.delegate = self
-        
-        setData()
         setLocalizable()
+        setData()
+        
     }
     func setLocalizable()
     {
@@ -242,8 +242,6 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         
         setImage(url: VehicleInsuranceCertificateImage, imageView: self.imgVehicleInsurance)
         
-        
-
         lblDriverLicenceExpiryDate.text = strDriverLicenceExpireDate
         lblAccreditationCertiExpiryDate.text = strAccreditationCertificateExpireDate
 //        lblCarRegistrationExpiryDate.text = strRegistrationCertificateExpire

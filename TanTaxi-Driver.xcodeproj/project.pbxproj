@@ -604,13 +604,13 @@
 			isa = PBXGroup;
 			children = (
 				3AF9136621C9199F00E2C08A /* MyRatingViewCell.swift */,
+				EECDB7DA203D48B20079F78B /* Trip Info */,
 				3A5DDCA221BA588800F9B5A3 /* WaitForTipViewController */,
 				3AFADC8C219E98970009E3D2 /* AppDelegate */,
 				1110D3BB2075FD0700CC8C1F /* TripToDestination */,
 				EECDB7DE203D49030079F78B /* Receive Request For Trip */,
 				EECDB7DC203D48DA0079F78B /* LoginVC */,
 				EECDB7DD203D48E50079F78B /* PassengerInfoVC */,
-				EECDB7DA203D48B20079F78B /* Trip Info */,
 				EECDB7DB203D48CB0079F78B /* MeterVC */,
 				00E928E7202AE2BF00A399E2 /* DriverRegistration */,
 				00E928F5202AE2BF00A399E2 /* HeaderVC */,
