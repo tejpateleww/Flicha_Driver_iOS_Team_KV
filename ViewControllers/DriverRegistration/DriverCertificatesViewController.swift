@@ -12,12 +12,13 @@ import UIKit
 class DriverCertificatesViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,WWCalendarTimeSelectorProtocol  {
 
     
-    @IBOutlet var btnDone: UIButton!
+//    @IBOutlet var btnDone: UIButton!
     @IBOutlet weak var constraintHeightOfSmallView: NSLayoutConstraint! // 50
     @IBOutlet weak var constraintBottomOfButton: NSLayoutConstraint! // 128
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var lblHaveAnAccount: UILabel!
     
+    @IBOutlet weak var btnNext: ThemeButton!
     
     let datePicker: UIDatePicker = UIDatePicker()
     
@@ -70,17 +71,17 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     {
         self.title = "App Name".localized
 
-        txtDriverLicence.placeholder = "Driver Licence (Front only)".localized
-        lblDriverLicence.text = "Select driver licence expiry date".localized
-        txtAccreditation.placeholder = "Revenue Licence".localized
-        lblAccreditation.text = "Select revenue licence expiry date".localized
+        txtDriverLicence.placeholder =  "Select driver licence expiry date".localized
+        lblDriverLicence.text = "Driver Licence (Front only)".localized
+        txtAccreditation.placeholder = "Select revenue licence expiry date".localized//Select Tin Certificate expiry day
+        lblAccreditation.text = "Revenue Licence".localized
         txtCarRegistraion.placeholder = "Vehicle Registration Document".localized
-        txtVehicleInsurance.placeholder = "Vehicle Insurance Policy/Certificate".localized
-        lblVehicleInsurance.text = "Select vehicle insurance/policy expiry date".localized
-        btnDone.setTitle("Done".localized, for: .normal)
+        txtVehicleInsurance.placeholder = "Select vehicle insurance/policy expiry date".localized
+        lblVehicleInsurance.text = "Vehicle Insurance Policy/Certificate".localized
+        btnNext.setTitle("Done".localized, for: .normal)
 //        lblHaveAnAccount.text = "".localized
 //        btnLogin.setTitle("".localized, for: .normal)
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,8 +91,8 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-        btnDone.layer.cornerRadius = btnDone.frame.size.height/2
-        btnDone.clipsToBounds = true
+        btnNext.layer.cornerRadius = btnNext.frame.size.height/2
+        btnNext.clipsToBounds = true
     }
    
 
@@ -294,7 +295,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     func alert()
     {
         let alert = UIAlertController(title: appName.kAPPName, message: "This feature will comming soon.", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
@@ -420,7 +421,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         let selectedDate: String = dateFormatter.string(from: sender.date)
         
         txtDriverLicence.text = selectedDate
-        lblDriverLicence.isHidden = true
+//        lblDriverLicence.isHidden = true
         datePicker.removeFromSuperview()
         print("Selected value \(selectedDate)")
     }
@@ -528,11 +529,11 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         if imagePicked == 1 {
             txtDriverLicence.text = mySelectedDate as String
-            lblDriverLicence.isHidden = true
+//            lblDriverLicence.isHidden = true
             
         } else if imagePicked == 2 {
             txtAccreditation.text = mySelectedDate as String
-            lblAccreditation.isHidden = true
+//            lblAccreditation.isHidden = true
             
         }
 //        else if imagePicked == 3 {
@@ -541,7 +542,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
 //        }
         else if imagePicked == 4 {
             txtVehicleInsurance.text = mySelectedDate as String
-            lblVehicleInsurance.isHidden = true
+//            lblVehicleInsurance.isHidden = true
         }
         self.myDatePicker.removeFromSuperview()
     }
@@ -563,11 +564,11 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         if imagePicked == 1 {
             txtDriverLicence.text = mySelectedDate as String
-            lblDriverLicence.isHidden = true
+//            lblDriverLicence.isHidden = true
             
         } else if imagePicked == 2 {
             txtAccreditation.text = mySelectedDate as String
-            lblAccreditation.isHidden = true
+//            lblAccreditation.isHidden = true
             
         }
 //            else if imagePicked == 3 {
@@ -576,7 +577,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
 //        }
         else if imagePicked == 4 {
             txtVehicleInsurance.text = mySelectedDate as String
-            lblVehicleInsurance.isHidden = true
+//            lblVehicleInsurance.isHidden = true
         }
         
         
@@ -632,7 +633,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
                 }
                 else if let resDict = result as? NSDictionary
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert(appName.kAPPName, message: (((result as! [String:AnyObject])["message"] as! NSArray).firstObject as! String), vc: self)//resDict.object(forKey: "message") as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
                     UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
@@ -641,7 +642,14 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             
         }
     }
-    
+//(lldb) po print(result)
+//    {
+//    message =     (
+//    "Mobile Number already exists"
+//    );
+//    status = 0;
+//    }
+
     
     
     func getAllRegistrationData()
@@ -790,11 +798,11 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         let DriverLicenceExpiryDate = txtDriverLicence.text
         let CarRegistrationExpiryDate = txtCarRegistraion.text
         let AccreditationCertificateExpiryDate = txtAccreditation.text
-        lblAccreditation.isHidden = true
+//        lblAccreditation.isHidden = true
         let VehicleInsuranceCertificateExpiryDate = txtVehicleInsurance.text
         
-        lblDriverLicence.isHidden = true
-        lblVehicleInsurance.isHidden = true
+//        lblDriverLicence.isHidden = true
+//        lblVehicleInsurance.isHidden = true
         dictData[RegistrationFinalKeys.kDriverLicenceExpiryDate] = DriverLicenceExpiryDate as AnyObject
         dictData[RegistrationFinalKeys.kCarRegistrationExpiryDate] = CarRegistrationExpiryDate as AnyObject
         dictData[RegistrationFinalKeys.kAccreditationCertificateExpiryDate] = AccreditationCertificateExpiryDate as AnyObject

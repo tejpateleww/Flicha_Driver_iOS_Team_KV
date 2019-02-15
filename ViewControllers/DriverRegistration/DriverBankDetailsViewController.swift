@@ -105,27 +105,27 @@ class DriverBankDetailsViewController: UIViewController
     func CheckValidation() -> Bool
     {
         let sb = Snackbar()
-//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
+//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "Dismiss".localized, action: { print("Button is push") })
         
         if txtAccountHolderName.text == "" {
-            sb.createWithAction(text: "Please enter account holder name".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter account holder name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             return false
         }
         else if txtBankName.text == "" {
-            sb.createWithAction(text: "Please enter bank name".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter bank name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             return false
 
         }
             
             
         else if txtBankBranch.text == "" {
-            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             return false
 
         }
             
         else if txtAccountNumber.text == "" {
-            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             return false
         }
         

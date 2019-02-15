@@ -17,18 +17,6 @@ let screenHeightDeveloper : Double = 568
 let screenWidthDeveloper : Double = 320
 
 
-@IBDesignable
-class DesignableView: UIView {
-}
-
-@IBDesignable
-class DesignableButton: UIButton {
-}
-
-@IBDesignable
-class DesignableLabel: UILabel {
-}
-
 
 extension UIView {
     

@@ -92,9 +92,15 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         txtPassword.placeholder = "Password".localized
         txtConPassword.placeholder = "Confirm Password".localized
         btnNext.setTitle("Send OTP".localized, for: .normal)
+        txtOTP.placeholder = "Enter Mobile OTP".localized
+        //lblPleaseCheckYourEmail.text = "".localized
+//        lblPleaseCheckYourEmail.text = "Resend OTP".localized
+        btnResentOtp.setTitle("Resend OTP".localized, for: .normal)
 //        lblHaveAccount.text = "".localized
 //        btnLogin.setTitle("".localized, for: normal)
     }
+    @IBOutlet weak var lblPleaseCheckYourEmail: UILabel!
+    @IBOutlet weak var btnResentOtp: UIButton!
     
     @IBAction func btnNext(_ sender: Any)
     {
@@ -196,7 +202,6 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             return false
         }
         
-        
         return true
     }
     
@@ -249,7 +254,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
                 
                 let alert = UIAlertController(title: appName.kAPPName, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
                 
-                let ok = UIAlertAction(title: "OK".localized, style: .default, handler: { ACTION in
+                let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: { ACTION in
                     //
                     let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
 //                    driverVC.viewDidLayoutSubviews()
@@ -286,7 +291,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             {
                 print(result)
                 let alert = UIAlertController(title: appName.kAPPName, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
             }
@@ -333,7 +338,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             {
                 let alert = UIAlertController(title: "Wrong OTP", message: "Please enter correct OTP".localized, preferredStyle: .alert)
                 
-                let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
+                let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
                 
                 alert.addAction(ok)
                 
