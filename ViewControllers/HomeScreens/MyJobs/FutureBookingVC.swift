@@ -41,7 +41,7 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         refreshControl.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControl.Event.valueChanged)
-        refreshControl.tintColor = UIColor.red
+        refreshControl.tintColor = ThemeYellowColor
         
         return refreshControl
     }()
@@ -93,7 +93,10 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-                
+        if Connectivity.isConnectedToInternet() == false {
+            self.refreshControl.endRefreshing()
+            return
+        }
         webserviceOFFurureBooking()
         if self.aryData.count > 0 {
             self.lblNodataFound.isHidden = true
@@ -144,7 +147,7 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         cell.lblPickUpTimeTitle.text = "Pick Up Time :".localized
         cell.lblTripDistance.text = "Distance Travel :".localized
-        cell.lblPaymentType.text = "Payment Type :".localized
+        cell.lblpeymentType.text = "Payment Type :".localized
        
         cell.viewCell.layer.cornerRadius = 10
         cell.viewCell.clipsToBounds = true
@@ -187,10 +190,9 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 cell.lblFlightNumber.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "FlightNumber", isNotHave: strNotAvailable) // data.object(forKey: "FlightNumber") as? String
                 cell.lblNotes.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Notes", isNotHave: strNotAvailable) //data.object(forKey: "Notes") as? String
         
-                if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-                    let KeyPaymentType = (SelectedLanguage == "en") ? "PaymentType" : "swahili_PaymentType"
-                    cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyPaymentType, isNotHave: strNotAvailable)
-                }
+        
+                    cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: GetPaymentTypeKey(), isNotHave: strNotAvailable)
+        
                  // data.object(forKey: "PaymentType") as? String
         
                 cell.viewSecond.isHidden = !expandedCellPaths.contains(indexPath)
@@ -324,8 +326,16 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
             }
             else {
-                print(result)
-            
+                self.refreshControl.endRefreshing()
+                if let res = result as? String {
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
+                }
+                else if let resDict = result as? NSDictionary {
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                else if let resAry = result as? NSArray {
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
             }
         }
     }
@@ -377,8 +387,9 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
 
             if (status) {
 //                print(result)
-                let alert = UIAlertController(title: "Booking Accepted", message: "", preferredStyle: .alert)
-                let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
+                //needToCheck
+                let alert = UIAlertController(title: "App Name".localized , message: ((result as! [String:AnyObject])[GetResponseMessageKey()] as! String), preferredStyle: .alert)
+                let OK = UIAlertAction(title: "OK".localized, style: .default, handler: { ACTION in
 //                    let myJobs = (self.navigationController?.children[0] as! TabbarController).childViewControllers.last as! MyJobsViewController
                     self.webserviceOFFurureBooking()
 //                    myJobs.btnPendingJobsClicked(myJobs.btnPendingJobs)
@@ -400,13 +411,13 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
         
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }

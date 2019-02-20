@@ -49,6 +49,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     var strId = String()
     var strType = String()
     
+
     var indexPathSample = NSIndexPath()
   
     //-------------------------------------------------------------
@@ -61,15 +62,16 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         viewMain.layer.cornerRadius = 8
         viewMain.layer.masksToBounds = true
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-//        tableView.separatorStyle = .none
+        //        tableView.separatorStyle = .none
         
         tableView.allowsMultipleSelection = false
         indexPathSample = NSIndexPath(row: 23, section: 0)
         
+       
         
         print(aryData.count)
         
@@ -90,14 +92,36 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
                 
             }
+        } else {
+            if let CarType = UserDefaults.standard.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) as? String {
+                if CarType != "" {
+                    let SelectedVehicles:[String] = (CarType.contains(",") == true) ? CarType.components(separatedBy: ",") : [CarType]
+                    
+                    for i in 0..<self.aryData.count
+                    {
+                        let vehicleName = ((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Name") as! String
+//                        let anotherVehicleID : Int = Int(vehicleID)!
+                        for j in 0..<SelectedVehicles.count
+                        {
+                            if (vehicleName == SelectedVehicles[j])
+//                                (Singletons.sharedInstance.arrVehicleClass.object(at: j)) as! Int)
+                            {
+                                self.aryChooseCareModel.append(((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Id") as! String)
+                                self.aryChooseCarName.append(((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Name") as! String)
+                                self.selectedCells.append(i)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.title = "App Name".localized
-
+        lblSelectCarType.text = "Vehicle Type".localized
         btnOK.setTitle("Done".localized, for: .normal)
-//        lblSelectModel.text = "Select Card".localized
     }
 
     override func didReceiveMemoryWarning()
@@ -119,16 +143,9 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarAndTaxiesTableViewCell") as! CarAndTaxiesTableViewCell
         cell.selectionStyle = .none
-        
-        
-//        cell.lblCarModelClass.text = "".localized
-//        cell.lblCarModelDescription.text = "".localized
-        
         let dictData = aryData.object(at: indexPath.row) as! NSDictionary
         
         cell.lblCarModelClass.text = dictData.object(forKey: "Name") as? String
-//        cell.lblCarModelDescription.text = "".localized
-        //dictData.object(forKey: "Description") as? String
         
         cell.btnTickMark.imageView?.contentMode = .scaleAspectFit
         cell.btnTickMark.setImage(UIImage.init(named: "Unchecked"), for: .normal)
@@ -151,6 +168,9 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
         
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
@@ -166,9 +186,12 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             else
             {
-                let sb = Snackbar()
-                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-                sb.show()
+                let ValidationAlert = UIAlertController(title: "App Name".localized, message: "You can only select three types".localized, preferredStyle: UIAlertController.Style.alert)
+                ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+                self.present(ValidationAlert, animated: true, completion: nil)
+//                let sb = Snackbar()
+//                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//                sb.show()
             }
             
         }

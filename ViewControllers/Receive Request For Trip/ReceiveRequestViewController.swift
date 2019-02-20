@@ -93,7 +93,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     func setLocalization(){
         lblReceiveRequest.text = "Receive Request".localized
         lblMessage.text = "New booking request arrived".localized
-        lblGrandTotal.text = "Grand Total is".localized
+//        lblGrandTotal.text = "Grand Total is".localized
         lblPickUpLocationInfo.text = "Pick up location".localized
         lblDropoffLocationInfo.text = "Drop off location".localized
         btnReject.setTitle("Reject".localized, for: .normal)
@@ -141,7 +141,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
 //            if strGrandTotal != "0" {
 //                lblGrandTotal.text = "Grand Total : \(strGrandTotal) \(currency)"
 //            } else if strEstimateFare != "0" {
-                lblGrandTotal.text = "Estimate Fare : \(strEstimateFare) \(currency)"
+                lblGrandTotal.text = "\("Estimate Fare".localized) : \(strEstimateFare) \(currency)"
 //            }
         
             lblMessage.text = strRequestMessage

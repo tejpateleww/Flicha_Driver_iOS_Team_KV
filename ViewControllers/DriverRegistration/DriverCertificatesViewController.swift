@@ -11,7 +11,8 @@ import UIKit
 
 class DriverCertificatesViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,WWCalendarTimeSelectorProtocol  {
 
-    
+ 
+
 //    @IBOutlet var btnDone: UIButton!
     @IBOutlet weak var constraintHeightOfSmallView: NSLayoutConstraint! // 50
     @IBOutlet weak var constraintBottomOfButton: NSLayoutConstraint! // 128
@@ -110,6 +111,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     @IBOutlet weak var imgAccreditationCertifi: UIImageView!
     @IBOutlet weak var imgCarRegistration: UIImageView!
     @IBOutlet weak var imgVehicleInsurience: UIImageView!
+    
     // ------------------------------------------------------------
     
     @IBOutlet weak var lblDriverLicence: UILabel!
@@ -147,19 +149,21 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
 //        self.PickingImageFromGallery()
 //        self.selectDate()
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized
+            , style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
     
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
@@ -170,7 +174,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
                 
            
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -182,20 +186,23 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     @IBAction func btnAccreditationCertiView(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized
+, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized
+, style: .default, handler: { ACTION in
 //            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.savedPhotosAlbum){
             
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .photoLibrary
-                self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                    UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
                 self.imagePicked = sender.tag
                 self.present(self.imagePicker, animated: true)
                 
 //            }
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized ,style: .default, handler: { ACTION in
    
             
             self.imagePicker.allowsEditing = false
@@ -208,7 +215,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
                 
             
         })
-        let Cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let Cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -224,20 +231,24 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     @IBAction func btnCarRegisView(_ sender: UIButton) {
 //        alert()
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized
+, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized
+, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             
                 self.imagePicked = sender.tag
                 self.present(self.imagePicker, animated: true)
                 
            
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized
+, style: .default, handler: { ACTION in
            
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
@@ -248,7 +259,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
                 
             
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -259,20 +270,22 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     @IBAction func btnVehicleInsuView(_ sender: UIButton) {
 //        alert()
         
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized
+, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized
+, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
-                
-          
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized
+, style: .default, handler: { ACTION in
             
             
             self.imagePicker.allowsEditing = false
@@ -281,10 +294,8 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
-                
-            
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -294,7 +305,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     func alert()
     {
-        let alert = UIAlertController(title: appName.kAPPName, message: "This feature will comming soon.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "App Name".localized, message: "This feature will comming soon.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
@@ -312,7 +323,8 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         picker.sourceType = .savedPhotosAlbum
         
         // picker.stopVideoCapture()
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.mediaTypes = [kUTTypeImage as String]
+//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     
@@ -334,29 +346,24 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         let pickedImage  = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         let selector = WWCalendarTimeSelector.instantiate()
         
-        
         // 2. You can then set delegate, and any customization options
         //        selector.delegate = self
-        selector.optionTopPanelTitle = "Please choose date"
+        selector.optionTopPanelTitle = "Please add expiry date".localized
         
         // 3. Then you simply present it from your view controller when necessary!
         selector.delegate = self
         
         if pickedImage == nil
         {
-            Utilities.showAlert("", message: "Please select any picture", vc: (UIApplication.shared.keyWindow?.rootViewController)!)
+            Utilities.showAlert("App Name".localized, message: "Please select Profile pic".localized, vc: (UIApplication.shared.keyWindow?.rootViewController)!)
         }
         else
         {
             if imagePicked == 1 {
                 imgDriverLicence.image = pickedImage
-                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    
                     self.present(selector, animated: true, completion: nil)
                 }
-                
-                
             } else if imagePicked == 2 {
                 imgAccreditationCertifi.image = pickedImage
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -469,22 +476,22 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         if imgDriverLicence.image == UIImage(named: "iconPlaceholderVehicle") {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
             
         }
         else if imgCarRegistration.image == UIImage(named: "iconPlaceholderVehicle") {
             
-             UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
+             UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
             
         }
         else if imgVehicleInsurience.image == UIImage(named: "iconPlaceholderVehicle") {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
 
         }
         else if imgAccreditationCertifi.image == UIImage(named: "iconPlaceholderVehicle") {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
             
         }
         else
@@ -629,14 +636,14 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
               
                 if let res = result as? String
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: (((result as! [String:AnyObject])["message"] as! NSArray).firstObject as! String), vc: self)//resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (((result as! [String:AnyObject])[GetResponseMessageKey()] as! NSArray).firstObject as! String), vc: self)//resDict.object(forKey: "message") as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
             
@@ -720,10 +727,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
          let BankAccountNo: String = userDefault.object(forKey: RegistrationFinalKeys.kBankAccountNo) as! String
         dictData[RegistrationFinalKeys.kBankAccountNo] = BankAccountNo as AnyObject
         
-    
-        
-        
-         let referralCode: String = userDefault.object(forKey: RegistrationFinalKeys.kReferralCode) as! String
+        let referralCode: String = userDefault.object(forKey: RegistrationFinalKeys.kReferralCode) as! String
         dictData[RegistrationFinalKeys.kReferralCode] = referralCode as AnyObject
         
 //        if let lat: String = userDefault.object(forKey: RegistrationFinalKeys.kLat) as? String {

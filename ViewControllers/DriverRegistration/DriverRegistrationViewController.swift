@@ -17,6 +17,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
     private let borderColor: UIColor = UIColor(hue: 1, saturation: 0, brightness: 1, alpha: 0.5)
     private let backgroundColor: UIColor = UIColor(hue: 1, saturation: 0, brightness: 1, alpha: 0.08)
     
+    @IBOutlet weak var lblTitle: UILabel!
     
 //    @IBOutlet var viewBank: UIView!
 //    @IBOutlet var viewDriver: UIView!
@@ -75,6 +76,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
+        self.lblTitle.text = "App Name".localized
 //        print(UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber))
         
         if UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber) != nil
@@ -256,6 +258,8 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         }
 
     }
+    
+    
     func setCornertoView(View: UIView, BGColor : UIColor, borderColor : UIColor, textcolor : UIColor , label : UILabel)
     {
         View.layer.cornerRadius = View.frame.size.width / 2
@@ -275,9 +279,11 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
     {
         super.viewWillAppear(true)
 //        self.setNavigationBar()
-
-        self.title = "App Name".localized
+        
+        
     }
+    
+    
     
     func setNavigationBar()
     {
@@ -437,6 +443,14 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
                 let personalVC = driverVC.children[pageNO - 1] as! DriverPersonelDetailsViewController
                 let picData = UserDefaults.standard.value(forKey: RegistrationFinalKeys.kDriverImage)
                 let image = UIImage(data:picData as! Data,scale:1.0)
+                
+//
+//                if let driverDecodedImageData: NSData = NSKeyedUnarchiver.unarchiveObject(with: userDefault.object(forKey:  RegistrationFinalKeys.kDriverImage) as! Data) as? NSData {
+//                    let image: UIImage = UIImage(data: driverDecodedImageData as Data)!
+//
+//
+//                }
+                
                 personalVC.txtDOB.text = UserDefaults.standard.value(forKey: RegistrationFinalKeys.kKeyDOB) as? String
                 personalVC.txtFullName.text = UserDefaults.standard.value(forKey: RegistrationFinalKeys.kFullname) as? String
                 personalVC.txtAddress.text = UserDefaults.standard.value(forKey: RegistrationFinalKeys.kAddress) as? String
@@ -448,17 +462,21 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
                 }
                 else
                 {
-                    personalVC.btnMale.setImage(UIImage.init(named: "iconRadioSelected"), for: .normal)
+                    personalVC.btnFemale.setImage(UIImage.init(named: "iconRadioSelected"), for: .normal)
                 }
 
-                if image == nil
-                {
-                    personalVC.imgProfile.image = UIImage.init(named: "iconUsers")
+                if let driverDecodedImageData: NSData = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey:  RegistrationFinalKeys.kDriverImage) as! Data) as? NSData {
+                    let image: UIImage = UIImage(data: driverDecodedImageData as Data)!
+                    if image == nil
+                    {
+                        personalVC.imgProfile.image = UIImage.init(named: "iconUsers")
+                    }
+                    else
+                    {
+                        personalVC.imgProfile.image = image
+                    }
                 }
-                else
-                {
-                    personalVC.imgProfile.image = image
-                }
+             
             }
             else if pageNO == 3
             {
@@ -489,7 +507,12 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
                 VehicleVC.txtCarType.text = UserDefaults.standard.value(forKey: RegistrationFinalKeys.kVehicleClass) as? String
                 VehicleVC.txtVehicleMake.text = UserDefaults.standard.value(forKey: RegistrationFinalKeys.kCompanyModel) as? String
                 VehicleVC.txtNumberPassenger.selectedItem = UserDefaults.standard.value(forKey: RegistrationFinalKeys.kNumberOfPasssenger) as? String
+                
+
             }
+            
+         
+
            
             let page = self.view.frame.size.width * CGFloat(pageNO - 1)
             self.scrollObj.setContentOffset(CGPoint(x: page, y: 0), animated: true)
@@ -501,10 +524,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
                 for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
                     print("\(key) = \(value) \n")
                     
-                    if key == "Token" {
-                        
-                    }
-                    else {
+                    if(key != "Token" && key != "i18n_language") {
                         UserDefaults.standard.removeObject(forKey: key)
                     }
                 }

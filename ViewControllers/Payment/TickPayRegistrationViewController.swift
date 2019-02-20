@@ -42,15 +42,15 @@ class TickPayRegistrationViewController: UIViewController,UIImagePickerControlle
     }
     
     @IBAction func btnUploadDrivingLicence(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
         alert.addAction(Gallery)
         alert.addAction(Camera)
@@ -62,12 +62,12 @@ class TickPayRegistrationViewController: UIViewController,UIImagePickerControlle
         
         if(txtCompanyName.text?.count == 0)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please insert Company Name", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please insert Company Name", vc: self)
             return false
         }
         else if(txtAbn.text?.count == 0)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please insert Company Name", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please insert Company Name", vc: self)
             return false
         }
         
@@ -89,7 +89,8 @@ class TickPayRegistrationViewController: UIViewController,UIImagePickerControlle
         picker.sourceType = .photoLibrary
         
         // picker.stopVideoCapture()
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.mediaTypes = [kUTTypeImage as String]
+//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     

@@ -165,7 +165,7 @@ class SetPasscodeViewController: UIViewController {
                                 Singletons.sharedInstance.setPasscode = checkPasscode
                                 UserDefaults.standard.set(Singletons.sharedInstance.setPasscode, forKey: "Passcode")
                                 
-                                UtilityClass.showAlertWithCompletion(appName.kAPPName, message: "Passcode change successfully", vc: self, completionHandler: { ACTION in
+                                UtilityClass.showAlertWithCompletion("App Name".localized, message: "Passcode change successfully", vc: self, completionHandler: { ACTION in
                                     
                                     self.navigationController?.popViewController(animated: true)
                                 })

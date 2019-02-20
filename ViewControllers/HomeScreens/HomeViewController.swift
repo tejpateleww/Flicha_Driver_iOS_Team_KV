@@ -817,7 +817,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     func methodsAfterConnectingToSocket()
     {
         if defaultLocation.coordinate.latitude == 0 || defaultLocation.coordinate.longitude == 0 {
-            UtilityClass.showAlert("Missing", message: "Latitude or Longitude", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Latitude or Longitude", vc: self)
         }
         else {
             self.socketCallForReceivingBookingRequest()                 // ReceiveBookingRequest
@@ -887,7 +887,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     next.strDropoffLocation = DropoffLocation
                 }
                 
-                if let RequestMessage = ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: "message") as? String {
+                if let RequestMessage = ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as? String {
                     next.strRequestMessage = RequestMessage
                 }
                 self.addLocalNotification()
@@ -1016,11 +1016,11 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             //            UtilityClass.showAlert("Future Booking Request Arrived.", message: (msg.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
             
-            let alert = UIAlertController(title: "Future Booking Request Arrived.",
-                                          message: (msg.object(at: 0) as! NSDictionary).object(forKey: "message") as? String,
+            let alert = UIAlertController(title: "App Name".localized,
+                                          message: (msg.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as? String,
                                           preferredStyle: UIAlertController.Style.alert)
             
-            let okAction = UIAlertAction(title: "Open", style: .default, handler: { (action) in
+            let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: { (action) in
                 
                 Singletons.sharedInstance.isFromNotification = true
                 self.tabBarController?.selectedIndex = 1
@@ -1110,7 +1110,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             })
             
             
-            let cancelAction = UIAlertAction(title: "Dismiss",
+            let cancelAction = UIAlertAction(title: "Dismiss".localized,
                                              style: .destructive, handler: nil)
             
             alert.addAction(cancelAction)
@@ -1215,7 +1215,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             {
                 
                 //                self.btnCompleteTrip.isHidden = true
-                UtilityClass.showAlert(appName.kAPPName, message: (((data as NSArray).object(at: 0) as! NSDictionary)).object(forKey: "message") as! String, vc: self)
+                UtilityClass.showAlert("App Name".localized, message: (((data as NSArray).object(at: 0) as! NSDictionary)).object(forKey: GetResponseMessageKey()) as! String, vc: self)
             }
         })
     }
@@ -1583,7 +1583,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             print("ReceiveMoneyNotify: \(data)")
             
-            UtilityClass.showAlert(appName.kAPPName, message: ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
             
         })
     }
@@ -1818,10 +1818,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             let msg = (data as NSArray)
             
-            let alert = UIAlertController(title: "Tip Alert",
-                                          message: (msg.object(at: 0) as! NSDictionary).object(forKey: "message") as? String,
+            let alert = UIAlertController(title: "App Name".localized,
+                                          message: (msg.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as? String,
                                           preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: { (action) in
                 //                Utilities.showActivityIndicator()
                 
                 //                if SingletonClass.sharedInstance.passengerPaymentType == "cash" || SingletonClass.sharedInstance.passengerPaymentType == "Cash"
@@ -1921,10 +1921,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             let msg = (data as NSArray)
             
-            let alert = UIAlertController(title: "Tip Alert",
-                                          message: (msg.object(at: 0) as! NSDictionary).object(forKey: "message") as? String,
+            let alert = UIAlertController(title: "App Name".localized,
+                                          message: (msg.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as? String,
                                           preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: { (action) in
                 Utilities.showActivityIndicator()
                 
                 //                if SingletonClass.sharedInstance.passengerPaymentType == "cash" || SingletonClass.sharedInstance.passengerPaymentType == "Cash"
@@ -2056,7 +2056,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         
         
         if bookingID == "" || driverID == "" {
-            UtilityClass.showAlert("Missing", message: "Booking ID or Driver ID", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Booking ID or Driver ID", vc: self)
         }
         else
         {
@@ -2079,7 +2079,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     //-------------------------------------------------------------
     func BookingRejected() {
         if bookingID == "" || driverID == "" {
-            UtilityClass.showAlert("Missing", message: "Booking ID or Driver ID", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Booking ID or Driver ID", vc: self)
         }
         else {
             
@@ -2131,7 +2131,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             if !(Singletons.sharedInstance.isBookNowOrBookLater) {
                 
-                UtilityClass.showAlert("Request Cancelled", message: (((data as NSArray).object(at: 0) as! NSDictionary)).object(forKey: "message") as! String, vc: self )//((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController)!)
+                UtilityClass.showAlert("App Name".localized, message: (((data as NSArray).object(at: 0) as! NSDictionary)).object(forKey: GetResponseMessageKey()) as! String, vc: self )//((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController)!)
                 self.resetMapView()
                 Singletons.sharedInstance.bookingId = ""
                 if self.driverMarker != nil {
@@ -2158,8 +2158,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             if !(Singletons.sharedInstance.isBookNowOrBookLater) {
                 
-                let alert = UIAlertController(title: appName.kAPPName, message: ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: "message") as? String, preferredStyle: .alert)
-                let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
+                let alert = UIAlertController(title: "App Name".localized, message: ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as? String, preferredStyle: .alert)
+                let OK = UIAlertAction(title: "OK".localized, style: .default, handler: { ACTION in
                     
                     self.resetMapView()
                     Singletons.sharedInstance.isRequestAccepted = false
@@ -2181,7 +2181,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                             if let passengerDataAdvance = dictBookinInfoIsDictData.object(at: 0) as? NSDictionary {
                                 if let nameOfPassenger = passengerDataAdvance.object(forKey: "PassengerName") as? String {
                                     
-                                    let alert = UIAlertController(title: appName.kAPPName, message: "\(dictFirstObjectIsDict.object(forKey: "message") as? String ?? "Trip has been canceled by passenger") \(nameOfPassenger)", preferredStyle: .alert)
+                                    let alert = UIAlertController(title: "App Name".localized, message: "\(dictFirstObjectIsDict.object(forKey: GetResponseMessageKey()) as? String ?? "Trip has been canceled by passenger.".localized) \(nameOfPassenger)", preferredStyle: .alert)
                                     let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
                                         
                                     })
@@ -2232,7 +2232,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     @IBAction func btnStartTrip(_ sender: UIButton) {
         
         if(Singletons.sharedInstance.driverDuty != "1") {
-            UtilityClass.showAlert("Missing", message: "Get Online first.", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Get Online first.", vc: self)
             return
         }
         
@@ -2249,7 +2249,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             if advanceBookingID == "" || driverID == "" {
                 
-                UtilityClass.showAlert("Missing", message: "Booking ID or Driver ID", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Booking ID or Driver ID", vc: self)
                 
             }
             else {
@@ -2263,7 +2263,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             if bookingID == "" || driverID == "" {
                 
-                UtilityClass.showAlert("Missing", message: "Booking ID or Driver ID", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Booking ID or Driver ID", vc: self)
                 
             }
             else {
@@ -2277,15 +2277,15 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     @IBAction func btnCancelTrip(_ sender: Any) {
         
         if(Singletons.sharedInstance.driverDuty != "1") {
-            UtilityClass.showAlert("Missing", message: "Get Online first.", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Get online First.".localized, vc: self)
             return
         }
         
-        let CancelTripAlert = UIAlertController(title: "", message: "Are you sure you want to cancel the trip?", preferredStyle: .alert)
-        CancelTripAlert.addAction(UIAlertAction(title: "Yes", style: .default , handler: { (UIAlertAction) in
+        let CancelTripAlert = UIAlertController(title: "App Name".localized, message: "Are you sure you want to cancel the trip?".localized, preferredStyle: .alert)
+        CancelTripAlert.addAction(UIAlertAction(title: "Yes".localized, style: .default , handler: { (UIAlertAction) in
             self.cancelTrip()
         }))
-        CancelTripAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler:   nil))
+        CancelTripAlert.addAction(UIAlertAction(title: "No".localized, style: .cancel, handler:   nil))
         
         self.present(CancelTripAlert, animated: true, completion: nil)
         
@@ -2334,7 +2334,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     self.driverMarker.title = ""
                 }
                 Singletons.sharedInstance.isBookNowOrBookLater = false
-                UtilityClass.showAlert("Request Cancelled", message: "Your request has been cancelled successfully.", vc: self )
+                //needToCheck
+                UtilityClass.showAlert("App Name".localized, message: "Trip has been cancelled.".localized, vc: self )
                 self.resetMapView()
                 if let resDict = result as? NSDictionary {
                     //                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
@@ -2343,15 +2344,17 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             }
             else {
                 
-                UtilityClass.showAlertWithCompletion(appName.kAPPName, message: "Please cancel trip again", vc: self, completionHandler: { (status) in
+                UtilityClass.showAlertWithCompletion("App Name".localized, message: "Please try again later.".localized, vc: self, completionHandler: { (status) in
                     self.webserviceOfCurrentBooking()
                 })
                 
+//                "Please cancel trip again"
+                
                 //                if let res = result as? String {
-                //                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                //                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 //                }
                 //                else if let resDict = result as? NSDictionary {
-                //                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                //                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: "message") as! String, vc: self)
                 //                }
                 //                else if let resAry = result as? NSArray {
                 //                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
@@ -2575,7 +2578,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     @IBAction func btnCompleteTrip(_ sender: UIButton)
     {
         if(Singletons.sharedInstance.driverDuty != "1") {
-            UtilityClass.showAlert("Missing", message: "Get Online first.", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Get online First.".localized, vc: self)
             return
         }
         
@@ -2688,8 +2691,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         //        else
         //        {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Tip", message: "Do you want to get tip from passenger?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { [weak alert] (_) in
+        let alert = UIAlertController(title: "Tip".localized, message: "Want to ask about Tips?".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes".localized, style: .default, handler: { [weak alert] (_) in
             
             
             //                        Utilities.showActivityIndicator()
@@ -2739,7 +2742,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             //                        })
             
         }))
-        alert.addAction(UIAlertAction(title: "NO", style: .destructive, handler: { [] (_) in
+        alert.addAction(UIAlertAction(title: "No".localized, style: .destructive, handler: { [] (_) in
             
             Utilities.showActivityIndicator()
             if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
@@ -2989,7 +2992,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     {
         if isAdvanceBooking {
             if advanceBookingID == "" {
-                UtilityClass.showAlert("Missing", message: "Booking ID", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Booking Id".localized, vc: self)
             }
             else {
 //                if self.btnWaiting.currentTitle == "Hold Trip".localized {
@@ -3069,7 +3072,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
             if bookingID == "" && Singletons.sharedInstance.isRequestAccepted == true
             {
-                UtilityClass.showAlert("Missing", message: "Booking ID", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Booking Id".localized, vc: self)
             }
             else
             {
@@ -3657,7 +3660,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                                     }
                                     
                                     if finalDistance == 0 {
-                                        UtilityClass.showAlert(appName.kAPPName, message: "Distance is 0 by not countable distance", vc: self)
+                                        UtilityClass.showAlert("App Name".localized, message: "Distance is 0 by not countable distance", vc: self)
                                         
                                     }
                                     else {
@@ -3710,7 +3713,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 }
                 else {
                     print  ("Destination is nil.")
-                    UtilityClass.showAlert(appName.kAPPName, message: "Destination is nil.", vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: "Destination is nil.", vc: self)
                     DispatchQueue.main.async {
                         DispatchQueue.main.async {
                             UtilityClass.hideACProgressHUD()
@@ -3724,7 +3727,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             }
             else {
                 print  ("Origin is nil")
-                UtilityClass.showAlert(appName.kAPPName, message: "Origin is nil.", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Origin is nil.", vc: self)
                 DispatchQueue.main.async {
                     UtilityClass.hideACProgressHUD()
                     //                    print("Function: \(#function), line: \(#line)")
@@ -4288,7 +4291,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 
                 if let res = result as? String
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if result is NSDictionary
                 {
@@ -4348,7 +4351,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     self.webserviceOFGetAllCards()
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 
             }
@@ -4384,7 +4387,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     
                     
                     self.playSound(strName: "\(RingToneSound)")
-                    UtilityClass.showAlertWithCompletion("Alert! This is a cash job", message: "Please Collect Money From Passenger", vc: self, completionHandler: { ACTION in
+                    UtilityClass.showAlertWithCompletion("Alert! This is a cash job".localized, message: "Please Collect Money From Passenger".localized, vc: self, completionHandler: { ACTION in
                         
                         DispatchQueue.main.async {
                             self.stopSound()
@@ -4393,6 +4396,17 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                         
                         UserDefaults.standard.set(Singletons.sharedInstance.isRequestAccepted, forKey: tripStatus.kisRequestAccepted)
                         UserDefaults.standard.set(Singletons.sharedInstance.isTripContinue, forKey: tripStatus.kisTripContinue)
+                        
+                        
+                        if let TripToDesting = self.dictCompleteTripData.value(forKey: "trip_to_destin") as? Int {
+                            if (TripToDesting == 1) {
+                                Singletons.sharedInstance.dictTripDestinationLocation["location"] = self.dictCompleteTripData.value(forKey: "location") as AnyObject
+                                Singletons.sharedInstance.dictTripDestinationLocation["trip_to_destin"] = 0 as AnyObject
+                             
+                                self.userDefault.set(false, forKey: "buttonSelected")
+                                self.userDefault.synchronize()
+                            }
+                        }
                         
                         DispatchQueue.main.async {
                             
@@ -4421,7 +4435,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                             //                            alert.addAction(Cancel)
                             //                            self.present(alert, animated: true, completion: nil)
                             
-                            let alert = UIAlertController(title: appName.kAPPName, message: paymentMessage, preferredStyle: UIAlertController.Style.alert)
+                            let alert = UIAlertController(title: "App Name".localized, message: paymentMessage, preferredStyle: UIAlertController.Style.alert)
                             
                             alert.setValue(NSAttributedString(string: alert.title!, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 21, weight: UIFont.Weight.medium), NSAttributedString.Key.foregroundColor : UIColor.red]), forKey: "attributedTitle")
                             
@@ -4429,7 +4443,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                             
                             //        alert.setValuesForKeys([NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue).rawValue: UIColor.red])
                             
-                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { ACTION in
+                            alert.addAction(UIAlertAction(title: "OK".localized, style: UIAlertAction.Style.default, handler: { ACTION in
                                 DispatchQueue.main.async {
                                     self.setCarAfterTrip()
                                     self.completeTripInfo()
@@ -4456,25 +4470,27 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 }
             }
             else {
-                UtilityClass.showAlertWithCompletion(appName.kAPPName, message: "Please complete trip again", vc: self, completionHandler: { (status) in
+                UtilityClass.showAlertWithCompletion("App Name".localized, message: "Please try again later.".localized, vc: self, completionHandler: { (status) in
                     self.webserviceOfCurrentBooking()
                 })
                 
+//                "Please complete trip again"
+                
                 //                if let res: String = result as? String {
-                //                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                //                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 //                }
                 //                else if let resDict = result as? NSDictionary {
                 //
                 //                    if let msgIsArray = resDict.object(forKey: "message") as? NSArray {
-                //                        UtilityClass.showAlert(appName.kAPPName, message: msgIsArray.firstObject as! String, vc: self)
+                //                        UtilityClass.showAlert("App Name".localized, message: msgIsArray.firstObject as! String, vc: self)
                 //                    } else {
-                //                        UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                //                        UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: "message") as! String, vc: self)
                 //                    }
                 //
                 //
                 //                }
                 //                else if let resAry = result as? NSArray {
-                //                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                //                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
                 //                }
                 
             }
@@ -4554,13 +4570,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             else {
                 
                 if let res: String = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -4584,13 +4600,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -4630,7 +4646,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 Singletons.sharedInstance.isDriverLoggedIN = false
                 UserDefaults.standard.set(false, forKey: kIsSocketEmited)
                 
-                Utilities.showAlertWithCompletion(AppNAME, message: "Your account was just signed in to a new device.", vc: ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController)!, completionHandler: { (status) in
+                Utilities.showAlertWithCompletion(AppNAME, message: "Your session has been expired, please try to login again.".localized, vc: ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController)!, completionHandler: { (status) in
                     self.performSegue(withIdentifier: "SignOutFromHome", sender: (Any).self)
                 })
                 
@@ -4638,13 +4654,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             else {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -4813,7 +4829,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 
                 if let res = result as? String
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if result is NSDictionary
                 {
@@ -4873,7 +4889,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     self.webserviceOFGetAllCards()
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 
             }
@@ -4954,7 +4970,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         else {
             
             NSLog("Can't use com.google.maps://");
-            UtilityClass.showAlert(appName.kAPPName, message: "Please install Google Maps", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please install Google Maps.".localized, vc: self)
         }
     }
     
@@ -5044,7 +5060,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 }
                 else
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong", vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: "Something went wrong!".localized, vc: self)
                 }
                 
                 if ((result as AnyObject)["meter_model"] != nil)
@@ -5053,13 +5069,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 }
                 else
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong", vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: "Something went wrong!".localized, vc: self)
                 }
                 
             }
             else
             {
-                UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Something went wrong!".localized, vc: self)
             }
         }
     }

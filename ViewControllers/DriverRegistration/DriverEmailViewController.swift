@@ -160,45 +160,45 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         
         let isEmailAddressValid = isValidEmailAddress(emailID: txtEmail.text!)
         
-        if txtMobile.text!.count == 0
+        if txtMobile.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter mobile number".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter mobile number".localized, vc: self)
             return false
         }
-        else if txtMobile.text!.count != 10
+        else if txtMobile.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count != 10
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid mobile number".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter valid mobile number".localized, vc: self)
             return false
         }
         
-        else if txtEmail.text!.count == 0
+        else if txtEmail.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter email".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter email".localized, vc: self)
             return false
         }
         else if (!isEmailAddressValid)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid email".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter a valid email".localized, vc: self)
             
             return false
         }
-        else if txtPassword.text!.count == 0
+        else if txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter password".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter password".localized, vc: self)
             return false
-        }else if txtPassword.text!.count < 6
+        } else if (txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count)! < 8
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Password must contain at least 6 characters".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Password must contain at least 8 characters.".localized, vc: self)
             return false
         }
-        else if txtConPassword.text!.count == 0
+        else if txtConPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter confirm password".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter confirm password".localized, vc: self)
             return false
         }
         else if txtConPassword.text! != txtPassword.text
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Password and confirm password must be same".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Password and confirm password must be same".localized, vc: self)
             return false
         }
         
@@ -252,7 +252,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
                 self.userDefault.set(otp, forKey: OTPCodeStruct.kOTPCode)
                 self.userDefault.set(self.aryOfCompany, forKey: OTPCodeStruct.kCompanyList)
                 
-                let alert = UIAlertController(title: appName.kAPPName, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: result.object(forKey: GetResponseMessageKey()) as? String, preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: { ACTION in
                     //
@@ -290,7 +290,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             else
             {
                 print(result)
-                let alert = UIAlertController(title: appName.kAPPName, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: result.object(forKey: GetResponseMessageKey()) as? String, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
@@ -306,7 +306,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         
         if Utilities.isEmpty(str: txtOTP.text)
         {
-            Utilities.showAlert("", message: "Please enter OTP".localized, vc: (UIApplication.shared.keyWindow?.rootViewController)!)
+            Utilities.showAlert("App Name".localized, message: "Please enter OTP".localized, vc: (UIApplication.shared.keyWindow?.rootViewController)!)
             return false
         }
         else
@@ -336,7 +336,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             }
             else
             {
-                let alert = UIAlertController(title: "Wrong OTP", message: "Please enter correct OTP".localized, preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Please enter correct OTP".localized, preferredStyle: .alert)
                 
                 let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
                 

@@ -66,6 +66,9 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.set("", forKey: RegistrationFinalKeys.kCarThreeTypeName)
+        UserDefaults.standard.synchronize()
+        
         if DeviceType.IS_IPHONE_4_OR_LESS || DeviceType.IS_IPAD {
             constraintHeightOfImage.constant = 120
             constraintHeightOfTextFields.constant = 30
@@ -132,6 +135,7 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
     {
         txtNumberPassenger.selectedItem = item
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -152,20 +156,26 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
             let carType: String = UserDefaults.standard.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) as! String
             txtCarType.text = carType
         }
-        
     }
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     {
         if textField == txtCarType
         {
 //            self.view.endEditing(true)
             self.view.endEditing(true)
-            CarAndTexis()
+            self.perform(#selector(openCarAndTaxis), with: nil, afterDelay: 0.3)
+           
             return false
         }
         
         return true
     }
+    
+    @objc func openCarAndTaxis() {
+         CarAndTexis()
+    }
+    
     //-------------------------------------------------------------
     // MARK: - Outlets
     //-------------------------------------------------------------
@@ -201,32 +211,17 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         Singletons.sharedInstance.boolTaxiModel = true
         userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")
         
-        let sb = Snackbar()
+        let validator = isValidateForCarAndTaxi()
         
-        if txtCompany.text == "" {
-            
-            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtCarType.text == "" {
-            
-            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtVehicleRegistrationNumber.text == "" {
-            
-            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if imgVehicle.image == nil {
-            
-            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        } else {
+        if validator.0 == true {
             self.view.endEditing(true)
             CarAndTexis()
+        } else {
+    
+            let ValidationAlert = UIAlertController(title: "App Name".localized, message: validator.1, preferredStyle: UIAlertController.Style.alert)
+            ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+            self.present(ValidationAlert, animated: true, completion: nil)
         }
-        
         
         
 //        let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
@@ -243,55 +238,29 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         Singletons.sharedInstance.boolTaxiModel = true
         userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")
         
-        let sb = Snackbar()
+        let validator = isValidateForNext()
         
-        if txtVehicleRegistrationNumber.text == "" {
-            
-            sb.createWithAction(text: "Please enter vehicle plate number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtCompany.text == "" {
-            
-            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtVehicleMake.text == "" {
-            
-            sb.createWithAction(text: "Please enter vehicle make".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if (txtCarType.text as? String) == "" {
-            
-            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtNumberPassenger.selectedItem == nil ||  txtNumberPassenger.selectedItem == "" || txtNumberPassenger.selectedItem == "Number Of Passenger".localized
-        {
-            
-            sb.createWithAction(text: "Please enter no of passenger".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if imgVehicle.image == UIImage(named: "iconCARPlaceholder") || imgVehicle.image == nil //UIImage.init(named: "") 
-        {
-
-            sb.createWithAction(text: "Please select vehicle image".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else
-        {
+        if validator.0 == true {
             setData()
             let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
             
             driverVC.viewFifth.backgroundColor = ThemeYellowColor
-//            driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
+            //            driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
             let x = self.view.frame.size.width * 4
             driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
             UserDefaults.standard.set(4, forKey: savedDataForRegistration.kPageNumber)
             
             driverVC.viewDidLayoutSubviews()
             
+        } else {
+            
+            let ValidationAlert = UIAlertController(title: "App Name".localized, message: validator.1, preferredStyle: UIAlertController.Style.alert)
+            ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+            self.present(ValidationAlert, animated: true, completion: nil)
         }
+        
     }
+
     func didgetIdAndName(id: String, Name: String  ) {
         
         if id == "" || Name == "" {
@@ -317,38 +286,141 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         Singletons.sharedInstance.boolTaxiModel = false
         userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")
         
-        let sb = Snackbar()
+        let validator = isValidateForDeliveryService()
+        
+        if validator.0 == true {
+            DeliveryService()
+        }  else {
+            
+            let ValidationAlert = UIAlertController(title: "App Name".localized, message: validator.1, preferredStyle: UIAlertController.Style.alert)
+            ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+            self.present(ValidationAlert, animated: true, completion: nil)
+        }
+        
+        
+        //        let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
+        //        let x = self.view.frame.size.width * 5
+        //        driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
+        
+}
+    
+
+    func isValidateForDeliveryService() -> (Bool,String) {
+        var isValidate:Bool = true
+        var validatorMessage:String = ""
+    
+//        let sb = Snackbar()
         
         if txtCompany.text == "" {
-            
-            sb.createWithAction(text: "Enter Company Name", actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
+            isValidate = false
+            validatorMessage = "Enter Company Name"
+//            sb.createWithAction(text: "Enter Company Name", actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
         }
         else if txtCarType.text == "" {
-            
-            sb.createWithAction(text: "Enter Car Color", actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
+            isValidate = false
+            validatorMessage = "Enter Car Color"
+//            sb.createWithAction(text: "Enter Car Color", actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
         }
         else if txtVehicleRegistrationNumber.text == "" {
-            
-            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            sb.show()
+            isValidate = false
+            validatorMessage = "Vehicle Registration Document".localized
+//            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
         }
         else if imgVehicle.image == UIImage(named: "iconProfileLocation") {
-            
-            sb.createWithAction(text: "Choose Photo".localized, actionTitle:"Dismiss".localized, action: { print("Button is push") })
-            sb.show()
-        } else {
-            DeliveryService()
+            isValidate = false
+            validatorMessage = "Choose Photo".localized
+//            sb.createWithAction(text: "Choose Photo".localized, actionTitle:"Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
         }
         
-//        let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
-//        let x = self.view.frame.size.width * 5
-//        driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
-        
+        return (isValidate,validatorMessage)
     }
+
+    func isValidateForNext() -> (Bool,String) {
+        var isValidate:Bool = true
+        var validatorMessage:String = ""
     
-    
+//        let sb = Snackbar()
+        
+        if txtVehicleRegistrationNumber.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            validatorMessage = "Please enter vehicle plate number".localized
+//            sb.createWithAction(text: "Please enter vehicle plate number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtCompany.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            validatorMessage = "Please enter vehicle model".localized
+//            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtVehicleMake.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            validatorMessage = "Please enter vehicle make".localized
+//            sb.createWithAction(text: "Please enter vehicle make".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtCarType.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            validatorMessage = "Please select vehicle type".localized
+//            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtNumberPassenger.selectedItem == nil ||  txtNumberPassenger.selectedItem == "" || txtNumberPassenger.selectedItem == "Number Of Passenger".localized
+        {
+            isValidate = false
+            validatorMessage = "Please enter no of passenger".localized
+//            sb.createWithAction(text: "Please enter no of passenger".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if imgVehicle.image == UIImage(named: "iconCARPlaceholder") || imgVehicle.image == nil //UIImage.init(named: "")
+        {
+            isValidate = false
+            validatorMessage = "Please select vehicle image".localized
+//            sb.createWithAction(text: "Please select vehicle image".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        return(isValidate,validatorMessage)
+    }
+
+    func isValidateForCarAndTaxi() -> (Bool,String) {
+        var isValidate:Bool = true
+        var validatorMessage:String = ""
+        
+//        let sb = Snackbar()
+        
+        if txtCompany.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            validatorMessage = "Please enter vehicle model".localized
+//            sb.createWithAction(text: "Please enter vehicle model".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtCarType.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            validatorMessage = "Please select vehicle type".localized
+//            sb.createWithAction(text: "Please select vehicle type".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtVehicleRegistrationNumber.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            validatorMessage = "Vehicle Registration Document".localized
+//            sb.createWithAction(text: "Vehicle Registration Document".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if imgVehicle.image == nil {
+            isValidate = false
+            validatorMessage = "Choose Photo".localized
+//            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        
+        return(isValidate,validatorMessage)
+    }
+
+
     func CarAndTexis()
     {
         Singletons.sharedInstance.isDriverVehicleTypesViewControllerFilled = true
@@ -384,8 +456,6 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
                     self.aryDataCarsAndTaxiVehicleTypes.append(strCarModelNames)
                 }
                 
-               
-                
                 self.getVehicleName()
                 
             }
@@ -393,13 +463,13 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
             {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -449,10 +519,12 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized
+, style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized
+, style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
@@ -478,7 +550,8 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         picker.sourceType = .photoLibrary
         
         // picker.stopVideoCapture()
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.mediaTypes = [kUTTypeImage as String]
+//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     

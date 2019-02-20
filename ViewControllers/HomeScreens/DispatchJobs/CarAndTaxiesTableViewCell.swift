@@ -35,7 +35,7 @@ class CarAndTaxiesTableViewCell: UITableViewCell {
     //-------------------------------------------------------------
     
     @IBOutlet weak var lblCarModelClass: UILabel!
-    @IBOutlet weak var lblCarModelDescription: UILabel!
+//    @IBOutlet weak var lblCarModelDescription: UILabel!
     
     @IBOutlet weak var btnTickMark: UIButton!
     

@@ -293,7 +293,7 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
     @objc func  Support(){
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as! webViewVC
         viewController.headerName = "Support".localized
-//        viewController.headerName = "\(appName.kAPPName) - Terms & Conditions"
+//        viewController.headerName = "\("App Name".localized) - Terms & Conditions"
         viewController.strURL = WebSupport.SupportURL
 //        "https://www.tantaxitanzania.com/front/termsconditions"
         self.navigationController?.pushViewController(viewController, animated: true)

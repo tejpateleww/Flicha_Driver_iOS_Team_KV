@@ -357,6 +357,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSubmitButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnSubmit:" destination="R0Y-qC-1zB" eventType="touchUpInside" id="wUQ-7U-Djv"/>
                                 </connections>
@@ -373,7 +376,7 @@
                                                 <color key="tintColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isLeftViewNeeded" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="LeftImage" value="iconLock"/>
@@ -398,7 +401,7 @@
                                                 <color key="tintColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isLeftViewNeeded" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="LeftImage" value="iconLock"/>
@@ -14018,12 +14021,12 @@ EE15IEpvYnM
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8wK-Cw-PhN" kind="relationship" relationship="rootViewController" id="SaF-7i-1t5"/>
+                        <segue destination="lT6-lq-cDb" kind="relationship" relationship="rootViewController" id="b9J-Nu-iXr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibx-yx-lEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312" y="318"/>
+            <point key="canvasLocation" x="1309" y="318"/>
         </scene>
         <!--termsConditionWebviewVc-->
         <scene sceneID="Bib-00-cfC">
@@ -14530,6 +14533,55 @@ EE15IEpvYnM
             </objects>
             <point key="canvasLocation" x="7594" y="293"/>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="TEe-bN-tnS">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="lT6-lq-cDb" customClass="SplashViewController" customModule="TanTaxi_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rlX-ag-1BF"/>
+                        <viewControllerLayoutGuide type="bottom" id="zHM-da-OYe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YIc-dZ-7dZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgSplashBackground" translatesAutoresizingMaskIntoConstraints="NO" id="jET-mD-vWb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="otr-xG-6sl">
+                                <rect key="frame" x="54.5" y="30" width="211.5" height="211.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="otr-xG-6sl" secondAttribute="height" multiplier="1:1" id="5q0-Ge-B6H"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconDriver" translatesAutoresizingMaskIntoConstraints="NO" id="4Rm-Ku-fcN">
+                                <rect key="frame" x="117.5" y="241.5" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="4sA-QB-hDU"/>
+                                    <constraint firstAttribute="width" secondItem="4Rm-Ku-fcN" secondAttribute="height" multiplier="1:1" id="vpI-Re-PAv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jET-mD-vWb" firstAttribute="top" secondItem="YIc-dZ-7dZ" secondAttribute="top" id="2P6-SO-6fZ"/>
+                            <constraint firstItem="4Rm-Ku-fcN" firstAttribute="top" secondItem="otr-xG-6sl" secondAttribute="bottom" id="G3H-kb-t6i"/>
+                            <constraint firstItem="otr-xG-6sl" firstAttribute="width" secondItem="otr-xG-6sl" secondAttribute="height" multiplier="1:1" id="H9B-o3-XqF"/>
+                            <constraint firstItem="otr-xG-6sl" firstAttribute="top" secondItem="rlX-ag-1BF" secondAttribute="bottom" constant="10" id="Kfb-7I-REl"/>
+                            <constraint firstItem="4Rm-Ku-fcN" firstAttribute="centerY" secondItem="jET-mD-vWb" secondAttribute="centerY" id="ccU-35-BOc"/>
+                            <constraint firstItem="jET-mD-vWb" firstAttribute="leading" secondItem="YIc-dZ-7dZ" secondAttribute="leading" id="fs0-BG-ebq"/>
+                            <constraint firstAttribute="bottom" secondItem="jET-mD-vWb" secondAttribute="bottom" id="kWA-3S-vTI"/>
+                            <constraint firstAttribute="trailing" secondItem="jET-mD-vWb" secondAttribute="trailing" id="pFG-83-vTx"/>
+                            <constraint firstItem="4Rm-Ku-fcN" firstAttribute="centerX" secondItem="otr-xG-6sl" secondAttribute="centerX" id="sNn-8a-bNV"/>
+                            <constraint firstItem="otr-xG-6sl" firstAttribute="centerX" secondItem="jET-mD-vWb" secondAttribute="centerX" id="vgP-qR-bPl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dID-q7-xhC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfg-1n-ycE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2218" y="318"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="266" height="266"/>
@@ -14547,6 +14599,7 @@ EE15IEpvYnM
         <image name="iconDiscount" width="85" height="85"/>
         <image name="iconDispatchTab" width="21" height="21"/>
         <image name="iconDollerGrey" width="42" height="42"/>
+        <image name="iconDriver" width="85" height="85"/>
         <image name="iconDropDwon" width="85" height="85"/>
         <image name="iconDummyCard" width="42" height="26"/>
         <image name="iconEmail" width="26" height="26"/>
@@ -14603,6 +14656,6 @@ EE15IEpvYnM
     <inferredMetricsTieBreakers>
         <segue reference="IpS-zx-juy"/>
         <segue reference="nmM-gN-k9b"/>
-        <segue reference="8CO-DQ-u8J"/>
+        <segue reference="6yW-Rk-jW0"/>
     </inferredMetricsTieBreakers>
 </document>

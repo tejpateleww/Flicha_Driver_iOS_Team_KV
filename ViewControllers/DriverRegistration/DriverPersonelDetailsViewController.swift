@@ -68,9 +68,6 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         lblFemale.text = "Female".localized
         txtInviteCode.placeholder = "Invite Code (Optional)".localized
         btnNext.setTitle("Next".localized, for: .normal)
-
-        
-        
     }
    
 
@@ -164,9 +161,6 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         // Dispose of any resources that can be recreated.
     }
     
-  
-    
-    
     //-------------------------------------------------------------
     // MARK: - Actions
     //-------------------------------------------------------------
@@ -178,9 +172,9 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     @IBAction func btnFemale(_ sender: UIButton) {
         selectedFemale()
     }
-    @IBAction func btnOthers(_ sender: UIButton) {
-        selectedOthers()
-    }
+//    @IBAction func btnOthers(_ sender: UIButton) {
+//        selectedOthers()
+//    }
     
     
     func selectedMale()
@@ -195,16 +189,23 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         btnFemale.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
 //        btnOthers.setImage(UIImage(named: "iconCheckMarkUnSelected"), for: .normal)
     }
-    func selectedOthers()
-    {
-        btnMale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-        btnFemale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-//        btnOthers.setImage(UIImage(named: "iconCheckMarkSelected"), for: .normal)
-    }
+//    func selectedOthers()
+//    {
+//        btnMale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+//        btnFemale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+////        btnOthers.setImage(UIImage(named: "iconCheckMarkSelected"), for: .normal)
+//    }
     
     @IBAction func btnNext(_ sender: Any)
     {
-        checkFields()
+        let validator = checkFields()
+        if validator.0 == true {
+            setData()
+        } else {
+            let ValidationAlert = UIAlertController(title: "App Name".localized, message: validator.1, preferredStyle: UIAlertController.Style.alert)
+            ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+            self.present(ValidationAlert, animated: true, completion: nil)
+        }
     }
     @IBAction func btnLogin(_ sender: Any)
     {
@@ -219,10 +220,12 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized
+, style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized
+, style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
@@ -244,7 +247,8 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         picker.sourceType = .photoLibrary
         
         // picker.stopVideoCapture()
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.mediaTypes = [kUTTypeImage as String]
+//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     
@@ -287,7 +291,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
             dictData.setObject(txtAddress.text!, forKey: RegistrationProfileKeys.kKeyAddress as NSCopying)
             dictData.setObject(txtPostCode.text!, forKey: RegistrationProfileKeys.kKeyPostCode as NSCopying)
             dictData.setObject(txtInviteCode.text!, forKey: RegistrationProfileKeys.kKeyInviteCode as NSCopying)
-           
+           dictData.setObject(imgProfile.image!.pngData()! as NSData, forKey: RegistrationFinalKeys.kDriverImage as NSCopying)
             
             arrData.add(dictData)
         
@@ -306,19 +310,26 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         
     }
     
-    func checkFields()
+    func checkFields() -> (Bool,String)
     {
-        let sb = Snackbar()
+        var isValidate:Bool = true
+        var ValidatorMessage:String = ""
+        
+//        let sb = Snackbar()
 //        sb.createWithAction(text: "Upload Car Registration", actionTitle: "Dismiss".localized, action: { print("Button is push") })
 
-        if txtFullName.text == "" {
-            sb.createWithAction(text: "Please enter user name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+        if txtFullName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            ValidatorMessage = "Please enter user name".localized
+//            sb.createWithAction(text: "Please enter user name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
 //        else if txtDOB.text == "" {
 //            sb.createWithAction(text: "Enter Date of Birth", actionTitle: "Dismiss".localized, action: { print("Button is push") })
 //        }
-        else if txtAddress.text == "" {
-             sb.createWithAction(text: "Please enter address".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+        else if txtAddress.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValidate = false
+            ValidatorMessage = "Please enter address".localized
+//             sb.createWithAction(text: , actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
       
 //        else if txtPostCode.text == "" {
@@ -326,13 +337,14 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
 //        }
       
         else if imgProfile.image == UIImage(named: "iconProfileLocation") {
-            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            isValidate = false
+            ValidatorMessage = "Choose Photo".localized
+//            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
-        else {
-            setData()
-        }
+       
         
-        sb.show()
+//        sb.show()
+        return (isValidate,ValidatorMessage)
     }
     
     func setDataForProfile()
@@ -357,6 +369,9 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let myEncodedImageData: NSData = NSKeyedArchiver.archivedData(withRootObject: imageData) as NSData
         userDefault.set(myEncodedImageData, forKey: RegistrationFinalKeys.kDriverImage)
         
+        let image = UIImage(data: imageData as Data)
+        imgProfile.image = image
+        
         userDefault.set(txtDOB.text, forKey: RegistrationFinalKeys.kKeyDOB)
         userDefault.set(txtFullName.text, forKey: RegistrationFinalKeys.kFullname)
         userDefault.set(txtAddress.text, forKey: RegistrationFinalKeys.kAddress)
@@ -379,9 +394,10 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
             userDefault.set("Male", forKey: RegistrationFinalKeys.kGender)
         }
 
+
         navigateToNext()
     }
-    
+  
     func navigateToNext()
     {
          UserDefaults.standard.set(2, forKey: savedDataForRegistration.kPageNumber)

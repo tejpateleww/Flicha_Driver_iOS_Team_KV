@@ -53,7 +53,7 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
 
         if SingletonsForTripToDestination.sharedInstance.isFirstDestinationSelected == true
         {
-            imgSwitchIcon.image = UIImage.init(named: "iconOnSwitch")
+            imgSwitchIcon.image = UIImage.init(named: "iconSwitchOn")
             viewTextfield.isHidden = false
             btnDone.isHidden = false
         }
@@ -75,8 +75,8 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
     func  setLocalizable()
     {
         self.headerView?.lblTitle.text = "Trip to Destination".localized
-        self.lblDestinationTrip.text = "Destination Trip".localized
-        btnDone.setTitle("Done".localized, for: .normal)
+        self.lblDestinationTrip.text = "Trip to Destination".localized
+        btnDone.setTitle("Submit".localized, for: .normal)
             txtDestination.placeholder = "Destination Location".localized
     }
     
@@ -88,13 +88,9 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         if textField == txtDestination
-        {
-            
-            self.txtDestinationLocation(txtDestination)
-            
+        {  self.txtDestinationLocation(txtDestination)
             return false
         }
-        
         return true
     }
 
@@ -171,13 +167,9 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
     }
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-
-            txtDestination.text = place.formattedAddress
-            doubleLat = place.coordinate.latitude
-            doubleLng = place.coordinate.longitude
-        
-       
-        
+        txtDestination.text = place.formattedAddress
+        doubleLat = place.coordinate.latitude
+        doubleLng = place.coordinate.longitude
         dismiss(animated: true, completion: nil)
     }
     
@@ -201,19 +193,32 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
                 print(result)
                 if ((result as! [String:AnyObject])["status"] as! Int == 1)
                 {
-                    self.userDefault.set(self.btnSelectDestination.isSelected, forKey: "buttonSelected")
-                    self.userDefault.set(self.txtDestination.text, forKey: "tripDestination")
-                    if(self.btnSelectDestination.isSelected)
-                    {
-                        self.txtDestination.isUserInteractionEnabled = false
-                    }
-
+                    UtilityClass.showAlertWithCompletion("App Name".localized, message: (result as! [String:AnyObject])[GetResponseMessageKey()] as! String, vc: self, completionHandler: { (Status) in
+                        self.userDefault.set(self.btnSelectDestination.isSelected, forKey: "buttonSelected")
+                        self.userDefault.set(self.txtDestination.text, forKey: "tripDestination")
+                        if(self.btnSelectDestination.isSelected)
+                        {
+                            self.txtDestination.isUserInteractionEnabled = false
+                        }
+                    })
                 }
             }
             else
             {
-                print(result)
+                if let res = result as? String {
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
+                }
+                else if let resDict = result as? NSDictionary {
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                else if let resAry = result as? NSArray {
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
             }
+//            else
+//            {
+//                print(result)
+//            }
         }
     }
     
@@ -221,9 +226,9 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
     {
 
         let strAddress = txtDestination.text!
-        
-        if strAddress != ""
-        {
+        if strAddress == "" {
+            UtilityClass.showAlert("App Name".localized, message: "Please enter a Destination.".localized, vc: self)
+        } else {
             var dictParam = [String:AnyObject]()
             let driverID = Singletons.sharedInstance.strDriverID
             
@@ -240,7 +245,6 @@ class TripToDestinationViewController: ParentViewController, GMSAutocompleteView
             {
                 dictParam["Status"] = 0 as AnyObject
             }
-            
             self.webserviceCallToOnOffTripToDestination(dictParam: dictParam)
         }
     }

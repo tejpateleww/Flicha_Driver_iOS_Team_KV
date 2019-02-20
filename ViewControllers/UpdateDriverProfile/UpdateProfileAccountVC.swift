@@ -17,6 +17,8 @@ class UpdateProfileAccountVC: UIViewController {
     
     var sendData = [String:AnyObject]()
     
+    @IBOutlet weak var lblTitle: UILabel!
+    
     
     //-------------------------------------------------------------
     // MARK: - Base Methods
@@ -45,7 +47,7 @@ class UpdateProfileAccountVC: UIViewController {
         setLocalizable()
     }
     func setLocalizable(){
-        self.title = "Account".localized
+        self.lblTitle.text = "Account".localized
         txtAccountHolderName.placeholder = "Name".localized
         txtBankName.placeholder = "Bank Name".localized
         txtBSB.placeholder = "Bsb".localized
@@ -83,6 +85,9 @@ class UpdateProfileAccountVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+
+    
+    
     @IBAction func btnSaveData(_ sender: UIButton) {
         
         if (validationForAccount())
@@ -104,19 +109,19 @@ class UpdateProfileAccountVC: UIViewController {
     func validationForAccount() -> Bool {
         
         if (txtAccountHolderName.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter user name".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter user name".localized, vc: self)
             return false
         }
         else if (txtBankName.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter bank name".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter bank name".localized, vc: self)
             return false
         }
         else if (txtBSB.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter bank branch".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter bank branch".localized, vc: self)
             return false
         }
         else if (txtBankAcNo.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter account number".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter account number".localized, vc: self)
             return false
         }
 //        else if (txtABN.text!.count == 0) {
@@ -151,8 +156,8 @@ class UpdateProfileAccountVC: UIViewController {
                 
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
                 
-                let alert = UIAlertController(title: appName.kAPPName, message: "Updated Successfully", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let alert = UIAlertController(title: "App Name".localized, message: "Updated successfully.".localized, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 
@@ -162,13 +167,13 @@ class UpdateProfileAccountVC: UIViewController {
                 print(result)
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
             

@@ -156,7 +156,7 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
 //                UtilityClass.showAlert(appName.kAPPName, message: "Please select car model", vc: self)
             }
             else if Singletons.sharedInstance.isDriverVehicleTypesViewControllerFilled == false {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
             }
             else {
                 cellBottom.btnNext.addTarget(self, action: #selector(self.MoveToNext), for: .touchUpInside)
@@ -183,9 +183,12 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
             }
             else
             {
-                let sb = Snackbar()
-                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-                sb.show()
+                let ValidationAlert = UIAlertController(title: "App Name".localized, message: "You can only select three types".localized, preferredStyle: UIAlertController.Style.alert)
+                ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+                self.present(ValidationAlert, animated: true, completion: nil)
+//                let sb = Snackbar()
+//                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//                sb.show()
             }
             
         } else {
@@ -260,12 +263,25 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
             }
             else
             {
-                print(result)
-//                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
-//                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-//                alert.addAction(ok)
-//                self.present(alert, animated: true, completion: nil)
+                if let res = result as? String {
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
+                }
+                else if let resDict = result as? NSDictionary {
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                else if let resAry = result as? NSArray {
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
             }
+                
+//            else
+//            {
+//                print(result)
+////                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
+////                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+////                alert.addAction(ok)
+////                self.present(alert, animated: true, completion: nil)
+//            }
         }
     }
 

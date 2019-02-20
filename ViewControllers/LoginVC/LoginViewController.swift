@@ -68,8 +68,8 @@
         
     }
     
-        override func loadViewIfNeeded() {
-            super.loadViewIfNeeded()
+    override func loadView() {
+            super.loadView()
     
     
 //        txtMobile.text = "3698523698"
@@ -77,20 +77,29 @@
     
 //            Utilities.setStatusBarColor(color: UIColor.clear)
     
-            if(Singletons.sharedInstance.isDriverLoggedIN)
-            {
-                let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
-                self.navigationController?.pushViewController(next, animated: false)
-            }
-    
-            if Connectivity.isConnectedToInternet()
-            {
-                print("Yes! internet is available.")
+//            if Connectivity.isConnectedToInternet()
+//            {
+//                print("Yes! internet is available.")
+                self.webserviceOfAppSetting()
                 // do some tasks..
-            }
-            else {
-                UtilityClass.showAlert(appName.kAPPName, message: "Internet connection not available", vc: self)
-            }
+//            }
+//            else
+//            {
+//                UtilityClass.showAlertWithCompletion(appName.kAPPName, message: "Sorry! Not connected to internet".localized, vc: self) { (status) in
+//                    self.navigationController?.popViewController(animated: false)
+//                }
+////                UtilityClass.showAlert(appName.kAPPName, message: "Sorry! Not connected to internet".localized, vc: self)
+//                return
+//            }
+        
+//            if Connectivity.isConnectedToInternet()
+//            {
+//                print("Yes! internet is available.")
+//                // do some tasks..
+//            }
+//            else {
+//                UtilityClass.showAlert(appName.kAPPName, message: "Sorry! Not connected to internet".localized, vc: self)
+//            }
     
 //            webserviceOfAppSetting()
     //
@@ -119,17 +128,9 @@
         
         Utilities.setStatusBarColor(color: UIColor.clear)
         
-        if Connectivity.isConnectedToInternet()
-        {
-            print("Yes! internet is available.")
-            // do some tasks..
-        }
-        else
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Internet connection not available", vc: self)
-        }
+
         
-        webserviceOfAppSetting()
+       
         //
         
         btnSignUp.layer.cornerRadius = 3.0
@@ -226,11 +227,11 @@
     @IBAction func btnForgotPassword(_ sender: UIButton) {
         
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Forgot password?", message: "Enter your email here.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Forgot Password?".localized, message: "Please enter email".localized, preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
-            textField.placeholder = "Email"
+            textField.placeholder = "Email".localized
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -249,7 +250,7 @@
             
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default, handler: { [weak alert] (_) in
             
             
         }))
@@ -277,7 +278,7 @@
     
     @objc func showAlertForPasswordWrong() {
         
-        UtilityClass.showAlert(appName.kAPPName, message: "Please enter mobile number".localized, vc: self)
+        UtilityClass.showAlert("App Name".localized, message: "Please enter mobile number".localized, vc: self)
         
     }
     
@@ -364,13 +365,13 @@
                 print(result)
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 
             }
@@ -389,7 +390,7 @@
             if (status) {
                 
                 print(result)
-                let alert = UIAlertController(title: appName.kAPPName, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: result.object(forKey: GetResponseMessageKey()) as? String, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
@@ -398,13 +399,13 @@
                 print(result)
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -437,12 +438,12 @@
                 
                 if ((result as! NSDictionary).object(forKey: "update") as? Bool) != nil {
                     
-                    let alert = UIAlertController(title: appName.kAPPName, message: (result as! NSDictionary).object(forKey: "message") as? String, preferredStyle: .alert)
-                    let UPDATE = UIAlertAction(title: "UPDATE", style: .default, handler: { ACTION in
+                    let alert = UIAlertController(title: "App Name".localized, message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as? String, preferredStyle: .alert)
+                    let UPDATE = UIAlertAction(title: "Update".localized, style: .default, handler: { ACTION in
                         
                         UIApplication.shared.openURL(NSURL(string: appName.kAPPUrl)! as URL)
                     })
-                    let Cancel = UIAlertAction(title: "Cancel", style: .default, handler: { ACTION in
+                    let Cancel = UIAlertAction(title: "Cancel".localized, style: .default, handler: { ACTION in
                         
                         if(Singletons.sharedInstance.isDriverLoggedIN)
                         {
@@ -456,7 +457,12 @@
                 }
                 else
                 {
-                    
+                   
+                    if(Singletons.sharedInstance.isDriverLoggedIN)
+                    {
+                        let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
+                        self.navigationController?.pushViewController(next, animated: false)
+                    }
 //                    if(Singletons.sharedInstance.isDriverLoggedIN)
 //                    {
 //                        let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
@@ -484,14 +490,14 @@
                  */
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let update = (result as! NSDictionary).object(forKey: "update") as? Bool {
                     
                     if (update) {
                         //                        UtilityClass.showAlert(appName.kAPPName, message: (result as! NSDictionary).object(forKey: "message") as! String, vc: self)
                         
-                        UtilityClass.showAlertWithCompletion(appName.kAPPName, message: (result as! NSDictionary).object(forKey: "message") as! String, vc: self, completionHandler: { ACTION in
+                        UtilityClass.showAlertWithCompletion("App Name".localized, message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self, completionHandler: { ACTION in
                             
                             UIApplication.shared.open((NSURL(string: appName.kAPPUrl)! as URL), options: [:], completionHandler: { (status) in
                                 
@@ -499,7 +505,7 @@
                         })
                     }
                     else {
-                        UtilityClass.showAlert(appName.kAPPName, message: (result as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                     
                 }
@@ -521,8 +527,8 @@
                 //                }
             }
         }
-        
     }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == txtMobile {
             let resultText: String? = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
@@ -550,17 +556,17 @@
         
         if txtMobile.text!.count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter mobile number".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter mobile number".localized, vc: self)
             return false
         }
 //        else if txtMobile.text!.count != 10 {
-//            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid phone number.", vc: self)
+//            UtilityClass.showAlert("App Name".localized, message: "Please enter valid phone number.", vc: self)
 //            return false
 //        }
         else if txtPassword.text!.count == 0
         {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter password".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter password".localized, vc: self)
             
             return false
         }

@@ -313,7 +313,7 @@ class MeterViewController: UIViewController {
         
         if contactNumber == "" {
             
-            UtilityClass.showAlertWithCompletion(appName.kAPPName, message: "Contact number is not available", vc: self, completionHandler: {_ in
+            UtilityClass.showAlertWithCompletion("App Name".localized, message: "Contact number is not available", vc: self, completionHandler: {_ in
             })
         }
         else
@@ -374,7 +374,7 @@ class MeterViewController: UIViewController {
             if (sender.isSelected)
             {
                 var textData = String()
-                let alert = UIAlertController(title: appName.kAPPName, message: "Enter passenger mobile number", preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Enter passenger mobile number", preferredStyle: .alert)
                 alert.addTextField { (textField) in
                     textField.placeholder = "Passenger mobile number"
                 }
@@ -413,7 +413,7 @@ class MeterViewController: UIViewController {
         }
         else
         {
-            UtilityClass.showAlertAnother(appName.kAPPName, message: "Please select a car type", vc: self)
+            UtilityClass.showAlertAnother("App Name".localized, message: "Please select a car type", vc: self)
         }
         
     }
@@ -425,7 +425,7 @@ class MeterViewController: UIViewController {
         
         
         Singletons.sharedInstance.MeterStatus = meterStatus.kIsMeterStart
-        UtilityClass.showAlertAnother(appName.kAPPName, message: "Please stay connected to the app, untill the trip is finished! may be you can loose your data.", vc: self)
+        UtilityClass.showAlertAnother("App Name".localized, message: "Please stay connected to the app, untill the trip is finished! may be you can loose your data.", vc: self)
         self.btnPauseTrip.isHidden = false
         if (self.navigationController?.viewControllers[0].children.count != 0)
         {
@@ -504,7 +504,7 @@ class MeterViewController: UIViewController {
                 }
                 else
                 {
-                    UtilityClass.showAlertAnother(appName.kAPPName, message: "Please select a car type", vc: self)
+                    UtilityClass.showAlertAnother("App Name".localized, message: "Please select a car type", vc: self)
                 }
             }
             else
@@ -534,7 +534,7 @@ class MeterViewController: UIViewController {
         }
         else
         {
-            UtilityClass.showAlertAnother(appName.kAPPName, message: "To start waiting time the trip should on", vc: self)
+            UtilityClass.showAlertAnother("App Name".localized, message: "To start waiting time the trip should on", vc: self)
             
         }
         
@@ -604,7 +604,7 @@ class MeterViewController: UIViewController {
                     
                 })
                
-//                UtilityClass.showAlert(appName.kAPPName, message: msg, vc: self)
+//                UtilityClass.showAlert("App Name".localized, message: msg, vc: self)
             
             }
             
@@ -629,12 +629,12 @@ class MeterViewController: UIViewController {
                 }
                 else
                 {
-                    UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong", vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: "Something went wrong!".localized, vc: self)
                 }
             }
             else
             {
-                UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Something went wrong!".localized, vc: self)
             }
         }
     }
@@ -662,7 +662,7 @@ class MeterViewController: UIViewController {
                 print(#function)
                 print(result)
                 
-                UtilityClass.showAlertWithCompletion(appName.kAPPName, message: message, vc: self, completionHandler: { (status) in
+                UtilityClass.showAlertWithCompletion("App Name".localized, message: message, vc: self, completionHandler: { (status) in
                     if(status)
                     {
                         self.navigationController?.popViewController(animated: true)
@@ -686,13 +686,13 @@ class MeterViewController: UIViewController {
                 
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }

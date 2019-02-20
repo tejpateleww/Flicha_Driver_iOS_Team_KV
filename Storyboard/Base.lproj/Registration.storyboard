@@ -189,38 +189,38 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDi-np-y9r">
-                                <rect key="frame" x="0.0" y="164" width="320" height="404"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="384"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgq-d6-aa2">
-                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="404"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="384"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aE-7g-9Sc">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="384"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <segue destination="reg-LN-93W" kind="embed" id="pTi-hc-cp9"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1j-4T-IKK">
-                                                <rect key="frame" x="320" y="0.0" width="320" height="404"/>
+                                                <rect key="frame" x="320" y="0.0" width="320" height="384"/>
                                                 <connections>
                                                     <segue destination="JTk-re-dVi" kind="embed" id="3d4-f2-EY8"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qr7-mw-1Gu">
-                                                <rect key="frame" x="640" y="0.0" width="320" height="404"/>
+                                                <rect key="frame" x="640" y="0.0" width="320" height="384"/>
                                                 <connections>
                                                     <segue destination="Qg5-lo-G1Z" kind="embed" id="NLC-RW-LwT"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sc0-9h-1Gg">
-                                                <rect key="frame" x="960" y="0.0" width="320" height="404"/>
+                                                <rect key="frame" x="960" y="0.0" width="320" height="384"/>
                                                 <connections>
                                                     <segue destination="Ftm-BO-rKl" kind="embed" id="UGq-aL-hxe"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Af-oF-xNy">
-                                                <rect key="frame" x="1280" y="0.0" width="320" height="404"/>
+                                                <rect key="frame" x="1280" y="0.0" width="320" height="384"/>
                                                 <connections>
                                                     <segue destination="EGc-cO-SG2" kind="embed" id="Ed2-qC-YAl"/>
                                                 </connections>
@@ -265,6 +265,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-Vx-Agc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_Back" translatesAutoresizingMaskIntoConstraints="NO" id="bei-aN-T64">
+                                        <rect key="frame" x="15" y="39.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="5Jg-Iq-sVZ"/>
+                                            <constraint firstAttribute="width" constant="25" id="PO5-aZ-vyS"/>
+                                        </constraints>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ym-Ws-kxM">
                                         <rect key="frame" x="10" y="8" width="68" height="68"/>
                                         <constraints>
@@ -275,21 +282,14 @@
                                             <action selector="btnBack:" destination="EQ5-DG-fhx" eventType="touchUpInside" id="9PE-Re-qh6"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBack" translatesAutoresizingMaskIntoConstraints="NO" id="bei-aN-T64">
-                                        <rect key="frame" x="15" y="39.5" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="5Jg-Iq-sVZ"/>
-                                            <constraint firstAttribute="width" constant="25" id="PO5-aZ-vyS"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTRATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPh-HP-dqa">
                                         <rect key="frame" x="99" y="42" width="122.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.8862745098" green="0.51764705879999995" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bei-aN-T64" firstAttribute="centerY" secondItem="U5B-Vx-Agc" secondAttribute="centerY" constant="10" id="8Ca-U4-ZfO"/>
                                     <constraint firstItem="5Ym-Ws-kxM" firstAttribute="top" secondItem="U5B-Vx-Agc" secondAttribute="top" constant="8" id="HBq-UP-AxH"/>
@@ -310,7 +310,7 @@
                             <constraint firstItem="ej6-CC-Qk9" firstAttribute="height" secondItem="FTM-5N-X3v" secondAttribute="height" id="J41-va-4X6"/>
                             <constraint firstItem="UDi-np-y9r" firstAttribute="leading" secondItem="FTM-5N-X3v" secondAttribute="leading" id="Pvg-CD-pBc"/>
                             <constraint firstItem="0Af-oF-xNy" firstAttribute="width" secondItem="FTM-5N-X3v" secondAttribute="width" id="PzJ-9b-bmS"/>
-                            <constraint firstItem="4EP-pD-M18" firstAttribute="top" secondItem="UDi-np-y9r" secondAttribute="bottom" id="S65-B3-p8B"/>
+                            <constraint firstItem="4EP-pD-M18" firstAttribute="top" secondItem="UDi-np-y9r" secondAttribute="bottom" constant="20" id="S65-B3-p8B"/>
                             <constraint firstItem="ej6-CC-Qk9" firstAttribute="width" secondItem="FTM-5N-X3v" secondAttribute="width" id="VqZ-4w-f2p"/>
                             <constraint firstItem="UDi-np-y9r" firstAttribute="top" secondItem="TvV-Am-ftR" secondAttribute="bottom" id="X1y-C5-zxr"/>
                             <constraint firstItem="TvV-Am-ftR" firstAttribute="leading" secondItem="FTM-5N-X3v" secondAttribute="leading" id="X5S-A4-CKb"/>
@@ -333,6 +333,7 @@
                         <outlet property="lblFifth" destination="y9r-0d-Whc" id="q7l-DJ-35I"/>
                         <outlet property="lblFore" destination="VhS-Wb-k89" id="d9s-Y7-ZNn"/>
                         <outlet property="lblThree" destination="2tB-1S-flk" id="P8N-cg-1CA"/>
+                        <outlet property="lblTitle" destination="FPh-HP-dqa" id="QVJ-x0-Ysa"/>
                         <outlet property="lblTwo" destination="mYy-yq-DzR" id="f63-8j-Qoo"/>
                         <outlet property="lblone" destination="78P-tb-TZv" id="lHf-9a-YBe"/>
                         <outlet property="scrollObj" destination="UDi-np-y9r" id="bS7-ar-FXg"/>
@@ -1767,6 +1768,7 @@ You must be 21 years of age or over.</string>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPlaceholderVehicle" translatesAutoresizingMaskIntoConstraints="NO" id="P0V-lP-GM7">
                                                                 <rect key="frame" x="250" y="7.5" width="35" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="fH3-WL-qLi"/>
                                                                     <constraint firstAttribute="height" constant="35" id="rvl-0l-YoF"/>
@@ -1809,13 +1811,13 @@ You must be 21 years of age or over.</string>
                                                                         <real key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                        <real key="value" value="3"/>
+                                                                        <real key="value" value="1.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                        <real key="value" value="2"/>
+                                                                        <real key="value" value="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                        <size key="value" width="1" height="1"/>
+                                                                        <size key="value" width="0.5" height="0.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1862,6 +1864,7 @@ You must be 21 years of age or over.</string>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPlaceholderVehicle" translatesAutoresizingMaskIntoConstraints="NO" id="eOS-Il-ugZ">
                                                                 <rect key="frame" x="250" y="7.5" width="35" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="207-xj-pBI"/>
                                                                     <constraint firstAttribute="width" constant="35" id="LoT-Mv-Ayc"/>
@@ -1904,13 +1907,13 @@ You must be 21 years of age or over.</string>
                                                                         <real key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                        <real key="value" value="3"/>
+                                                                        <real key="value" value="1.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                        <real key="value" value="2"/>
+                                                                        <real key="value" value="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                        <size key="value" width="1" height="1"/>
+                                                                        <size key="value" width="0.5" height="0.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1956,6 +1959,7 @@ You must be 21 years of age or over.</string>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPlaceholderVehicle" translatesAutoresizingMaskIntoConstraints="NO" id="QCY-iu-0xM">
                                                                 <rect key="frame" x="250" y="7.5" width="35" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="q0G-w7-9qj"/>
                                                                     <constraint firstAttribute="width" constant="35" id="q1O-4P-sGt"/>
@@ -1984,13 +1988,13 @@ You must be 21 years of age or over.</string>
                                                                         <real key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                        <real key="value" value="1"/>
+                                                                        <real key="value" value="1.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                        <real key="value" value="2"/>
+                                                                        <real key="value" value="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                        <size key="value" width="1" height="1"/>
+                                                                        <size key="value" width="0.5" height="0.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2043,6 +2047,7 @@ You must be 21 years of age or over.</string>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPlaceholderVehicle" translatesAutoresizingMaskIntoConstraints="NO" id="JBW-bH-WMj">
                                                                 <rect key="frame" x="250" y="7.5" width="35" height="35"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="Isj-zJ-3jF"/>
                                                                     <constraint firstAttribute="height" constant="35" id="Zr4-U2-MY3"/>
@@ -2085,13 +2090,13 @@ You must be 21 years of age or over.</string>
                                                                         <real key="value" value="2"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                        <real key="value" value="3"/>
+                                                                        <real key="value" value="1.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                        <real key="value" value="2"/>
+                                                                        <real key="value" value="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                        <size key="value" width="1" height="1"/>
+                                                                        <size key="value" width="0.5" height="0.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2683,11 +2688,11 @@ You must be 21 years of age or over.</string>
                         <viewControllerLayoutGuide type="bottom" id="WhY-08-64s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aZZ-Lt-lgF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="384"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anv-PJ-lnE">
-                                <rect key="frame" x="20" y="20" width="280" height="364"/>
+                                <rect key="frame" x="20" y="20" width="280" height="344"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dF-W0-Ddh">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
@@ -2696,8 +2701,8 @@ You must be 21 years of age or over.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Car Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-th-g7p">
-                                                <rect key="frame" x="83.5" y="55" width="113" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfc-th-g7p">
+                                                <rect key="frame" x="94.5" y="55" width="91" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2726,28 +2731,21 @@ You must be 21 years of age or over.</string>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vkr-R8-mYj">
-                                        <rect key="frame" x="10" y="85" width="260" height="239"/>
+                                        <rect key="frame" x="10" y="85" width="260" height="219"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarAndTaxiesTableViewCell" rowHeight="108" id="iRu-sK-lMB" customClass="CarAndTaxiesTableViewCell" customModule="TanTaxi_Driver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="260" height="108"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarAndTaxiesTableViewCell" rowHeight="50" id="iRu-sK-lMB" customClass="CarAndTaxiesTableViewCell" customModule="TanTaxi_Driver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="260" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iRu-sK-lMB" id="6ey-lF-yTs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="107.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QC-HH-3pE">
-                                                            <rect key="frame" x="5" y="5" width="250" height="97.5"/>
+                                                            <rect key="frame" x="5" y="5" width="250" height="39.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKC-9g-jC8">
-                                                                    <rect key="frame" x="5" y="29" width="201" height="58.5"/>
-                                                                    <string key="text">(All First Class Cars can be a part of Business Class) Mercedes S series, BMW 7 series, Audi A8 &amp; S, Tesla S, X, Porsche Cayenne, Jaguar, All luxury SUV’s.</string>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                                    <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="First Class" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvI-tl-LUO">
                                                                     <rect key="frame" x="5" y="10" width="68" height="16"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -2755,7 +2753,7 @@ You must be 21 years of age or over.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-5N-RgF">
-                                                                    <rect key="frame" x="214" y="34" width="31" height="30"/>
+                                                                    <rect key="frame" x="214" y="3" width="31" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="31" id="Vqj-Sr-TuH"/>
                                                                         <constraint firstAttribute="height" constant="30" id="Yp3-iP-3SK"/>
@@ -2765,13 +2763,9 @@ You must be 21 years of age or over.</string>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="uKC-9g-jC8" firstAttribute="top" secondItem="SvI-tl-LUO" secondAttribute="bottom" constant="3" id="Ax8-Qc-UH2"/>
                                                                 <constraint firstItem="SvI-tl-LUO" firstAttribute="leading" secondItem="0QC-HH-3pE" secondAttribute="leading" constant="5" id="G59-fq-qTi"/>
-                                                                <constraint firstItem="4Ko-5N-RgF" firstAttribute="centerY" secondItem="0QC-HH-3pE" secondAttribute="centerY" id="Lq6-ra-j4L"/>
-                                                                <constraint firstItem="4Ko-5N-RgF" firstAttribute="leading" secondItem="uKC-9g-jC8" secondAttribute="trailing" constant="8" id="O3Q-md-X5k"/>
                                                                 <constraint firstItem="SvI-tl-LUO" firstAttribute="top" secondItem="0QC-HH-3pE" secondAttribute="top" constant="10" id="YlL-Zd-93p"/>
-                                                                <constraint firstItem="uKC-9g-jC8" firstAttribute="leading" secondItem="SvI-tl-LUO" secondAttribute="leading" id="lCQ-tI-MVB"/>
-                                                                <constraint firstAttribute="bottom" secondItem="uKC-9g-jC8" secondAttribute="bottom" constant="10" id="uDx-BY-kXB"/>
+                                                                <constraint firstItem="4Ko-5N-RgF" firstAttribute="centerY" secondItem="SvI-tl-LUO" secondAttribute="centerY" id="Z7v-Qa-nxu"/>
                                                                 <constraint firstAttribute="trailing" secondItem="4Ko-5N-RgF" secondAttribute="trailing" constant="5" id="yht-9x-NzD"/>
                                                             </constraints>
                                                         </view>
@@ -2788,14 +2782,13 @@ You must be 21 years of age or over.</string>
                                                 <connections>
                                                     <outlet property="btnTickMark" destination="4Ko-5N-RgF" id="uB7-VZ-JQQ"/>
                                                     <outlet property="lblCarModelClass" destination="SvI-tl-LUO" id="qZS-TA-fYZ"/>
-                                                    <outlet property="lblCarModelDescription" destination="uKC-9g-jC8" id="DTD-6E-Gsc"/>
                                                     <outlet property="viewBackground" destination="0QC-HH-3pE" id="yGX-T9-6OA"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8l-ct-O86" customClass="ThemeButton" customModule="TanTaxi_Driver" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="324" width="280" height="40"/>
+                                        <rect key="frame" x="0.0" y="304" width="280" height="40"/>
                                         <color key="backgroundColor" red="0.89338213209999995" green="0.51630395650000005" blue="0.15679338570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="XtZ-hu-igq"/>
@@ -2844,7 +2837,7 @@ You must be 21 years of age or over.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEu-9w-LiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4116" y="841"/>
+            <point key="canvasLocation" x="4115.625" y="840.84507042253517"/>
         </scene>
     </scenes>
     <resources>
@@ -2852,7 +2845,6 @@ You must be 21 years of age or over.</string>
         <image name="Unchecked" width="30" height="30"/>
         <image name="bottomLine" width="386" height="1"/>
         <image name="iconAddress" width="85" height="85"/>
-        <image name="iconBack" width="85" height="85"/>
         <image name="iconBankAccount" width="85" height="85"/>
         <image name="iconBirthday" width="85" height="85"/>
         <image name="iconCARPlaceholder" width="85" height="85"/>
@@ -2868,6 +2860,7 @@ You must be 21 years of age or over.</string>
         <image name="iconTransferToBankSelect" width="85" height="85"/>
         <image name="iconUser" width="85" height="85"/>
         <image name="iconUsers" width="85" height="85"/>
+        <image name="icon_Back" width="85" height="85"/>
         <image name="imageView:SpK-QK-iQj:image" width="85" height="85">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI

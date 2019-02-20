@@ -101,7 +101,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     {
         txtVehicleRegistrationNumber.placeholder = "Vehicle Plate Number".localized
         txtVehicleModel.placeholder = "Vehicle Model".localized
-        txtCompany.placeholder = "Car Company".localized
+        txtCompany.placeholder = "Vehicle Make".localized
         
 //        txtCompany.placeholder = "".localized
         txtCarType.placeholder = "Vehicle Type".localized
@@ -158,28 +158,16 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         Singletons.sharedInstance.boolTaxiModel = true
         userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")
         
-        let sb = Snackbar()
+        let validator = isValidateForCarAndTaxi()
         
-        if txtCompany.text == "" {
-            
-            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtCarType.text == ""
-        {
-            sb.createWithAction(text: "Enter Car Type", actionTitle: "OK".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtVehicleRegistrationNumber.text == "" {
-            
-            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else {
+        if validator.0 == true {
             CarAndTexis()
+        } else {
+            
+            let ValidationAlert = UIAlertController(title: "App Name".localized, message: validator.1, preferredStyle: UIAlertController.Style.alert)
+            ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+            self.present(ValidationAlert, animated: true, completion: nil)
         }
-        
-        
         
         //        let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
         //        let x = self.view.frame.size.width * 4
@@ -192,25 +180,14 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         Singletons.sharedInstance.boolTaxiModel = false
         userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")
         
-        let sb = Snackbar()
-        
-        if txtCompany.text == "" {
+        let validator = self.isValidateForDeliveryService()
+        if validator.0 == true {
+                DeliveryService()
+        }  else {
             
-            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtCarType.text == "" {
-            
-            sb.createWithAction(text: "Vehicle Type".localized, actionTitle: "OK".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else if txtVehicleRegistrationNumber.text == "" {
-            
-            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
-            sb.show()
-        }
-        else  {
-            DeliveryService()
+            let ValidationAlert = UIAlertController(title: "App Name".localized, message: validator.1, preferredStyle: UIAlertController.Style.alert)
+            ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+            self.present(ValidationAlert, animated: true, completion: nil)
         }
         
         
@@ -222,6 +199,62 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         
     }
     
+    func isValidateForDeliveryService() -> (Bool,String) {
+        var isValidate:Bool = true
+        var ValidatorMessage:String = ""
+        
+//        let sb = Snackbar()
+        if txtCompany.text == "" {
+//            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK".localized, action: { print("Button is push") })
+//            sb.show()
+            isValidate = false
+            ValidatorMessage = "Enter Company Name"
+        }
+        else if txtCarType.text == "" {
+            isValidate = false
+            ValidatorMessage = "Vehicle Type".localized
+//            sb.createWithAction(text: "Vehicle Type".localized, actionTitle: "OK".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtVehicleRegistrationNumber.text == "" {
+            isValidate = false
+            ValidatorMessage = "Enter Vehicle Registration No."
+//            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        
+        return (isValidate,ValidatorMessage)
+    }
+    
+    func isValidateForCarAndTaxi() -> (Bool,String) {
+        var isValidate:Bool = true
+        var ValidatorMessage:String = ""
+        
+//        let sb = Snackbar()
+        
+        if txtCompany.text == "" {
+            isValidate = false
+            ValidatorMessage = "Enter Company Name"
+//            sb.createWithAction(text: "Enter Company Name", actionTitle: "OK".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtCarType.text == ""
+        {
+            isValidate = false
+            ValidatorMessage = "Enter Car Type"
+//            sb.createWithAction(text: "Enter Car Type", actionTitle: "OK".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        else if txtVehicleRegistrationNumber.text == "" {
+            isValidate = false
+            ValidatorMessage = "Enter Vehicle Registration No."
+//            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
+//            sb.show()
+        }
+        
+        
+        return (isValidate,ValidatorMessage)
+    }
     
     func CarAndTexis()
     {
@@ -302,10 +335,10 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
@@ -331,7 +364,8 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         picker.sourceType = .photoLibrary
         
         // picker.stopVideoCapture()
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.mediaTypes = [kUTTypeImage as String]
+//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     
@@ -369,7 +403,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         if (Validations()){
             
             if Singletons.sharedInstance.vehicleClass == "" {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please select at least one vehicle type.".localized, vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please select at least one vehicle type.".localized, vc: self)
             }
             else {
                 
@@ -398,7 +432,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     func Validations() -> Bool {
         
 //        if (txtVehicleRegistrationNumber.text!.count == 0) {
-//            UtilityClass.showAlert(appName.kAPPName, message: "Enter Vehicle Registration Number", vc: self)
+//            UtilityClass.showAlert("App Name".localized, message: "Enter Vehicle Registration Number", vc: self)
 //            return false
 //        }
 //        else if (txtCompany.text!.count == 0) {
@@ -411,28 +445,28 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
 //        }
         if txtVehicleRegistrationNumber.text == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Plate Number".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Vehicle Plate Number".localized, vc: self)
             return false
         }
         else if txtCompany.text == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Model".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Vehicle Model".localized, vc: self)
             return false
         }
         else if txtVehicleModel.text == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Model".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Vehicle Model".localized, vc: self)
             return false
         }
         else if (txtCarType.text as! String) == "" {
             
-            UtilityClass.showAlert(appName.kAPPName, message: "Vehicle Type".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Vehicle Type".localized, vc: self)
             return false
         }
         else if txtNoOfPassenger.selectedItem == nil ||  txtNoOfPassenger.selectedItem == "" || txtNoOfPassenger.selectedItem == "Number of Passenger"
         {
 
-            UtilityClass.showAlert(appName.kAPPName, message: "Number Of Passenger".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Number Of Passenger".localized, vc: self)
             return false
         }
         
@@ -476,13 +510,13 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
             {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -528,7 +562,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
 //                UserDefaults.standard.set(Singletons.sharedInstance.dictDriverProfile, forKey: driverProfileKeys.kKeyDriverProfile)
                 
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
-                let alert = UIAlertController(title: appName.kAPPName, message: "Updated Successfully", preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Updated successfully.".localized, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
@@ -538,17 +572,17 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
                 print(result)
                 
                 if let res = (result as? String) {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else {
                     if let res = result as? String {
-                        UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                     }
                     else if let resDict = result as? NSDictionary {
-                        UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                     else if let resAry = result as? NSArray {
-                        UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                 }
             }

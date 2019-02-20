@@ -194,9 +194,9 @@ class VerifyPasswordViewController: UIViewController {
     
     @IBAction func btnForgot(_ sender: UIButton) {
         
-        let msg = "If you can't remember your passcode, you must sign out from \(appName.kAPPName) and login with your email address and password."
+        let msg = "If you can't remember your passcode, you must sign out from \("App Name".localized) and login with your email address and password."
         
-        let alert = UIAlertController(title: appName.kAPPName, message: msg, preferredStyle: .alert)
+        let alert = UIAlertController(title: "App Name".localized, message: msg, preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTIOn in
             
             let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager

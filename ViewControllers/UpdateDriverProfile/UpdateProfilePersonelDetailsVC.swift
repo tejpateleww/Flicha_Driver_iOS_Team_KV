@@ -26,6 +26,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     // MARK: - Outlets
     //-------------------------------------------------------------
     
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet var lblEmail: UILabel!
     @IBOutlet var lblName: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
@@ -120,11 +121,12 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         thePicker.reloadAllComponents()
         thePicker.reloadInputViews()
         setLocalizable()
-        self.title = "Profile".localized
+    
     }
     
     func setLocalizable()
     {
+        lblTitle.text = "Profile".localized
         txtFullName.placeholder = "Full Name".localized
         txtAddress.placeholder = "Address".localized
         txtMobile.placeholder = "Mobile Number".localized
@@ -137,6 +139,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         
     }
 
+    
    
     @IBOutlet weak var lblGender: UILabel!
     
@@ -173,7 +176,8 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         picker.sourceType = .photoLibrary
         
         // picker.stopVideoCapture()
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.mediaTypes = [kUTTypeImage as String]
+//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     
@@ -276,14 +280,15 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     {
         self.performSegue(withIdentifier: "segueChangePassword", sender: nil)
     }
+    
     @IBAction func btnEditProfileIPic(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
             self.PickingImageFromCamera()
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
@@ -302,9 +307,25 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     func webserviceCallToGetCompanyList()
     {
         webserviceForCompanyList([] as AnyObject) { (data, status) in
-            self.aryCompanyIDS  = (data as! NSDictionary).object(forKey: "company") as! [[String : AnyObject]]
-//            self.webserviceCallForGetDriverProfile()
-            self.setData()
+            if(status)
+            {
+                self.aryCompanyIDS  = (data as! NSDictionary).object(forKey: "company") as! [[String : AnyObject]]
+                //            self.webserviceCallForGetDriverProfile()
+                self.setData()
+            }
+            else
+            {
+                if let res = data as? String {
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
+                }
+                else if let resDict = data as? NSDictionary {
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                else if let resAry = data as? NSArray {
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+            }
+           
             
         }
     }
@@ -397,7 +418,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
 
         
         if imgProfile.image == nil {
-            UtilityClass.showAlert("Missing", message: "Please select Profile pic".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please select Profile pic".localized, vc: self)
         }
         else {
             
@@ -445,7 +466,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
                 UserDefaults.standard.set(true, forKey: driverProfileKeys.kKeyIsDriverLoggedIN)
                 
-                let alert = UIAlertController(title: appName.kAPPName, message: "Updated Successfully", preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Updated Successfully", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
@@ -458,19 +479,19 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
             } else {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary
                 {
 //                    if (newString as? NSNull) == NSNull()
                     
-                    if (resDict.object(forKey: "message")  as? NSNull) != nil
+                    if (resDict.object(forKey: GetResponseMessageKey())  as? NSNull) != nil
                     {
-                         UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong!", vc: self)
+                         UtilityClass.showAlert("App Name".localized, message: "Something went wrong!".localized, vc: self)
                     }
                     else
                     {
-                         UtilityClass.showAlert(appName.kAPPName, message: (resDict.object(forKey: "message") as? String)!, vc: self)
+                         UtilityClass.showAlert("App Name".localized, message: (resDict.object(forKey: GetResponseMessageKey()) as? String)!, vc: self)
                     }
                     
 //                    if(((resDict.object(forKey: "message") as! String)as? NSNull) == NSNull())
@@ -485,7 +506,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
                    
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
             
@@ -498,22 +519,22 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
 
         if (txtAddress.text?.count == 0)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Address", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter address".localized, vc: self)
             return false
         }
         else if (txtDOB.text?.count == 0)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Date of Birth", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter date of birth".localized, vc: self)
             return false
         }
         else if (txtFullName.text?.count == 0)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter User Name", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter user name".localized, vc: self)
             return false
         }
 //        else if (txtPostCode.text?.count == 0)
 //        {
-//            UtilityClass.showAlert(appName.kAPPName, message: "Enter Post Code", vc: self)
+//            UtilityClass.showAlert("App Name".localized, message: "Enter Post Code", vc: self)
 //            return false
 //        }
         

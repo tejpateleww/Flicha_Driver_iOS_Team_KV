@@ -200,7 +200,7 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
                 self.present(fbSignInDialog, animated: true, completion: nil)
             }
             else {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please install Facebook app", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please install Facebook app", vc: self)
             }
         }
 
@@ -239,12 +239,12 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
                     self.present(twitterSignInDialog, animated: false)
                 }
                 else {
-                    UtilityClass.showAlert(appName.kAPPName, message: "Please install Twitter app", vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: "Please install Twitter app", vc: self)
                 }
 
             }
             else {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please install Twitter app", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please install Twitter app", vc: self)
             }
 
         }
@@ -300,16 +300,16 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
         switch result {
         case MFMailComposeResult.cancelled:
             print("Mail cancelled")
-            UtilityClass.showAlert(appName.kAPPName, message: "Mail cancelled", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Mail cancelled", vc: self)
         case MFMailComposeResult.saved:
             print("Mail saved")
-            UtilityClass.showAlert(appName.kAPPName, message: "Mail saved", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Mail saved", vc: self)
         case MFMailComposeResult.sent:
             print("Mail sent")
-            UtilityClass.showAlert(appName.kAPPName, message: "Mail sent", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Mail sent", vc: self)
         case MFMailComposeResult.failed:
             print("Mail sent failure: \(String(describing: error?.localizedDescription))")
-            UtilityClass.showAlert(appName.kAPPName, message: "Mail sent failure: \(String(describing: error?.localizedDescription))", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Mail sent failure: \(String(describing: error?.localizedDescription))", vc: self)
             break
         }
         self.dismiss(animated: true, completion: nil)
@@ -320,10 +320,10 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
         switch result {
         case MessageComposeResult.cancelled:
             print("Mail cancelled")
-            UtilityClass.showAlert(appName.kAPPName, message: "Message cancelled", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Message cancelled", vc: self)
         case MessageComposeResult.sent:
             print("Mail sent")
-            UtilityClass.showAlert(appName.kAPPName, message: "Message sent", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Message sent", vc: self)
         case MessageComposeResult.failed:
             print("Mail sent failure")
             break
@@ -336,7 +336,7 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
         {
     //        let profile =  NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! NSDictionary))
     //        let driverFullName = profile.object(forKey: "Fullname") as! String
-            let messageBody = "\(driverFullName) has invited you to become a \(appName.kAPPName) Driver"
+            let messageBody = "\(driverFullName) has invited you to become a \("App Name".localized) Driver"
             let androidLink = "Android click \("")"
             let iosLink = "iOS click \(appName.kAPPUrl)"
             let yourInviteCode = "Your invite code is: \(strReferralCode)"

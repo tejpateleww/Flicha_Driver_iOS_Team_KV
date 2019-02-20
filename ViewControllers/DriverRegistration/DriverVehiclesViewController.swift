@@ -185,7 +185,7 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
 //                UtilityClass.showAlert(appName.kAPPName, message: "Please select car model", vc: self)
             }
             else if Singletons.sharedInstance.isDriverVehicleTypesViewControllerFilled == false {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please enter all document\'s detail.".localized, vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
             }
             else {
                 cellBottom.btnNext.addTarget(self, action: #selector(self.MoveToNext), for: .touchUpInside)
@@ -209,9 +209,12 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
             }
             else
             {
-                let sb = Snackbar()
-                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-                sb.show()
+                let ValidationAlert = UIAlertController(title: "App Name".localized, message: "You can only select three types".localized, preferredStyle: UIAlertController.Style.alert)
+                ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+                self.present(ValidationAlert, animated: true, completion: nil)
+//                let sb = Snackbar()
+//                sb.createWithAction(text: "You can only select three types".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//                sb.show()
             }
             
         } else {

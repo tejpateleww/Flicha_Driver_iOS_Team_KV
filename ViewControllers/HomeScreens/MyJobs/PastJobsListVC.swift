@@ -44,7 +44,7 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         refreshControl.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControl.Event.valueChanged)
-        refreshControl.tintColor = UIColor.red
+        refreshControl.tintColor = ThemeYellowColor
         
         return refreshControl
     }()
@@ -117,6 +117,10 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
+        if Connectivity.isConnectedToInternet() == false {
+            self.refreshControl.endRefreshing()
+            return
+        }
         //        aryPastJobs.removeAllObjects()
         self.ReloadNewData()
 //        self.webserviceOfPastbookingpagination(index: 1)
@@ -182,12 +186,13 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.lblDiscountInFo.text = "Discount :".localized
         cell.lblBookingFare.text = "Booking Fee :".localized
         cell.lblTripFare.text = "Base Fare :".localized
-        cell.lblTollFees.text = "Tip :".localized
+        cell.lblTollFees.text = "\("Tip".localized) :"
         cell.lblSubTotalTitle.text = "Sub Total :".localized
         cell.lblTaX.text = "Tax :".localized
         cell.lblPaymentTypeInfo.text = "Payment Type :".localized
         cell.lblGrandTotalTitle.text = "Total Paid to Driver :".localized
         cell.lblTripStatusTitle.text = "Trip Status :".localized
+        
         //        cell2.selectionStyle = .none
         
         //        if aryPastJobs.count != 0 {
@@ -342,12 +347,10 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         let strGrandTotal = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "GrandTotal", isNotHave: strNotAvailable)
         cell.lblGrandTotalDesc.text = "\(strGrandTotal) \(currency)" // data.object(forKey: "GrandTotal") as? String
         
-        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-            let KeyPaymentType = (SelectedLanguage == "en") ? "PaymentType" : "swahili_PaymentType"
-            let KeyTripStatus = (SelectedLanguage == "en") ? "Status" : "swahili_BookingStatus"
-            cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyPaymentType, isNotHave: strNotAvailable)
-            cell.lblTripStatusInfo.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyTripStatus, isNotHave: strNotAvailable)
-        }
+       
+            cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: GetPaymentTypeKey(), isNotHave: strNotAvailable)
+            cell.lblTripStatusInfo.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: GetTripStatusKey(), isNotHave: strNotAvailable)
+       
         
         cell.lblFlightNumber.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "FlightNumber", isNotHave: strNotAvailable) // data.object(forKey: "FlightNumber") as? String
         cell.lblNotes.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Notes", isNotHave: strNotAvailable) //data.object(forKey: "Notes") as? String
@@ -551,6 +554,19 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
             else {
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                    if let res = result as? String {
+                        UtilityClass.showAlert("App Name".localized, message: res, vc: self)
+                    }
+                    else if let resDict = result as? NSDictionary {
+                        UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                    }
+                    else if let resAry = result as? NSArray {
+                        UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                    }
+                }
+                
                 //                UtilityClass.showAlertOfAPIResponse(param: result, vc: self)
             }
             

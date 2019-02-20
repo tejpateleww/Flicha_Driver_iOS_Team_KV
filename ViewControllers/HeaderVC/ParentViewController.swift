@@ -197,7 +197,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
 //            UtilityClass.showAlertWithCompletion(title: "\(appName)", message: "Contact number is not available") { (index, title) in
 //            }
             
-            UtilityClass.showAlertWithCompletion(appName.kAPPName, message: "Contact number is not available", vc: self, completionHandler: {_ in
+            UtilityClass.showAlertWithCompletion("App Name".localized, message: "Contact number is not available", vc: self, completionHandler: {_ in
             })
         }
         else
@@ -302,7 +302,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
 
         if Singletons.sharedInstance.latitude == nil || Singletons.sharedInstance.longitude == nil || Singletons.sharedInstance.latitude == 0 || Singletons.sharedInstance.longitude == 0
         {
-            UtilityClass.showAlert("Location Missing", message: "Please turn on location", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please turn on location", vc: self)
         }
         else
         {
@@ -321,7 +321,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
                     {
                         self.headerView?.btnSwitch.setImage(UIImage(named: "iconSwitchOff"), for: .normal)
                         Singletons.sharedInstance.driverDuty = "0"
-                         UtilityClass.showAlert("", message: (result as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                         UtilityClass.showAlert("", message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                         UIApplication.shared.isIdleTimerDisabled = false
                         let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
                         socket.disconnect()
@@ -336,7 +336,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
                         socket.connect()
                         UIApplication.shared.isIdleTimerDisabled = true
 
-                        UtilityClass.showAlert("", message: (result as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("", message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                         
                         let contentVC = (self.navigationController?.children[0] as? TabbarController)?.children[0] as? HomeViewController
                         contentVC?.UpdateDriverLocation()
@@ -350,13 +350,13 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
                 
                     
                     if let res = result as? String {
-                        UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                     }
                     else if let resDict = result as? NSDictionary {
-                        UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                     else if let resAry = result as? NSArray {
-                        UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
 
                     self.headerView?.btnSwitch.isEnabled = true

@@ -38,12 +38,12 @@ class Utilities: NSObject
     class func showAlertWithCompletion(_ title: String, message: String, vc: UIViewController,completionHandler: @escaping CompletionHandler) -> Void
     {
         //        title = "TickToc"
-        let alert = UIAlertController(title: appName.kAPPName,
+        let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
         
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: { (action) in
             completionHandler(true)
         }))
         //vc will be the view controller on which you will present your alert as you cannot use self because this method is static.
@@ -336,11 +336,11 @@ class Utilities: NSObject
     }
     class func showAlert(_ title: String, message: String, vc: UIViewController) -> Void
     {
-        let alert = UIAlertController(title: appName.kAPPName,
+        let alert = UIAlertController(title:title,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
         
-        let cancelAction = UIAlertAction(title: "OK",
+        let cancelAction = UIAlertAction(title: "OK".localized,
                                          style: .cancel, handler: nil)
         
         alert.addAction(cancelAction)
@@ -354,11 +354,11 @@ class Utilities: NSObject
     
     class func showAlertAnother(_ title: String, message: String, vc: UIViewController) -> Void
     {
-        let alert = UIAlertController(title: appName.kAPPName,
+        let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: UIAlertController.Style.alert)
         
-        let cancelAction = UIAlertAction(title: "OK",
+        let cancelAction = UIAlertAction(title: "OK".localized,
                                          style: .cancel, handler: nil)
         
         alert.addAction(cancelAction)

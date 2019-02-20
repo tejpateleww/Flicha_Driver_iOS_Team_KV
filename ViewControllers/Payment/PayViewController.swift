@@ -267,7 +267,7 @@ class PayViewController: ParentViewController, UIPickerViewDataSource, UIPickerV
                 UtilityClass.showAlert("Missing", message: "Please enter CVV Number", vc: self)
             }
             else if txtCVV.text!.count != 3 {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid CVV Number", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please enter valid CVV Number", vc: self)
             }
         }
         else {
@@ -595,10 +595,10 @@ class PayViewController: ParentViewController, UIPickerViewDataSource, UIPickerV
                 DispatchQueue.main.async {
 
                     if let res = result as? String {
-                        UtilityClass.showAlertAnother(appName.kAPPName, message: res, vc: self)
+                        UtilityClass.showAlertAnother("App Name".localized, message: res, vc: self)
                     }
                     else {
-                        UtilityClass.showAlertAnother(appName.kAPPName, message: (result as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlertAnother("App Name".localized, message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                 }
             }
@@ -626,13 +626,13 @@ class PayViewController: ParentViewController, UIPickerViewDataSource, UIPickerV
             else {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }

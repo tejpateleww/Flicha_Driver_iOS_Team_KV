@@ -271,10 +271,10 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
         
         
         if txtPickupLocation.text!.count == 0 {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Pickup Location", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Enter Pickup Location", vc: self)
         }
         else if txtDropLocation.text!.count == 0 {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Dropoff Location", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Enter Dropoff Location", vc: self)
         }
         else {
             
@@ -333,7 +333,7 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
         print("Fareamount: \(String(describing: fareAmount))")
         
         if totalEastimateFare > fareAmount! {
-            UtilityClass.showAlert(appName.kAPPName, message: "You cannot enter estimate fare less than \(totalEastimateFare). ", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "You cannot enter estimate fare less than \(totalEastimateFare). ", vc: self)
         }
         else {
             if (validationForDispathcJobsNow()) {
@@ -344,7 +344,7 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
         }
         else
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter all fields", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter all fields", vc: self)
         }
         
        
@@ -473,13 +473,13 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
             {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -617,13 +617,13 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
                 print(result)
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resDict.object(forKey: "message")) as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resDict.object(forKey: GetResponseMessageKey())) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
@@ -652,7 +652,7 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
                     
                     if(dataTotalFare == 0)
                     {
-                        UtilityClass.showAlert(appName.kAPPName, message: "No drivers availabale", vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: "No drivers availabale", vc: self)
                     }
                     
                 }
@@ -696,31 +696,31 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
     func validationForDispathcJobsNow() -> Bool {
         
         if (txtContactName.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Customer Name", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Enter Customer Name", vc: self)
             return false
         }
         else if (txtMobileNumber.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Mobile Number", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Enter Mobile Number", vc: self)
             return false
         }
 //        else if (txtCustomerEmail.text!.count == 0) {
-//            UtilityClass.showAlert(appName.kAPPName, message: "Enter Email ID", vc: self)
+//            UtilityClass.showAlert("App Name".localized, message: "Enter Email ID", vc: self)
 //            return false
 //        }
         else if (txtPickupLocation.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Pickup Location", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Enter Pickup Location", vc: self)
             return false
         }
         else if (txtDropLocation.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Dropoff Location", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Enter Dropoff Location", vc: self)
             return false
         }
         else if (txtFareAmount.text!.count == 0) {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Fare Amount", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Enter Fare Amount", vc: self)
             return false
         }
         else if (vehicleTypeData.Id == "") {
-            UtilityClass.showAlert(appName.kAPPName, message: "Select Vehicle Type", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Select Vehicle Type", vc: self)
             return false
         }
         

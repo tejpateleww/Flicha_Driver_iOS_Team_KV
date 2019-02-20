@@ -227,7 +227,7 @@ class InVoiceReceiptViewController: ParentViewController, UIPickerViewDelegate, 
         strTiCKPayId = Singletons.sharedInstance.strTickPayId
         
         if strInvoiceType == "" {
-            UtilityClass.showAlert(appName.kAPPName, message: "Select Invoice Type", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Select Invoice Type", vc: self)
         }
         else {
             param["InvoiceType"] = strInvoiceType as AnyObject
@@ -266,13 +266,13 @@ class InVoiceReceiptViewController: ParentViewController, UIPickerViewDelegate, 
             else{
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
 
             }
@@ -291,12 +291,12 @@ class InVoiceReceiptViewController: ParentViewController, UIPickerViewDelegate, 
         {
             if txtEmailId.text!.count == 0
             {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Email Id", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please Enter Email Id", vc: self)
                 return false
             }
             else if (!isEmailAddressValid)
             {
-                UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Valid Email ID", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please Enter Valid Email ID", vc: self)
                 
                 return false
             }
@@ -306,7 +306,7 @@ class InVoiceReceiptViewController: ParentViewController, UIPickerViewDelegate, 
              if txtPhoneNumber.text!.count == 0
             {
                 
-                UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Phone number", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Please Enter Phone number", vc: self)
                 
                 return false
             }
@@ -315,11 +315,11 @@ class InVoiceReceiptViewController: ParentViewController, UIPickerViewDelegate, 
        
        
          if txtCustomerName.text!.count == 0 {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter customer name", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter Customer Name.".localized, vc: self)
             return false
         }
         else if txtDescription.text!.count == 0 {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please enter description", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter description", vc: self)
             return false
         }
         

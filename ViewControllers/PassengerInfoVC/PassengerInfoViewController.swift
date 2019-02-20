@@ -183,7 +183,7 @@ class PassengerInfoViewController: UIViewController,MFMessageComposeViewControll
             let contactNumber = strPassengerMobileNumber
             
             if contactNumber == "" {
-                UtilityClass.showAlert(appName.kAPPName, message: "Contact number  is not available", vc: self)
+                UtilityClass.showAlert("App Name".localized, message: "Contact number  is not available", vc: self)
             }
             else {
                 let controller = MFMessageComposeViewController()
@@ -215,7 +215,7 @@ class PassengerInfoViewController: UIViewController,MFMessageComposeViewControll
         let contactNumber = strPassengerMobileNumber
         
         if contactNumber == "" {
-            UtilityClass.showAlert(appName.kAPPName, message: "Contact number  is not available", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Contact number  is not available", vc: self)
         }
         else {
             callNumber(phoneNumber: contactNumber)

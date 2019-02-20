@@ -77,14 +77,13 @@ class DriverBankDetailsViewController: UIViewController
     */
     @IBAction func btnNext(_ sender: Any) {
         
-
-        if CheckValidation()
-        {
+        let validator = CheckValidation()
+        if validator.0 == true {
             let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
             
             //        let personalDetailsVC = driverVC.childViewControllers[2] as! DriverPersonelDetailsViewController
             driverVC.viewOne.backgroundColor = ThemeYellowColor
-//            driverVC.imgCar.image = UIImage.init(named: iconCarSelect)
+            //            driverVC.imgCar.image = UIImage.init(named: iconCarSelect)
             let x = self.view.frame.size.width * 3
             driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
             
@@ -96,41 +95,52 @@ class DriverBankDetailsViewController: UIViewController
             self.userDefault.set(self.txtAccountNumber.text, forKey: RegistrationFinalKeys.kBankAccountNo)
             self.userDefault.set(3, forKey: savedDataForRegistration.kPageNumber)
             driverVC.viewDidLayoutSubviews()
+        } else {
+            
+            let ValidationAlert = UIAlertController(title: "App Name".localized, message: validator.1, preferredStyle: UIAlertController.Style.alert)
+            ValidationAlert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler: nil))
+            self.present(ValidationAlert, animated: true, completion: nil)
         }
-        
-        
         
     }
     
-    func CheckValidation() -> Bool
+    func CheckValidation() -> (Bool,String)
     {
-        let sb = Snackbar()
+//        let sb = Snackbar()
+        var isValidate:Bool = true
+        var ValidationMessage:String = ""
+        
+        
 //        sb.createWithAction(text: "Upload Car Registration", actionTitle: "Dismiss".localized, action: { print("Button is push") })
         
-        if txtAccountHolderName.text == "" {
-            sb.createWithAction(text: "Please enter account holder name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            return false
+        if txtAccountHolderName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+//            sb.createWithAction(text: "Please enter account holder name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            isValidate = false
+            ValidationMessage = "Please enter account holder name".localized
         }
-        else if txtBankName.text == "" {
-            sb.createWithAction(text: "Please enter bank name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            return false
+        else if txtBankName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+//            sb.createWithAction(text: "Please enter bank name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            isValidate = false
+            ValidationMessage = "Please enter bank name".localized
 
         }
             
             
-        else if txtBankBranch.text == "" {
-            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            return false
+        else if txtBankBranch.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+//            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            isValidate = false
+            ValidationMessage = "Please enter bank branch".localized
 
         }
             
-        else if txtAccountNumber.text == "" {
-            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            return false
+        else if txtAccountNumber.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+//            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            isValidate = false
+            ValidationMessage = "Please enter account number".localized
         }
         
-        sb.show()
-        return true
+//        sb.show()
+        return (isValidate,ValidationMessage)
 
     }
 

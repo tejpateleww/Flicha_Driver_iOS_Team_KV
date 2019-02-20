@@ -137,7 +137,6 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             if let passOn = UserDefaults.standard.object(forKey: "isPasscodeON") as? Bool {
                 
                 if passOn == false {
-                    
                     Singletons.sharedInstance.isPasscodeON = false
                 }
                 else {
@@ -285,7 +284,7 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             let data = ((userInfo["aps"]! as! [String : AnyObject])["alert"]!) as! [String : AnyObject]
             
             
-            let alert = UIAlertController(title: appName.kAPPName,
+            let alert = UIAlertController(title: "App Name".localized,
                                           message: data["title"] as? String,
                                           preferredStyle: UIAlertController.Style.alert)
             
@@ -296,7 +295,7 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
                     self.pushAfterReceiveNotification(typeKey: key as! String, applicationObject: application)
                 }))
                 
-                alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: { (action) in
+                alert.addAction(UIAlertAction(title: "Dismiss".localized, style: .destructive, handler: { (action) in
                     
                 }))
                 self.window?.rootViewController?.present(alert, animated: true, completion: nil)

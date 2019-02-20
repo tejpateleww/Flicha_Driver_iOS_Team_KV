@@ -69,17 +69,18 @@ class ChangePasswordViewController: ParentViewController {
    
     @IBAction func btnSubmit(_ sender: UIButton) {
         
+        let Validator:(Bool,String) = self.isValidate()
         
-        let inputText = txtNewPassword.text!
         
-        if inputText.count > 7 {
-            
-             WebservieceChengePassword()
+        if Validator.0 == true {
+          
+            WebservieceChengePassword()
+        
         }
         else {
            
-            let alert = UIAlertController(title: appName.kAPPName, message: "Password should be minimum 8 characters", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let alert = UIAlertController(title: "App Name".localized, message: Validator.1, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
         }
@@ -90,6 +91,25 @@ class ChangePasswordViewController: ParentViewController {
     // MARK: - Custom Methods
     //-------------------------------------------------------------
     
+    func isValidate() -> (Bool,String) {
+        var isValid:Bool = true
+        var ValidatorMessage:String = ""
+        if self.txtNewPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValid = false
+            ValidatorMessage = "Please enter password".localized
+        } else if (self.txtNewPassword.text?.count)! < 8 {
+            isValid = false
+            ValidatorMessage = "Password must contain at least 8 characters.".localized
+        } else if self.txtConfirmPass.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            isValid = false
+            ValidatorMessage = "Please enter confirm password".localized
+        } else if self.txtConfirmPass.text != self.txtNewPassword.text {
+            isValid = false
+            ValidatorMessage = "Password and confirm password must be same".localized
+        }
+        
+        return (isValid,ValidatorMessage)
+    }
     
     @objc func nevigateToBack()
     {
@@ -122,12 +142,12 @@ class ChangePasswordViewController: ParentViewController {
                     print(result)
                     
                     if let res = result as? String {
-                        UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                     }
                     else if let resDict = result as? NSDictionary {
                         
-                        let alert = UIAlertController(title: appName.kAPPName, message: (resDict).object(forKey: "message") as? String, preferredStyle: .alert)
-                        let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
+                        let alert = UIAlertController(title: "App Name".localized, message: (resDict).object(forKey: GetResponseMessageKey()) as? String, preferredStyle: .alert)
+                        let OK = UIAlertAction(title: "OK".localized, style: .default, handler: { ACTION in
                             
                             self.navigationController?.popViewController(animated: true)
                         })
@@ -136,7 +156,7 @@ class ChangePasswordViewController: ParentViewController {
                         
                     }
                     else if let resAry = result as? NSArray {
-                        UtilityClass.showAlert(appName.kAPPName, message: ((resAry).object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: ((resAry).object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                     
                 } else {
@@ -144,13 +164,13 @@ class ChangePasswordViewController: ParentViewController {
                     print(result)
                     
                     if let res = result as? String {
-                        UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                     }
                     else if let resDict = result as? NSDictionary {
-                        UtilityClass.showAlert(appName.kAPPName, message: (resDict).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: (resDict).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                     else if let resAry = result as? NSArray {
-                        UtilityClass.showAlert(appName.kAPPName, message: ((resAry).object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                        UtilityClass.showAlert("App Name".localized, message: ((resAry).object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                     }
                     
                 }

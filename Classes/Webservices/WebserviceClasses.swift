@@ -32,11 +32,14 @@ func postData(_ dictParams: AnyObject, nsURL: String, completion: @escaping (_ r
 
     print("The webservice call is \(url) and the params are \(dictParams)")
     
+    if Connectivity.isConnectedToInternet() == false {
+         completion("Sorry! Not connected to internet".localized as AnyObject, false)
+        return
+    }
     
-    DispatchQueue.main.async
-        {
+    
+    DispatchQueue.main.async{
         UtilityClass.showACProgressHUD()
-
     }
     
     Alamofire.request(url, method: .post, parameters: dictParams as? [String : AnyObject], encoding: URLEncoding.default, headers: header)
@@ -79,6 +82,11 @@ func getData(_ dictParams: AnyObject, nsURL: String,  completion: @escaping (_ r
 //    HUD.dimsBackground = false
 //    HUD.allowsInteraction = false
 //    HUD.show(.systemActivity)
+    
+    if Connectivity.isConnectedToInternet() == false {
+        completion("Sorry! Not connected to internet".localized as AnyObject, false)
+        return
+    }
     
     UtilityClass.showACProgressHUD()
    
@@ -130,6 +138,11 @@ func getDataOfHistory(_ dictParams: AnyObject, nsURL: String,  completion: @esca
 {
  
     let url = BaseURL + nsURL
+    if Connectivity.isConnectedToInternet() == false {
+        completion("Sorry! Not connected to internet".localized as AnyObject, false)
+        return
+    }
+    
     DispatchQueue.main.async {
         UtilityClass.showACProgressHUD()
     }
@@ -176,6 +189,11 @@ func getDataOfHistory(_ dictParams: AnyObject, nsURL: String,  completion: @esca
 func sendImage(_ dictParams: [String:AnyObject], image1: UIImage, image2: UIImage, image3: UIImage, image4: UIImage, image5: UIImage, image6: UIImage, nsURL: String, completion: @escaping (_ result: AnyObject, _ success: Bool) -> Void) {
     
     let url = BaseURL + nsURL
+    
+    if Connectivity.isConnectedToInternet() == false {
+        completion("Sorry! Not connected to internet".localized as AnyObject, false)
+        return
+    }
     
 //    print("The webservice call is\(url) and the params are \(dictParams)")
 
@@ -282,7 +300,10 @@ func sendImage(_ dictParams: [String:AnyObject], image1: UIImage, image2: UIImag
 func DeiverInfo(_ dictParams: [String:AnyObject], image1: UIImage, nsURL: String, completion: @escaping (_ result: AnyObject, _ success: Bool) -> Void) {
     
     let url = BaseURL + nsURL
-    
+    if Connectivity.isConnectedToInternet() == false {
+        completion("Sorry! Not connected to internet".localized as AnyObject, false)
+        return
+    }
     
 //    let headers: HTTPHeaders = ["key": "TicktocApp123*"]
     //    let aryImagesName = ["DriverLicence","CarRegistration","AccreditationCertificate","VehicleInsuranceCertificate"]
@@ -362,7 +383,10 @@ func sendUpdateDriverDocument(_ dictParams: [String:AnyObject], image: UIImage, 
     
     let url = BaseURL + nsURL
     
-    
+    if Connectivity.isConnectedToInternet() == false {
+        completion("Sorry! Not connected to internet".localized as AnyObject, false)
+        return
+    }
 //    let headers: HTTPHeaders = ["key": "TicktocApp123*"]
     //    let aryImagesName = ["DriverLicence","CarRegistration","AccreditationCertificate","VehicleInsuranceCertificate"]
     
@@ -450,6 +474,7 @@ func getDataGoogle(_ dictParams: AnyObject, nsURL: String,  completion: @escapin
     //    HUD.dimsBackground = false
     //    HUD.allowsInteraction = false
     //    HUD.show(.systemActivity)
+    
     
     UtilityClass.showACProgressHUD()
     

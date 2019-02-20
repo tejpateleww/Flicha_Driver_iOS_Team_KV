@@ -15,7 +15,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     var imagePicker = UIImagePickerController()
     var imagePicked = 0
-
+    var SelectedDocImage = UIImage()
     
     //-------------------------------------------------------------
     // MARK: - Base Methods
@@ -57,13 +57,14 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         lblAccreditationCerti.text = "TIN Certificate".localized
         lblAccreditationCertiExpiryDate.text = "Select TIN Certificate expiry date".localized
         lblCarRegistration.text = "Vehicle Registration Document".localized
-        lblCarRegistrationExpiryDate.text = "Select car registration expiry date".localized
+//        lblCarRegistrationExpiryDate.text = "Select car registration expiry date".localized
         lblVehicleInsurance.text = "Vehicle Insurance Policy/Certificate".localized
         lblVehicleInsuranceExpiryDate.text = "Select vehicle insurance/policy expiry date".localized
-        btnSave.setTitle("Save".localized, for: .normal)
+//        btnSave.setTitle("Save".localized, for: .normal)
     }
 
-    @IBOutlet weak var btnSave: ThemeButton!
+//    @IBOutlet weak var btnSave: ThemeButton!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,7 +92,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     @IBOutlet weak var imgCarRegistration: UIImageView!
     @IBOutlet weak var lblCarRegistration: UILabel!
-    @IBOutlet weak var lblCarRegistrationExpiryDate: UILabel!
+//    @IBOutlet weak var lblCarRegistrationExpiryDate: UILabel!
     
     @IBOutlet weak var imgVehicleInsurance: UIImageView!
     @IBOutlet weak var lblVehicleInsurance: UILabel!
@@ -105,25 +106,26 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
             
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
             
-           DispatchQueue.main.async {
+//           DispatchQueue.main.async {
             
                 self.imagePicked = sender.tag
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .camera
                 self.imagePicker.cameraCaptureMode = .photo
-            }
+//            }
             self.present(self.imagePicker, animated: true)
             
             
@@ -143,24 +145,25 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
             
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
-            DispatchQueue.main.async {
-                
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
+//            DispatchQueue.main.async {
+            
                 self.imagePicked = sender.tag
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .camera
                 self.imagePicker.cameraCaptureMode = .photo
-            }
+//            }
             self.present(self.imagePicker, animated: true)
             
             
@@ -180,24 +183,25 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         
         let alert = UIAlertController(title: "Choose Photo".localized ,message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
             
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
-            DispatchQueue.main.async {
-                
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
+//            DispatchQueue.main.async {
+            
                 self.imagePicked = sender.tag
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .camera
                 self.imagePicker.cameraCaptureMode = .photo
-            }
+//            }
             self.present(self.imagePicker, animated: true)
             
             
@@ -266,26 +270,26 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     @IBAction func btnVehicleInsurance(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Options".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
             
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
-            DispatchQueue.main.async {
-                
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
+//            DispatchQueue.main.async {
+            
                 self.imagePicked = sender.tag
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .camera
                 //                self.imagePicker.cameraCaptureMode = .photo
-            }
+//            }
             self.present(self.imagePicker, animated: true)
             
             
@@ -309,23 +313,22 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     var boolImgVehicle = Bool()
     
-    @IBAction func btnSaveData(_ sender: Any) {
-    }
+//    @IBAction func btnSaveData(_ sender: Any) {
+//    }
     
     // MARK:- Upload Vehicle Image
 
     
     @IBAction func btnUploadVehicleImage(_ sender: Any) {
         
-        let alert = UIAlertController(title:  "Choose Options".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title:  "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
-        let Gallery = UIAlertAction(title: "Gallery", style: .default, handler: { ACTION in
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
            
             self.boolImgVehicle = true
-            
             self.PickingImageFromGallery()
         })
-        let Camera  = UIAlertAction(title: "Camera", style: .default, handler: { ACTION in
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
             
             self.boolImgVehicle = true
             self.PickingImageFromCamera()
@@ -354,7 +357,8 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         picker.sourceType = .photoLibrary
         
         // picker.stopVideoCapture()
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.mediaTypes = [kUTTypeImage as String]
+//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     
@@ -377,26 +381,29 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
                                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {
         
-        
-
-        DispatchQueue.main.async {
-             let pickedImage  = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-                        if self.imagePicked == 1 {
+//        DispatchQueue.main.async {
+            let pickedImage  = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            if self.imagePicked == 1 {
                 self.imgDriverLicence.contentMode = .scaleToFill
                 self.imgDriverLicence.image = pickedImage
+                self.SelectedDocImage = pickedImage!
             } else if self.imagePicked == 2 {
                 self.imgAccreditationCerti.contentMode = .scaleToFill
                 self.imgAccreditationCerti.image = pickedImage
+                 self.SelectedDocImage = pickedImage!
             } else if self.imagePicked == 3 {
                 self.imgCarRegistration.contentMode = .scaleToFill
                 self.imgCarRegistration.image = pickedImage
+                self.SelectedDocImage = pickedImage!
             } else if self.imagePicked == 4 {
                 self.imgVehicleInsurance.contentMode = .scaleToFill
                 self.imgVehicleInsurance.image = pickedImage
+                self.SelectedDocImage = pickedImage!
             }
-        }
+//        }
         dismiss(animated: true, completion: nil)
-
+        
+        
         if boolImgVehicle == true
         {
             if let pickedImage  = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -409,27 +416,41 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         }
         else
         {
-//            dismiss(animated: true)
-            
-            let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                // Your code with delay
-            
-            
-                let selector = WWCalendarTimeSelector.instantiate()
-                
-                
-                // 2. You can then set delegate, and any customization options
-                //        selector.delegate = self
-                selector.optionTopPanelTitle = "Please add expiry date".localized
-                
-                // 3. Then you simply present it from your view controller when necessary!
-                self.present(selector, animated: true, completion: nil)
-                selector.delegate = self
-                
+            //            dismiss(animated: true)
+            if self.imagePicked == 3 {
+                  webserviceCallToUploaDocs(imageToUpload: self.SelectedDocImage, strParam: "CarRegistrationCertificate", expireDate: "", expireDateKey: "")
+            } else {
+                self.perform(#selector(self.OpenDateTimePicker), with: nil, afterDelay: 0.5)
+                /*
+                let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+                DispatchQueue.main.asyncAfter(deadline: when) {
+                    // Your code with delays
+                    let selector = WWCalendarTimeSelector.instantiate()
+                    // 2. You can then set delegate, and any customization options
+                    //        selector.delegate = self
+                    selector.optionTopPanelTitle = "Please add expiry date".localized
+                    
+                    // 3. Then you simply present it from your view controller when necessary!
+                    self.present(selector, animated: true, completion: nil)
+                    selector.delegate = self
+                    
+                }
+                 */
             }
         }
-
+        
+    }
+    
+    @objc func OpenDateTimePicker() {
+        // Your code with delays
+        let selector = WWCalendarTimeSelector.instantiate()
+        // 2. You can then set delegate, and any customization options
+        //        selector.delegate = self
+        selector.optionTopPanelTitle = "Please add expiry date".localized
+        
+        // 3. Then you simply present it from your view controller when necessary!
+        self.present(selector, animated: true, completion: nil)
+        selector.delegate = self
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -454,21 +475,19 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         
         if imagePicked == 1 {
             lblDriverLicenceExpiryDate.text = mySelectedDate as String
-            webserviceCallToUploaDocs(imageToUpload: imgDriverLicence.image!, strParam: "DriverLicence", expireDate: mySelectedDate, expireDateKey: "DriverLicenseExpire")
+            webserviceCallToUploaDocs(imageToUpload: self.SelectedDocImage, strParam: "DriverLicence", expireDate: mySelectedDate, expireDateKey: "DriverLicenseExpire")
             
         } else if imagePicked == 2 {
             lblAccreditationCertiExpiryDate.text = mySelectedDate as String
-            webserviceCallToUploaDocs(imageToUpload: imgAccreditationCerti.image!, strParam: "AccreditationCertificate", expireDate: mySelectedDate, expireDateKey: "AccreditationCertificateExpire")
-
-            
+            webserviceCallToUploaDocs(imageToUpload: self.SelectedDocImage, strParam: "AccreditationCertificate", expireDate: mySelectedDate, expireDateKey: "AccreditationCertificateExpire")
         } else if imagePicked == 3 {
-            lblCarRegistrationExpiryDate.text = mySelectedDate as String
-            webserviceCallToUploaDocs(imageToUpload: imgCarRegistration.image!, strParam: "CarRegistrationCertificate", expireDate: mySelectedDate, expireDateKey: "RegistrationCertificateExpire")
+//            lblCarRegistrationExpiryDate.text = mySelectedDate as String
+//            webserviceCallToUploaDocs(imageToUpload: imgCarRegistration.image!, strParam: "CarRegistrationCertificate", expireDate: mySelectedDate, expireDateKey: "RegistrationCertificateExpire")
 
             
         } else if imagePicked == 4 {
             lblVehicleInsuranceExpiryDate.text = mySelectedDate as String
-            webserviceCallToUploaDocs(imageToUpload: imgVehicleInsurance.image!, strParam: "VehicleInsuranceCertificate", expireDate: mySelectedDate, expireDateKey: "VehicleInsuranceCertificateExpire")
+            webserviceCallToUploaDocs(imageToUpload: self.SelectedDocImage, strParam: "VehicleInsuranceCertificate", expireDate: mySelectedDate, expireDateKey: "VehicleInsuranceCertificateExpire")
 
         }
     }
@@ -499,7 +518,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
                 UserDefaults.standard.set(true, forKey: driverProfileKeys.kKeyIsDriverLoggedIN)
                 
   
-                let alert = UIAlertController(title: appName.kAPPName, message: "Updated successfully.".localized, preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Updated successfully.".localized, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
@@ -513,13 +532,13 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
             } else {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
             

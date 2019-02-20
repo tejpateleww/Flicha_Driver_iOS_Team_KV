@@ -296,6 +296,7 @@
                     </view>
                     <connections>
                         <outlet property="btnSave" destination="v1i-Cc-hna" id="aMz-ef-c30"/>
+                        <outlet property="lblTitle" destination="wJ3-i9-zDp" id="EtL-TS-eBJ"/>
                         <outlet property="txtABN" destination="UK1-90-cPx" id="pVv-Lo-Ncb"/>
                         <outlet property="txtAccountHolderName" destination="yeQ-xd-Fkg" id="UVZ-uJ-EPS"/>
                         <outlet property="txtBSB" destination="CQe-Nz-YuH" id="Xv6-xf-Qu4"/>
@@ -748,6 +749,10 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                                                 <state key="normal" title="Change Password"/>
+                                                                <connections>
+                                                                    <action selector="btnChangePassword:" destination="cvW-n9-8gg" eventType="touchUpInside" id="ajX-Kt-NDd"/>
+                                                                    <action selector="btnChangePasswordClicked:" destination="ed2-r5-hVe" eventType="touchUpInside" id="EGb-sc-iuv"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf1-DP-qxs" customClass="ThemeButton" customModule="TanTaxi_Driver" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="75" width="315" height="45"/>
@@ -902,6 +907,7 @@
                         <outlet property="lblFemale" destination="83s-wj-6gh" id="Se7-XW-p5p"/>
                         <outlet property="lblGender" destination="oha-UW-sm0" id="n0c-xc-FZk"/>
                         <outlet property="lblName" destination="0t9-hL-zF5" id="Hax-KW-cBd"/>
+                        <outlet property="lblTitle" destination="LFW-S7-3Ov" id="Squ-2J-h2j"/>
                         <outlet property="lblmale" destination="e7i-cT-yul" id="hB3-o0-cTl"/>
                         <outlet property="txtAddress" destination="Fsi-Ug-1IT" id="5fr-Vj-ysE"/>
                         <outlet property="txtCity" destination="TCt-sR-pOM" id="kpV-JH-1ci"/>
@@ -918,6 +924,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvR-eb-I6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cvW-n9-8gg" userLabel="Exit" sceneMemberID="exit"/>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-zV-grk">
                     <rect key="frame" x="0.0" y="0.0" width="335" height="42"/>
                     <subviews>
@@ -1592,25 +1599,21 @@
                                                     <constraint firstAttribute="height" constant="30" id="VJ3-vi-qqv"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Re-Yl-uQD">
-                                                <rect key="frame" x="8" y="8" width="110.5" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="AZu-lQ-dPo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Car Registration Expiry date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eB-3T-g6T">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Car Registration Expiry date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eB-3T-g6T">
                                                 <rect key="frame" x="8" y="31.5" width="183" height="13.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="13.5" id="qdq-EV-dNU"/>
-                                                </constraints>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlF-8x-UQC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Re-Yl-uQD">
+                                                <rect key="frame" x="8" y="5" width="244" height="39"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlF-8x-UQC">
                                                 <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <connections>
                                                     <action selector="btnCarRegistration:" destination="R89-Dr-0Kg" eventType="touchUpInside" id="HUN-0g-zHX"/>
@@ -1627,14 +1630,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="XaO-4b-37Y" secondAttribute="trailing" constant="15" id="1u6-K4-0HN"/>
-                                            <constraint firstItem="6Re-Yl-uQD" firstAttribute="top" secondItem="pja-gC-tr5" secondAttribute="top" constant="8" id="2uO-Xy-VUH"/>
-                                            <constraint firstItem="8eB-3T-g6T" firstAttribute="top" secondItem="6Re-Yl-uQD" secondAttribute="bottom" constant="2.5" id="968-Vy-NVE"/>
+                                            <constraint firstItem="6Re-Yl-uQD" firstAttribute="top" secondItem="pja-gC-tr5" secondAttribute="top" constant="5" id="2uO-Xy-VUH"/>
+                                            <constraint firstItem="XaO-4b-37Y" firstAttribute="leading" secondItem="6Re-Yl-uQD" secondAttribute="trailing" constant="8" id="9Cq-19-UCo"/>
                                             <constraint firstItem="6Re-Yl-uQD" firstAttribute="leading" secondItem="pja-gC-tr5" secondAttribute="leading" constant="8" id="EaD-XI-zs7"/>
                                             <constraint firstAttribute="trailing" secondItem="jlF-8x-UQC" secondAttribute="trailing" id="MFu-FV-Vht"/>
-                                            <constraint firstItem="8eB-3T-g6T" firstAttribute="leading" secondItem="6Re-Yl-uQD" secondAttribute="leading" id="MQe-sO-iS2"/>
-                                            <constraint firstAttribute="bottom" secondItem="8eB-3T-g6T" secondAttribute="bottom" constant="5" id="Qgu-Hr-3Vq"/>
                                             <constraint firstItem="XaO-4b-37Y" firstAttribute="centerY" secondItem="pja-gC-tr5" secondAttribute="centerY" id="Tff-K5-fb3"/>
                                             <constraint firstItem="jlF-8x-UQC" firstAttribute="top" secondItem="pja-gC-tr5" secondAttribute="top" id="XT0-XA-O0c"/>
+                                            <constraint firstItem="1rG-JD-FVc" firstAttribute="top" secondItem="6Re-Yl-uQD" secondAttribute="bottom" constant="5" id="aQ0-B4-SAF"/>
                                             <constraint firstAttribute="bottom" secondItem="1rG-JD-FVc" secondAttribute="bottom" id="mGF-Ti-IhV"/>
                                             <constraint firstAttribute="bottom" secondItem="jlF-8x-UQC" secondAttribute="bottom" id="pSC-Nj-aaV"/>
                                             <constraint firstItem="1rG-JD-FVc" firstAttribute="leading" secondItem="pja-gC-tr5" secondAttribute="leading" id="rf8-pY-a6y"/>
@@ -1669,7 +1671,7 @@
                                                 <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5b-DA-D8p">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5b-DA-D8p">
                                                 <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                                 <connections>
                                                     <action selector="btnVehicleInsurance:" destination="R89-Dr-0Kg" eventType="touchUpInside" id="Mto-TI-Dq4"/>
@@ -1706,26 +1708,15 @@
                                     <constraint firstItem="1rG-JD-FVc" firstAttribute="trailing" secondItem="Yeb-Ia-J2T" secondAttribute="trailing" id="ng6-28-ycc"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VW-i9-RSC" customClass="ThemeButton" customModule="TanTaxi_Driver" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VW-i9-RSC" customClass="ThemeButton" customModule="TanTaxi_Driver" customModuleProvider="target">
                                 <rect key="frame" x="46" y="483" width="228" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.89411764709999997" green="0.51764705879999995" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="YG9-y6-rmh">
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="preciseConstant">
-                                                <real key="value" value="80"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </constraint>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="20"/>
                                 <state key="normal" title="Save"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSubmitButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="btnSaveData:" destination="R89-Dr-0Kg" eventType="touchUpInside" id="sHq-IU-DM3"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1738,24 +1729,19 @@
                             <constraint firstItem="0Yj-YE-klf" firstAttribute="trailing" secondItem="Cue-Ml-Kif" secondAttribute="trailing" id="8TB-Hd-XWp"/>
                             <constraint firstAttribute="trailing" secondItem="X4Y-jN-ml7" secondAttribute="trailing" constant="7" id="9dF-IN-WPU"/>
                             <constraint firstAttribute="trailing" secondItem="Sdv-H1-YG9" secondAttribute="trailing" id="CJe-fH-vuT"/>
-                            <constraint firstItem="4VW-i9-RSC" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="leadingMargin" constant="30" id="E7l-sL-XP5"/>
-                            <constraint firstItem="Gu5-x2-bjs" firstAttribute="top" secondItem="4VW-i9-RSC" secondAttribute="bottom" constant="40" id="W39-gW-RZc"/>
                             <constraint firstItem="0Yj-YE-klf" firstAttribute="top" secondItem="Cue-Ml-Kif" secondAttribute="top" id="WqD-fy-hyE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4VW-i9-RSC" secondAttribute="trailing" constant="30" id="Z2W-bm-0YN"/>
                             <constraint firstItem="X4Y-jN-ml7" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="leading" constant="7" id="d9r-DD-Vpg"/>
                             <constraint firstAttribute="trailing" secondItem="LMk-f0-VOa" secondAttribute="trailing" id="jm3-mB-C5Q"/>
                             <constraint firstItem="Sdv-H1-YG9" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="leading" id="keU-nn-JQu"/>
                             <constraint firstItem="LMk-f0-VOa" firstAttribute="top" secondItem="Sdv-H1-YG9" secondAttribute="bottom" constant="1" id="kko-5k-X8K"/>
                             <constraint firstItem="0Yj-YE-klf" firstAttribute="bottom" secondItem="Cue-Ml-Kif" secondAttribute="bottom" id="mv9-gF-qig"/>
                             <constraint firstItem="P1y-eC-yhq" firstAttribute="centerY" secondItem="Cue-Ml-Kif" secondAttribute="baseline" id="wZv-Pw-Qou"/>
-                            <constraint firstItem="4VW-i9-RSC" firstAttribute="centerX" secondItem="c6p-88-MwT" secondAttribute="centerX" id="wb1-fC-dYU"/>
                             <constraint firstItem="LMk-f0-VOa" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="leading" id="wcv-CO-taj"/>
                             <constraint firstItem="X4Y-jN-ml7" firstAttribute="top" secondItem="P1y-eC-yhq" secondAttribute="bottom" constant="10" id="xc8-eB-cSZ"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="btnSave" destination="4VW-i9-RSC" id="j99-8v-Deh"/>
                         <outlet property="imgAccreditationCerti" destination="t88-N5-eqk" id="9H2-gi-82E"/>
                         <outlet property="imgCarRegistration" destination="XaO-4b-37Y" id="Z83-iB-n2L"/>
                         <outlet property="imgDriverLicence" destination="38I-ak-O3D" id="Qgf-J1-YGc"/>
@@ -1764,7 +1750,6 @@
                         <outlet property="lblAccreditationCerti" destination="II6-i0-T4c" id="zHm-lT-zT8"/>
                         <outlet property="lblAccreditationCertiExpiryDate" destination="6Vt-Ia-re5" id="cVH-Mg-Nbl"/>
                         <outlet property="lblCarRegistration" destination="6Re-Yl-uQD" id="hwh-kx-wgL"/>
-                        <outlet property="lblCarRegistrationExpiryDate" destination="8eB-3T-g6T" id="Rdj-h9-jDO"/>
                         <outlet property="lblDriverLicence" destination="qah-PT-ZvS" id="Nhm-7Z-y9R"/>
                         <outlet property="lblDriverLicenceExpiryDate" destination="1Pz-bz-7r0" id="CE7-h1-O4H"/>
                         <outlet property="lblTitle" destination="tx7-ua-5u4" id="Dwu-eF-Szs"/>
@@ -1795,7 +1780,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="2147" y="1910"/>
+            <point key="canvasLocation" x="2146.875" y="1909.8591549295775"/>
         </scene>
         <!--Update Driver Vehicle Types View Controller-->
         <scene sceneID="ISE-IC-bdy">
@@ -2352,7 +2337,7 @@ You must be 21 years of age or over.</string>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqY-Eg-zho">
                                                                 <rect key="frame" x="0.0" y="104" width="290" height="42"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car Company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NU2-lS-aTs">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vehicle Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NU2-lS-aTs">
                                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="xcI-H0-QPR"/>

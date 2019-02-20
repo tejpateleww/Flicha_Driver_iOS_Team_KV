@@ -44,7 +44,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
             refreshControl.addTarget(self, action:
                 #selector(self.handleRefresh(_:)),
                                      for: UIControl.Event.valueChanged)
-            refreshControl.tintColor = UIColor.red
+            refreshControl.tintColor = ThemeYellowColor
             
             return refreshControl
     }()
@@ -66,9 +66,6 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         
         // UtilityClass.showACProgressHUD()
-        
-        
-        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -99,6 +96,10 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
+        if Connectivity.isConnectedToInternet() == false {
+            self.refreshControl.endRefreshing()
+            return
+        }
         webserviceofPendingJobs()
         if self.aryPendingJobs.count > 0 {
             self.lblNodataFound.isHidden = true
@@ -180,10 +181,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         cell.lblFlightNumber.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "FlightNumber", isNotHave: strNotAvailable) //data.object(forKey: "FlightNumber") as? String
         cell.lblNotes.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: "Notes", isNotHave: strNotAvailable) //data.object(forKey: "Notes") as? String
         
-        if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-            let KeyPaymentType = (SelectedLanguage == "en") ? "PaymentType" : "swahili_PaymentType"
-            cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: KeyPaymentType, isNotHave: strNotAvailable)
-        }
+        cell.lblPaymentType.text = checkDictionaryHaveValue(dictData: data as! [String : AnyObject], didHaveValue: GetPaymentTypeKey(), isNotHave: strNotAvailable)
         
         cell.btnStartTrip.tag = Int((data.object(forKey: "Id") as? String)!)!
         cell.btnStartTrip.addTarget(self, action: #selector(self.strtTrip(sender:)), for: .touchUpInside)
@@ -325,12 +323,15 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
             }
             else {
                 //                print(result)
-                
-                if let res: String = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                self.refreshControl.endRefreshing()
+                if let res = result as? String {
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
-                else {
-                    UtilityClass.showAlert(appName.kAPPName, message: (result as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                else if let resDict = result as? NSDictionary {
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                else if let resAry = result as? NSArray {
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 
             }
@@ -368,7 +369,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         //        else
         //        {
         if(Singletons.sharedInstance.driverDuty != "1") {
-            UtilityClass.showAlert("Missing", message: "Get Online first.", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Get online First.".localized, vc: self)
             return
         }
         let bookingID = String((sender.tag))

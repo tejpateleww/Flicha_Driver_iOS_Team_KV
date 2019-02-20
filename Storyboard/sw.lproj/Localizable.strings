@@ -9,7 +9,7 @@
 "App Name" = "Dereva wa TanTax";
 "Currency" = "TZS";
 "Internet Error" = "Internet Error";
-"Sorry! Not connected to internet" = "Sorry! Not connected to internet";
+"Sorry! Not connected to internet" = "Hakuna Intaneti";
 "Something is wrong, try again later" = "Something is wrong, try again later";
 "Permission Denied, You cannot access location data." = "Permission Denied, You cannot access location data.";
 "Location" = "Location";
@@ -36,9 +36,9 @@
 "Please enter mobile number" = "Tafadhali ingiza namba ya simu";
 "Please enter valid mobile number" = "Tafadhali ingiza namba sahihi ya simu";
 "Please enter email" = "Tafadhali ingiza email";
-"Please enter valid email" = "Tafadhali ingiza email sahihi";
+"Please enter a valid email" = "Tafadhali ingiza email sahihi";
 "Please enter password" = "Tafadhali ingiza Password";
-"Password must contain at least 6 characters." = "Password iwe na hefuri angalau 6.";
+"Password must contain at least 8 characters." = "Password iwe na hefuri angalau 8.";
 "Please enter confirm password" = "Tafadhali ingiza password tena";
 "Password and confirm password must be same" = "Password zote zinatakiwa zinafanane";
 "Please enter OTP" = "Tafadhali ingiza OTP";
@@ -151,7 +151,7 @@
 "Number Of Passenger" = "Idadi ya Abiria";
 "Choose Photo" = "Chagua picha";
 "Select photo from gallery" = "Chagua picha kutoka kwa Gallery";
-"Select photo from camera" = "Select photo from camera";
+"Select photo from camera" = "Chagua picha kutoka kwa Kamera";
 "No media selected" = "Hakuna media imechaguliwa";
 "Referral Amount" = "Kiasi Cha Referral";
 "When a friend rides with your code" = "Wakati Rafiki Akitumia Code Yako";
@@ -271,6 +271,7 @@
 "Passcode Required" = "Passcode inatakiwa";
 "Enter old password" = "Ingiza Password ya zamani";
 "Something went wrong please restart your application and login again!" = "Something went wrong please restart your application and login again!";
+"Something went wrong!" = "Kitu fulani kilikuwa kibaya!";
 "Please select Profile pic" = "Tafadhali chagua Picha ya Ukurasa";
 "Set Amount" = "Weka Kiwango";
 "Please enter Customer Name." = "Tafadhali ingiza jina la Mteja";
@@ -291,4 +292,8 @@
 "ETA" = "ETA";
 "Car Company" = "Car Company";
 "Destination Trip" = "Destination Trip";
-
+"Please wait for 30 seconds" = "Please wait for 30 seconds";
+"Want to ask about Tips?" = "Want to ask about Tips?";
+"Thanks for feedback." = "Asante kwa mrejesho.";
+"Please install Google Maps." = "Please install Google Maps.";
+"Are you sure you want to logout?" = "Are you sure you want to logout?";

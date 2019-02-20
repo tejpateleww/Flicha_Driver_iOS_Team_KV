@@ -130,8 +130,6 @@ class EditDriverProfileVC: ParentViewController {
     @IBAction func btnVehicle(_ sender: UIButton) {
         
         let next = self.storyboard?.instantiateViewController(withIdentifier: "updateDriverSelectVehicleTypesViewControllerViewController") as! updateDriverSelectVehicleTypesViewControllerViewController
-
-        
         self.navigationController?.pushViewController(next, animated: true)
         
     }
@@ -167,7 +165,13 @@ class EditDriverProfileVC: ParentViewController {
 
     @IBAction func btnLogout(_ sender: Any)
     {
-         self.webserviceOFSignOut()
+        let LogoutConfirmation = UIAlertController(title: "App Name".localized, message: "Are you sure you want to logout?".localized, preferredStyle: .alert)
+        LogoutConfirmation.addAction(UIAlertAction(title: "Logout".localized, style: .destructive, handler: { (UIAlertAction) in
+            self.webserviceOFSignOut()
+        }))
+        LogoutConfirmation.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
+        self.present(LogoutConfirmation, animated: true, completion: nil)
+    
     }
     
     func webserviceOFSignOut()
@@ -215,13 +219,13 @@ class EditDriverProfileVC: ParentViewController {
             else {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }

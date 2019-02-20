@@ -45,7 +45,14 @@ class WaitForTipViewController: UIViewController,SRCountdownTimerDelegate
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.setLocalization()
 //        lblWaitForTip.text = "".localized
+    }
+    
+    func setLocalization() {
+     
+        self.lblWaitForTip.text = "Please wait for 30 seconds".localized
+    
     }
     
     override func didReceiveMemoryWarning() {

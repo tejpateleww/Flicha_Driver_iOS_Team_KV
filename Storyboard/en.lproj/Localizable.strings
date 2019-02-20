@@ -37,9 +37,9 @@
 "Please enter mobile number" = "Please enter mobile number";
 "Please enter valid mobile number" = "Please enter valid mobile number";
 "Please enter email" = "Please enter email";
-"Please enter valid email" = "Please enter valid email";
+"Please enter a valid email" = "Please enter a valid email";
 "Please enter password" = "Please enter password";
-"Password must contain at least 6 characters." = "Password must contain at least 6 characters.";
+"Password must contain at least 8 characters." = "Password must contain at least 8 characters.";
 "Please enter confirm password" = "Please enter confirm password";
 "Password and confirm password must be same" = "Password and confirm password must be same";
 "Please enter OTP" = "Please enter OTP";
@@ -273,6 +273,7 @@
 "Passcode Required" = "Passcode Required";
 "Enter old password" = "Enter old password";
 "Something went wrong please restart your application and login again!" = "Something went wrong please restart your application and login again!";
+"Something went wrong!" = "Something went wrong!";
 "Please select Profile pic" = "Please select Profile pic";
 "Set Amount" = "Set Amount";
 "Please enter Customer Name." = "Please enter Customer Name.";
@@ -291,6 +292,8 @@
 "Tip by Passenger" = "Tip by Passenger:";
 "Car Company" = "Car Company";
 "Destination Trip" = "Destination Trip";
-
-
-
+"Please wait for 30 seconds" = "Please wait for 30 seconds";
+"Want to ask about Tips?" = "Want to ask about Tips?";
+"Thanks for feedback." = "Thanks for feedback.";
+"Please install Google Maps." = "Please install Google Maps.";
+"Are you sure you want to logout?" = "Are you sure you want to logout?";
