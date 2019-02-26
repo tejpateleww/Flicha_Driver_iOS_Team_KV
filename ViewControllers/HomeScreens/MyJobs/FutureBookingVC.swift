@@ -264,6 +264,10 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
 
     @objc func btnActionForSelectRecord(sender: UIButton) {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
         bookingID = String((sender.tag))
         

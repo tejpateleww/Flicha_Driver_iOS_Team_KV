@@ -232,6 +232,10 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     var boolTimeEnd = Bool()
     
     @IBAction func btnRejected(_ sender: UIButton) {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
          Singletons.sharedInstance.firstRequestIsAccepted = false
         isAccept = false
@@ -244,8 +248,12 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     }
     
     @IBAction func btnAcceped(_ sender: UIButton) {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
-         Singletons.sharedInstance.firstRequestIsAccepted = false
+        Singletons.sharedInstance.firstRequestIsAccepted = false
         
         isAccept = true
         boolTimeEnd = true

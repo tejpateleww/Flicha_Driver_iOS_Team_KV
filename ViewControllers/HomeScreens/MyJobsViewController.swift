@@ -110,12 +110,10 @@ class MyJobsViewController: ParentViewController
     {
         self.headerView?.lblTitle.text = "My Jobs".localized
         btnFutureBooking.setTitle( "Future Booking".localized, for: .normal)
-        btnPastJobs.setTitle("Pending Jobs".localized, for: .normal)
-        btnPendingJobs.setTitle("Past Jobs".localized, for: .normal)
-       
-        
-        
+        btnPastJobs.setTitle("Past Jobs".localized, for: .normal)
+        btnPendingJobs.setTitle("Pending Jobs".localized, for: .normal)
     }
+    
     /*func scrollViewDidScroll(_ scrollView: UIScrollView)
      {
      let pageWidth : CGFloat = scrollView.frame.size.width

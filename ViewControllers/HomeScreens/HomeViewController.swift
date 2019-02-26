@@ -2222,6 +2222,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     //-------------------------------------------------------------
     
     @IBAction func btnCurrentLocation(_ sender: UIButton) {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
         mapView.animate(toLocation: CLLocationCoordinate2D(latitude: defaultLocation.coordinate.latitude, longitude: defaultLocation.coordinate.longitude))
         mapView.animate(toZoom: 17.5)
@@ -2231,8 +2235,16 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     @IBAction func btnStartTrip(_ sender: UIButton) {
         
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
+        
         if(Singletons.sharedInstance.driverDuty != "1") {
-            UtilityClass.showAlert("App Name".localized, message: "Get Online first.", vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Get Online first.".localized, vc: self)
+            return
+        } else if self.btnWaiting.isSelected == true {
+            UtilityClass.showAlert("App Name".localized, message: "Please stop trip waiting time first.".localized, vc: self)
             return
         }
         
@@ -2275,9 +2287,16 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     }
     
     @IBAction func btnCancelTrip(_ sender: Any) {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
         if(Singletons.sharedInstance.driverDuty != "1") {
             UtilityClass.showAlert("App Name".localized, message: "Get online First.".localized, vc: self)
+            return
+        } else if self.btnWaiting.isSelected == true {
+            UtilityClass.showAlert("App Name".localized, message: "Please stop trip waiting time first.".localized, vc: self)
             return
         }
         
@@ -2364,6 +2383,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     }
     
     func btnStartTripAction() {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
         self.mapView.clear()
         self.driverMarker = nil
@@ -2389,17 +2412,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
         }
         else {
-            
             BottomButtonView.isHidden = true
             StartTripView.isHidden = false
             //            self.btnStartTrip.isHidden = true
             self.viewLocationDetails.isHidden = false
             self.constrainLocationViewBottom.constant = self.StartTripView.frame.height
-            
             self.view.bringSubviewToFront(StartTripView)
-            
             self.pickupPassengerFromLocation()
-            
         }
         self.constrainLocationViewBottom.constant = self.StartTripView.frame.size.height
         Singletons.sharedInstance.MeterStatus = meterStatus.kIsMeterStart
@@ -2577,8 +2596,16 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     @IBAction func btnCompleteTrip(_ sender: UIButton)
     {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
+        
         if(Singletons.sharedInstance.driverDuty != "1") {
             UtilityClass.showAlert("App Name".localized, message: "Get online First.".localized, vc: self)
+            return
+        } else if self.btnWaiting.isSelected == true {
+            UtilityClass.showAlert("App Name".localized, message: "Please stop trip waiting time first.".localized, vc: self)
             return
         }
         
@@ -3144,6 +3171,11 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     @IBAction func btnAcceptRequest(_ sender: UIButton) {
         
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
+        
         Singletons.sharedInstance.isPickUPPasenger = false
         
         //        self.resetMapView()
@@ -3158,6 +3190,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     }
     
     @IBAction func btnRejectRequest(_ sender: UIButton) {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
         if isAdvanceBooking {
             self.RejectBookLaterBookingRequest()
@@ -4938,6 +4974,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     }
     
     @IBAction func getDirections(_ sender: Any) {
+        if Connectivity.isConnectedToInternet() == false {
+            UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
+            return
+        }
         
         let BookingInfo : NSDictionary!
         
