@@ -152,7 +152,7 @@
         if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
             
-            if manager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization))
+            if manager.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization)) || manager.responds(to: #selector(CLLocationManager.requestAlwaysAuthorization))
             {
                 if manager.location != nil
                 {
