@@ -158,6 +158,7 @@
 		00E92A74202AE2C100A399E2 /* WebserviceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E929C7202AE2C000A399E2 /* WebserviceMethods.swift */; };
 		00EB9E4F1F90D6C1008DB2DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EB9E4E1F90D6C1008DB2DE /* CoreLocation.framework */; };
 		1110D3BD2075FD1700CC8C1F /* TripToDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */; };
+		18546BD0225DB555009DF334 /* PesapalWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */; };
 		2101CD0E216F2CBA007B9680 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2101CD0D216F2CBA007B9680 /* ThemeButton.swift */; };
 		212FA5B320D7BF530057CE58 /* ShareRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212FA5B220D7BF530057CE58 /* ShareRideViewController.swift */; };
 		2174C3BB216E143D000533CE /* InviteDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174C3B9216E0889000533CE /* InviteDriverViewController.swift */; };
@@ -400,6 +401,7 @@
 		00EB9E4E1F90D6C1008DB2DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		00FAEEE31F9F770E00D5F5C4 /* TZSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TZSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationViewController.swift; sourceTree = "<group>"; };
+		18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesapalWebViewViewController.swift; sourceTree = "<group>"; };
 		2101CD0D216F2CBA007B9680 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		212FA5B220D7BF530057CE58 /* ShareRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareRideViewController.swift; sourceTree = "<group>"; };
 		2174C3B9216E0889000533CE /* InviteDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteDriverViewController.swift; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 				00E928F3202AE2BF00A399E2 /* DummyData.swift */,
 				00E92927202AE2BF00A399E2 /* TabbarController.swift */,
 				63209118218ADA7E00A1241C /* MyFeedbackViewCell.swift */,
+				18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1823,6 +1826,7 @@
 				00E92A18202AE2C100A399E2 /* ACProgressView.swift in Sources */,
 				3AFADCF5219E98CC0009E3D2 /* UIView+WebCache.m in Sources */,
 				21A65EE42166193E0037E40E /* ThemeTextField.swift in Sources */,
+				18546BD0225DB555009DF334 /* PesapalWebViewViewController.swift in Sources */,
 				00E929FA202AE2C100A399E2 /* PassengerInfoViewController.swift in Sources */,
 				3AFADCF7219E98CC0009E3D2 /* SVIndefiniteAnimatedView.m in Sources */,
 				00E92A43202AE2C100A399E2 /* SPGradientView.swift in Sources */,

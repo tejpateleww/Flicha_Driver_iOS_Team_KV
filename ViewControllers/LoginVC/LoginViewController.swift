@@ -165,7 +165,7 @@
                 manager.startUpdatingLocation()
             }
         }
-        
+     
         // Do any additional setup after loading the view.
     }
     
@@ -217,11 +217,9 @@
     @IBAction func btnSignIn(_ sender: UIButton) {
         //        CustomSideMenuViewController
         
-        if (validateAllFields())
-        {
+        if (validateAllFields()) {
             webserviceForLoginDrivers()
-        }
-        
+        }        
     }
     
     @IBAction func btnForgotPassword(_ sender: UIButton) {
@@ -252,25 +250,23 @@
         
         alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default, handler: { [weak alert] (_) in
             
-            
         }))
         
         // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
+    
     @IBAction func btnFaceBook(_ sender: UIButton) {
     }
     
-    @IBAction func btnSignUP(_ sender: UIButton)
-    {
+    @IBAction func btnSignUP(_ sender: UIButton) {
       
         //        performSegue(withIdentifier: "SegueToRegisterVc", sender: self)
+    }
+    
+    @IBAction func btnGoogle(_ sender: UIButton) {
         
     }
-    @IBAction func btnGoogle(_ sender: UIButton) {
-    }
-    
-    
     
     func checkPass() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.showAlertForPasswordWrong), name: Notification.Name("checkForgotPassword"), object: nil)
@@ -357,6 +353,7 @@
                     }
                     let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
                     self.navigationController?.pushViewController(next, animated: true)
+                    
                 }
                 
             }

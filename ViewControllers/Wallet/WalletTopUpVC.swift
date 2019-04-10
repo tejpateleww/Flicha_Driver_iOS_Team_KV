@@ -15,9 +15,8 @@ import UIKit
 }
 
 
-class WalletTopUpVC: ParentViewController, SelectCardDelegate {
-
-    
+class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWebView {
+   
     @IBOutlet var viewCardNumber: UIView!
     var strCardId = String()
     var strAmt = String()
@@ -74,22 +73,22 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate {
     
     @IBAction func btnAddFunds(_ sender: UIButton) {
         
-        if strCardId == "" {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please reselect card", vc: self)
-        }
-        else if txtAmount.text == "" {
+//        if strCardId == "" {
+//            UtilityClass.showAlert(appName.kAPPName, message: "Please reselect card", vc: self)
+//        }
+//        else
+        if txtAmount.text == "" {
             UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Amount", vc: self)
         }
         else {
-            webserviceOFTopUp()
+//            webserviceOFTopUp()
+            let next = self.storyboard?.instantiateViewController(withIdentifier: "PesapalWebViewViewController") as! PesapalWebViewViewController
+            next.strUrl = "https://www.tantaxitanzania.com/pesapal/add_money/\(Singletons.sharedInstance.strDriverID)/\(txtAmount.text!.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: currency, with: ""))/driver"
+            self.present(next, animated: true, completion: nil)
             txtAmount.resignFirstResponder()
         }
-        
-        
-        
-
-        
     }
+    
     @IBAction func txtAmount(_ sender: UITextField) {
         
         if let amountString = txtAmount.text?.currencyInputFormatting() {
@@ -119,7 +118,6 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate {
             txtAmount.text = String(unfiltered1.filter { !removal1.contains($0) })
             
             
-            
             // ----------------------------------------------------------------------
             // ----------------------------------------------------------------------
             let unfiltered = amountString   //  "!   !! yuahl! !"
@@ -144,13 +142,8 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate {
             strAmt = y
             print("amount : \(strAmt)")
             
-            
-            
-            
         }
     }
-    
-    
     
     //-------------------------------------------------------------
     // MARK: - Select Card Delegate Methods
@@ -165,6 +158,7 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate {
         strCardId = dictData["Id"] as! String
         
     }
+    
     func setCreditCardImage(str: String) -> String {
         
         //   visa , mastercard , amex , diners , discover , jcb , other
@@ -194,7 +188,17 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate {
         }
         
         return strType
-    }    //-------------------------------------------------------------
+    }
+    
+    func didOrderPesapalStatus(status: Bool) {
+        if status {
+            
+        }
+    }
+    
+    
+    
+    //-------------------------------------------------------------
     // MARK: - Webservice Methods For TOP UP
     //-------------------------------------------------------------
     
@@ -234,7 +238,6 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate {
                 else if let resAry = result as? NSArray {
                     UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
                 }
-               
             }
         }
     }
