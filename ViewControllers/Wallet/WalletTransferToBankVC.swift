@@ -63,19 +63,26 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
         btnWithdrawFunds.layer.masksToBounds = true
         
       txtBankAccountNo.keyboardType = .numberPad
-        lblCurrentBalanceTitle.text = "\(Singletons.sharedInstance.strCurrentBalance)"
+        self.lblcurrentBalance.text = "\(Singletons.sharedInstance.strCurrentBalance) \(currency)"
         let profileData = Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! [String : AnyObject]
 
         
        
         let strBSB = profileData["BSB"] as! String
         let strHolderName = profileData["BankHolderName"] as! String
-        let strABN = profileData["ABN"] as! String
+//        let strABN = profileData["ABN"] as! String
         let strBankName = profileData["BankName"] as! String
         let strAccNumber = profileData["BankAcNo"] as! String
       
+        self.txtAccountName.text = strHolderName
+        self.txtBankName.text = strBankName
+        self.txtBankAccountNo.text = strAccNumber
+        self.txtBSB.text = strBSB
         
-        
+        self.txtAccountName.isUserInteractionEnabled = false
+        self.txtBankName.isUserInteractionEnabled = false
+        self.txtBankAccountNo.isUserInteractionEnabled = false
+        self.txtBSB.isUserInteractionEnabled = false
         
 //        lblAccountHolderName.text = ": \(strHolderName)"
 //        lblABN.text = ": \(strABN)"
@@ -87,7 +94,26 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
         
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            self.SetLocalizable()
+    }
+    
+    func SetLocalizable() {
+        self.strTitle = "Transfer To Bank".localized
+        self.showsBackButton = true
+        self.createHeaderView()
+        self.lblCurrentBalanceTitle.text = "Current Balance".localized
+        self.btnWithdrawFunds.setTitle("Transfer To Bank".localized, for: .normal)
+        self.txtAccountName.placeholder = "Account Holder Name".localized
+        self.txtBankName.placeholder = "Bank Name".localized
+        self.txtBankAccountNo.placeholder = "Bank Account No.".localized
+        self.txtBSB.placeholder = "Bsb".localized
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -184,9 +210,7 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
             print(String(unfiltered1.filter { !removal1.contains($0) })) // => "yuahl"
             
             txtAmount.text = String(unfiltered1.filter { !removal1.contains($0) })
-            
-            
-            
+             
             // ----------------------------------------------------------------------
             // ----------------------------------------------------------------------
             let unfiltered = amountString   //  "!   !! yuahl! !"
@@ -210,11 +234,7 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
             
             strAmt = y
             print("amount : \(strAmt)")
-            
-            
-            
-            
-        }
+      }
     }
     
     @IBAction func btnWithdrawFunds(_ sender: UIButton) {
@@ -327,13 +347,13 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
             else
             {
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
