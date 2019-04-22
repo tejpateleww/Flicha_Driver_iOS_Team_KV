@@ -95,7 +95,7 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
         lblShareYourInviteCode.text =   "Share Your Invite Code".localized
         btnShare.setTitle("Share".localized, for: .normal)
   
-        self.headerView?.lblTitle.text = "My Ratings".localized
+        self.headerView?.lblTitle.text = "Invite Friends".localized
         
         
         

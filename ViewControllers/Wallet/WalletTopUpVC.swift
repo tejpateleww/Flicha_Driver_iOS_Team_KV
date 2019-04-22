@@ -38,6 +38,12 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWe
         btnAddFunds.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
+    
+        override func viewWillAppear(_ animated: Bool)
+        {
+            super.viewWillAppear(animated)
+            self.navigationController?.isNavigationBarHidden = true
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,14 +83,20 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWe
 //            UtilityClass.showAlert(appName.kAPPName, message: "Please reselect card", vc: self)
 //        }
 //        else
-        if txtAmount.text == "" {
+        
+        if txtAmount.text == ""
+        {
             UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Amount", vc: self)
         }
-        else {
+        else
+        {
 //            webserviceOFTopUp()
             let next = self.storyboard?.instantiateViewController(withIdentifier: "PesapalWebViewViewController") as! PesapalWebViewViewController
             next.strUrl = "https://www.tantaxitanzania.com/pesapal/add_money/\(Singletons.sharedInstance.strDriverID)/\(txtAmount.text!.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: currency, with: ""))/driver"
-            self.present(next, animated: true, completion: nil)
+//            let navController = UINavigationController.init(rootViewController: next)
+//            UIApplication.shared.keyWindow?.rootViewController?.present(navController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(next, animated: true)
+//            self.present(next, animated: true, completion: nil)
             txtAmount.resignFirstResponder()
         }
     }
@@ -191,7 +203,8 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWe
     }
     
     func didOrderPesapalStatus(status: Bool) {
-        if status {
+        if status
+        {
             
         }
     }

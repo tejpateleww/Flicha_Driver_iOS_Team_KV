@@ -23,7 +23,7 @@
 
 import Foundation
 
-let DefaultStatusBarHeight : CGFloat = 20
+let DefaultStatusBarHeight : CGFloat = UIApplication.shared.statusBarFrame.size.height //20
 
 extension UIView {
     class func panelAnimation(_ duration : TimeInterval, animations : @escaping (()->()), completion : (()->())? = nil) {
@@ -33,7 +33,7 @@ extension UIView {
     }
 }
 
-public extension UINavigationController {
+@objc  extension UINavigationController {
     public func addSideMenuButton(completion: ((UIButton) -> ())? = nil) {
         guard let image = SideMenuController.preferences.drawing.menuButtonImage else {
             return

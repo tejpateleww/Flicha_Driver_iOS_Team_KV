@@ -160,7 +160,7 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
             cellItemList.lblLegal.text = "Legal".localized
             cellItemList.lblSupport.text = "Support".localized
             cellItemList.btnLogOut.setTitle("Log Out".localized, for: .normal)
-            
+            cellItemList.lblPaymentOption.text = "Payment Options".localized
             cellItemList.btnMyJob.addTarget(self, action: #selector(self.MyJob), for: .touchUpInside)
             //            cellItemList.btnMyJob.tag = indexPath.row
             cellItemList.btnPaymentOption.addTarget(self, action: #selector(self.PayMentOption), for: .touchUpInside)

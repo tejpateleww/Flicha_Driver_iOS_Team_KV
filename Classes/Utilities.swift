@@ -419,7 +419,7 @@ class Utilities: NSObject
         UIApplication.shared.statusBarStyle = .lightContent
         controller.navigationController?.isNavigationBarHidden = false
         controller.navigationController?.navigationBar.isOpaque = false;
-        controller.navigationController?.navigationBar.isTranslucent = false
+        controller.navigationController?.navigationBar.isTranslucent = true
         
         controller.navigationController?.navigationBar.barTintColor = naviColor;
         controller.navigationController?.navigationBar.tintColor = UIColor.white;
@@ -431,7 +431,8 @@ class Utilities: NSObject
         controller.navigationController?.navigationBar.shadowImage = UIImage()
         
         let btnLeft = UIButton.init()
-        btnLeft.setImage(UIImage.init(named: leftImage), for: .normal)
+        btnLeft.setImage(UIImage.init(named: leftImage)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btnLeft.tintColor = UIColor.white
         btnLeft.layer .setValue(controller, forKey: "controller")
         
         if leftImage == kMenuIcon

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Excellent Webworld. All rights reserved.
 //*/
 //
-"App Name" = "Dereva wa TanTax";
+"App Name" = "Dereva wa TanTaxi";
 "Currency" = "TZS";
 "Internet Error" = "Internet Error";
 "Sorry! Not connected to internet" = "Hakuna Intaneti";
@@ -81,7 +81,7 @@
 "Select vehicle insurance/policy expiry date" = "Chagua tarehe ya mwisho wa Bima";
 "Select TIN Certificate expiry date" = "Chagua tarehe ya kumalizika kwa Cheti cha TIN";
 "My Jobs" = "Kazi zangu";
-"Payment Options" = "Aina za kulipa";
+"Payment Options" = "Njia Za Malipo";
 "Wallet" = "Wallet";
 "My Ratings" = "Ratings zangu";
 "Invite Friends" = "Karibisha Marafiki";

@@ -15,7 +15,8 @@ protocol delegatePesapalWebView {
 //    @objc optional func didOrderFailed()
 }
 
-class PesapalWebViewViewController: UIViewController {
+class PesapalWebViewViewController: ParentViewController
+{
     
 
     // ----------------------------------------------------
@@ -48,41 +49,76 @@ class PesapalWebViewViewController: UIViewController {
         let webConfiguration = WKWebViewConfiguration()
         
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.navigationDelegate = self
-        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-        webView.backgroundColor = UIColor.blue
-        self.view = webView!
-        self.viewForWebView = webView!
+//        webView = WKWebView.init(frame: CGRect(x: 0, y: 90, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 100))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.blue
+//        self.view.backgroundColor = UIColor.white
+//        self.viewForWebView = webView!
+        
+       
+        
+        webView.navigationDelegate = self
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        webView.backgroundColor = UIColor.white
+        
+       
+        self.view = webView!
+
         self.viewForWebView = webView!
+        
         
         let url = URL(string: strUrl)!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
         setProgressView()
     }
-    
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
+        
+    }
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             progressView.progress = Float((webView?.estimatedProgress)!)
         }
     }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+        Utilities.setNavigationBarInViewController(controller: self, naviColor: UIColor.clear, naviTitle: "", leftImage: "", rightImage: "")
+        let Naviheight = (self.navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.height
+//
+        webView.frame = CGRect(x: 0, y: Naviheight, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
+//        self.navigationController?.isNavigationBarHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+//        if (isMovingToParent)
+//        {
+            self.navigationController?.isNavigationBarHidden = true
+//        }
+    }
     
     // ----------------------------------------------------
     // MARK: - Custom Methods
     // ----------------------------------------------------
-    func setProgressView() {
+    func setProgressView()
+    {
         [progressView].forEach { self.view.addSubview($0) }
         progressView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         progressView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         if #available(iOS 11.0, *) {
             progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        } else {
+        }
+        else
+        {
             // Fallback on earlier versions
         }
         progressView.heightAnchor.constraint(equalToConstant: 2).isActive = true

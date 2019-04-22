@@ -123,8 +123,8 @@
             }
         }
         
-//        txtMobile.text = "1111111111"
-//        txtPassword.text = "123456"
+        txtMobile.text = "1111111111"
+        txtPassword.text = "123456"
         
         Utilities.setStatusBarColor(color: UIColor.clear)
         
