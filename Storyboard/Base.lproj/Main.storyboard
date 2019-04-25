@@ -2219,7 +2219,7 @@ EE15IEpvYnM
                             <rect key="frame" x="4" y="133" width="288" height="150"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awa-cD-5tM" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                    <rect key="frame" x="36" y="42.5" width="0.0" height="30"/>
+                                    <rect key="frame" x="36" y="42.5" width="10" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="SVi-kZ-LWO"/>
                                     </constraints>
@@ -2266,7 +2266,7 @@ EE15IEpvYnM
                                     </subviews>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTk-Ii-uNg" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                    <rect key="frame" x="0.0" y="10" width="108.5" height="20"/>
+                                    <rect key="frame" x="0.0" y="10" width="118.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="aYR-Ar-JuK"/>
                                     </constraints>
@@ -7951,11 +7951,12 @@ EE15IEpvYnM
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xN4-5J-ya6">
-                                        <rect key="frame" x="15" y="32" width="20" height="20"/>
+                                        <rect key="frame" x="15" y="24.5" width="35" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="kdp-ZH-zTX"/>
-                                            <constraint firstAttribute="width" constant="20" id="kec-AZ-zPH"/>
+                                            <constraint firstAttribute="height" constant="35" id="kdp-ZH-zTX"/>
+                                            <constraint firstAttribute="width" constant="35" id="kec-AZ-zPH"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                         <state key="normal" image="iconBack"/>
                                         <connections>
                                             <action selector="btnBackToHome:" destination="FO3-r0-ViT" eventType="touchUpInside" id="MT6-aZ-fVL"/>
@@ -14035,11 +14036,12 @@ EE15IEpvYnM
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbV-eH-53q">
-                                                <rect key="frame" x="15" y="24" width="30" height="30"/>
+                                                <rect key="frame" x="15" y="19" width="35" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="431-Ga-Spi"/>
+                                                    <constraint firstAttribute="height" constant="35" id="431-Ga-Spi"/>
                                                     <constraint firstAttribute="width" secondItem="SbV-eH-53q" secondAttribute="height" multiplier="1:1" id="c80-d0-lg8"/>
                                                 </constraints>
+                                                <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                                 <state key="normal" image="iconBack"/>
                                                 <connections>
                                                     <action selector="btnBack:" destination="bxt-nS-oWv" eventType="touchUpInside" id="gWc-X7-h90"/>
@@ -14607,7 +14609,7 @@ EE15IEpvYnM
         <image name="iconAcceptTrip" width="40" height="40"/>
         <image name="iconArrowGray" width="42" height="42"/>
         <image name="iconArrowGrey" width="21" height="21"/>
-        <image name="iconBack" width="28" height="28"/>
+        <image name="iconBack" width="85" height="85"/>
         <image name="iconBalance" width="85" height="85"/>
         <image name="iconBus" width="85" height="85"/>
         <image name="iconCall" width="26" height="26"/>

@@ -143,6 +143,7 @@
 "Full Name" = "Full Name";
 "Profile" = "Profile";
 "Updated successfully." = "Updated successfully.";
+"Profile Updated Successfully" = "Profile Updated Successfully";
 "New Picture" = "New Picture";
 "Gender" = "Gender";
 "Change Password" = "Change Password";
@@ -228,6 +229,7 @@
 "Date Of Birth" = "Date Of Birth";
 "Address" = "Address";
 "Bsb" = "Bsb";
+"Branch Code" = "Branch Code";
 "Vehicle Plate Number" = "Vehicle Plate Number";
 "Vehicle Model" = "Vehicle Model";
 "Vehicle Type" = "Vehicle Type";

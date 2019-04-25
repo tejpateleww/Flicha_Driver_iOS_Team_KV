@@ -26,16 +26,10 @@ class UpdateProfileAccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         dictData = NSMutableDictionary(dictionary: Singletons.sharedInstance.dictDriverProfile as NSDictionary)
        
-        
         let profile = dictData.object(forKey: "profile") as! NSDictionary
         strDriverID = profile.object(forKey: "Id") as! String
-        
-        
-        
         setData()
         
         // ABN, BANK name, BSB,BANK account
@@ -46,11 +40,12 @@ class UpdateProfileAccountVC: UIViewController {
         super.viewWillAppear(true)
         setLocalizable()
     }
-    func setLocalizable(){
+    
+    func setLocalizable() {
         self.lblTitle.text = "Account".localized
         txtAccountHolderName.placeholder = "Name".localized
         txtBankName.placeholder = "Bank Name".localized
-        txtBSB.placeholder = "Bsb".localized
+        txtBSB.placeholder = "Branch Code".localized
         txtBankAcNo.placeholder = "Bank Account No.".localized
         btnSave.setTitle("Save".localized, for: .normal)
     }

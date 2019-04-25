@@ -466,7 +466,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
                 UserDefaults.standard.set(true, forKey: driverProfileKeys.kKeyIsDriverLoggedIN)
                 
-                let alert = UIAlertController(title: "App Name".localized, message: "Updated Successfully", preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Profile Updated Successfully".localized, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)

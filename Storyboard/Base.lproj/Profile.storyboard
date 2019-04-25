@@ -131,7 +131,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BSB" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-Nz-YuH">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Branch Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-Nz-YuH">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                                 <color key="tintColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -220,11 +220,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-Ck-0jX">
-                                        <rect key="frame" x="12" y="27" width="25" height="25"/>
+                                        <rect key="frame" x="12" y="17" width="35" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="KKA-AP-qRM"/>
-                                            <constraint firstAttribute="width" constant="25" id="vPW-gG-Yav"/>
+                                            <constraint firstAttribute="height" constant="35" id="KKA-AP-qRM"/>
+                                            <constraint firstAttribute="width" constant="35" id="vPW-gG-Yav"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                         <state key="normal" image="iconBack"/>
                                         <connections>
                                             <action selector="btnBack:" destination="ajE-iZ-fGK" eventType="touchUpInside" id="mex-zK-Lw9"/>
@@ -238,7 +239,7 @@
                                         <state key="normal" image="iconCall"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ3-i9-zDp">
-                                        <rect key="frame" x="126" y="29.5" width="68.5" height="20.5"/>
+                                        <rect key="frame" x="126" y="24.5" width="68.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -842,7 +843,7 @@
                                             <constraint firstAttribute="height" constant="35" id="9ai-gc-f4i"/>
                                             <constraint firstAttribute="width" constant="35" id="Oeh-wU-4iE"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                        <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                         <state key="normal" image="iconBack"/>
                                         <connections>
                                             <action selector="btnBack:" destination="hC5-5v-puM" eventType="touchUpInside" id="3Il-cN-ViM"/>
@@ -1391,17 +1392,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Documents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx7-ua-5u4">
-                                        <rect key="frame" x="113" y="34.5" width="94" height="20.5"/>
+                                        <rect key="frame" x="113" y="29.5" width="94" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACt-nu-P7B">
-                                        <rect key="frame" x="12" y="32" width="25" height="25"/>
+                                        <rect key="frame" x="12" y="22" width="35" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="TPh-mI-cvc"/>
-                                            <constraint firstAttribute="width" constant="25" id="lVc-Px-xSU"/>
+                                            <constraint firstAttribute="height" constant="35" id="TPh-mI-cvc"/>
+                                            <constraint firstAttribute="width" constant="35" id="lVc-Px-xSU"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                         <state key="normal" image="iconBack"/>
                                         <connections>
                                             <action selector="btnBack:" destination="ajE-iZ-fGK" eventType="touchUpInside" id="1Wy-7B-tAF"/>
@@ -2074,11 +2076,12 @@ You must be 21 years of age or over.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40b-in-AO6">
-                                                <rect key="frame" x="5" y="25" width="46" height="32"/>
+                                                <rect key="frame" x="5" y="22" width="35" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="gUe-YN-vAw"/>
-                                                    <constraint firstAttribute="width" constant="46" id="sP9-hP-K9j"/>
+                                                    <constraint firstAttribute="height" constant="35" id="gUe-YN-vAw"/>
+                                                    <constraint firstAttribute="width" constant="35" id="sP9-hP-K9j"/>
                                                 </constraints>
+                                                <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                                 <state key="normal" image="iconBack"/>
                                                 <connections>
                                                     <action selector="btnBack:" destination="ajE-iZ-fGK" eventType="touchUpInside" id="q1t-0l-QBe"/>
@@ -2086,7 +2089,7 @@ You must be 21 years of age or over.</string>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEHICLE OF DRIVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pd-8y-ITL">
-                                                <rect key="frame" x="77.5" y="31" width="165" height="20.5"/>
+                                                <rect key="frame" x="77.5" y="29.5" width="165" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2542,18 +2545,19 @@ You must be 21 years of age or over.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rz-mk-ElG">
-                                        <rect key="frame" x="12" y="32" width="25" height="25"/>
+                                        <rect key="frame" x="12" y="22" width="35" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Bqh-RR-H5m"/>
-                                            <constraint firstAttribute="width" constant="25" id="StS-TL-oh8"/>
+                                            <constraint firstAttribute="height" constant="35" id="Bqh-RR-H5m"/>
+                                            <constraint firstAttribute="width" constant="35" id="StS-TL-oh8"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                         <state key="normal" image="iconBack"/>
                                         <connections>
                                             <action selector="btnBack:" destination="hC5-5v-puM" eventType="touchUpInside" id="fsS-IE-ojv"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq3-2U-QLh">
-                                        <rect key="frame" x="100.5" y="34.5" width="119" height="20.5"/>
+                                        <rect key="frame" x="100.5" y="29.5" width="119" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

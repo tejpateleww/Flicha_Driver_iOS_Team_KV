@@ -96,7 +96,7 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWe
         
         if txtAmount.text == ""
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Amount", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter amount".localized, vc: self)
         }
         else
         {

@@ -109,7 +109,7 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
         self.txtAccountName.placeholder = "Account Holder Name".localized
         self.txtBankName.placeholder = "Bank Name".localized
         self.txtBankAccountNo.placeholder = "Bank Account No.".localized
-        self.txtBSB.placeholder = "Bsb".localized
+        self.txtBSB.placeholder = "Branch Code".localized
         
         
     }
@@ -266,7 +266,7 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
             
 //            Utilities.showCustomAlert(title: "Missing", message: "Enter Amount") { (index, title) in
 //            }
-            Utilities.showAlert(appName.kAPPName, message: "Enter Amount", vc: (UIApplication.shared.keyWindow?.rootViewController)!)
+            Utilities.showAlert(appName.kAPPName, message: "Please enter amount".localized, vc: (UIApplication.shared.keyWindow?.rootViewController)!)
             return false
         }
         else if txtAccountName.text!.count == 0 {

@@ -38,12 +38,13 @@
                                     <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1E-eJ-hFL">
-                                    <rect key="frame" x="15" y="27.5" width="19" height="20"/>
+                                    <rect key="frame" x="15" y="20" width="35" height="35"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="amw-vH-NZf"/>
-                                        <constraint firstAttribute="width" constant="19" id="sby-Ki-yBH"/>
+                                        <constraint firstAttribute="height" constant="35" id="amw-vH-NZf"/>
+                                        <constraint firstAttribute="width" constant="35" id="sby-Ki-yBH"/>
                                     </constraints>
+                                    <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                     <state key="normal" image="iconMenu"/>
                                     <connections>
                                         <action selector="btnSideMenu:" destination="rkH-kk-dTZ" eventType="touchUpInside" id="xMD-fy-txB"/>
@@ -115,12 +116,13 @@
                                     </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1T-z4-IAj">
-                                    <rect key="frame" x="15" y="27.5" width="20" height="20"/>
+                                    <rect key="frame" x="15" y="20" width="35" height="35"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="Rt9-KH-Mi1"/>
-                                        <constraint firstAttribute="width" constant="20" id="fET-a1-8nN"/>
+                                        <constraint firstAttribute="height" constant="35" id="Rt9-KH-Mi1"/>
+                                        <constraint firstAttribute="width" constant="35" id="fET-a1-8nN"/>
                                     </constraints>
+                                    <inset key="imageEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                     <state key="normal" image="iconBack"/>
                                     <connections>
                                         <action selector="btnBack:" destination="rkH-kk-dTZ" eventType="touchUpInside" id="6uk-DJ-OKr"/>
