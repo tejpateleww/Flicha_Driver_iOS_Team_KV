@@ -151,7 +151,7 @@ class UpdateProfileAccountVC: UIViewController {
                 
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
                 
-                let alert = UIAlertController(title: "App Name".localized, message: "Updated successfully.".localized, preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Account Updated successfully.".localized, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)

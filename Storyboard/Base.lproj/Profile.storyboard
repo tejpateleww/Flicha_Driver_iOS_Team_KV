@@ -2622,7 +2622,7 @@ You must be 21 years of age or over.</string>
     </scenes>
     <resources>
         <image name="iconAccount" width="85" height="85"/>
-        <image name="iconBack" width="85" height="85"/>
+        <image name="iconBack" width="28" height="28"/>
         <image name="iconCARPlaceholder" width="85" height="85"/>
         <image name="iconCall" width="26" height="26"/>
         <image name="iconCarPlaceholder" width="225" height="104"/>
