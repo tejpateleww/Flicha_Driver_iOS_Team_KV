@@ -158,7 +158,6 @@
                     strLatitude = currentLocation.coordinate.latitude
                     strLongitude = currentLocation.coordinate.longitude
                 }
-                
                 manager.startUpdatingLocation()
             }
         }

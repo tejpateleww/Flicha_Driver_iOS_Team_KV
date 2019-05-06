@@ -155,10 +155,11 @@
 "Select photo from gallery" = "Chagua picha kutoka kwa Gallery";
 "Select photo from camera" = "Chagua picha kutoka kwa Kamera";
 "No media selected" = "Hakuna media imechaguliwa";
-"Referral Amount" = "Kiasi Cha Referral";
+"Referral Amount" = "Kiasi Cha Pointi";
 "When a friend rides with your code" = "Wakati Rafiki Akitumia Code Yako";
 "Share Your Invite Code" = "Sambaza code yako";
 "Share" = "Sambaza";
+"click here" = "Gonga hapa";
 "has invited you to become a" = "amekukuaribisha wewe kuwa";
 "Your invite code is :" = "Code yako ya Ukaribisho ni:";
 "Need camera permission!" = "Ruhusa inatakiwa ya Kamera!";
@@ -170,7 +171,7 @@
 "Top Up" = "Ongeza";
 "Transfer To Bank" = "Hamisha kwenda Benki";
 "History" = "Historia";
-"Available Funds" = "Pesa iliyopo";
+"Available Funds" = "Salio lililopo";
 "Please select card" = "Please select card";
 "Please enter amount" = "Tafadhali ingiza kiasi";
 "Select Card" = "Chagua kadi";

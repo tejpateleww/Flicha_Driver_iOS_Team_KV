@@ -38,7 +38,7 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
         let profileData = Singletons.sharedInstance.dictDriverProfile
 
         
-        lblReferalAmount.text = "Referral amount \((profileData?.object(forKey: "profile") as! NSDictionary).object(forKey: "ReferralAmount") as! Double) \(currency)"
+        lblReferalAmount.text = "\("Referral Amount".localized) \((profileData?.object(forKey: "profile") as! NSDictionary).object(forKey: "ReferralAmount") as! Double) \(currency)"
         if let ReferralCode = (profileData?.object(forKey: "profile") as! NSDictionary).object(forKey: "ReferralCode") as? String {
             strReferralCode = ReferralCode
             lblReferralCode.text = strReferralCode
@@ -87,10 +87,11 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
     @IBOutlet weak var btnShare: UIButton!
     
     @IBOutlet weak var lblShareYourInviteCode: UILabel!
+    
     func setLocalization()
     {
-        
-        lblReferalAmount.text = "Referral Amount".localized
+         let profileData = Singletons.sharedInstance.dictDriverProfile
+        lblReferalAmount.text = "\("Referral Amount".localized) \((profileData?.object(forKey: "profile") as! NSDictionary).object(forKey: "ReferralAmount") as! Double) \(currency)"
         lblWhenAFrindRidesWithYourCode.text = "When a friend rides with your code".localized
         lblShareYourInviteCode.text =   "Share Your Invite Code".localized
         btnShare.setTitle("Share".localized, for: .normal)
@@ -149,11 +150,12 @@ class InviteDriverViewController : ParentViewController,MFMailComposeViewControl
 
         if decodeResults!.count != 0
         {
-
 //            let profile = decodeResults!.object(forKey: "Profile")
             strName = ((decodeResults as! NSDictionary).object(forKey: "profile") as! NSDictionary).object(forKey: "Fullname") as! String
         }
-        let strContent = "\(strName)  has invited you to become a TanTaxi Driver.\n \n click here \("https://itunes.apple.com/us/app/TanTaxi/id1445179587?ls=1&mt=8") \n\n Your invite code is: \(strReferralCode)" // \n https://www.facebook.com/tesluxe \n https://www.instagram.com/teslux3 \n https://www.instagram.com/teslux3 \n https://twitter.com/TESLUX3"
+        let strContent = "\(strName)  \("has invited you to become a".localized) \("App Name".localized).\n \n \("click here".localized) \("https://itunes.apple.com/us/app/TanTaxi/id1445179587?ls=1&mt=8") \n\n \("Your invite code is :".localized) \(strReferralCode)"
+        
+        // \n https://www.facebook.com/tesluxe \n https://www.instagram.com/teslux3 \n https://www.instagram.com/teslux3 \n https://twitter.com/TESLUX3"
         //        name + " has invited you to become a Tesluxe Passenger.\n" +
         //            "\n" +
         //        click here (https://play.google.com/store/apps/details?id=com.Tesluxe) + "\n\n Your invite code is: "+ iniviteCode + "\n" + https://www.facebook.com/tesluxe
