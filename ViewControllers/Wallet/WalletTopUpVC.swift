@@ -39,12 +39,22 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWe
         // Do any additional setup after loading the view.
     }
     
-        override func viewWillAppear(_ animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
         {
             super.viewWillAppear(animated)
+            self.SetLocalizable()
             self.navigationController?.isNavigationBarHidden = true
         }
-
+    
+    
+    func SetLocalizable() {
+        self.strTitle = "Top Up".localized
+        self.showsBackButton = true
+        self.createHeaderView()
+        self.btnAddFunds.setTitle("Top Up".localized, for: .normal)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,7 +96,7 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWe
         
         if txtAmount.text == ""
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Amount", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter amount".localized, vc: self)
         }
         else
         {
@@ -243,13 +253,13 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate, delegatePesapalWe
                 self.txtAmount.text = ""
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }

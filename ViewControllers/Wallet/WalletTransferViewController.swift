@@ -37,12 +37,12 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.setLocalizable()
 //        f = false
         self.viewSendMoney.backgroundColor = UIColor.black
         self.imgSendMoney.image = UIImage.init(named: "iconSendMoneySelected")
         self.lblSendMoney.textColor = ThemeYellowColor
-        
+        scrollObj.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         
         self.viewReceiveMoney.backgroundColor = themeGrayBGColor
         self.imgReceiveMoney.image = UIImage.init(named: "iconReceiveMoneyUnselected")
@@ -51,7 +51,19 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
         self.viewTransferToBank.backgroundColor = themeGrayBGColor
         self.imgTransferToBank.image = UIImage.init(named: "iconTransferBankUnselected")
         self.lblTransferToBank.textColor = themeGrayTextColor
+       
     }
+    
+    func setLocalizable() {
+        self.strTitle = "Transfer".localized
+        self.showsBackButton = true
+        self.createHeaderView()
+        self.lblSendMoney.text = "Send Money".localized
+        self.lblReceiveMoney.text = "Receive Money".localized
+        self.lblTransferToBank.text = "Transfer To Bank".localized
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -112,8 +124,71 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
     
     }
     
+    @IBAction func txtEnterAmount(_ sender: Any) {
+    
+    
+    
+    
+    }
     @IBAction func txtEnterMoney(_ sender: UITextField) {
     
+        if let amountString = txtEnterMoney.text?.currencyInputFormatting() {
+            
+            
+            //            txtAmount.text = amountString
+            
+            
+            let unfiltered1 = amountString   //  "!   !! yuahl! !"
+            
+            
+            var y = amountString.replacingOccurrences(of: "$", with: "", options: .regularExpression, range: nil)
+            y = y.replacingOccurrences(of: " ", with: "")
+            // Array of Characters to remove
+            let removal1: [Character] = ["$"," "]    // ["!"," "]
+            
+            // turn the string into an Array
+            let unfilteredCharacters1 = unfiltered1
+            
+            // return an Array without the removal Characters
+            let filteredCharacters1 = unfilteredCharacters1.filter { !removal1.contains($0) }
+            
+            // build a String with the filtered Array
+            let filtered1 = String(filteredCharacters1)
+            
+            print(filtered1) // => "yeah"
+            
+            // combined to a single line
+            print(String(unfiltered1.filter { !removal1.contains($0) })) // => "yuahl"
+            
+            txtEnterMoney.text = String(unfiltered1.filter { !removal1.contains($0) })
+            
+            // ----------------------------------------------------------------------
+            // ----------------------------------------------------------------------
+            let unfiltered = amountString   //  "!   !! yuahl! !"
+            
+            // Array of Characters to remove
+            let removal: [Character] = ["$",","," "]    // ["!"," "]
+            
+            // turn the string into an Array
+            let unfilteredCharacters = unfiltered
+            
+            // return an Array without the removal Characters
+            let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
+            
+            // build a String with the filtered Array
+            let filtered = String(filteredCharacters)
+            
+            print(filtered) // => "yeah"
+            
+            // combined to a single line
+            print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
+            
+//            strAmt = y
+//            print("amount : \(strAmt)")
+        }
+        
+        
+        /*
         if let amountString = txtEnterMoney.text?.currencyInputFormatting() {
             txtEnterMoney.text = amountString
             
@@ -146,9 +221,14 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
             print("QRCode : \(Singletons.sharedInstance.strQRCodeForSendMoney)")
         
         }
-        
+        */
     }
     
+    
+//    @IBAction func txtAmount(_ sender: UITextField) {
+//
+//
+//    }
     
     
     @IBAction func btnSendMoney(_ sender: UIButton) {
@@ -307,7 +387,7 @@ extension String {
 class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     
-    
+    var amount = String()
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     var isReading: Bool = false
@@ -343,8 +423,7 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        
+        self.setLocalizable()
         NotificationCenter.default.addObserver(self, selector: #selector(self.isSendMoneySucessfully), name: Notification.Name("isSendMoneySucessfully"), object: nil)
         
         self.lblQRScanner.isHidden = false
@@ -357,11 +436,18 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
 //        startStopClick()
     }
     
+    func setLocalizable() {
+        self.lblSendMoneyTitle.text = "Send Money".localized
+        self.btnSendMoney.setTitle("Send Money".localized, for: .normal)
+        self.lblQRScanner.text = "Tap to activate Scanner".localized
+        
+    }
+    
+    
     @objc func isSendMoneySucessfully() {
         self.lblQRScanner.isHidden = false
         lblFullName.isHidden = true
         lblMobileNumber.isHidden = true
-        
         captureSession = nil
     }
     
@@ -373,10 +459,78 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
     @IBOutlet weak var lblMobileNumber: UILabel!
     @IBOutlet weak var imgQRCode: UIImageView!
     @IBOutlet weak var lblQRScanner: UILabel!
+    @IBOutlet var lblSendMoneyTitle: UILabel!
+    @IBOutlet var btnSendMoney: UIButton!
+  
+    @IBOutlet var txtEnterMoney: UITextField!
+    
+    
     
     //-------------------------------------------------------------
     // MARK: - Action
     //-------------------------------------------------------------
+    
+    
+    @IBAction func txtEnterMoney(_ sender: UITextField) {
+        
+            if let amountString = txtEnterMoney.text?.currencyInputFormatting() {
+                
+                
+                //            txtAmount.text = amountString
+                
+                
+                let unfiltered1 = amountString   //  "!   !! yuahl! !"
+                
+                
+                var y = amountString.replacingOccurrences(of: "$", with: "", options: .regularExpression, range: nil)
+                y = y.replacingOccurrences(of: " ", with: "")
+                // Array of Characters to remove
+                let removal1: [Character] = ["$"," "]    // ["!"," "]
+                
+                // turn the string into an Array
+                let unfilteredCharacters1 = unfiltered1
+                
+                // return an Array without the removal Characters
+                let filteredCharacters1 = unfilteredCharacters1.filter { !removal1.contains($0) }
+                
+                // build a String with the filtered Array
+                let filtered1 = String(filteredCharacters1)
+                
+                print(filtered1) // => "yeah"
+                
+                // combined to a single line
+                print(String(unfiltered1.filter { !removal1.contains($0) })) // => "yuahl"
+                
+                txtEnterMoney.text = String(unfiltered1.filter { !removal1.contains($0) })
+                
+                // ----------------------------------------------------------------------
+                // ----------------------------------------------------------------------
+                let unfiltered = amountString   //  "!   !! yuahl! !"
+                
+                // Array of Characters to remove
+                let removal: [Character] = ["$",","," "]    // ["!"," "]
+                
+                // turn the string into an Array
+                let unfilteredCharacters = unfiltered
+                
+                // return an Array without the removal Characters
+                let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
+                
+                // build a String with the filtered Array
+                let filtered = String(filteredCharacters)
+                
+                print(filtered) // => "yeah"
+                
+                // combined to a single line
+                print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
+                
+                amount = y
+                self.txtEnterMoney.text = (amount != "") ? "\(currency)\(amount)" : ""
+                //            strAmt = y
+                //            print("amount : \(strAmt)")
+        }
+    }
+    
     
     @IBAction func btnOpenCameraForQRCode(_ sender: UIBarButtonItem) {
         
@@ -385,6 +539,32 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if Singletons.sharedInstance.isSendMoneySuccessFully {
             
         }
+    }
+    
+    
+    @IBAction func SendMoney(_ sender: Any) {
+        
+                if  amount.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != "" {
+                    let currrentBalance = Singletons.sharedInstance.strCurrentBalance
+                    let enterdAmount = (amount.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) as NSString).doubleValue
+        
+                    print("enterdAmount : \(enterdAmount)")
+                    print("currrentBalance : \(currrentBalance)")
+        
+//                    if enterdAmount > currrentBalance {
+//                        UtilityClass.showAlert(appName.kAPPName, message: "Your current balance is lower then entered amount", vc: self)
+//                    }
+//                    else {
+                        self.webserviceOfSendMoney()
+//                    }
+                }
+//                else if Singletons.sharedInstance.strQRCodeForSendMoney == "" {
+//                    UtilityClass.showAlert(appName.kAPPName, message: "Please Scane QR Code", vc: self)
+//                }
+                else {
+                    UtilityClass.showAlert(appName.kAPPName, message: "Please enter Send amount.".localized, vc: self)
+                }
+   
     }
     
     
@@ -438,20 +618,24 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     @objc func stopReading() {
-        
-        captureSession?.stopRunning()
-        captureSession = nil
-        videoPreviewLayer.removeFromSuperlayer()
+        if videoPreviewLayer != nil {
+            captureSession?.stopRunning()
+            captureSession = nil
+            videoPreviewLayer.removeFromSuperlayer()
+        }
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+//        <#code#>
+//    }
+//
+//    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         for data in metadataObjects {
-            let metaData = data as! AVMetadataObject
+            let metaData = data
             print(metaData.description)
             let transformed = videoPreviewLayer?.transformedMetadataObject(for: metaData) as? AVMetadataMachineReadableCodeObject
             if let unwraped = transformed {
-                print(unwraped.stringValue)
-                
+                print(unwraped.stringValue!)
                 
                 Singletons.sharedInstance.strQRCodeForSendMoney = unwraped.stringValue!
                 
@@ -465,6 +649,64 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 isReading = false;
             }
         }
+    }
+    
+    //-------------------------------------------------------------
+    // MARK: - Webservice Methods
+    //-------------------------------------------------------------
+    
+    func webserviceOfSendMoney() {
+        
+        var dictParam = [String:AnyObject]()
+        
+        //        amount.removeFirst()
+        
+        dictParam[walletSendMoney.kAmount] = amount.trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject
+        dictParam[walletSendMoney.kQRCode] = Singletons.sharedInstance.strQRCodeForSendMoney as AnyObject
+        dictParam[walletSendMoney.kSenderId] = Singletons.sharedInstance.strDriverID as AnyObject
+        
+        print("dictParam : \(dictParam)")
+        
+        webserviceForASendMoneyInWallet(dictParam as AnyObject) { (result, status) in
+           
+            if (status) {
+                print(result)
+                
+                if let res = result as? String {
+                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                }
+                else {
+                    
+                    Singletons.sharedInstance.strCurrentBalance = ((result as! NSDictionary).object(forKey: "walletBalance") as! AnyObject).doubleValue
+                    
+                    self.txtEnterMoney.text = ""
+                    
+                    NotificationCenter.default.post(name: Notification.Name("isSendMoneySucessfully"), object: nil)
+                    
+                    Singletons.sharedInstance.isSendMoneySuccessFully = true
+                    
+                    
+                    UtilityClass.showAlert(appName.kAPPName, message: (result as! NSDictionary).object(forKey: "message")! as! String, vc: self)
+                    
+                }
+                
+            }
+            else {
+                print(result)
+                
+                if let res = result as? String {
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
+                }
+                else if let resDict = result as? NSDictionary {
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                else if let resAry = result as? NSArray {
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                
+            }
+        }
+        
     }
     
     func webserviceOfQRCodeDetails() {
@@ -506,9 +748,23 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 self.lblQRScanner.isHidden = false
                 self.lblFullName.isHidden = true
                 self.lblMobileNumber.isHidden = true
+                
+                if let res = result as? String {
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
+                }
+                else if let resDict = result as? NSDictionary {
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
+                else if let resAry = result as? NSArray {
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                }
             }
         }
     }
+    
+    
+    
+    
    
 }
 // ----------------------------------------------------------------------
@@ -527,6 +783,17 @@ class WalletTransferRecieve: UIViewController {
         super.viewDidLoad()
         setImage()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setLocalizable()
+    }
+    
+    func setLocalizable() {
+        self.lblRecieveMoney.text = "Receive Money".localized
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -537,6 +804,7 @@ class WalletTransferRecieve: UIViewController {
     //-------------------------------------------------------------
     
     @IBOutlet weak var imgQRCode: UIImageView!
+    @IBOutlet var lblRecieveMoney: UILabel!
     
     
     //-------------------------------------------------------------

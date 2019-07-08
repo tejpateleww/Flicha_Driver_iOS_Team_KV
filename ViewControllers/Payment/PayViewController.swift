@@ -256,7 +256,7 @@ class PayViewController: ParentViewController, UIPickerViewDataSource, UIPickerV
             UtilityClass.showAlert("Missing", message: "Please Enter Company Name / Name", vc: self)
         }
         else if txtAmount.text == "" {
-            UtilityClass.showAlert("Missing", message: "Please Enter Amount", vc: self)
+            UtilityClass.showAlert("Missing", message: "Please enter amount".localized, vc: self)
         }
         else if txtExpiryDate.text == "" {
             UtilityClass.showAlert("Missing", message: "Please Enter Expiry Date", vc: self)

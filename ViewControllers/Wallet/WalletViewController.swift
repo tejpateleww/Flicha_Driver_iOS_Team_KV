@@ -17,6 +17,7 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var viewBalance: UIView!
     @IBOutlet weak var viewCards: UIView!
     @IBOutlet weak var viewTransfer: UIView!
+    @IBOutlet var lblNavTitle: UILabel!
     
     
     override func loadView() {
@@ -93,8 +94,17 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
     {
         super.viewWillAppear(true)
         UIApplication.shared.statusBarStyle = .lightContent
-        self.lblCurrentBalance.text = "Balance \n \(Singletons.sharedInstance.strCurrentBalance) \(currency)"
+        self.setLocalizable()
     }
+    
+    func setLocalizable()
+    {
+        self.lblNavTitle.text = "Wallet".localized
+        self.lblCurrentBalance.text = "\("Balance".localized) \n \(Singletons.sharedInstance.strCurrentBalance) \(currency)"
+        self.lblTransfer.text = "Transfer".localized
+        
+    }
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         //        pageCtrl.currentPage = Int(pageNumber)
@@ -235,7 +245,7 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
                 Singletons.sharedInstance.strCurrentBalance = ((result as! NSDictionary).object(forKey: "walletBalance") as AnyObject).doubleValue
                 let currentRatio = Double(Singletons.sharedInstance.strCurrentBalance)
                 
-                self.lblCurrentBalance.text = "Balance \n \(Singletons.sharedInstance.strCurrentBalance) \(currency)"
+                self.lblCurrentBalance.text = "\("Balance".localized) \n \(Singletons.sharedInstance.strCurrentBalance) \(currency)"
 //                self.lblCurrentBalance.text = "\(currency)\(Singletons.sharedInstance.strCurrentBalance)"
                 
 //                self.lblAvailableFundsDesc.text = "\(currency)\(Singletons.sharedInstance.strCurrentBalance)"
@@ -253,13 +263,13 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
                 print(result)
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resDict).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: ((resAry).object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 
             }
@@ -287,13 +297,13 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
             else {
                 print(result)
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }

@@ -312,10 +312,9 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         
         
         txtVehicleRegistrationNumber.text = Vehicle.object(forKey: "VehicleRegistrationNo") as? String
-        txtVehicleModel.text = Vehicle.object(forKey: "VehicleModel") as? String
+        txtVehicleModel.text = Vehicle.object(forKey: "VehicleModelName") as? String
         
-        txtCompany.text = Vehicle.object(forKey: "VehicleModelName") as? String
-
+        txtCompany.text = Vehicle.object(forKey: "Company") as? String
         let carType = Vehicle.object(forKey: "VehicleClass") as? String
         txtCarType.text = carType
 

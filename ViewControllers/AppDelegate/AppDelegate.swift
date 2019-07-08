@@ -349,9 +349,7 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         UNUserNotificationCenter.current().getNotificationSettings(completionHandler: {(settings) in
             
             print("Notification Settings: \(settings)")
-            
-            
-            guard settings.authorizationStatus == .authorized else { return }
+           guard settings.authorizationStatus == .authorized else { return }
             
             DispatchQueue.main.async {
                 UIApplication.shared.registerForRemoteNotifications()

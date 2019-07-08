@@ -285,11 +285,12 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.navigationController?.pushViewController(viewController, animated: true)
         
     }
+    
     @objc func Legal(){
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LegalViewController") as! LegalViewController
         self.navigationController?.pushViewController(viewController, animated: true)
-        
-    }
+   }
+    
     @objc func  Support(){
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as! webViewVC
         viewController.headerName = "Support".localized
@@ -479,7 +480,6 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         driverFullName = profile.object(forKey: "Fullname") as! String
         driverMobileNo = profile.object(forKey: "Email") as! String
-        
         strImagPath = profile.object(forKey: "Image") as! String
         
         

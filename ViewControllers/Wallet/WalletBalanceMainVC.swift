@@ -48,7 +48,7 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         
-        self.tableView.addSubview(self.refreshControl)
+//        self.tableView.addSubview(self.refreshControl)
         
         if Singletons.sharedInstance.walletHistoryData.count == 0 {
              webserviceOfTransactionHistory()
@@ -65,20 +65,35 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.strTitle = "Balance".localized
+        self.showsBackButton = true
+        self.createHeaderView()
+        self.setLocalizable()
         self.viewTopUp.backgroundColor = themeGrayBGColor
         self.imgTopUp.image = UIImage.init(named: "iconTNZUnselected")
-        self.lblTopUp.textColor = themeGrayTextColor
+        self.lblTopUp.textColor = UIColor.black
         self.viewTransfer.backgroundColor = themeGrayBGColor
         self.imgTransfer.image = UIImage.init(named: "iconTransferBankUnselected")
-        self.lblTransferToBank.textColor = themeGrayTextColor
+        self.lblTransferToBank.textColor = UIColor.black
         self.viewHistory.backgroundColor = themeGrayBGColor
         self.imgHistory.image = UIImage.init(named: "iconWalletHistoryUnselected")
-        self.lblHistory.textColor = themeGrayTextColor
+        self.lblHistory.textColor = UIColor.black
+        self.lblAvailableFundsDesc.textColor = ThemeYellowColor
         
         webserviceOfTransactionHistory()
         tableView.reloadData()
     }
+    
+    
+    func setLocalizable() {
+    
+        self.lblTopUp.text = "Top Up".localized
+        self.lblTransferToBank.text = "Transfer To Bank".localized
+        self.lblHistory.text = "History".localized
+        self.lblAvailableFunds.text = "Available Funds".localized
+        
+    }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -132,7 +147,7 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return aryData.count
+        return (aryData.count <= 5) ? aryData.count : 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -277,13 +292,13 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
                 print(result)
                 
                 if let res = result as? String {
-                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: res, vc: self)
                 }
                 else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {
-                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
         }
