@@ -127,9 +127,6 @@
         txtPassword.text = "123456"
         
         Utilities.setStatusBarColor(color: UIColor.clear)
-        
-
-        
        
         //
         
