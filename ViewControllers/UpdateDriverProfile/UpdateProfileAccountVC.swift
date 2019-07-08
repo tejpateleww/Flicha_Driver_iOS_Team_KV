@@ -27,7 +27,7 @@ class UpdateProfileAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dictData = NSMutableDictionary(dictionary: Singletons.sharedInstance.dictDriverProfile as NSDictionary)
-       
+
         let profile = dictData.object(forKey: "profile") as! NSDictionary
         strDriverID = profile.object(forKey: "Id") as! String
         setData()
@@ -49,7 +49,7 @@ class UpdateProfileAccountVC: UIViewController {
         txtBankAcNo.placeholder = "Bank Account No.".localized
         btnSave.setTitle("Save".localized, for: .normal)
     }
-  
+
 
     @IBOutlet weak var btnSave: ThemeButton!
     override func didReceiveMemoryWarning() {
@@ -93,7 +93,7 @@ class UpdateProfileAccountVC: UIViewController {
             sendData[RegistrationFinalKeys.kBankName] = txtBankName.text as AnyObject
             sendData[RegistrationFinalKeys.kBankAccountNo] = txtBankAcNo.text as AnyObject
             sendData[RegistrationFinalKeys.kABN] = txtABN.text as AnyObject
-            sendData[RegistrationFinalKeys.kBSB] = txtBSB.text as AnyObject
+            //            sendData[RegistrationFinalKeys.kBSB] = txtBSB.text as AnyObject
             sendData[RegistrationFinalKeys.kServiceDescription] = txtServiceDescription.text as AnyObject
             
             webservieMethods()
@@ -111,22 +111,22 @@ class UpdateProfileAccountVC: UIViewController {
             UtilityClass.showAlert("App Name".localized, message: "Please enter bank name".localized, vc: self)
             return false
         }
-        else if (txtBSB.text!.count == 0) {
-            UtilityClass.showAlert("App Name".localized, message: "Please enter bank branch".localized, vc: self)
-            return false
-        }
+            //        else if (txtBSB.text!.count == 0) {
+            //            UtilityClass.showAlert("App Name".localized, message: "Please enter bank branch".localized, vc: self)
+            //            return false
+            //        }
         else if (txtBankAcNo.text!.count == 0) {
             UtilityClass.showAlert("App Name".localized, message: "Please enter account number".localized, vc: self)
             return false
         }
-//        else if (txtABN.text!.count == 0) {
-//            UtilityClass.showAlert(appName.kAPPName, message: "Enter ABN Number", vc: self)
-//            return false
-//        }
-//        else if (txtServiceDescription.text!.count == 0) {
-//            UtilityClass.showAlert(appName.kAPPName, message: "Enter Service Description", vc: self)
-//            return false
-//        }
+        //        else if (txtABN.text!.count == 0) {
+        //            UtilityClass.showAlert(appName.kAPPName, message: "Enter ABN Number", vc: self)
+        //            return false
+        //        }
+        //        else if (txtServiceDescription.text!.count == 0) {
+        //            UtilityClass.showAlert(appName.kAPPName, message: "Enter Service Description", vc: self)
+        //            return false
+        //        }
         
         
         return true
@@ -147,7 +147,7 @@ class UpdateProfileAccountVC: UIViewController {
                 
                 Singletons.sharedInstance.dictDriverProfile = NSMutableDictionary(dictionary: (result as! NSDictionary))
                 
-//                UserDefaults.standard.set(Singletons.sharedInstance.dictDriverProfile, forKey: driverProfileKeys.kKeyDriverProfile)
+                //                UserDefaults.standard.set(Singletons.sharedInstance.dictDriverProfile, forKey: driverProfileKeys.kKeyDriverProfile)
                 
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
                 
@@ -182,17 +182,17 @@ class UpdateProfileAccountVC: UIViewController {
         
         
 
-//        let Vehicle: NSMutableDictionary = profile.object(forKey: "Vehicle") as! NSMutableDictionary
-//
+        //        let Vehicle: NSMutableDictionary = profile.object(forKey: "Vehicle") as! NSMutableDictionary
+        //
         
         txtAccountHolderName.text = profile.object(forKey: "BankHolderName") as? String
         txtBankName.text = profile.object(forKey: "BankName") as? String
         txtBankAcNo.text = profile.object(forKey: "BankAcNo") as? String
         txtABN.text = profile.object(forKey: "ABN") as? String
-        txtBSB.text = profile.object(forKey: "BSB") as? String
+        //        txtBSB.text = profile.object(forKey: "BSB") as? String
         txtServiceDescription.text = profile.object(forKey: "Description") as? String
         
         
     }
-   
+
 }

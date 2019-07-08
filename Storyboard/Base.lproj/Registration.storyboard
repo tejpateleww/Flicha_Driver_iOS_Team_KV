@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
         <array key="proxima-nova.otf">
             <string>ProximaNova-Regular</string>
         </array>
@@ -729,13 +732,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsT-nf-Cv3">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="521"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="471"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icn-B0-iQD">
-                                                <rect key="frame" x="0.0" y="175" width="320" height="230"/>
+                                                <rect key="frame" x="0.0" y="175" width="320" height="180"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MIA-iF-cWs">
-                                                        <rect key="frame" x="20" y="20" width="280" height="190"/>
+                                                        <rect key="frame" x="20" y="20" width="280" height="140"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwd-Vd-cpI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
@@ -787,11 +790,11 @@
                                                                     <constraint firstItem="Kpg-nl-yvR" firstAttribute="top" secondItem="rmr-B5-u08" secondAttribute="top" id="pmt-KK-7bf"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlD-iq-K0S">
-                                                                <rect key="frame" x="0.0" y="100" width="280" height="40"/>
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlD-iq-K0S">
+                                                                <rect key="frame" x="0.0" y="95" width="280" height="0.0"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bank Branch" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tcC-fN-R9g" customClass="ThemeTextField" customModule="TanTaxi_Driver" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="0.0"/>
                                                                         <color key="tintColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -811,7 +814,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfV-4b-sWH">
-                                                                <rect key="frame" x="0.0" y="150" width="280" height="40"/>
+                                                                <rect key="frame" x="0.0" y="100" width="280" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Account Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XyD-e8-SNq" customClass="ThemeTextField" customModule="TanTaxi_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
@@ -845,7 +848,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN4-t0-2Zd" customClass="ThemeButton" customModule="TanTaxi_Driver" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="435" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="385" width="280" height="40"/>
                                                 <color key="backgroundColor" red="0.89338213209999995" green="0.51630395650000005" blue="0.15679338570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Bia-Cg-Gnq"/>
@@ -862,7 +865,7 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PK-7W-D42">
-                                                <rect key="frame" x="83" y="490" width="94.5" height="21"/>
+                                                <rect key="frame" x="83" y="440" width="94.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="HBW-sn-tsn"/>
                                                 </constraints>
@@ -871,7 +874,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuh-f6-iTX">
-                                                <rect key="frame" x="185.5" y="486" width="41" height="28"/>
+                                                <rect key="frame" x="185.5" y="436" width="41" height="28"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" title="Log In ">
                                                     <color key="titleColor" red="0.89338213209999995" green="0.51630395650000005" blue="0.15679338570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

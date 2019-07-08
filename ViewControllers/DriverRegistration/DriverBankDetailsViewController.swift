@@ -91,7 +91,7 @@ class DriverBankDetailsViewController: UIViewController
             
             self.userDefault.set(self.txtAccountHolderName.text, forKey: RegistrationFinalKeys.kbankHolderName)
             self.userDefault.set(self.txtBankName.text, forKey: RegistrationFinalKeys.kBankName)
-            self.userDefault.set(self.txtBankBranch.text, forKey: RegistrationFinalKeys.kBSB)
+//            self.userDefault.set(self.txtBankBranch.text, forKey: RegistrationFinalKeys.kBSB)
             self.userDefault.set(self.txtAccountNumber.text, forKey: RegistrationFinalKeys.kBankAccountNo)
             self.userDefault.set(3, forKey: savedDataForRegistration.kPageNumber)
             driverVC.viewDidLayoutSubviews()
@@ -126,12 +126,12 @@ class DriverBankDetailsViewController: UIViewController
         }
             
             
-        else if txtBankBranch.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
-//            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
-            isValidate = false
-            ValidationMessage = "Please enter bank branch".localized
-
-        }
+//        else if txtBankBranch.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+////            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+//            isValidate = false
+//            ValidationMessage = "Please enter bank branch".localized
+//
+//        }
             
         else if txtAccountNumber.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
 //            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })

@@ -11,9 +11,9 @@ import UIKit
 
 class DriverCertificatesViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,WWCalendarTimeSelectorProtocol  {
 
- 
 
-//    @IBOutlet var btnDone: UIButton!
+
+    //    @IBOutlet var btnDone: UIButton!
     @IBOutlet weak var constraintHeightOfSmallView: NSLayoutConstraint! // 50
     @IBOutlet weak var constraintBottomOfButton: NSLayoutConstraint! // 128
     @IBOutlet weak var btnLogin: UIButton!
@@ -38,7 +38,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        giveShadow()
+        //        giveShadow()
         
         if DeviceType.IS_IPHONE_4_OR_LESS || DeviceType.IS_IPAD {
             constraintHeightOfSmallView.constant = 40
@@ -46,17 +46,17 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         }
         
         imagePicker.delegate = self
-       
-/*
-        imgDriverLicence.layer.cornerRadius = imgDriverLicence.frame.size.width / 2
-        imgDriverLicence.layer.masksToBounds = true
-        imgAccreditationCertifi.layer.cornerRadius = imgAccreditationCertifi.frame.size.width / 2
-        imgAccreditationCertifi.layer.masksToBounds = true
-        imgCarRegistration.layer.cornerRadius = imgCarRegistration.frame.size.width / 2
-        imgCarRegistration.layer.masksToBounds = true
-        imgVehicleInsurience.layer.cornerRadius = imgVehicleInsurience.frame.size.width / 2
-        imgVehicleInsurience.layer.masksToBounds = true
-*/
+
+        /*
+         imgDriverLicence.layer.cornerRadius = imgDriverLicence.frame.size.width / 2
+         imgDriverLicence.layer.masksToBounds = true
+         imgAccreditationCertifi.layer.cornerRadius = imgAccreditationCertifi.frame.size.width / 2
+         imgAccreditationCertifi.layer.masksToBounds = true
+         imgCarRegistration.layer.cornerRadius = imgCarRegistration.frame.size.width / 2
+         imgCarRegistration.layer.masksToBounds = true
+         imgVehicleInsurience.layer.cornerRadius = imgVehicleInsurience.frame.size.width / 2
+         imgVehicleInsurience.layer.masksToBounds = true
+         */
         
         
         
@@ -64,10 +64,10 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       setLocalizable()
+        setLocalizable()
     }
     
- 
+
     func setLocalizable()
     {
         self.title = "App Name".localized
@@ -80,8 +80,8 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         txtVehicleInsurance.placeholder = "Select vehicle insurance/policy expiry date".localized
         lblVehicleInsurance.text = "Vehicle Insurance Policy/Certificate".localized
         btnNext.setTitle("Done".localized, for: .normal)
-//        lblHaveAnAccount.text = "".localized
-//        btnLogin.setTitle("".localized, for: .normal)
+        //        lblHaveAnAccount.text = "".localized
+        //        btnLogin.setTitle("".localized, for: .normal)
 
     }
 
@@ -95,7 +95,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         btnNext.layer.cornerRadius = btnNext.frame.size.height/2
         btnNext.clipsToBounds = true
     }
-   
+
 
     //-------------------------------------------------------------
     // MARK: - Outlets
@@ -138,41 +138,41 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     // MARK: - Actions
     //-------------------------------------------------------------
     
-//    cellDetails.classView.layer.borderWidth = 1
-//    cellDetails.classView.layer.masksToBounds = true
-//    cellDetails.classView.layer.borderColor = UIColor.gray.cgColor
+    //    cellDetails.classView.layer.borderWidth = 1
+    //    cellDetails.classView.layer.masksToBounds = true
+    //    cellDetails.classView.layer.borderColor = UIColor.gray.cgColor
     
     
     
     @IBAction func btnDriverLicenceView(_ sender: UIButton) {
         
-//        self.PickingImageFromGallery()
-//        self.selectDate()
+        //        self.PickingImageFromGallery()
+        //        self.selectDate()
         
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
             , style: .default, handler: { ACTION in
-            
-            self.imagePicker.allowsEditing = false
-            self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = [kUTTypeImage as String]
-//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            
-            self.imagePicked = sender.tag
-            self.present(self.imagePicker, animated: true)
-    
+
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                //                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+
+                self.imagePicked = sender.tag
+                self.present(self.imagePicker, animated: true)
+
         })
         let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
             self.imagePicker.cameraCaptureMode = .photo
- 
+
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
-                
-           
+
+
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
@@ -180,39 +180,39 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         alert.addAction(Camera)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
-   
-   
+
+
     }
     
     @IBAction func btnAccreditationCertiView(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "Choose Photo".localized
-, message: nil, preferredStyle: .alert)
+            , message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
-, style: .default, handler: { ACTION in
-//            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.savedPhotosAlbum){
-            
+            , style: .default, handler: { ACTION in
+                //            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.savedPhotosAlbum){
+
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .photoLibrary
                 self.imagePicker.mediaTypes = [kUTTypeImage as String]
-//                    UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                //                    UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
                 self.imagePicked = sender.tag
                 self.present(self.imagePicker, animated: true)
                 
-//            }
+                //            }
         })
         let Camera  = UIAlertAction(title: "Select photo from camera".localized ,style: .default, handler: { ACTION in
-   
+
             
             self.imagePicker.allowsEditing = false
             self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
             self.imagePicker.cameraCaptureMode = .photo
-         
+
             
             self.imagePicked = sender.tag
             self.present(self.imagePicker, animated: true)
-                
+
             
         })
         let Cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
@@ -225,39 +225,39 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         
         
-//        alert()
+        //        alert()
     }
     
     @IBAction func btnCarRegisView(_ sender: UIButton) {
-//        alert()
+        //        alert()
         
         let alert = UIAlertController(title: "Choose Photo".localized
-, message: nil, preferredStyle: .alert)
+            , message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
-, style: .default, handler: { ACTION in
-            
-            self.imagePicker.allowsEditing = false
-            self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = [kUTTypeImage as String]
-//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            
+            , style: .default, handler: { ACTION in
+
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                //                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+
                 self.imagePicked = sender.tag
                 self.present(self.imagePicker, animated: true)
                 
-           
+
         })
         let Camera  = UIAlertAction(title: "Select photo from camera".localized
-, style: .default, handler: { ACTION in
-           
-            self.imagePicker.allowsEditing = false
-            self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            self.imagePicker.cameraCaptureMode = .photo
-     
-            self.imagePicked = sender.tag
-            self.present(self.imagePicker, animated: true)
+            , style: .default, handler: { ACTION in
+
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                self.imagePicker.cameraCaptureMode = .photo
+
+                self.imagePicked = sender.tag
+                self.present(self.imagePicker, animated: true)
                 
-            
+
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
@@ -268,32 +268,32 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     }
     
     @IBAction func btnVehicleInsuView(_ sender: UIButton) {
-//        alert()
+        //        alert()
         
         let alert = UIAlertController(title: "Choose Photo".localized
-, message: nil, preferredStyle: .alert)
+            , message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
-, style: .default, handler: { ACTION in
-            
-            self.imagePicker.allowsEditing = false
-            self.imagePicker.sourceType = .photoLibrary
-            self.imagePicker.mediaTypes = [kUTTypeImage as String]
-//                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            
-            self.imagePicked = sender.tag
-            self.present(self.imagePicker, animated: true)
+            , style: .default, handler: { ACTION in
+
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                //                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+
+                self.imagePicked = sender.tag
+                self.present(self.imagePicker, animated: true)
         })
         let Camera  = UIAlertAction(title: "Select photo from camera".localized
-, style: .default, handler: { ACTION in
-            
-            
-            self.imagePicker.allowsEditing = false
-            self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            self.imagePicker.cameraCaptureMode = .photo
-            
-            self.imagePicked = sender.tag
-            self.present(self.imagePicker, animated: true)
+            , style: .default, handler: { ACTION in
+
+
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                self.imagePicker.cameraCaptureMode = .photo
+
+                self.imagePicked = sender.tag
+                self.present(self.imagePicker, animated: true)
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
@@ -324,7 +324,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         // picker.stopVideoCapture()
         picker.mediaTypes = [kUTTypeImage as String]
-//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        //            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     
@@ -379,37 +379,37 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             }
         }
         dismiss(animated: true)
-       
-//        UIView.animate(withDuration: 5.0, delay: 10.0, options: .transitionCurlUp, animations: {
-//
-//            self.Calendar()
-//        }, completion: {_ in
-//
-//        })
+
+        //        UIView.animate(withDuration: 5.0, delay: 10.0, options: .transitionCurlUp, animations: {
+        //
+        //            self.Calendar()
+        //        }, completion: {_ in
+        //
+        //        })
         
-//        let selector = WWCalendarTimeSelector.instantiate()
-//
-//
-//        // 2. You can then set delegate, and any customization options
-//        //        selector.delegate = self
-//        selector.optionTopPanelTitle = "Please choose date"
-//
-//        // 3. Then you simply present it from your view controller when necessary!
-//        self.present(selector, animated: true, completion: nil)
-//        selector.delegate = self
-//
+        //        let selector = WWCalendarTimeSelector.instantiate()
+        //
+        //
+        //        // 2. You can then set delegate, and any customization options
+        //        //        selector.delegate = self
+        //        selector.optionTopPanelTitle = "Please choose date"
+        //
+        //        // 3. Then you simply present it from your view controller when necessary!
+        //        self.present(selector, animated: true, completion: nil)
+        //        selector.delegate = self
+        //
         
-//        Calendar()
-        
-        
+        //        Calendar()
         
         
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imgDriverLicence.contentMode = .scaleToFill
-//            imgDriverLicence.image = pickedImage
-//
-//        }
-//        dismiss(animated: true, completion: nil)
+        
+        
+        //        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        //            imgDriverLicence.contentMode = .scaleToFill
+        //            imgDriverLicence.image = pickedImage
+        //
+        //        }
+        //        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -428,13 +428,13 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         let selectedDate: String = dateFormatter.string(from: sender.date)
         
         txtDriverLicence.text = selectedDate
-//        lblDriverLicence.isHidden = true
+        //        lblDriverLicence.isHidden = true
         datePicker.removeFromSuperview()
         print("Selected value \(selectedDate)")
     }
     
     
-   
+
     //-------------------------------------------------------------
     // MARK: - Custom Methods
     //-------------------------------------------------------------
@@ -458,10 +458,10 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         VehicleInsuView.layer.borderColor = UIColor.gray.cgColor
         
         
-//        DriverLicenceView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
- //       AccreditationView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
-//        carRegisView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
-//        VehicleInsuView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
+        //        DriverLicenceView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
+        //       AccreditationView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
+        //        carRegisView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
+        //        VehicleInsuView.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 1, scale: true)
 
     }
     
@@ -472,7 +472,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     @IBAction func btnNext(_ sender: Any) {
         
-       
+
         
         if imgDriverLicence.image == UIImage(named: "iconPlaceholderVehicle") {
             
@@ -481,7 +481,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         }
         else if imgCarRegistration.image == UIImage(named: "iconPlaceholderVehicle") {
             
-             UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Please enter all document\'s detail.".localized, vc: self)
             
         }
         else if imgVehicleInsurience.image == UIImage(named: "iconPlaceholderVehicle") {
@@ -502,7 +502,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
     }
     
-   
+
     let myDatePicker: UIDatePicker = UIDatePicker()
     func Calendar()
     {
@@ -536,20 +536,20 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         if imagePicked == 1 {
             txtDriverLicence.text = mySelectedDate as String
-//            lblDriverLicence.isHidden = true
+            //            lblDriverLicence.isHidden = true
             
         } else if imagePicked == 2 {
             txtAccreditation.text = mySelectedDate as String
-//            lblAccreditation.isHidden = true
+            //            lblAccreditation.isHidden = true
             
         }
-//        else if imagePicked == 3 {
-//            txtCarRegistraion.text = mySelectedDate as String
-//
-//        }
+            //        else if imagePicked == 3 {
+            //            txtCarRegistraion.text = mySelectedDate as String
+            //
+            //        }
         else if imagePicked == 4 {
             txtVehicleInsurance.text = mySelectedDate as String
-//            lblVehicleInsurance.isHidden = true
+            //            lblVehicleInsurance.isHidden = true
         }
         self.myDatePicker.removeFromSuperview()
     }
@@ -571,26 +571,26 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         
         if imagePicked == 1 {
             txtDriverLicence.text = mySelectedDate as String
-//            lblDriverLicence.isHidden = true
+            //            lblDriverLicence.isHidden = true
             
         } else if imagePicked == 2 {
             txtAccreditation.text = mySelectedDate as String
-//            lblAccreditation.isHidden = true
+            //            lblAccreditation.isHidden = true
             
         }
-//            else if imagePicked == 3 {
-//            txtCarRegistraion.text = mySelectedDate as String
-//
-//        }
+            //            else if imagePicked == 3 {
+            //            txtCarRegistraion.text = mySelectedDate as String
+            //
+            //        }
         else if imagePicked == 4 {
             txtVehicleInsurance.text = mySelectedDate as String
-//            lblVehicleInsurance.isHidden = true
+            //            lblVehicleInsurance.isHidden = true
         }
         
         
         
     }
-   
+
     //-------------------------------------------------------------
     // MARK: - Webservice Methods
     //-------------------------------------------------------------
@@ -599,7 +599,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     func webserviceForRegistration()
     {
-   
+
         webserviceForRegistrationForDriver(dictData as AnyObject, image1: imgDriverLicence.image!, image2: imgAccreditationCertifi.image!, image3: imgCarRegistration.image!, image4: imgVehicleInsurience.image!, image5: imgDriver, image6: imgVehicle) { (result, status) in
             
             
@@ -616,15 +616,15 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
                     
                     
                     Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
-//                    UserDefaults.standard.set(Singletons.sharedInstance.dictDriverProfile, forKey: driverProfileKeys.kKeyDriverProfile)
+                    //                    UserDefaults.standard.set(Singletons.sharedInstance.dictDriverProfile, forKey: driverProfileKeys.kKeyDriverProfile)
                     UserDefaults.standard.set(true, forKey: driverProfileKeys.kKeyIsDriverLoggedIN)
                     
                     let profileData = Singletons.sharedInstance.dictDriverProfile
                     
                     Singletons.sharedInstance.strDriverID = (profileData?.object(forKey: "profile") as! NSDictionary).object(forKey: "Id") as! String
                     
-//                    let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
-//                    self.navigationController?.pushViewController(next, animated: true)
+                    //                    let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
+                    //                    self.navigationController?.pushViewController(next, animated: true)
                     
                     self.navigationController?.isNavigationBarHidden = true
                     self.performSegue(withIdentifier: "afterCompleteRegistration", sender: nil)
@@ -633,7 +633,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             }
             else
             {
-              
+
                 if let res = result as? String
                 {
                     UtilityClass.showAlert("App Name".localized, message: res, vc: self)
@@ -649,13 +649,13 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             
         }
     }
-//(lldb) po print(result)
-//    {
-//    message =     (
-//    "Mobile Number already exists"
-//    );
-//    status = 0;
-//    }
+    //(lldb) po print(result)
+    //    {
+    //    message =     (
+    //    "Mobile Number already exists"
+    //    );
+    //    status = 0;
+    //    }
 
     
     
@@ -665,89 +665,89 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             dictData[RegistrationFinalKeys.kEmail] = email as AnyObject
         }
         let fullName: String = (userDefault.object(forKey: RegistrationFinalKeys.kFullname) as? String)!
-            dictData[RegistrationFinalKeys.kFullname] = fullName as AnyObject
-       
+        dictData[RegistrationFinalKeys.kFullname] = fullName as AnyObject
+
         let gender: String = (userDefault.object(forKey: RegistrationFinalKeys.kGender) as? String)!
-            dictData[RegistrationFinalKeys.kGender] = gender as AnyObject
-       
+        dictData[RegistrationFinalKeys.kGender] = gender as AnyObject
+
         let mobileNo: String = (userDefault.object(forKey: RegistrationFinalKeys.kMobileNo) as? String)!
-            dictData[RegistrationFinalKeys.kMobileNo] = mobileNo as AnyObject
-      
+        dictData[RegistrationFinalKeys.kMobileNo] = mobileNo as AnyObject
+
         let password: String = (userDefault.object(forKey: RegistrationFinalKeys.kPassword) as? String)!
-            dictData[RegistrationFinalKeys.kPassword] = password as AnyObject
-      
+        dictData[RegistrationFinalKeys.kPassword] = password as AnyObject
+
         let address: String = (userDefault.object(forKey: RegistrationFinalKeys.kAddress) as? String)!
-            dictData[RegistrationFinalKeys.kAddress] = address as AnyObject
-       
-//        let suburd: String = (userDefault.object(forKey: RegistrationFinalKeys.kSuburb) as? String)!
-//            dictData[RegistrationFinalKeys.kSuburb] = suburd as AnyObject
+        dictData[RegistrationFinalKeys.kAddress] = address as AnyObject
+
+        //        let suburd: String = (userDefault.object(forKey: RegistrationFinalKeys.kSuburb) as? String)!
+        //            dictData[RegistrationFinalKeys.kSuburb] = suburd as AnyObject
         
-         let postcode: String = userDefault.object(forKey: RegistrationFinalKeys.kZipcode) as! String
-            dictData[RegistrationFinalKeys.kZipcode] = postcode as AnyObject
-      
-         let passenger: String = userDefault.object(forKey: RegistrationFinalKeys.kNumberOfPasssenger) as! String
-            dictData[RegistrationFinalKeys.kNumberOfPasssenger] = passenger as AnyObject
+        let postcode: String = userDefault.object(forKey: RegistrationFinalKeys.kZipcode) as! String
+        dictData[RegistrationFinalKeys.kZipcode] = postcode as AnyObject
+
+        let passenger: String = userDefault.object(forKey: RegistrationFinalKeys.kNumberOfPasssenger) as! String
+        dictData[RegistrationFinalKeys.kNumberOfPasssenger] = passenger as AnyObject
         
         let vehicleModelName: String = userDefault.object(forKey: RegistrationFinalKeys.kVehicleModelName) as! String
         dictData[RegistrationFinalKeys.kVehicleModelName] = vehicleModelName as AnyObject
         
-//
+        //
         
-//        message =     (
-//            "Please upload Vehicle Image",
-//            "Please enter no of passenger",
-//            "Please enter vehicle model name"
-//        );
-//        status = 0;
-        
-        
-//         let state: String = userDefault.object(forKey: RegistrationFinalKeys.kState) as! String
-//            dictData[RegistrationFinalKeys.kState] = state as AnyObject
-//
-//         let Country: String = userDefault.object(forKey: RegistrationFinalKeys.kCountry) as! String
-//            dictData[RegistrationFinalKeys.kCountry] = Country as AnyObject
-      
+        //        message =     (
+        //            "Please upload Vehicle Image",
+        //            "Please enter no of passenger",
+        //            "Please enter vehicle model name"
+        //        );
+        //        status = 0;
         
         
-         let DOB: String = userDefault.object(forKey: RegistrationFinalKeys.kKeyDOB) as! String
-            dictData[RegistrationFinalKeys.kKeyDOB] = DOB as AnyObject
-//
-//         let ABN: String = userDefault.object(forKey: RegistrationFinalKeys.kABN) as! String
-//            dictData[RegistrationFinalKeys.kABN] = ABN as AnyObject
-//
-//        let ServiceDescription = userDefault.object(forKey: RegistrationFinalKeys.kServiceDescription) as! String
-//            dictData[RegistrationFinalKeys.kServiceDescription] = ServiceDescription as AnyObject
+        //         let state: String = userDefault.object(forKey: RegistrationFinalKeys.kState) as! String
+        //            dictData[RegistrationFinalKeys.kState] = state as AnyObject
+        //
+        //         let Country: String = userDefault.object(forKey: RegistrationFinalKeys.kCountry) as! String
+        //            dictData[RegistrationFinalKeys.kCountry] = Country as AnyObject
+
         
-         let BSB: String = userDefault.object(forKey: RegistrationFinalKeys.kBSB) as! String
-            dictData[RegistrationFinalKeys.kBSB] = BSB as AnyObject
-//
-         let BankName: String = userDefault.object(forKey: RegistrationFinalKeys.kBankName) as! String
-            dictData[RegistrationFinalKeys.kBankName] = BankName as AnyObject
-     
-         let BankAccountNo: String = userDefault.object(forKey: RegistrationFinalKeys.kBankAccountNo) as! String
+        
+        let DOB: String = userDefault.object(forKey: RegistrationFinalKeys.kKeyDOB) as! String
+        dictData[RegistrationFinalKeys.kKeyDOB] = DOB as AnyObject
+        //
+        //         let ABN: String = userDefault.object(forKey: RegistrationFinalKeys.kABN) as! String
+        //            dictData[RegistrationFinalKeys.kABN] = ABN as AnyObject
+        //
+        //        let ServiceDescription = userDefault.object(forKey: RegistrationFinalKeys.kServiceDescription) as! String
+        //            dictData[RegistrationFinalKeys.kServiceDescription] = ServiceDescription as AnyObject
+        
+        //         let BSB: String = userDefault.object(forKey: RegistrationFinalKeys.kBSB) as! String
+        //            dictData[RegistrationFinalKeys.kBSB] = BSB as AnyObject
+        //
+        let BankName: String = userDefault.object(forKey: RegistrationFinalKeys.kBankName) as! String
+        dictData[RegistrationFinalKeys.kBankName] = BankName as AnyObject
+
+        let BankAccountNo: String = userDefault.object(forKey: RegistrationFinalKeys.kBankAccountNo) as! String
         dictData[RegistrationFinalKeys.kBankAccountNo] = BankAccountNo as AnyObject
         
         let referralCode: String = userDefault.object(forKey: RegistrationFinalKeys.kReferralCode) as! String
         dictData[RegistrationFinalKeys.kReferralCode] = referralCode as AnyObject
         
-//        if let lat: String = userDefault.object(forKey: RegistrationFinalKeys.kLat) as? String {
-//             dictData[RegistrationFinalKeys.kLat] = lat as AnyObject
-//        } else {
+        //        if let lat: String = userDefault.object(forKey: RegistrationFinalKeys.kLat) as? String {
+        //             dictData[RegistrationFinalKeys.kLat] = lat as AnyObject
+        //        } else {
         
-//        }
-       
-//        if let lng: String = userDefault.object(forKey: RegistrationFinalKeys.kLng) as? String {
-//            dictData[RegistrationFinalKeys.kLng] = lng as AnyObject
-//        } else {
+        //        }
+
+        //        if let lng: String = userDefault.object(forKey: RegistrationFinalKeys.kLng) as? String {
+        //            dictData[RegistrationFinalKeys.kLng] = lng as AnyObject
+        //        } else {
         
-//        }
+        //        }
         
         dictData[RegistrationFinalKeys.kLat] = "22.0236514" as AnyObject
         dictData[RegistrationFinalKeys.kLat] = "72.0236514" as AnyObject
-       
-//         let carModel: String = userDefault.object(forKey: profileKeys.kCarModel) as! String
-//            dictData[profileKeys.kCarModel] = carModel as AnyObject
-       
+
+        //         let carModel: String = userDefault.object(forKey: profileKeys.kCarModel) as! String
+        //            dictData[profileKeys.kCarModel] = carModel as AnyObject
+
         
         let vehicleRegistrationNumber: String = userDefault.object(forKey: RegistrationFinalKeys.kVehicleRegistrationNo) as! String
         dictData[RegistrationFinalKeys.kVehicleRegistrationNo] = vehicleRegistrationNumber as AnyObject
@@ -780,9 +780,9 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             imgVehicle = imgageVehicle
         }
         
-//        let placesArray = NSKeyedUnarchiver.unarchiveObject(with: userDefault.object(forKey: RegistrationFinalKeys.kDriverImage) as! Data) as! NSData
-//        let image = UIImage(data: placesArray as Data)
-       
+        //        let placesArray = NSKeyedUnarchiver.unarchiveObject(with: userDefault.object(forKey: RegistrationFinalKeys.kDriverImage) as! Data) as! NSData
+        //        let image = UIImage(data: placesArray as Data)
+
         
         SetVehicleExpiryDates()
         
@@ -798,15 +798,15 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     func SetVehicleExpiryDates()
     {
-    
+
         let DriverLicenceExpiryDate = txtDriverLicence.text
         let CarRegistrationExpiryDate = txtCarRegistraion.text
         let AccreditationCertificateExpiryDate = txtAccreditation.text
-//        lblAccreditation.isHidden = true
+        //        lblAccreditation.isHidden = true
         let VehicleInsuranceCertificateExpiryDate = txtVehicleInsurance.text
         
-//        lblDriverLicence.isHidden = true
-//        lblVehicleInsurance.isHidden = true
+        //        lblDriverLicence.isHidden = true
+        //        lblVehicleInsurance.isHidden = true
         dictData[RegistrationFinalKeys.kDriverLicenceExpiryDate] = DriverLicenceExpiryDate as AnyObject
         dictData[RegistrationFinalKeys.kCarRegistrationExpiryDate] = CarRegistrationExpiryDate as AnyObject
         dictData[RegistrationFinalKeys.kAccreditationCertificateExpiryDate] = AccreditationCertificateExpiryDate as AnyObject
@@ -815,12 +815,12 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
+
         if segue.destination is CustomSideMenuViewController {
             
         }
-       
+
     }
-  
+
     // ------------------------------------------------------------
 }

@@ -247,7 +247,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         setImage(url: VehicleInsuranceCertificateImage, imageView: self.imgVehicleInsurance)
         
         lblDriverLicenceExpiryDate.text = strDriverLicenceExpireDate
-        lblAccreditationCertiExpiryDate.text = strAccreditationCertificateExpireDate
+//        lblAccreditationCertiExpiryDate.text = strAccreditationCertificateExpireDate
 //        lblCarRegistrationExpiryDate.text = strRegistrationCertificateExpire
         lblVehicleInsuranceExpiryDate.text = strVehicleInsuranceCertificate
     }
