@@ -13,17 +13,17 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
         </array>
-        <array key="proxima-nova-586c8e081cb01.otf">
-            <string>ProximaNova-Regular</string>
-        </array>
         <array key="proxima-nova-bold.otf">
             <string>ProximaNova-Bold</string>
         </array>
-        <array key="proxima-nova-light-586c8e5e87d36.otf">
+        <array key="proxima-nova-light.otf">
             <string>ProximaNova-Light</string>
         </array>
         <array key="proxima-nova-semibold.otf">
             <string>ProximaNova-Semibold</string>
+        </array>
+        <array key="proxima-nova.otf">
+            <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -8153,6 +8153,7 @@ EE15IEpvYnM
                         <outlet property="lblCards" destination="mNW-JK-BS0" id="LbV-k6-Biu"/>
                         <outlet property="lblCurrentBalance" destination="OJr-vp-nAR" id="Jkm-wo-rhI"/>
                         <outlet property="lblEntertainment" destination="ga1-Dp-nSG" id="30v-G7-NMK"/>
+                        <outlet property="lblNavTitle" destination="jIT-ro-gcE" id="TKF-V2-Dqp"/>
                         <outlet property="lblTransfer" destination="tCU-go-amE" id="Bq0-LQ-5U0"/>
                         <outlet property="lblTravel" destination="Ld1-Pd-ga9" id="WoL-fb-LPn"/>
                         <outlet property="scrollObj" destination="Rew-1v-c5N" id="Csc-ZB-0mr"/>
@@ -8595,7 +8596,7 @@ EE15IEpvYnM
                                         <rect key="frame" x="27" y="167.5" width="246" height="246.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-pL-oOp">
-                                                <rect key="frame" x="0.0" y="10" width="246" height="230"/>
+                                                <rect key="frame" x="0.0" y="10" width="246" height="170"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fNt-0y-F2y">
                                                         <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
@@ -8738,8 +8739,8 @@ EE15IEpvYnM
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-6N-0Pw">
-                                                        <rect key="frame" x="0.0" y="180" width="246" height="50"/>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ScK-6N-0Pw">
+                                                        <rect key="frame" x="0.0" y="170" width="246" height="0.0"/>
                                                         <subviews>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5O-bJ-DYr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="246" height="1"/>
@@ -8758,7 +8759,7 @@ EE15IEpvYnM
                                                                 </constraints>
                                                             </view>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BSB" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XI9-Te-KLC" customClass="ACFloatingTextfield" customModule="ACFloatingTextfield_Swift">
-                                                                <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="246" height="0.0"/>
                                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="tintColor" red="1" green="0.67450980390000004" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="textColor"/>

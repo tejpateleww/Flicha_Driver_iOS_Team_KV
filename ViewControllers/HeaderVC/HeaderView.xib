@@ -32,13 +32,17 @@
                                     <rect key="frame" x="137.5" y="25" width="99.5" height="11"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrR-3L-xJP">
-                                    <rect key="frame" x="163" y="28.5" width="48.5" height="20.5"/>
+                                    <rect key="frame" x="163" y="30.5" width="48.5" height="20.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20.5" id="eWi-o0-ay5"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1E-eJ-hFL">
-                                    <rect key="frame" x="15" y="20" width="35" height="35"/>
+                                    <rect key="frame" x="15" y="23.5" width="35" height="35"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="amw-vH-NZf"/>
@@ -51,7 +55,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LR-Zj-Ohg">
-                                    <rect key="frame" x="291" y="24" width="73" height="30"/>
+                                    <rect key="frame" x="291" y="26" width="73" height="30"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="SIGN OUT">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,7 +71,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpK-Hb-6Tt">
-                                    <rect key="frame" x="251.5" y="24" width="114.5" height="30"/>
+                                    <rect key="frame" x="251.5" y="26" width="114.5" height="30"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Na-lf-rIM">
                                             <rect key="frame" x="0.0" y="0.0" width="54.5" height="30"/>
@@ -116,7 +120,7 @@
                                     </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1T-z4-IAj">
-                                    <rect key="frame" x="15" y="20" width="35" height="35"/>
+                                    <rect key="frame" x="15" y="22" width="35" height="35"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="Rt9-KH-Mi1"/>
@@ -139,15 +143,14 @@
                                 <constraint firstAttribute="height" priority="750" constant="64" id="JtN-Nm-rXi"/>
                                 <constraint firstItem="LrR-3L-xJP" firstAttribute="centerX" secondItem="oom-Cw-b6m" secondAttribute="centerX" id="LGS-eQ-Ks2"/>
                                 <constraint firstItem="wpK-Hb-6Tt" firstAttribute="leading" secondItem="nRD-B0-mZn" secondAttribute="trailing" constant="14.5" id="SlS-R5-gNI"/>
-                                <constraint firstItem="0LR-Zj-Ohg" firstAttribute="centerY" secondItem="LrR-3L-xJP" secondAttribute="centerY" id="Sne-JG-3Hm"/>
                                 <constraint firstItem="LrR-3L-xJP" firstAttribute="centerY" secondItem="n1T-z4-IAj" secondAttribute="centerY" constant="1.25" id="Vpy-gL-VxN"/>
+                                <constraint firstItem="s1E-eJ-hFL" firstAttribute="centerY" secondItem="LrR-3L-xJP" secondAttribute="centerY" id="XnV-f6-xTf"/>
                                 <constraint firstAttribute="trailing" secondItem="0LR-Zj-Ohg" secondAttribute="trailing" constant="10" id="app-GF-ps9"/>
                                 <constraint firstItem="nRD-B0-mZn" firstAttribute="top" secondItem="oom-Cw-b6m" secondAttribute="top" constant="25" id="ca2-sw-CSC"/>
                                 <constraint firstItem="wpK-Hb-6Tt" firstAttribute="leading" secondItem="LrR-3L-xJP" secondAttribute="trailing" constant="40" id="dB9-F3-moW"/>
-                                <constraint firstItem="n1T-z4-IAj" firstAttribute="centerY" secondItem="oom-Cw-b6m" secondAttribute="centerY" constant="7" id="jJu-Cj-S7a"/>
+                                <constraint firstAttribute="bottom" secondItem="LrR-3L-xJP" secondAttribute="bottom" constant="10" id="kwu-Xt-GM7"/>
                                 <constraint firstItem="n1T-z4-IAj" firstAttribute="leading" secondItem="oom-Cw-b6m" secondAttribute="leading" constant="15" id="rZp-EM-Kmw"/>
                                 <constraint firstItem="wpK-Hb-6Tt" firstAttribute="centerY" secondItem="LrR-3L-xJP" secondAttribute="centerY" id="vdh-Uf-3dQ"/>
-                                <constraint firstItem="s1E-eJ-hFL" firstAttribute="centerY" secondItem="oom-Cw-b6m" secondAttribute="centerY" constant="7" id="vhG-K5-ZT6"/>
                                 <constraint firstItem="0LR-Zj-Ohg" firstAttribute="centerY" secondItem="LrR-3L-xJP" secondAttribute="centerY" id="w3Q-pn-JDC"/>
                                 <constraint firstItem="s1E-eJ-hFL" firstAttribute="leading" secondItem="oom-Cw-b6m" secondAttribute="leading" constant="15" id="zfF-WN-0HB"/>
                             </constraints>
@@ -209,7 +212,7 @@
         </view>
     </objects>
     <resources>
-        <image name="iconBack" width="85" height="85"/>
+        <image name="iconBack" width="26" height="26"/>
         <image name="iconCall" width="26" height="26"/>
         <image name="iconMenu" width="26" height="26"/>
         <image name="iconSwitchOn" width="44" height="20"/>

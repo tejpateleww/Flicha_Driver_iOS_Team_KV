@@ -284,12 +284,12 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
             Utilities.showAlert(appName.kAPPName, message: "Enter Bank Account Number", vc: (UIApplication.shared.keyWindow?.rootViewController)!)
             return false
         }
-        else if txtBSB.text!.count == 0 {
-            
-            Utilities.showAlert(appName.kAPPName, message: "Enter BSB Number", vc: (UIApplication.shared.keyWindow?.rootViewController)!)
-            return false
-        }
-            
+//        else if txtBSB.text!.count == 0 {
+//
+//            Utilities.showAlert(appName.kAPPName, message: "Enter BSB Number", vc: (UIApplication.shared.keyWindow?.rootViewController)!)
+//            return false
+//        }
+
             
         else if Double(strAmt)! > Singletons.sharedInstance.strCurrentBalance {
             
@@ -336,7 +336,7 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
         dictData["HolderName"] = txtAccountName.text //as! String
         dictData["ABN"] = "" //as! String
         dictData["BankName"] = txtBankName.text //as! String
-        dictData["BSB"] = txtBSB.text //as! String
+//        dictData["BSB"] = txtBSB.text //as! String
         dictData["AccountNo"] = txtBankAccountNo.text //as! String
         
         webserviceForTransferMoneyToBank(dictData as AnyObject) { (result, status) in

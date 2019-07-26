@@ -437,8 +437,8 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func setLocalizable() {
-        self.lblSendMoneyTitle.text = "Send Money".localized
-        self.btnSendMoney.setTitle("Send Money".localized, for: .normal)
+//        self.lblSendMoneyTitle.text = "Send Money".localized
+//        self.btnSendMoney.setTitle("Send Money".localized, for: .normal)
         self.lblQRScanner.text = "Tap to activate Scanner".localized
         
     }
@@ -459,11 +459,11 @@ class WalletTransferSend: UIViewController, AVCaptureMetadataOutputObjectsDelega
     @IBOutlet weak var lblMobileNumber: UILabel!
     @IBOutlet weak var imgQRCode: UIImageView!
     @IBOutlet weak var lblQRScanner: UILabel!
-    @IBOutlet var lblSendMoneyTitle: UILabel!
-    @IBOutlet var btnSendMoney: UIButton!
-  
+//    @IBOutlet var lblSendMoneyTitle: UILabel!
+//    @IBOutlet var btnSendMoney: UIButton!
+
     @IBOutlet var txtEnterMoney: UITextField!
-    
+
     
     
     //-------------------------------------------------------------
@@ -791,7 +791,7 @@ class WalletTransferRecieve: UIViewController {
     }
     
     func setLocalizable() {
-        self.lblRecieveMoney.text = "Receive Money".localized
+//        self.lblRecieveMoney.text = "Receive Money".localized
     }
     
     override func didReceiveMemoryWarning() {
@@ -804,8 +804,8 @@ class WalletTransferRecieve: UIViewController {
     //-------------------------------------------------------------
     
     @IBOutlet weak var imgQRCode: UIImageView!
-    @IBOutlet var lblRecieveMoney: UILabel!
-    
+//    @IBOutlet var lblRecieveMoney: UILabel!
+
     
     //-------------------------------------------------------------
     // MARK: - Custom Method
