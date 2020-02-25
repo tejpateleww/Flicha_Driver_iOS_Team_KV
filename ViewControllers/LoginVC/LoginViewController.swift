@@ -493,9 +493,13 @@
                         
                         UtilityClass.showAlertWithCompletion("App Name".localized, message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self, completionHandler: { ACTION in
                             
-                            UIApplication.shared.open((NSURL(string: appName.kAPPUrl)! as URL), options: [:], completionHandler: { (status) in
-                                
-                            })//openURL(NSURL(string: appName.kAPPUrl)! as URL)
+//                            UIApplication.shared.open((NSURL(string: appName.kAPPUrl)! as URL), options: [:], completionHandler: { (status) in
+
+//                            })//openURL(NSURL(string: appName.kAPPUrl)! as URL)
+
+                            UIApplication.shared.open((NSURL(string: "itms-apps://itunes.apple.com/app/id1445179587")! as URL), options: [:], completionHandler: { (status) in
+
+                            })
                         })
                     }
                     else {

@@ -234,7 +234,7 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
     
     @IBAction func btnTopUP(_ sender: UIButton) {
         
-        self.viewTopUp.backgroundColor = UIColor.black
+        self.viewTopUp.backgroundColor = ThemeBlackColor
         self.imgTopUp.image = UIImage.init(named: "iconTNZSelected")
         self.lblTopUp.textColor = ThemeYellowColor
         let next = self.storyboard?.instantiateViewController(withIdentifier: "WalletTopUpVC") as! WalletTopUpVC
@@ -244,7 +244,7 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
     
     @IBAction func btnTransferToBank(_ sender: UIButton) {
         
-        self.viewTransfer.backgroundColor = UIColor.black
+        self.viewTransfer.backgroundColor = ThemeBlackColor
         self.imgTransfer.image = UIImage.init(named: "iconTransferBankSelected")
         self.lblTransferToBank.textColor = ThemeYellowColor
         let next = self.storyboard?.instantiateViewController(withIdentifier: "WalletTransferToBankVC") as! WalletTransferToBankVC
@@ -253,7 +253,7 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
     
     @IBAction func btnHistory(_ sender: UIButton) {
         
-        self.viewHistory.backgroundColor = UIColor.black
+        self.viewHistory.backgroundColor = ThemeBlackColor
         self.imgHistory.image = UIImage.init(named: "iconWalletHistorySelected")
         self.lblHistory.textColor = ThemeYellowColor
         

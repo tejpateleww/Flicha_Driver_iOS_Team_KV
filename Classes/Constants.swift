@@ -11,13 +11,14 @@ import UIKit
 import BFKit
 
 let App_Delegate = UIApplication.shared.delegate as! AppDelegate
-let ThemeYellowColor : UIColor = UIColor.init(hex: "E48428")
+let ThemeYellowColor : UIColor = UIColor.init(hex: "ef4036")
+let ThemeBlackColor : UIColor = UIColor.init(hex: "231f20")
 let ThemeGrayColor : UIColor = UIColor.init(hex:  "8e8c80")
 let ThemeStatusBarColor : UIColor = UIColor.init(hex:  "cccccc")
 let themeGrayBGColor : UIColor = UIColor.init(hex: "DDDDDD")
 let themeGrayTextColor : UIColor = UIColor.init(hex: "7A7A7C")
 let Appdelegate = UIApplication.shared.delegate as! AppDelegate
-let AppNAME : String = "TanTaxi-Driver"
+let AppNAME : String = "Flichab-Driver"
 
 let navigationBarHeightIphoneX = 84
 var utility = Utilities()

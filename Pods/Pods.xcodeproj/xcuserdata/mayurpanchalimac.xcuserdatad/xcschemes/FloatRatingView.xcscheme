@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E10250FECAFAA00B2CAAF40A7178BE26"
+               BlueprintIdentifier = "DE757DC2461D0AA2D5AC6791CC56EFC8"
+               BuildableName = "FloatRatingView.framework"
                BlueprintName = "FloatRatingView"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "FloatRatingView.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

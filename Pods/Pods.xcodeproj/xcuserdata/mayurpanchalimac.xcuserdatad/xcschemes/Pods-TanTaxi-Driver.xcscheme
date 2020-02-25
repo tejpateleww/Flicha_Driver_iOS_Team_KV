@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F980ED49DDC79B1161AE3F2A0658D02F"
+               BlueprintIdentifier = "CE5843A76A1ED7DC15572F6914903657"
                BuildableName = "Pods_TanTaxi_Driver.framework"
                BlueprintName = "Pods-TanTaxi-Driver"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F980ED49DDC79B1161AE3F2A0658D02F"
+            BlueprintIdentifier = "CE5843A76A1ED7DC15572F6914903657"
             BuildableName = "Pods_TanTaxi_Driver.framework"
             BlueprintName = "Pods-TanTaxi-Driver"
             ReferencedContainer = "container:Pods.xcodeproj">

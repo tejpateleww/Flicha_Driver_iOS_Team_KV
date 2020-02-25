@@ -119,18 +119,18 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         //        Singletons.sharedInstance.dictDriverProfile = NSMutableDictionary(dictionary:UserDefaults.standard.object(forKey:  driverProfileKeys.kKeyDriverProfile) as! NSDictionary)
         
         let DEcode = Utilities.decodeDictionaryfromData(KEY: driverProfileKeys.kKeyDriverProfile)
-        if DEcode != nil || DEcode.count != 0
+        if DEcode.count != 0
         {
-            Singletons.sharedInstance.dictDriverProfile = DEcode as! NSMutableDictionary
+            Singletons.sharedInstance.dictDriverProfile = DEcode
             Singletons.sharedInstance.strDriverID = ((Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! NSDictionary).object(forKey: "Vehicle") as! NSDictionary).object(forKey: "DriverId") as! String
-            Singletons.sharedInstance.isDriverLoggedIN = UserDefaults.standard.object(forKey: driverProfileKeys.kKeyIsDriverLoggedIN) as! Bool
+            Singletons.sharedInstance.isDriverLoggedIN = UserDefaults.standard.object(forKey: driverProfileKeys.kKeyIsDriverLoggedIN) as? Bool
             
             if UserDefaults.standard.object(forKey: "DriverDuty") as? String == nil {
                 
                 Singletons.sharedInstance.driverDuty = "0"
             }
             else {
-                Singletons.sharedInstance.driverDuty = UserDefaults.standard.object(forKey: "DriverDuty") as! String
+                Singletons.sharedInstance.driverDuty = UserDefaults.standard.object(forKey: "DriverDuty") as? String
             }
             
             

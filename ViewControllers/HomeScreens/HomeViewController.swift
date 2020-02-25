@@ -696,7 +696,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             if let placeLikelihoodList = placeLikelihoodList {
                 let place = placeLikelihoodList.likelihoods.first?.place
                 if let place = place {
-                    self.nameLabel = place.name
+                    self.nameLabel = place.name ?? ""
                     self.addressLabel = (place.formattedAddress?.components(separatedBy: ", ").joined(separator: "\n"))!
                 }
             }

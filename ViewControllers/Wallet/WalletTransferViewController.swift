@@ -39,7 +39,7 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         self.setLocalizable()
 //        f = false
-        self.viewSendMoney.backgroundColor = UIColor.black
+        self.viewSendMoney.backgroundColor = ThemeBlackColor
         self.imgSendMoney.image = UIImage.init(named: "iconSendMoneySelected")
         self.lblSendMoney.textColor = ThemeYellowColor
         scrollObj.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
@@ -239,7 +239,7 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
         
 //        viewEnterMoney.isHidden = false
         
-        self.viewSendMoney.backgroundColor = UIColor.black
+        self.viewSendMoney.backgroundColor = ThemeBlackColor
         self.imgSendMoney.image = UIImage.init(named: "iconSendMoneySelected")
         self.lblSendMoney.textColor = ThemeYellowColor
         scrollObj.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
@@ -257,7 +257,7 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
         
         scrollObj.setContentOffset(CGPoint(x: self.view.frame.size.width, y: 0), animated: true)
         
-        self.viewReceiveMoney.backgroundColor = UIColor.black
+        self.viewReceiveMoney.backgroundColor = ThemeBlackColor
         self.imgReceiveMoney.image = UIImage.init(named: "iconReceiveMoneySelected")
         self.lblReceiveMoney.textColor = ThemeYellowColor
         

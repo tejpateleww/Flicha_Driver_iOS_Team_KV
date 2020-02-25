@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1001EA531739F081060168EAB3BA8246"
+               BlueprintIdentifier = "A32423E0D02E0A41B4E900FB52F6D139"
+               BuildableName = "SRCountdownTimer.framework"
                BlueprintName = "SRCountdownTimer"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SRCountdownTimer.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
