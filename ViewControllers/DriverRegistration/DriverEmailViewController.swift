@@ -237,8 +237,10 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     func webserviceForGetOTPCode()
     {
         var dictData = [String:AnyObject]()
-        dictData["Email"] = txtEmail.text as AnyObject
+        dictData[RegistrationFinalKeys.kEmail] = txtEmail.text as AnyObject
         dictData[RegistrationFinalKeys.kMobileNo] = txtMobile.text as AnyObject
+        dictData[RegistrationFinalKeys.kSMSKey] = txtPassword.text as AnyObject
+        
         
         webserviceForOTPDriverRegister(dictData as AnyObject) { (result, status) in
             

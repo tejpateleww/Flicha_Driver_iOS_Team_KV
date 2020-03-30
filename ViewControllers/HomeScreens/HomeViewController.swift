@@ -2949,7 +2949,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         //
         //            dictParams["DropoffLocation"] = "23.08327370,72.54679840" as AnyObject
         //        }
-        let headerTemp: [String:String] = ["key":"Tantaxi123*"]
+        let headerTemp: [String:String] = ["key":"Flicha123*#*"]
         
         Alamofire.request(url, method: .post, parameters: dictParams, encoding: URLEncoding.default, headers: headerTemp)
             .validate()

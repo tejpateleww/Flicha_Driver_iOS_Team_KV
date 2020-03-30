@@ -10,6 +10,7 @@ class ThemeTextField: UITextField {
     @IBInspectable public var isLeftViewNeeded: Bool = false
     @IBInspectable public var LeftImage: UIImage = UIImage()
     @IBInspectable public var isBorderNeeded: Bool = false
+    @IBInspectable public var isShadowNeeded: Bool = true
     
     override func awakeFromNib()
     {
@@ -18,13 +19,13 @@ class ThemeTextField: UITextField {
         self.backgroundColor = UIColor.white
         self.setValue(UIColor.black , forKeyPath: "placeholderLabel.textColor")
         
-        
-
+        if isShadowNeeded {
             self.layer.cornerRadius = 2
             self.layer.shadowRadius = 3.0
             self.layer.shadowColor = UIColor.black.withAlphaComponent(0.6).cgColor
             self.layer.shadowOffset = CGSize (width: 1.0, height: 1.0)
             self.layer.shadowOpacity = 1.0
+        }
         
         if isLeftViewNeeded == true {
             self.SetLeftViewImage(Image: LeftImage)

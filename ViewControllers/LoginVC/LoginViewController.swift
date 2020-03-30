@@ -123,8 +123,12 @@
             }
         }
         
-        txtMobile.text = "1111111111"
-        txtPassword.text = "123456"
+        #if targetEnvironment(simulator)
+        txtMobile.text = "1144772255"
+        txtPassword.text = "12345678"
+        #endif
+        
+        
         
         Utilities.setStatusBarColor(color: UIColor.clear)
        

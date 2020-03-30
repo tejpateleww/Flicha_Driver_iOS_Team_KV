@@ -292,12 +292,15 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
    }
     
     @objc func  Support(){
-        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as! webViewVC
-        viewController.headerName = "Support".localized
-//        viewController.headerName = "\("App Name".localized) - Terms & Conditions"
-        viewController.strURL = WebSupport.SupportURL
-//        "https://www.tantaxitanzania.com/front/termsconditions"
-        self.navigationController?.pushViewController(viewController, animated: true)
+        
+        UtilityClass.showAlert(appName.kAPPName, message: "This feature is coming soon", vc: self)
+        
+//        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "webViewVC") as! webViewVC
+//        viewController.headerName = "Support".localized
+////        viewController.headerName = "\("App Name".localized) - Terms & Conditions"
+//        viewController.strURL = WebSupport.SupportURL
+////        "https://www.tantaxitanzania.com/front/termsconditions"
+//        self.navigationController?.pushViewController(viewController, animated: true)
         
     }
     @objc func LogOut(){
@@ -495,11 +498,7 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
         //            strImagPath = profile.object(forKey: "Image") as! String
         //        }
         
-        
-        
-        
         tableView.reloadData()
-        
     }
     
     // ------------------------------------------------------------

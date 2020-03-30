@@ -11,14 +11,13 @@ import UIKit
 
 class UpdateProfileAccountVC: UIViewController {
     
-    var strDriverID = String()
     
-    var dictData = NSMutableDictionary()
-    
-    var sendData = [String:AnyObject]()
-    
+    @IBOutlet weak var btnSave: ThemeButton!
     @IBOutlet weak var lblTitle: UILabel!
     
+    var strDriverID = String()
+    var dictData = NSMutableDictionary()
+    var sendData = [String:AnyObject]()
     
     //-------------------------------------------------------------
     // MARK: - Base Methods
@@ -26,8 +25,8 @@ class UpdateProfileAccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dictData = NSMutableDictionary(dictionary: Singletons.sharedInstance.dictDriverProfile as NSDictionary)
-
         let profile = dictData.object(forKey: "profile") as! NSDictionary
         strDriverID = profile.object(forKey: "Id") as! String
         setData()
@@ -49,44 +48,32 @@ class UpdateProfileAccountVC: UIViewController {
         txtBankAcNo.placeholder = "Bank Account No.".localized
         btnSave.setTitle("Save".localized, for: .normal)
     }
-
-
-    @IBOutlet weak var btnSave: ThemeButton!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //-------------------------------------------------------------
     // MARK: - Outlets
     //-------------------------------------------------------------
-    
-    
     @IBOutlet weak var txtAccountHolderName: UITextField!
     @IBOutlet weak var txtBankName: UITextField!
     @IBOutlet weak var txtBankAcNo: UITextField!
     @IBOutlet weak var txtABN: UITextField!
     @IBOutlet weak var txtBSB: UITextField!
     @IBOutlet weak var txtServiceDescription: UITextField!
-    
 
     //-------------------------------------------------------------
     // MARK: - Actions
     //-------------------------------------------------------------
     
-    
-    @IBAction func btnBack(_ sender: UIButton)
-    {
+    @IBAction func btnBack(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
-
-    
-    
     @IBAction func btnSaveData(_ sender: UIButton) {
         
-        if (validationForAccount())
-        {
+        if (validationForAccount()) {
             
             sendData[profileKeys.kDriverId] = strDriverID as AnyObject
             sendData[RegistrationFinalKeys.kbankHolderName] = txtAccountHolderName.text as AnyObject
@@ -98,7 +85,6 @@ class UpdateProfileAccountVC: UIViewController {
             
             webservieMethods()
         }
-        
     }
     
     func validationForAccount() -> Bool {
@@ -128,10 +114,8 @@ class UpdateProfileAccountVC: UIViewController {
         //            return false
         //        }
         
-        
         return true
     }
-    
     
     //-------------------------------------------------------------
     // MARK: - Webservice Methods
@@ -171,7 +155,6 @@ class UpdateProfileAccountVC: UIViewController {
                     UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
-            
         }
     }
     
@@ -179,7 +162,6 @@ class UpdateProfileAccountVC: UIViewController {
     {
         
         let profile: NSMutableDictionary = NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile")) as! NSDictionary)
-        
         
 
         //        let Vehicle: NSMutableDictionary = profile.object(forKey: "Vehicle") as! NSMutableDictionary
@@ -189,7 +171,7 @@ class UpdateProfileAccountVC: UIViewController {
         txtBankName.text = profile.object(forKey: "BankName") as? String
         txtBankAcNo.text = profile.object(forKey: "BankAcNo") as? String
         txtABN.text = profile.object(forKey: "ABN") as? String
-        //        txtBSB.text = profile.object(forKey: "BSB") as? String
+        txtBSB.text = profile.object(forKey: "BSB") as? String
         txtServiceDescription.text = profile.object(forKey: "Description") as? String
         
         
