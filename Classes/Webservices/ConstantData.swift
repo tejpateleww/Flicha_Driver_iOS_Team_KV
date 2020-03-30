@@ -19,8 +19,8 @@ struct WebSupport {
 
 struct WebserviceURLs {
     
-    static let kBaseURL                                 = "https://www.tantaxitanzania.com/Drvier_Api/"//"https://pickngolk.info/web/Drvier_Api/" // "http://54.169.67.226/web/Drvier_Api/" //
-    static let kImageBaseURL                            = "https://www.tantaxitanzania.com/" // "http://54.169.67.226/web/" //
+    static let kBaseURL                                 = "http://3.6.224.0/Drvier_Api/" //"https://www.tantaxitanzania.com/Drvier_Api/"//"https://pickngolk.info/web/Drvier_Api/" // "http://54.169.67.226/web/Drvier_Api/" //
+    static let kImageBaseURL                            = "http://3.6.224.0/" //"https://www.tantaxitanzania.com/" // "http://54.169.67.226/web/" //
     static let kOTPForDriverRegister                    = "OtpForRegister"
     static let kVehicalModelList                        = "TaxiModel/"
     static let kDriverRegister                          = "Register"
@@ -144,6 +144,7 @@ struct RegistrationFinalKeys {
 
     static let kMobileNo = "MobileNo"// Done
     static let kFullname = "Fullname"// Done
+    static let kSMSKey = "SMSKey"
     static let kGender = "Gender"// Done
     static let kPassword = "Password"// Done
     static let kAddress = "Address"// Done
@@ -197,7 +198,7 @@ struct RegistrationFinalKeys {
 
 struct socketApiKeys {
     
-    static let kSocketBaseURL = "https://www.tantaxitanzania.com:8081"//"http://3.120.161.225:8080" //"http://13.237.0.107:8080/" //http://3.120.161.225:8080"//"https://pickngolk.info:8081" // "https://pickngolk.info:8081"   // "http://54.169.67.226:8080"  //
+    static let kSocketBaseURL = "http://3.6.224.0:8080" // "https://www.tantaxitanzania.com:8081"//"http://3.120.161.225:8080" //"http://13.237.0.107:8080/" //http://3.120.161.225:8080"//"https://pickngolk.info:8081" // "https://pickngolk.info:8081"   // "http://54.169.67.226:8080"  //
     
     static let kUpdateDriverLocation = "UpdateDriverLatLong"
     static let kReceiveBookingRequest = "AriveBookingRequest"

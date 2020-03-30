@@ -185,7 +185,6 @@
 		21B4FFFC216CA86D0076D566 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92910202AE2BF00A399E2 /* LoginViewController.swift */; };
 		340B0EEC221ABB4D002A1E13 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340B0EEB221ABB4D002A1E13 /* SplashViewController.swift */; };
 		3A5DDCA421BA588800F9B5A3 /* WaitForTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5DDCA321BA588800F9B5A3 /* WaitForTipViewController.swift */; };
-		3A5F1BCC21CE0872000007AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A5F1BCB21CE0872000007AE /* GoogleService-Info.plist */; };
 		3AC13C5621C8C80100DA3FE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC13C5521C8C80000DA3FE6 /* Extensions.swift */; };
 		3AF9136721C919A000E2C08A /* MyRatingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF9136621C9199F00E2C08A /* MyRatingViewCell.swift */; };
 		3AFADC8E219E98970009E3D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADC8D219E98970009E3D2 /* AppDelegate.swift */; };
@@ -227,6 +226,7 @@
 		63209119218ADA7E00A1241C /* MyFeedbackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63209118218ADA7E00A1241C /* MyFeedbackViewCell.swift */; };
 		63F23F752188690400FB629F /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F23F742188690400FB629F /* LegalViewController.swift */; };
 		63F23F77218890D300FB629F /* LegalWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F23F76218890D300FB629F /* LegalWebView.swift */; };
+		6E9D4A03241A0AEB005422B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E9D4A02241A0AEB005422B3 /* GoogleService-Info.plist */; };
 		E2F5DCFFF062C8389AFBD272 /* Pods_Flicha_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E9006BBB1F9D5D7DF5BAD1 /* Pods_Flicha_Driver.framework */; };
 		EECDB7D9203D48AE0079F78B /* MeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECDB7D8203D48AE0079F78B /* MeterViewController.swift */; };
 		EEFEA5942211839600D88655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFEA5962211839600D88655 /* Main.storyboard */; };
@@ -258,8 +258,7 @@
 		00E928DB202AE2BE00A399E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00E928DE202AE2BF00A399E2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E928DF202AE2BF00A399E2 /* Main.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
-		00E928E0202AE2BF00A399E2 /* TanTaxi-Driver-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TanTaxi-Driver-Bridging-Header.h"; sourceTree = "<group>"; };
-		00E928E1202AE2BF00A399E2 /* PickNGo-Driver.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "PickNGo-Driver.entitlements"; sourceTree = "<group>"; };
+		00E928E0202AE2BF00A399E2 /* Flicha-Driver-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Flicha-Driver-Bridging-Header.h"; sourceTree = "<group>"; };
 		00E928E6202AE2BF00A399E2 /* ComingSoonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComingSoonVC.swift; sourceTree = "<group>"; };
 		00E928E8202AE2BF00A399E2 /* DriverCertificatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverCertificatesViewController.swift; sourceTree = "<group>"; };
 		00E928E9202AE2BF00A399E2 /* DriverEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverEmailViewController.swift; sourceTree = "<group>"; };
@@ -432,7 +431,6 @@
 		340B0EEB221ABB4D002A1E13 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		376705515675F759D3D7D71F /* Pods-Flicha-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicha-Driver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver.release.xcconfig"; sourceTree = "<group>"; };
 		3A5DDCA321BA588800F9B5A3 /* WaitForTipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitForTipViewController.swift; sourceTree = "<group>"; };
-		3A5F1BCB21CE0872000007AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3AC13C5521C8C80000DA3FE6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3AF9136621C9199F00E2C08A /* MyRatingViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRatingViewCell.swift; sourceTree = "<group>"; };
 		3AFADC8D219E98970009E3D2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -510,6 +508,7 @@
 		63209118218ADA7E00A1241C /* MyFeedbackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedbackViewCell.swift; sourceTree = "<group>"; };
 		63F23F742188690400FB629F /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		63F23F76218890D300FB629F /* LegalWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalWebView.swift; sourceTree = "<group>"; };
+		6E9D4A02241A0AEB005422B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71709713182604892762B874 /* Pods-Flicha-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicha-Driver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver.debug.xcconfig"; sourceTree = "<group>"; };
 		71E830EFF7C980BA0858A2D1 /* Pods_TenTexi_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenTexi_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932475C955A0B6A950732388 /* Pods-TenTexi-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenTexi-Driver.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenTexi-Driver/Pods-TenTexi-Driver.release.xcconfig"; sourceTree = "<group>"; };
@@ -598,11 +597,10 @@
 		00E928DC202AE2BF00A399E2 /* Other Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A5F1BCB21CE0872000007AE /* GoogleService-Info.plist */,
+				6E9D4A02241A0AEB005422B3 /* GoogleService-Info.plist */,
 				00E928DE202AE2BF00A399E2 /* Info.plist */,
 				00E928DF202AE2BF00A399E2 /* Main.strings */,
-				00E928E0202AE2BF00A399E2 /* TanTaxi-Driver-Bridging-Header.h */,
-				00E928E1202AE2BF00A399E2 /* PickNGo-Driver.entitlements */,
+				00E928E0202AE2BF00A399E2 /* Flicha-Driver-Bridging-Header.h */,
 			);
 			path = "Other Resources";
 			sourceTree = "<group>";
@@ -1647,10 +1645,10 @@
 				21A65EDF216614630037E40E /* proxima-nova.otf in Resources */,
 				21A65EE0216614630037E40E /* proxima-nova-light-italic.otf in Resources */,
 				00E92A6F202AE2C100A399E2 /* ringTone.mp3 in Resources */,
+				6E9D4A03241A0AEB005422B3 /* GoogleService-Info.plist in Resources */,
 				00E929F1202AE2C100A399E2 /* ExpandDispatchedJobsViewController.xib in Resources */,
 				EEFEA5B1221184F900D88655 /* Localizable.strings in Resources */,
 				00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */,
-				3A5F1BCC21CE0872000007AE /* GoogleService-Info.plist in Resources */,
 				21A5A2CB1FBC61960047E9AA /* Location.gpx in Resources */,
 				005CC1912037F9720090CAED /* PickNGo.mp3 in Resources */,
 				EEFEA5942211839600D88655 /* Main.storyboard in Resources */,
@@ -2174,7 +2172,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Other Resources/TanTaxi-Driver-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Other Resources/Flicha-Driver-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2197,7 +2195,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Other Resources/TanTaxi-Driver-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Other Resources/Flicha-Driver-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

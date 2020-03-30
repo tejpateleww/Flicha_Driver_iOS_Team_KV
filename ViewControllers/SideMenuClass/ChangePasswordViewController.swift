@@ -53,8 +53,8 @@ class ChangePasswordViewController: ParentViewController {
 
         headerView?.lblHeaderTitle.text = "Change Password"
         
-        btnSubmit.layer.cornerRadius = btnSubmit.frame.size.height/2
-        btnSubmit.clipsToBounds = true
+//        btnSubmit.layer.cornerRadius = btnSubmit.frame.size.height/2
+//        btnSubmit.clipsToBounds = true
     }
     //-------------------------------------------------------------
     // MARK: - Outlets

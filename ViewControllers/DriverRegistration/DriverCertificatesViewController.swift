@@ -58,15 +58,12 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
          imgVehicleInsurience.layer.masksToBounds = true
          */
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setLocalizable()
     }
-    
 
     func setLocalizable()
     {
@@ -87,10 +84,9 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
-    override func viewDidLayoutSubviews()
-    {
+    
+    override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         btnNext.layer.cornerRadius = btnNext.frame.size.height/2
         btnNext.clipsToBounds = true

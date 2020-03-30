@@ -2,39 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1048315388776-735cikaec8cjkonbhlqthecu6gj2eqmi.apps.googleusercontent.com</string>
+	<string>102051690068-qimilt6gkdkcmhkgbjcn9v1mcuje80o4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1048315388776-735cikaec8cjkonbhlqthecu6gj2eqmi</string>
+	<string>com.googleusercontent.apps.102051690068-qimilt6gkdkcmhkgbjcn9v1mcuje80o4</string>
 	<key>API_KEY</key>
-	<string>AIzaSyALYs3q2bpEL87mVFitLerJqnRhs-coGhI</string>
+	<string>AIzaSyD3CaZD78zWTvHix-7bdW-R6hndr8FonO8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1048315388776</string>
+	<string>102051690068</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.TanTaxi-driver</string>
+	<string>com.Flicha.driver</string>
 	<key>PROJECT_ID</key>
-	<string>tantaxi-214610</string>
+	<string>flicha</string>
 	<key>STORAGE_BUCKET</key>
-	<string>tantaxi-214610.appspot.com</string>
+	<string>flicha.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1048315388776:ios:a67a49898ae595b7</string>
+	<string>1:102051690068:ios:7d499633473f538224dfc1</string>
 	<key>DATABASE_URL</key>
-	<string>https://tantaxi-214610.firebaseio.com</string>
+	<string>https://flicha.firebaseio.com</string>
 </dict>
 </plist>

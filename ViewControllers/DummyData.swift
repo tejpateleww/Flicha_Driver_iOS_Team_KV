@@ -7,6 +7,87 @@
 //
 
 import Foundation
+
+
+/*
+/// After Register New User Data
+{
+    message = "Registered successfully";
+    profile =     {
+        ABN = "";
+        AccreditationCertificate = "";
+        AccreditationCertificateExpire = "0000-00-00";
+        Address = "Prahladnagar, Ahmedabad";
+        AppVersion = "";
+        Availability = 0;
+        BSB = "";
+        BankAcNo = 1122334566;
+        BankHolderName = Bhavesh;
+        BankName = Kotak;
+        CategoryId = "<null>";
+        City = "";
+        CompanyId = 11;
+        Country = "";
+        DCNumber = "";
+        DOB = "0000-00-00";
+        Description = "";
+        DeviceType = 1;
+        DispatcherId = 0;
+        DriverDuty = 0;
+        DriverLicense = "http://3.6.224.0/images/driver/3/dd281303f9d000cb733987756eea447a.jpeg";
+        DriverLicenseExpire = "2025-03-12";
+        Email = "bhavesh@excellentwebworld.info";
+        Fullname = Bhavesh;
+        Gender = Male;
+        Id = 3;
+        Image = "http://3.6.224.0/images/driver/3/897d734ad32f567cca2fb308e5a11029.jpeg";
+        Lat = "72.0236514";
+        Lng = "";
+        MobileNo = 1144772255;
+        Password = 25d55ad283aa400af464c76d713c07ad;
+        PendingBooking = 0;
+        ProfileComplete = 0;
+        Pwd = "";
+        QRCode = "http://3.6.224.0/images/qrcode/ZHJpdmVyXzExNDQ3NzIyNTU=.png";
+        ReferralCode = flichadr3Bha;
+        RightToken = 1;
+        ShareRiding = 0;
+        SmartPhone = 1;
+        State = "";
+        Status = 1;
+        SubUrb = "";
+        Token = "fovf4Pp3v_8:APA91bGiqWtisrLQmdvGv8LApItGuyCOPbbNmFwdNQgq-sCmmsvnhXvEcXz5LrZYl0k8-xBvk_WJLkIyA2ON47BCptAvcoFPykVmhvx5WAQ5Ekzy-d5cW3A2wcGUjqqgWuH11uooG9wK";
+        Trash = 0;
+        Vehicle =         {
+            CategoryId = "<null>";
+            Color = "";
+            Company = BMW;
+            CompanyId = 1;
+            Description = "";
+            DriverId = 3;
+            Id = 8;
+            NoOfPassenger = 4;
+            RegistrationCertificate = "http://3.6.224.0/images/driver/3/f940e4580d431a0e6b2cee8c3db2ee12.jpeg";
+            RegistrationCertificateExpire = "0000-00-00";
+            VehicleClass = "";
+            VehicleImage = "http://3.6.224.0/images/driver/3/53a2df4bd6fa8a87bd26187b40c6870b.jpeg";
+            VehicleInsuranceCertificate = "http://3.6.224.0/images/driver/3/518712d7cb9eec1414f7c399c2bf0713.jpeg";
+            VehicleInsuranceCertificateExpire = "2042-03-12";
+            VehicleModel = "0,0";
+            VehicleModelName = 650;
+            VehicleRegistrationNo = "GJ-01-AK-2030";
+        };
+        ZipCode = "";
+    };
+    status = 1;
+    "swahili_message" = "Umefanikiwa kujisajili";
+}
+*/
+
+
+
+
+
 /*
 "kReceiveBookingRequest"
 [{
