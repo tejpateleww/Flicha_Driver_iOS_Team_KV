@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import BFKit
+//import BFKit
 
 let App_Delegate = UIApplication.shared.delegate as! AppDelegate
 let ThemeYellowColor : UIColor = UIColor.init(hex: "ef4036")
@@ -28,13 +28,14 @@ let currency : String = "TZS"
 let dictanceType : String = "km"
 
 let kIsSocketEmited : String = "IsEmited"
-let SCREEN_WIDTH = UIScreen.screenWidth
-let SCREEN_HEIGHT = UIScreen.screenHeight
+let screenSize = UIScreen.main.bounds
+let SCREEN_WIDTH = screenSize.width
+let SCREEN_HEIGHT = screenSize.height
 let kAcceptTripStatus : String = "accepted"
 let kPendingTripStatus : String = "pending"
 let kTravellingTripStatus : String = "traveling"
-let SCREEN_MAX_LENGTH = max(UIScreen.screenWidth, UIScreen.screenHeight)
-let SCREEN_MIN_LENGTH = min(UIScreen.screenWidth, UIScreen.screenHeight)
+let SCREEN_MAX_LENGTH = max(SCREEN_WIDTH, SCREEN_HEIGHT)
+let SCREEN_MIN_LENGTH = min(SCREEN_WIDTH, SCREEN_HEIGHT)
 
 let IS_IPHONE_4_OR_LESS = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH < 568.0
 let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 568.0

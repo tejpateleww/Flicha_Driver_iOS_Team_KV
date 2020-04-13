@@ -3029,7 +3029,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     Singletons.sharedInstance.isTripHolding = true
                     UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
                     self.AdvancedStartHoldTrip()
-                    if (!App_Delegate.RoadPickupTimer.isValid())
+                    if (!App_Delegate.RoadPickupTimer.isValid)
                     {
                         App_Delegate.RoadPickupTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:  #selector(HomeViewController.updateTime), userInfo: nil, repeats: true)
                     }
@@ -3110,7 +3110,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                     Singletons.sharedInstance.isTripHolding = true
                     UserDefaults.standard.set(Singletons.sharedInstance.isTripHolding, forKey: holdTripStatus.kIsTripisHolding)
                     self.StartHoldTrip()
-                    if (!App_Delegate.RoadPickupTimer.isValid())
+                    if (!App_Delegate.RoadPickupTimer.isValid)
                     {
                         App_Delegate.RoadPickupTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:  #selector(HomeViewController.updateTime), userInfo: nil, repeats: true)
                     }

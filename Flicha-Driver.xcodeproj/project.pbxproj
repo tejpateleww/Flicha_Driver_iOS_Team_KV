@@ -229,7 +229,6 @@
 		3AFADCF8219E98CC0009E3D2 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AFADCD5219E98CC0009E3D2 /* SVProgressHUD.bundle */; };
 		3AFADCF9219E98CC0009E3D2 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCD7219E98CC0009E3D2 /* SVProgressHUD.m */; };
 		3AFADCFA219E98CC0009E3D2 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCD9219E98CC0009E3D2 /* SVRadialGradientLayer.m */; };
-		3AFADCFC219EA03F0009E3D2 /* BFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFADCFB219EA03F0009E3D2 /* BFKit.framework */; };
 		63209117218AD80600A1241C /* MyRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63209116218AD80600A1241C /* MyRatingViewController.swift */; };
 		63209119218ADA7E00A1241C /* MyFeedbackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63209118218ADA7E00A1241C /* MyFeedbackViewCell.swift */; };
 		63F23F752188690400FB629F /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F23F742188690400FB629F /* LegalViewController.swift */; };
@@ -559,7 +558,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AFADCFC219EA03F0009E3D2 /* BFKit.framework in Frameworks */,
 				00A0E0B71FED467B00DB5549 /* QuartzCore.framework in Frameworks */,
 				00A0E0B51FED467400DB5549 /* OpenGLES.framework in Frameworks */,
 				00A0E0B31FED466D00DB5549 /* ImageIO.framework in Frameworks */,
@@ -1730,7 +1728,6 @@
 				"${BUILT_PRODUCTS_DIR}/ACFloatingTextfield-Swift/ACFloatingTextfield_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/ACProgressHUD-Swift/ACProgressHUD_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BFKit-Swift/BFKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CreditCardForm/CreditCardForm.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FloatRatingView/FloatRatingView.framework",
@@ -1754,7 +1751,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACFloatingTextfield_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACProgressHUD_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BFKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CreditCardForm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatRatingView.framework",
