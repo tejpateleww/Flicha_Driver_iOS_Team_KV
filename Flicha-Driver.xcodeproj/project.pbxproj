@@ -159,6 +159,14 @@
 		00EB9E4F1F90D6C1008DB2DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EB9E4E1F90D6C1008DB2DE /* CoreLocation.framework */; };
 		1110D3BD2075FD1700CC8C1F /* TripToDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */; };
 		18546BD0225DB555009DF334 /* PesapalWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */; };
+		18E9473024323E9200BFE97C /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472824323E9200BFE97C /* Ubuntu-Medium.ttf */; };
+		18E9473124323E9200BFE97C /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472924323E9200BFE97C /* Ubuntu-LightItalic.ttf */; };
+		18E9473224323E9200BFE97C /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472A24323E9200BFE97C /* Ubuntu-Regular.ttf */; };
+		18E9473324323E9200BFE97C /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472B24323E9200BFE97C /* Ubuntu-Bold.ttf */; };
+		18E9473424323E9200BFE97C /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472C24323E9200BFE97C /* Ubuntu-MediumItalic.ttf */; };
+		18E9473524323E9200BFE97C /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472D24323E9200BFE97C /* Ubuntu-BoldItalic.ttf */; };
+		18E9473624323E9200BFE97C /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472E24323E9200BFE97C /* Ubuntu-Italic.ttf */; };
+		18E9473724323E9200BFE97C /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472F24323E9200BFE97C /* Ubuntu-Light.ttf */; };
 		2101CD0E216F2CBA007B9680 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2101CD0D216F2CBA007B9680 /* ThemeButton.swift */; };
 		212FA5B320D7BF530057CE58 /* ShareRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212FA5B220D7BF530057CE58 /* ShareRideViewController.swift */; };
 		2174C3BB216E143D000533CE /* InviteDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174C3B9216E0889000533CE /* InviteDriverViewController.swift */; };
@@ -401,6 +409,14 @@
 		00FAEEE31F9F770E00D5F5C4 /* TZSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TZSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationViewController.swift; sourceTree = "<group>"; };
 		18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesapalWebViewViewController.swift; sourceTree = "<group>"; };
+		18E9472824323E9200BFE97C /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		18E9472924323E9200BFE97C /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
+		18E9472A24323E9200BFE97C /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		18E9472B24323E9200BFE97C /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		18E9472C24323E9200BFE97C /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
+		18E9472D24323E9200BFE97C /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		18E9472E24323E9200BFE97C /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		18E9472F24323E9200BFE97C /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 		2101CD0D216F2CBA007B9680 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		212FA5B220D7BF530057CE58 /* ShareRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareRideViewController.swift; sourceTree = "<group>"; };
 		2174C3B9216E0889000533CE /* InviteDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteDriverViewController.swift; sourceTree = "<group>"; };
@@ -588,6 +604,7 @@
 		00E928DA202AE2BE00A399E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18E9472724323E9200BFE97C /* New Fonts */,
 				21A65EB1216613A10037E40E /* Fonts */,
 				00E928DB202AE2BE00A399E2 /* Assets.xcassets */,
 			);
@@ -1263,6 +1280,21 @@
 			path = TripToDestination;
 			sourceTree = "<group>";
 		};
+		18E9472724323E9200BFE97C /* New Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18E9472824323E9200BFE97C /* Ubuntu-Medium.ttf */,
+				18E9472924323E9200BFE97C /* Ubuntu-LightItalic.ttf */,
+				18E9472A24323E9200BFE97C /* Ubuntu-Regular.ttf */,
+				18E9472B24323E9200BFE97C /* Ubuntu-Bold.ttf */,
+				18E9472C24323E9200BFE97C /* Ubuntu-MediumItalic.ttf */,
+				18E9472D24323E9200BFE97C /* Ubuntu-BoldItalic.ttf */,
+				18E9472E24323E9200BFE97C /* Ubuntu-Italic.ttf */,
+				18E9472F24323E9200BFE97C /* Ubuntu-Light.ttf */,
+			);
+			path = "New Fonts";
+			sourceTree = "<group>";
+		};
 		2113EE212165FCD400370A68 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -1633,9 +1665,11 @@
 				21A65ED3216614630037E40E /* proxima-nova-condensed.otf in Resources */,
 				21A65ED4216614630037E40E /* proxima-nova-condensed-semibold-italic.otf in Resources */,
 				21A65ED5216614630037E40E /* proxima-nova-condensed-semibold.otf in Resources */,
+				18E9473624323E9200BFE97C /* Ubuntu-Italic.ttf in Resources */,
 				21A65ED6216614630037E40E /* proxima-nova-light.otf in Resources */,
 				21A65ED7216614630037E40E /* proxima-nova-condensed-light.otf in Resources */,
 				21A65ED8216614630037E40E /* proxima-nova-condensed-regular-italic.otf in Resources */,
+				18E9473224323E9200BFE97C /* Ubuntu-Regular.ttf in Resources */,
 				21A65ED9216614630037E40E /* proxima-nova-regular-italic.otf in Resources */,
 				21A65EDA216614630037E40E /* proxima-nova-condensed-light-italic.otf in Resources */,
 				21A65EDB216614630037E40E /* proxima-nova-semibold-italic.otf in Resources */,
@@ -1643,23 +1677,29 @@
 				21A65EDD216614630037E40E /* proxima-nova-semibold.otf in Resources */,
 				21A65EDE216614630037E40E /* proxima-nova-extrabold.otf in Resources */,
 				21A65EDF216614630037E40E /* proxima-nova.otf in Resources */,
+				18E9473124323E9200BFE97C /* Ubuntu-LightItalic.ttf in Resources */,
 				21A65EE0216614630037E40E /* proxima-nova-light-italic.otf in Resources */,
 				00E92A6F202AE2C100A399E2 /* ringTone.mp3 in Resources */,
 				6E9D4A03241A0AEB005422B3 /* GoogleService-Info.plist in Resources */,
 				00E929F1202AE2C100A399E2 /* ExpandDispatchedJobsViewController.xib in Resources */,
 				EEFEA5B1221184F900D88655 /* Localizable.strings in Resources */,
+				18E9473524323E9200BFE97C /* Ubuntu-BoldItalic.ttf in Resources */,
 				00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */,
 				21A5A2CB1FBC61960047E9AA /* Location.gpx in Resources */,
 				005CC1912037F9720090CAED /* PickNGo.mp3 in Resources */,
 				EEFEA5942211839600D88655 /* Main.storyboard in Resources */,
 				00E929E2202AE2C100A399E2 /* HeaderView.xib in Resources */,
+				18E9473324323E9200BFE97C /* Ubuntu-Bold.ttf in Resources */,
+				18E9473424323E9200BFE97C /* Ubuntu-MediumItalic.ttf in Resources */,
 				00E92A6E202AE2C100A399E2 /* RequestConfirm.mp3 in Resources */,
 				00E92A56202AE2C100A399E2 /* WWCalendarTimeSelector.storyboard in Resources */,
 				EEFEA59E221183F700D88655 /* Profile.storyboard in Resources */,
 				3AFADCF8219E98CC0009E3D2 /* SVProgressHUD.bundle in Resources */,
 				EEFEA5A82211841000D88655 /* Registration.storyboard in Resources */,
+				18E9473724323E9200BFE97C /* Ubuntu-Light.ttf in Resources */,
 				EEFEA599221183DB00D88655 /* TripToDestination.storyboard in Resources */,
 				EEFEA5A32211840700D88655 /* LaunchScreen.storyboard in Resources */,
+				18E9473024323E9200BFE97C /* Ubuntu-Medium.ttf in Resources */,
 				00E929D3202AE2C100A399E2 /* Main.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
