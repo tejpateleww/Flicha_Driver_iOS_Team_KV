@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import BFKit
+//import BFKit
 import QuartzCore
 
 class Utilities: NSObject

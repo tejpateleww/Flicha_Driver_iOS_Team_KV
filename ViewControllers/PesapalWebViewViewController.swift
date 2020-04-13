@@ -146,7 +146,7 @@ extension PesapalWebViewViewController: WKUIDelegate, WKNavigationDelegate {
         print("didStartProvisionalNavigation: \(String(describing: webView.url?.absoluteString))")
         if (webView.url?.absoluteString == "https://www.tantaxitanzania.com/pesapal/add_money_success") {
            
-            let alert = UIAlertController(title: appName.kAPPName.localize(), message: "Payment Success", preferredStyle: .alert)
+            let alert = UIAlertController(title: appName.kAPPName.localized, message: "Payment Success", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
                 self.dismiss(animated: true) {
         //                self.delegate?.PayPalPaymentSuccess(paymentID: "\(self.paymentid)")
@@ -163,7 +163,7 @@ extension PesapalWebViewViewController: WKUIDelegate, WKNavigationDelegate {
         }
         else if webView.url?.absoluteString == "https://www.tantaxitanzania.com/pesapal/add_money_failed" {
             
-            let alert = UIAlertController(title: appName.kAPPName.localize(), message: "Payment failed", preferredStyle: .alert)
+            let alert = UIAlertController(title: appName.kAPPName.localized, message: "Payment failed", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
                 self.delegate?.didOrderPesapalStatus(status: false)
                 self.dismiss(animated: true, completion: nil)
@@ -200,7 +200,7 @@ extension PesapalWebViewViewController: WKUIDelegate, WKNavigationDelegate {
         
         if (webView.url?.absoluteString == "https://www.tantaxitanzania.com/pesapal/add_money_success") {
             
-            let alert = UIAlertController(title: appName.kAPPName.localize(), message: "Payment Success", preferredStyle: .alert)
+            let alert = UIAlertController(title: appName.kAPPName.localized, message: "Payment Success", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
                 self.dismiss(animated: true) {
                     //                self.delegate?.PayPalPaymentSuccess(paymentID: "\(self.paymentid)")
@@ -217,7 +217,7 @@ extension PesapalWebViewViewController: WKUIDelegate, WKNavigationDelegate {
         
         if webView.url?.absoluteString == "https://www.tantaxitanzania.com/pesapal/add_money_failed" {
            
-            let alert = UIAlertController(title: appName.kAPPName.localize(), message: "Payment failed", preferredStyle: .alert)
+            let alert = UIAlertController(title: appName.kAPPName.localized, message: "Payment failed", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .default) { (action) in
                 self.delegate?.didOrderPesapalStatus(status: false)
                 self.dismiss(animated: true, completion: nil)
