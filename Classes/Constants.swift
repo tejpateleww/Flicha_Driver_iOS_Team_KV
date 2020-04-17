@@ -11,7 +11,7 @@ import UIKit
 //import BFKit
 
 let App_Delegate = UIApplication.shared.delegate as! AppDelegate
-let ThemeYellowColor : UIColor = UIColor.init(hex: "ef4036")
+let ThemeYellowColor : UIColor = UIColor.init(hex: "FBBE28")
 let ThemeBlackColor : UIColor = UIColor.init(hex: "231f20")
 let ThemeGrayColor : UIColor = UIColor.init(hex:  "8e8c80")
 let ThemeStatusBarColor : UIColor = UIColor.init(hex:  "cccccc")
@@ -71,32 +71,30 @@ let iconBankUnselect : String = "iconSegBankUnSelected"
 let iconCarUnselect : String = "iconSegVehicleUnSelected"
 let iconAttachmentUnselect : String = "iconSegAttachmentUnSelected"
 
-let CustomeFontProximaNovaBold : String = "ProximaNovaA-Bold"
-let CustomeFontProximaNovaRegular : String = "ProximaNovaA-Regular"
-let CustomeFontProximaNovaBlack : String = "ProximaNovaA-Black"
-let CustomeFontProximaNovaCondSemibold : String = "ProximaNovaACond-Semibold"
-let CustomeFontProximaNovaSemibold : String = "ProximaNova-Semibold"
-let CustomeFontProximaNovaSThin : String = "ProximaNovaS-Thin"
-let CustomeFontProximaNovaTThin : String = "ProximaNovaT-Thin"
+//let CustomeFontProximaNovaBold : String = "Ubuntu-Bold"
+//let CustomeFontProximaNovaRegular : String = "Ubuntu-Regular"
+//let CustomeFontProximaNovaBlack : String = "ProximaNovaA-Black"
+//let CustomeFontProximaNovaCondSemibold : String = "ProximaNovaACond-Semibold"
+//let CustomeFontProximaNovaSemibold : String = "ProximaNova-Semibold"
+//let CustomeFontProximaNovaSThin : String = "ProximaNovaS-Thin"
+//let CustomeFontProximaNovaTThin : String = "ProximaNovaT-Thin"
 
 let kGooglePlaceClientAPIKey : String = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" //"AIzaSyAW9o_4ULlYZ9AF_Cxuqn2mPav4XKJJwGI"
 let kGoogleServiceAPIKey : String = "AIzaSyClUkKxzVBjw1wb4h9AfbsHGenepqcYwUA"
-
-
-
 
 let kGoogleClientID : String = "47834603870-2q7f5911uemff0t4rfv4mvl8g22jc1ef.apps.googleusercontent.com"
 let kGoogleReversedClientID : String = "com.googleusercontent.apps.47834603870-2q7f5911uemff0t4rfv4mvl8g22jc1ef"
 
 let kTwitterConsumerAPIKey : String = "hP1bMN8z87nRv7JQpMdluArGy"
 let kTwitterConsumerSecretKey : String = "hhSbpPG8pC80B0F3ocsJ5YAZLKrEHweemsY1WHPmidbaBnULny"
+
 let CustomeFontUbuntuLight : String = "Ubuntu-Light"
 let CustomeFontUbuntuMediumItalic : String = "Ubuntu-MediumItalic"
 let CustomeFontUbuntuLightItalic : String = "Ubuntu-LightItalic"
 let CustomeFontUbuntuMedium : String = "Ubuntu-Medium"
 let CustomeFontUbuntuBold : String = "Ubuntu-Bold"
 let CustomeFontUbuntuItalic : String = "Ubuntu-Italic"
-let CustomeFontUbuntu : String = "Ubuntu"
+let CustomeFontUbuntuRegular : String = "Ubuntu-Regular"
 
 let kMyBooking : String = "My Booking"
 let kPay : String = "Pay"

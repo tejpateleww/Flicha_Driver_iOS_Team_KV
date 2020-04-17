@@ -65,22 +65,14 @@
 	<string>Photo Library access required for using photos!</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>proxima-nova-black.otf</string>
-		<string>proxima-nova-bold-italic.otf</string>
-		<string>proxima-nova-bold.otf</string>
-		<string>proxima-nova-condensed-light-italic.otf</string>
-		<string>proxima-nova-condensed-light.otf</string>
-		<string>proxima-nova-condensed-regular-italic.otf</string>
-		<string>proxima-nova-condensed-semibold-italic.otf</string>
-		<string>proxima-nova-condensed-semibold.otf</string>
-		<string>proxima-nova-condensed.otf</string>
-		<string>proxima-nova-extrabold.otf</string>
-		<string>proxima-nova-light-italic.otf</string>
-		<string>proxima-nova-light.otf</string>
-		<string>proxima-nova-regular-italic.otf</string>
-		<string>proxima-nova-semibold-italic.otf</string>
-		<string>proxima-nova-semibold.otf</string>
-		<string>proxima-nova.otf</string>
+		<string>Ubuntu-Italic.ttf</string>
+		<string>Ubuntu-BoldItalic.ttf</string>
+		<string>Ubuntu-Bold.ttf</string>
+		<string>Ubuntu-Light.ttf</string>
+		<string>Ubuntu-LightItalic.ttf</string>
+		<string>Ubuntu-Medium.ttf</string>
+		<string>Ubuntu-MediumItalic.ttf</string>
+		<string>Ubuntu-Regular.ttf</string>
 	</array>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>

@@ -9,14 +9,23 @@
 import UIKit
 
 class ChangePasswordViewController: ParentViewController {
+    
+    //-------------------------------------------------------------
+    // MARK: - Outlets
+    //-------------------------------------------------------------
+    
+    
+    //    @IBOutlet var iconPassword: UIImageView!
+    @IBOutlet var btnSubmit: UIButton!
+    @IBOutlet weak var txtConfirmPass: ThemeTextField!
+    @IBOutlet weak var txtNewPassword: UITextField!
+    
 
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
     
-//    @IBOutlet var iconPassword: UIImageView!
-    @IBOutlet var btnSubmit: UIButton!
-    @IBOutlet weak var txtConfirmPass: ThemeTextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,17 +42,20 @@ class ChangePasswordViewController: ParentViewController {
         super.viewWillAppear(true)
         setLicalization()
     }
+    
     func setLicalization()
     {
         self.headerView?.lblTitle.text = "Change Password".localized
-        txtNewPassword.placeholder = "New Password".localized
-        txtConfirmPass.placeholder = "Confirm Password".localized
-        btnSubmit.setTitle("Submit".localized, for: .normal)
+//        txtNewPassword.placeholder = "New Password".localized
+//        txtConfirmPass.placeholder = "Confirm Password".localized
+        btnSubmit.setTitle("Save".localized, for: .normal)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
@@ -56,11 +68,7 @@ class ChangePasswordViewController: ParentViewController {
 //        btnSubmit.layer.cornerRadius = btnSubmit.frame.size.height/2
 //        btnSubmit.clipsToBounds = true
     }
-    //-------------------------------------------------------------
-    // MARK: - Outlets
-    //-------------------------------------------------------------
-    
-    @IBOutlet weak var txtNewPassword: UITextField!
+   
     
     //-------------------------------------------------------------
     // MARK: - Actions

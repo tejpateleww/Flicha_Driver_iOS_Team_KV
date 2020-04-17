@@ -8,9 +8,9 @@
 
 import UIKit
 
-let AppRegularFont:String = "ProximaNova-Regular"
-let AppBoldFont:String = "ProximaNova-Bold"
-let AppSemiboldFont:String = "ProximaNova-Semibold"
+let AppRegularFont:String = "Ubuntu-Regular"
+let AppBoldFont:String = "Ubuntu-Bold"
+let AppSemiboldFont:String = "Ubuntu-Medium"
 
 let windowHeight: CGFloat = CGFloat(UIScreen.main.bounds.size.height)
 let screenHeightDeveloper : Double = 568

@@ -287,8 +287,8 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     @objc func Legal(){
-        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LegalViewController") as! LegalViewController
-        self.navigationController?.pushViewController(viewController, animated: true)
+//        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LegalViewController") as! LegalViewController
+//        self.navigationController?.pushViewController(viewController, animated: true)
    }
     
     @objc func  Support(){

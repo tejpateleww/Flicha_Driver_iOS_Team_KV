@@ -459,20 +459,20 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         
     }
 }
-
-extension String {
-    var localized: String {
-        
-        
-        let lang = UserDefaults.standard.string(forKey: "i18n_language")
-        print(lang)
-        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        print(path ?? "")
-        print(bundle ?? "")
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-    }
-}
+//
+//extension String {
+//    var localized: String {
+//
+//
+//        let lang = UserDefaults.standard.string(forKey: "i18n_language")
+//        print(lang)
+//        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+//        let bundle = Bundle(path: path!)
+//        print(path ?? "")
+//        print(bundle ?? "")
+//        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+//    }
+//}
 
 func setLayoutForswahilLanguage()
 {

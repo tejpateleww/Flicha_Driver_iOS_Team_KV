@@ -105,7 +105,7 @@ class DriverSelectVehicleTypesViewController: UIViewController,getVehicleIdAndNa
         txtNumberPassenger.itemList = ["1","2","3","4","5","6","7","8","9","10"]
         
         
-        txtNumberPassenger.font = UIFont.init(name: CustomeFontProximaNovaRegular, size: 14)
+        txtNumberPassenger.font = UIFont.init(name: CustomeFontUbuntuRegular, size: 14)
         txtNumberPassenger.textColor = UIColor.black
         txtNumberPassenger.backgroundColor = UIColor.white
         txtNumberPassenger.setValue(UIColor.black , forKeyPath: "placeholderLabel.textColor")

@@ -26,17 +26,17 @@
     //-------------------------------------------------------------
     
     //textFiled
-    @IBOutlet weak var txtMobile: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtMobile: ThemeTextField!
+    @IBOutlet weak var txtPassword: ThemeTextField!
     
     @IBOutlet weak var lblDonTHaveAnyAccount: UILabel!
     //view
     @IBOutlet weak var viewLogin: UIView!
     //    @IBOutlet weak var viewMain: UIView!
     //view
-    @IBOutlet weak var btnForgotPassWord: UIButton!
-    @IBOutlet var btnSignIn: UIButton!
-    @IBOutlet var btnSignUp: UIButton!
+    @IBOutlet weak var btnForgotPassWord: LocalizButton!
+    @IBOutlet var btnSignIn: ThemeButton!
+    @IBOutlet var btnSignUp: LocalizButton!
     
     @IBOutlet var lblLaungageName: UILabel!
     
@@ -61,10 +61,10 @@
         }
         self.txtMobile.placeholder = "Mobile Number".localized
         self.txtPassword.placeholder = "Password".localized
-        self.btnForgotPassWord.setTitle("Forgot Password".localized, for: .normal)
-        self.btnSignIn.setTitle("Sign In".localized, for: .normal)
-        self.btnSignUp.setTitle("Sign Up".localized, for: .normal)
-        self.lblDonTHaveAnyAccount.text = "Don't have an Account?".localized
+        self.btnForgotPassWord.setTitle("Forgot Password?".localized, for: .normal)
+//        self.btnSignIn.setTitle("Sign In".localized, for: .normal)
+//        self.btnSignUp.setTitle("Sign Up".localized, for: .normal)
+        self.lblDonTHaveAnyAccount.text = "Don't have an account?".localized
         
     }
     
@@ -109,6 +109,13 @@
     {
         super.viewDidLoad()
         
+        let yourAttributes : [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue,
+            NSAttributedString.Key.foregroundColor : ThemeYellowColor]
+        let attributeString = NSMutableAttributedString(string: "SIGN UP".localized,
+                                                        attributes: yourAttributes)
+        btnSignUp.setAttributedTitle(attributeString, for: .normal)
+        
         txtMobile.delegate = self
         lblLaungageName.layer.cornerRadius = 5
         lblLaungageName.backgroundColor = ThemeYellowColor
@@ -124,7 +131,7 @@
         }
         
         #if targetEnvironment(simulator)
-        txtMobile.text = "1144772255"
+        txtMobile.text = "9865322145"
         txtPassword.text = "12345678"
         #endif
         
@@ -134,10 +141,7 @@
        
         //
         
-        btnSignUp.layer.cornerRadius = 3.0
-        btnSignUp.layer.borderColor = UIColor.black.cgColor
-        btnSignUp.layer.borderWidth = 1.0
-        btnSignUp.clipsToBounds = true
+       
         //
         //        if DeviceType.IS_IPHONE_4_OR_LESS || DeviceType.IS_IPAD {
         //            constraintHeightOfLogo.constant = 120
@@ -177,18 +181,6 @@
 //        self.title = "Ingia".localized
     }
     
-    override func viewDidLayoutSubviews()
-    {
-        super.viewDidLayoutSubviews()
-        
-//        btnSignUp.layer.cornerRadius = btnSignUp.frame.size.height - 50
-//        btnSignUp.clipsToBounds = true
-//        
-//        btnSignIn.layer.cornerRadius = btnSignIn.frame.size.height - 30
-//        btnSignIn.clipsToBounds = true
-        
-        
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

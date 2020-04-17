@@ -298,7 +298,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
 //            lblTitle.text = "Tan Taxi"
             lblTitle.textColor = ThemeYellowColor
             lblTitle.textAlignment = .center
-            lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
+            lblTitle.font = UIFont.init(name: CustomeFontUbuntuBold, size: 11)
             self.navigationItem.titleView = lblTitle
         }
         else if  self.selectedIndex == 1
@@ -308,7 +308,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
 //            lblTitle.text = "Re"
             lblTitle.textColor = ThemeYellowColor
             lblTitle.textAlignment = .center
-            lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
+            lblTitle.font = UIFont.init(name: CustomeFontUbuntuBold, size: 11)
             self.navigationItem.titleView = lblTitle
         }
         else if  self.selectedIndex == 2
@@ -324,14 +324,13 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         }
         else if  self.selectedIndex == 3
         {
-        self.navigationItem.titleView = nil
+            self.navigationItem.titleView = nil
             let img = UIImage(named: kNavIcon)
             let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             imgView.image = img
             // setContent mode aspect fit
             imgView.contentMode = .scaleAspectFit
             self.navigationItem.titleView = imgView
-
         }
         else if  self.selectedIndex == 4
         {

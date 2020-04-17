@@ -24,10 +24,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgSplashBackground" translatesAutoresizingMaskIntoConstraints="NO" id="B1D-MD-D0Q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-gC-iRk">
-                                <rect key="frame" x="54.5" y="30" width="211.5" height="211.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-gC-iRk">
+                                <rect key="frame" x="71.5" y="30" width="177" height="211.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="MK7-gC-iRk" secondAttribute="height" multiplier="1:1" id="qzC-ug-Ehw"/>
+                                    <constraint firstAttribute="width" secondItem="MK7-gC-iRk" secondAttribute="height" multiplier="177:211" id="iv0-fX-dvH"/>
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconDriver" translatesAutoresizingMaskIntoConstraints="NO" id="ccL-uW-xQI">
@@ -42,7 +42,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="B1D-MD-D0Q" secondAttribute="trailing" id="8ub-u7-SZY"/>
                             <constraint firstItem="ccL-uW-xQI" firstAttribute="centerY" secondItem="B1D-MD-D0Q" secondAttribute="centerY" id="9eX-yL-nMi"/>
-                            <constraint firstItem="MK7-gC-iRk" firstAttribute="width" secondItem="MK7-gC-iRk" secondAttribute="height" multiplier="1:1" id="BJh-Pr-TB6"/>
                             <constraint firstItem="MK7-gC-iRk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="10" id="ByI-Z0-6zo"/>
                             <constraint firstItem="ccL-uW-xQI" firstAttribute="centerX" secondItem="MK7-gC-iRk" secondAttribute="centerX" id="Da1-iV-Ezu"/>
                             <constraint firstAttribute="bottom" secondItem="B1D-MD-D0Q" secondAttribute="bottom" id="FZB-vG-eIi"/>
@@ -59,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="266" height="339"/>
+        <image name="Logo" width="177" height="160"/>
         <image name="iconDriver" width="85" height="85"/>
         <image name="imgSplashBackground" width="414" height="896"/>
     </resources>
