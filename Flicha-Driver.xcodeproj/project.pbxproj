@@ -158,7 +158,35 @@
 		00E92A74202AE2C100A399E2 /* WebserviceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E929C7202AE2C000A399E2 /* WebserviceMethods.swift */; };
 		00EB9E4F1F90D6C1008DB2DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EB9E4E1F90D6C1008DB2DE /* CoreLocation.framework */; };
 		1110D3BD2075FD1700CC8C1F /* TripToDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */; };
+		1810E0832477A0D80030B4FF /* HelpDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1810E0822477A0D80030B4FF /* HelpDetailVC.swift */; };
+		182FDC07245426DD00187519 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FDC06245426DD00187519 /* BaseViewController.swift */; };
+		18378DBB24975154001B2FC4 /* VerifyOtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18378DBA24975154001B2FC4 /* VerifyOtpVC.swift */; };
 		18546BD0225DB555009DF334 /* PesapalWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */; };
+		185B295D245847FD000B5A3C /* MyTripDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B2952245847FC000B5A3C /* MyTripDescriptionTableViewCell.xib */; };
+		185B295E245847FD000B5A3C /* MyTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B2953245847FC000B5A3C /* MyTripTableViewCell.xib */; };
+		185B295F245847FD000B5A3C /* FooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B2954245847FC000B5A3C /* FooterTableViewCell.xib */; };
+		185B2960245847FD000B5A3C /* MyTripDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B2955245847FC000B5A3C /* MyTripDescriptionTableViewCell.swift */; };
+		185B2961245847FD000B5A3C /* MyTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B2956245847FC000B5A3C /* MyTripTableViewCell.swift */; };
+		185B2962245847FD000B5A3C /* MyBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B2957245847FC000B5A3C /* MyBookingVC.swift */; };
+		185B2963245847FD000B5A3C /* TitleHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B2959245847FC000B5A3C /* TitleHeaderCollectionViewCell.swift */; };
+		185B2964245847FD000B5A3C /* HeaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B295A245847FC000B5A3C /* HeaderTableViewController.swift */; };
+		185B2965245847FD000B5A3C /* MyTrips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B295C245847FC000B5A3C /* MyTrips.swift */; };
+		185B296724584ED9000B5A3C /* MyJobsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B296624584ED9000B5A3C /* MyJobsObject.swift */; };
+		185B296924587C1B000B5A3C /* MyBooking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185B296824587C1B000B5A3C /* MyBooking.storyboard */; };
+		187DF3B624505F25004164C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3A724505F25004164C1 /* ViewController.swift */; };
+		187DF3B724505F25004164C1 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3A924505F25004164C1 /* MenuCell.swift */; };
+		187DF3B824505F25004164C1 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3AA24505F25004164C1 /* SideMenuViewController.swift */; };
+		187DF3B924505F25004164C1 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3AB24505F25004164C1 /* HostViewController.swift */; };
+		187DF3BA24505F25004164C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3AC24505F25004164C1 /* MainViewController.swift */; };
+		187DF3BB24505F25004164C1 /* LanguageABCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187DF3AE24505F25004164C1 /* LanguageABCell.xib */; };
+		187DF3BC24505F25004164C1 /* LanguageTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187DF3AF24505F25004164C1 /* LanguageTVCell.xib */; };
+		187DF3BD24505F25004164C1 /* LogoutTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3B024505F25004164C1 /* LogoutTVCell.swift */; };
+		187DF3BE24505F25004164C1 /* LogoutTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187DF3B124505F25004164C1 /* LogoutTVCell.xib */; };
+		187DF3BF24505F25004164C1 /* LanguageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3B224505F25004164C1 /* LanguageTVCell.swift */; };
+		187DF3C024505F25004164C1 /* LanguageABCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3B324505F25004164C1 /* LanguageABCell.swift */; };
+		187DF3C124505F25004164C1 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187DF3B424505F25004164C1 /* HeaderTableViewCell.xib */; };
+		187DF3C224505F25004164C1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DF3B524505F25004164C1 /* HeaderTableViewCell.swift */; };
+		18AD57EA2476859400626633 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD57E92476859400626633 /* SettingsViewController.swift */; };
 		18E9473024323E9200BFE97C /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472824323E9200BFE97C /* Ubuntu-Medium.ttf */; };
 		18E9473124323E9200BFE97C /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472924323E9200BFE97C /* Ubuntu-LightItalic.ttf */; };
 		18E9473224323E9200BFE97C /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18E9472A24323E9200BFE97C /* Ubuntu-Regular.ttf */; };
@@ -406,7 +434,35 @@
 		00EB9E4E1F90D6C1008DB2DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		00FAEEE31F9F770E00D5F5C4 /* TZSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TZSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripToDestinationViewController.swift; sourceTree = "<group>"; };
+		1810E0822477A0D80030B4FF /* HelpDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpDetailVC.swift; sourceTree = "<group>"; };
+		182FDC06245426DD00187519 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		18378DBA24975154001B2FC4 /* VerifyOtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOtpVC.swift; sourceTree = "<group>"; };
 		18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesapalWebViewViewController.swift; sourceTree = "<group>"; };
+		185B2952245847FC000B5A3C /* MyTripDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTripDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		185B2953245847FC000B5A3C /* MyTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTripTableViewCell.xib; sourceTree = "<group>"; };
+		185B2954245847FC000B5A3C /* FooterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterTableViewCell.xib; sourceTree = "<group>"; };
+		185B2955245847FC000B5A3C /* MyTripDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTripDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		185B2956245847FC000B5A3C /* MyTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTripTableViewCell.swift; sourceTree = "<group>"; };
+		185B2957245847FC000B5A3C /* MyBookingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBookingVC.swift; sourceTree = "<group>"; };
+		185B2959245847FC000B5A3C /* TitleHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		185B295A245847FC000B5A3C /* HeaderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewController.swift; sourceTree = "<group>"; };
+		185B295C245847FC000B5A3C /* MyTrips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTrips.swift; sourceTree = "<group>"; };
+		185B296624584ED9000B5A3C /* MyJobsObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyJobsObject.swift; sourceTree = "<group>"; };
+		185B296824587C1B000B5A3C /* MyBooking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyBooking.storyboard; sourceTree = "<group>"; };
+		187DF3A724505F25004164C1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		187DF3A924505F25004164C1 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		187DF3AA24505F25004164C1 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		187DF3AB24505F25004164C1 /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
+		187DF3AC24505F25004164C1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		187DF3AE24505F25004164C1 /* LanguageABCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguageABCell.xib; sourceTree = "<group>"; };
+		187DF3AF24505F25004164C1 /* LanguageTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguageTVCell.xib; sourceTree = "<group>"; };
+		187DF3B024505F25004164C1 /* LogoutTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTVCell.swift; sourceTree = "<group>"; };
+		187DF3B124505F25004164C1 /* LogoutTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoutTVCell.xib; sourceTree = "<group>"; };
+		187DF3B224505F25004164C1 /* LanguageTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTVCell.swift; sourceTree = "<group>"; };
+		187DF3B324505F25004164C1 /* LanguageABCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageABCell.swift; sourceTree = "<group>"; };
+		187DF3B424505F25004164C1 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		187DF3B524505F25004164C1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		18AD57E92476859400626633 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		18E9472824323E9200BFE97C /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
 		18E9472924323E9200BFE97C /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
 		18E9472A24323E9200BFE97C /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
@@ -617,6 +673,8 @@
 		00E928E3202AE2BF00A399E2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				185B2950245847FC000B5A3C /* My Booking */,
+				182FDC06245426DD00187519 /* BaseViewController.swift */,
 				6892A77424482644003801EA /* Menu Screens */,
 				68BD66152446F997002F82F0 /* SIgnUpVC */,
 				3AF9136621C9199F00E2C08A /* MyRatingViewCell.swift */,
@@ -646,6 +704,7 @@
 				00E92927202AE2BF00A399E2 /* TabbarController.swift */,
 				63209118218ADA7E00A1241C /* MyFeedbackViewCell.swift */,
 				18546BCF225DB555009DF334 /* PesapalWebViewViewController.swift */,
+				18AD57E92476859400626633 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1220,6 +1279,7 @@
 				68DC59E72445841900A0AB2D /* Localization.swift */,
 				68DC59E4244582C300A0AB2D /* LocalizButton.swift */,
 				68DC59E3244582C200A0AB2D /* LocalizLabel.swift */,
+				187DF3A624505F25004164C1 /* SideMenu */,
 				21B1A03920FDCEA500B4D809 /* Extensions */,
 				00E929C4202AE2C000A399E2 /* Webservices */,
 				21B479C120DD260400C6D8F8 /* Models */,
@@ -1259,6 +1319,7 @@
 		00E929C8202AE2C100A399E2 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				185B296824587C1B000B5A3C /* MyBooking.storyboard */,
 				EEFEA5A52211840700D88655 /* LaunchScreen.storyboard */,
 				EEFEA5962211839600D88655 /* Main.storyboard */,
 				EEFEA59B221183DB00D88655 /* TripToDestination.storyboard */,
@@ -1275,6 +1336,83 @@
 				1110D3BC2075FD1700CC8C1F /* TripToDestinationViewController.swift */,
 			);
 			path = TripToDestination;
+			sourceTree = "<group>";
+		};
+		185B2950245847FC000B5A3C /* My Booking */ = {
+			isa = PBXGroup;
+			children = (
+				185B2951245847FC000B5A3C /* Cells */,
+				185B2957245847FC000B5A3C /* MyBookingVC.swift */,
+				185B2958245847FC000B5A3C /* HeaderCollectionTableView */,
+				185B295B245847FC000B5A3C /* Model */,
+			);
+			path = "My Booking";
+			sourceTree = "<group>";
+		};
+		185B2951245847FC000B5A3C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				185B2952245847FC000B5A3C /* MyTripDescriptionTableViewCell.xib */,
+				185B2953245847FC000B5A3C /* MyTripTableViewCell.xib */,
+				185B2954245847FC000B5A3C /* FooterTableViewCell.xib */,
+				185B2955245847FC000B5A3C /* MyTripDescriptionTableViewCell.swift */,
+				185B2956245847FC000B5A3C /* MyTripTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		185B2958245847FC000B5A3C /* HeaderCollectionTableView */ = {
+			isa = PBXGroup;
+			children = (
+				185B2959245847FC000B5A3C /* TitleHeaderCollectionViewCell.swift */,
+				185B295A245847FC000B5A3C /* HeaderTableViewController.swift */,
+			);
+			path = HeaderCollectionTableView;
+			sourceTree = "<group>";
+		};
+		185B295B245847FC000B5A3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				185B296624584ED9000B5A3C /* MyJobsObject.swift */,
+				185B295C245847FC000B5A3C /* MyTrips.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		187DF3A624505F25004164C1 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				187DF3A724505F25004164C1 /* ViewController.swift */,
+				187DF3A824505F25004164C1 /* Cells */,
+				187DF3AA24505F25004164C1 /* SideMenuViewController.swift */,
+				187DF3AB24505F25004164C1 /* HostViewController.swift */,
+				187DF3AC24505F25004164C1 /* MainViewController.swift */,
+				187DF3AD24505F25004164C1 /* SideMenuCellXIBs */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		187DF3A824505F25004164C1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				187DF3A924505F25004164C1 /* MenuCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		187DF3AD24505F25004164C1 /* SideMenuCellXIBs */ = {
+			isa = PBXGroup;
+			children = (
+				187DF3AE24505F25004164C1 /* LanguageABCell.xib */,
+				187DF3AF24505F25004164C1 /* LanguageTVCell.xib */,
+				187DF3B024505F25004164C1 /* LogoutTVCell.swift */,
+				187DF3B124505F25004164C1 /* LogoutTVCell.xib */,
+				187DF3B224505F25004164C1 /* LanguageTVCell.swift */,
+				187DF3B324505F25004164C1 /* LanguageABCell.swift */,
+				187DF3B424505F25004164C1 /* HeaderTableViewCell.xib */,
+				187DF3B524505F25004164C1 /* HeaderTableViewCell.swift */,
+			);
+			path = SideMenuCellXIBs;
 			sourceTree = "<group>";
 		};
 		18E9472724323E9200BFE97C /* New Fonts */ = {
@@ -1509,6 +1647,7 @@
 			isa = PBXGroup;
 			children = (
 				6892A7752448266B003801EA /* HelpVC.swift */,
+				1810E0822477A0D80030B4FF /* HelpDetailVC.swift */,
 				6892A7772448268B003801EA /* HelpTableViewCell.swift */,
 				6892A77B24489A17003801EA /* NotificationVC.swift */,
 				6892A779244899E6003801EA /* NotificationTableViewCell.swift */,
@@ -1520,6 +1659,7 @@
 			isa = PBXGroup;
 			children = (
 				68BD66162446FA03002F82F0 /* CreateAccountVC.swift */,
+				18378DBA24975154001B2FC4 /* VerifyOtpVC.swift */,
 				68BD661A244726BA002F82F0 /* VehicleAddVC.swift */,
 				68BD661C24473B86002F82F0 /* DocumentAddVC.swift */,
 				68BD661E244747D2002F82F0 /* CarCollectionViewCell.swift */,
@@ -1597,8 +1737,8 @@
 				00E5CEA01F8B402C004409A4 /* Frameworks */,
 				00E5CEA11F8B402C004409A4 /* Resources */,
 				0064AA171FBAF2FF0093C642 /* ShellScript */,
-				111FDDAFFE29F5B6D27ECC41 /* [CP] Embed Pods Frameworks */,
-				E105E7FB4B0E0EE9340DFC01 /* [CP] Copy Pods Resources */,
+				B1ABFE44A3ADBE68377F7247 /* [CP] Embed Pods Frameworks */,
+				EA593207BE8FF39DA6DB8DC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1659,7 +1799,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187DF3BC24505F25004164C1 /* LanguageTVCell.xib in Resources */,
 				18E9473624323E9200BFE97C /* Ubuntu-Italic.ttf in Resources */,
+				185B296924587C1B000B5A3C /* MyBooking.storyboard in Resources */,
 				18E9473224323E9200BFE97C /* Ubuntu-Regular.ttf in Resources */,
 				18E9473124323E9200BFE97C /* Ubuntu-LightItalic.ttf in Resources */,
 				00E92A6F202AE2C100A399E2 /* ringTone.mp3 in Resources */,
@@ -1669,16 +1811,22 @@
 				18E9473524323E9200BFE97C /* Ubuntu-BoldItalic.ttf in Resources */,
 				00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */,
 				21A5A2CB1FBC61960047E9AA /* Location.gpx in Resources */,
+				187DF3BB24505F25004164C1 /* LanguageABCell.xib in Resources */,
 				005CC1912037F9720090CAED /* PickNGo.mp3 in Resources */,
+				185B295E245847FD000B5A3C /* MyTripTableViewCell.xib in Resources */,
 				EEFEA5942211839600D88655 /* Main.storyboard in Resources */,
 				00E929E2202AE2C100A399E2 /* HeaderView.xib in Resources */,
 				18E9473324323E9200BFE97C /* Ubuntu-Bold.ttf in Resources */,
 				18E9473424323E9200BFE97C /* Ubuntu-MediumItalic.ttf in Resources */,
+				187DF3BE24505F25004164C1 /* LogoutTVCell.xib in Resources */,
 				00E92A6E202AE2C100A399E2 /* RequestConfirm.mp3 in Resources */,
 				00E92A56202AE2C100A399E2 /* WWCalendarTimeSelector.storyboard in Resources */,
 				EEFEA59E221183F700D88655 /* Profile.storyboard in Resources */,
+				185B295D245847FD000B5A3C /* MyTripDescriptionTableViewCell.xib in Resources */,
 				3AFADCF8219E98CC0009E3D2 /* SVProgressHUD.bundle in Resources */,
 				EEFEA5A82211841000D88655 /* Registration.storyboard in Resources */,
+				187DF3C124505F25004164C1 /* HeaderTableViewCell.xib in Resources */,
+				185B295F245847FD000B5A3C /* FooterTableViewCell.xib in Resources */,
 				18E9473724323E9200BFE97C /* Ubuntu-Light.ttf in Resources */,
 				EEFEA599221183DB00D88655 /* TripToDestination.storyboard in Resources */,
 				EEFEA5A32211840700D88655 /* LaunchScreen.storyboard in Resources */,
@@ -1703,62 +1851,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 14a43f19af433e25667bd2c0d03a5aa6e886a728 2340430a2873285f1c9628d9b46f95a0a23165a6305e01fc1529cbcacd067e65";
 		};
-		111FDDAFFE29F5B6D27ECC41 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ACFloatingTextfield-Swift/ACFloatingTextfield_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/ACProgressHUD-Swift/ACProgressHUD_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CreditCardForm/CreditCardForm.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/FloatRatingView/FloatRatingView.framework",
-				"${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQDropDownTextField/IQDropDownTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
-				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
-				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/StarscreamSocketIO/StarscreamSocketIO.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACFloatingTextfield_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACProgressHUD_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CreditCardForm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatRatingView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FormTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQDropDownTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StarscreamSocketIO.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3387972F285A3A90FDFD3FC6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1777,18 +1869,88 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E105E7FB4B0E0EE9340DFC01 /* [CP] Copy Pods Resources */ = {
+		B1ABFE44A3ADBE68377F7247 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ACFloatingTextfield-Swift/ACFloatingTextfield_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ACProgressHUD-Swift/ACProgressHUD_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CreditCardForm/CreditCardForm.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FloatRatingView/FloatRatingView.framework",
+				"${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQDropDownTextField/IQDropDownTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SRCountdownTimer/SRCountdownTimer.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACFloatingTextfield_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ACProgressHUD_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CreditCardForm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatRatingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FormTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQDropDownTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SRCountdownTimer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA593207BE8FF39DA6DB8DC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
@@ -1796,7 +1958,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1811,7 +1973,9 @@
 				00E92A55202AE2C100A399E2 /* String+Timepiece.swift in Sources */,
 				00E929E8202AE2C100A399E2 /* DispatchJobsBookLaterViewController.swift in Sources */,
 				00E92A06202AE2C100A399E2 /* MenuController.swift in Sources */,
+				182FDC07245426DD00187519 /* BaseViewController.swift in Sources */,
 				00E92A0D202AE2C100A399E2 /* DispatchedJobsForMyJobsTableViewCell.swift in Sources */,
+				187DF3B624505F25004164C1 /* ViewController.swift in Sources */,
 				3AFADCEC219E98CC0009E3D2 /* SDWebImageDownloaderOperation.m in Sources */,
 				3AFADCF9219E98CC0009E3D2 /* SVProgressHUD.m in Sources */,
 				00E92A74202AE2C100A399E2 /* WebserviceMethods.swift in Sources */,
@@ -1839,6 +2003,7 @@
 				00E92A59202AE2C100A399E2 /* DriverVehicleListViewController.swift in Sources */,
 				6892A77C24489A17003801EA /* NotificationVC.swift in Sources */,
 				00E92A6B202AE2C100A399E2 /* webViewVC.swift in Sources */,
+				187DF3BA24505F25004164C1 /* MainViewController.swift in Sources */,
 				3AFADCF0219E98CC0009E3D2 /* UIImage+GIF.m in Sources */,
 				00E929F3202AE2C100A399E2 /* FutureBookingVC.swift in Sources */,
 				00DEC663202DA037005565A7 /* DriverBankDetailsViewController.swift in Sources */,
@@ -1874,7 +2039,9 @@
 				00E92A3C202AE2C100A399E2 /* SPSegmentControlStyleProtocol.swift in Sources */,
 				00E929F2202AE2C100A399E2 /* FutureBookingTableViewCell.swift in Sources */,
 				00E929F4202AE2C100A399E2 /* PastJobsListVC.swift in Sources */,
+				187DF3C024505F25004164C1 /* LanguageABCell.swift in Sources */,
 				3AFADCDB219E98CC0009E3D2 /* iToast.m in Sources */,
+				18378DBB24975154001B2FC4 /* VerifyOtpVC.swift in Sources */,
 				00E92A28202AE2C100A399E2 /* SPUIColorExtenshion.swift in Sources */,
 				00E929E4202AE2C100A399E2 /* CarAndTaxiesTableViewCell.swift in Sources */,
 				3AFADCE2219E98CC0009E3D2 /* UIAlertController+Blocks.m in Sources */,
@@ -1883,22 +2050,26 @@
 				00E929EE202AE2C100A399E2 /* DispatchedJobsForMyJobsVC.swift in Sources */,
 				00E92A27202AE2C100A399E2 /* SPAudioPlayer.swift in Sources */,
 				00E92A05202AE2C100A399E2 /* DriverNewsViewController.swift in Sources */,
+				187DF3B724505F25004164C1 /* MenuCell.swift in Sources */,
 				00E92A0A202AE2C100A399E2 /* DriverNewsTableViewCell.swift in Sources */,
 				68DC59E82445841900A0AB2D /* Localization.swift in Sources */,
 				6892A7782448268B003801EA /* HelpTableViewCell.swift in Sources */,
 				00E929D9202AE2C100A399E2 /* DriverPersonelDetailsViewController.swift in Sources */,
 				00E929D5202AE2C100A399E2 /* ComingSoonVC.swift in Sources */,
+				18AD57EA2476859400626633 /* SettingsViewController.swift in Sources */,
 				3AFADCE8219E98CC0009E3D2 /* SDImageCacheConfig.m in Sources */,
 				3AFADCE3219E98CC0009E3D2 /* UIAlertView+Blocks.m in Sources */,
 				3AFADCEB219E98CC0009E3D2 /* SDWebImageDownloader.m in Sources */,
 				00E92A32202AE2C100A399E2 /* SPRandom.swift in Sources */,
 				00E92A31202AE2C100A399E2 /* SPLaunchAnimation.swift in Sources */,
 				00E929D7202AE2C100A399E2 /* DriverEmailViewController.swift in Sources */,
+				1810E0832477A0D80030B4FF /* HelpDetailVC.swift in Sources */,
 				00E92A2A202AE2C100A399E2 /* SPDelay.swift in Sources */,
 				000D8FEC202C495300A02C45 /* DriverRegistrationViewController.swift in Sources */,
 				00E92A40202AE2C100A399E2 /* SPPageItemsScalingCollectionLayout.swift in Sources */,
 				00E929F9202AE2C100A399E2 /* VerifyPasswordViewController.swift in Sources */,
 				00E92A22202AE2C100A399E2 /* CreditCardValidationType.swift in Sources */,
+				185B2960245847FD000B5A3C /* MyTripDescriptionTableViewCell.swift in Sources */,
 				3AFADCEE219E98CC0009E3D2 /* SDWebImagePrefetcher.m in Sources */,
 				21B479C020DD1F8300C6D8F8 /* shareRideListTableViewCell.swift in Sources */,
 				00E92A5C202AE2C100A399E2 /* updateDriverSelectVehicleTypesViewControllerViewController.swift in Sources */,
@@ -1920,6 +2091,7 @@
 				00E92A6D202AE2C100A399E2 /* CustonView.swift in Sources */,
 				00E92A2C202AE2C100A399E2 /* SPBezierPathFigure.swift in Sources */,
 				21B4FFFC216CA86D0076D566 /* LoginViewController.swift in Sources */,
+				185B2961245847FD000B5A3C /* MyTripTableViewCell.swift in Sources */,
 				00E929E5202AE2C100A399E2 /* CarAndTaxiesVC.swift in Sources */,
 				00E92A5D202AE2C100A399E2 /* updateDriverVehiclesViewController.swift in Sources */,
 				00E92A3D202AE2C100A399E2 /* SPSegmentedControl.swift in Sources */,
@@ -1935,6 +2107,7 @@
 				00E92A65202AE2C100A399E2 /* WalletCollectionViewCell.swift in Sources */,
 				00E92A53202AE2C100A399E2 /* NSDate+Timepiece.swift in Sources */,
 				00E92A11202AE2C100A399E2 /* updateDriverVehiclesViewControllerTableViewCell.swift in Sources */,
+				185B2965245847FD000B5A3C /* MyTrips.swift in Sources */,
 				00E92A2E202AE2C100A399E2 /* SPInternetConnection.swift in Sources */,
 				68BD661F244747D2002F82F0 /* CarCollectionViewCell.swift in Sources */,
 				0082BF2E2031572A00EC36D7 /* Utilities.swift in Sources */,
@@ -1955,9 +2128,12 @@
 				00E92A69202AE2C100A399E2 /* WalletTransferViewController.swift in Sources */,
 				00E929FD202AE2C100A399E2 /* TickPayAlertViewController.swift in Sources */,
 				00E92A25202AE2C100A399E2 /* SPAnimationSpring.swift in Sources */,
+				187DF3B824505F25004164C1 /* SideMenuViewController.swift in Sources */,
 				00E92A70202AE2C100A399E2 /* Singletons.swift in Sources */,
 				2101CD0E216F2CBA007B9680 /* ThemeButton.swift in Sources */,
+				187DF3BD24505F25004164C1 /* LogoutTVCell.swift in Sources */,
 				00E92A45202AE2C100A399E2 /* SPUIViewExtenshion.swift in Sources */,
+				185B296724584ED9000B5A3C /* MyJobsObject.swift in Sources */,
 				00E92A1A202AE2C100A399E2 /* ARCarMovement.swift in Sources */,
 				00E929E0202AE2C100A399E2 /* DummyData.swift in Sources */,
 				00E929F5202AE2C100A399E2 /* PendingJobsListVC.swift in Sources */,
@@ -1987,14 +2163,19 @@
 				68BD66172446FA03002F82F0 /* CreateAccountVC.swift in Sources */,
 				00E92A04202AE2C100A399E2 /* CustomSideMenuViewController.swift in Sources */,
 				1110D3BD2075FD1700CC8C1F /* TripToDestinationViewController.swift in Sources */,
+				185B2962245847FD000B5A3C /* MyBookingVC.swift in Sources */,
 				00E92A51202AE2C100A399E2 /* Int+Timepiece.swift in Sources */,
 				00E92A64202AE2C100A399E2 /* WalletCardsVC.swift in Sources */,
+				185B2964245847FD000B5A3C /* HeaderTableViewController.swift in Sources */,
 				00E92A3A202AE2C100A399E2 /* SPSegmentControllCell.swift in Sources */,
+				185B2963245847FD000B5A3C /* TitleHeaderCollectionViewCell.swift in Sources */,
 				00E92A50202AE2C100A399E2 /* Duration.swift in Sources */,
 				00E92A39202AE2C100A399E2 /* SPRoundButton.swift in Sources */,
+				187DF3C224505F25004164C1 /* HeaderTableViewCell.swift in Sources */,
 				00E929E1202AE2C100A399E2 /* HeaderView.swift in Sources */,
 				00E92A58202AE2C100A399E2 /* TripInfoCompletedTripVC.swift in Sources */,
 				00E929EB202AE2C100A399E2 /* HailedFareViewController.swift in Sources */,
+				187DF3BF24505F25004164C1 /* LanguageTVCell.swift in Sources */,
 				00E92A42202AE2C100A399E2 /* SPBlurView.swift in Sources */,
 				00E92A10202AE2C100A399E2 /* SideMenuTableViewCell.swift in Sources */,
 				63209117218AD80600A1241C /* MyRatingViewController.swift in Sources */,
@@ -2003,6 +2184,7 @@
 				00E92A5A202AE2C100A399E2 /* EditDriverProfileVC.swift in Sources */,
 				00E92A5E202AE2C100A399E2 /* updateDriverVehicleTypesViewController.swift in Sources */,
 				00E92A3F202AE2C100A399E2 /* SPPageItemsScalingCollectionView.swift in Sources */,
+				187DF3B924505F25004164C1 /* HostViewController.swift in Sources */,
 				00E92A41202AE2C100A399E2 /* SPParallaxTableViewCell.swift in Sources */,
 				3AFADCDE219E98CC0009E3D2 /* Reachability.m in Sources */,
 				00E92A24202AE2C100A399E2 /* SPAnimation.swift in Sources */,

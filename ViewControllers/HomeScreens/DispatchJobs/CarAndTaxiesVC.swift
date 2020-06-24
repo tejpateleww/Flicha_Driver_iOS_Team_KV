@@ -77,20 +77,16 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if Singletons.sharedInstance.isFromRegistration == false
         {
-            for i in 0..<self.aryData.count
-            {
+            for i in 0..<self.aryData.count {
                 let vehicleID = ((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Id") as! String
                 let anotherVehicleID : Int = Int(vehicleID)!
-                for j in 0..<Singletons.sharedInstance.arrVehicleClass.count
-                {
-                    if (anotherVehicleID == (Singletons.sharedInstance.arrVehicleClass.object(at: j)) as! Int)
-                    {
+                for j in 0..<Singletons.sharedInstance.arrVehicleClass.count {
+                    if (anotherVehicleID == (Singletons.sharedInstance.arrVehicleClass.object(at: j)) as! Int) {
                         self.aryChooseCareModel.append(((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Id") as! String)
                         self.aryChooseCarName.append(((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Name") as! String)
                         self.selectedCells.append(i)
                     }
                 }
-                
             }
         } else {
             if let CarType = UserDefaults.standard.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) as? String {
@@ -115,6 +111,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
         }
+//        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -183,6 +180,8 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.aryChooseCareModel.remove(at: self.selectedCells.index(of: indexPath.row)!)
                 self.aryChooseCarName.remove(at: self.selectedCells.index(of: indexPath.row)!)
                 self.selectedCells.remove(at: self.selectedCells.index(of: indexPath.row)!)
+                
+                Singletons.sharedInstance.arrVehicleClass = NSMutableArray(array: self.aryChooseCareModel.compactMap({Int($0)}))
             }
             else
             {
@@ -208,6 +207,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.aryChooseCareModel.append(dictData["Id"] as! String)
                 self.aryChooseCarName.append(dictData["Name"] as! String)
             }
+            Singletons.sharedInstance.arrVehicleClass = NSMutableArray(array: self.aryChooseCareModel.compactMap({Int($0)}))
         }
         
         tableView.reloadData()
@@ -220,8 +220,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     //-------------------------------------------------------------
 
     @IBOutlet weak var btnOK: UIButton!
-    @IBAction func btnOK(_ sender: UIButton)
-    {
+    @IBAction func btnOK(_ sender: UIButton) {
  
         let joined = aryChooseCareModel.joined(separator: ",")
         UserDefaults.standard.set(joined, forKey: RegistrationFinalKeys.kVehicleClass)

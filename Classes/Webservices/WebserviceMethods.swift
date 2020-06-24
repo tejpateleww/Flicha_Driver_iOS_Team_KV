@@ -36,6 +36,7 @@ let AcceptDispatchJobRequest = WebserviceURLs.kAcceptDispatchJobRequest
 
 let MyDispatchJob = WebserviceURLs.kMyDispatchJob
 let FutureBooking = WebserviceURLs.kFutureBooking
+let PendingJobs = WebserviceURLs.kPendingBooking
 let BookingHistory = WebserviceURLs.kBookingHistory
 
 let CurrentBooking = WebserviceURLs.kCurrentBooking
@@ -77,7 +78,13 @@ let TrackRunningTrip = WebserviceURLs.kTrackRunningTrip
 
 let PrivateMeterBooking = WebserviceURLs.kPrivateMeterBooking
 
+let DriverRating = WebserviceURLs.kShowUserRating
 
+let NotificationList = WebserviceURLs.kNotificationList
+
+let UpdateSettings = WebserviceURLs.kUpdateSettings
+
+let FaqList = WebserviceURLs.kFaqList
 //-------------------------------------------------------------
 // MARK: - Webservice For Registration
 //-------------------------------------------------------------
@@ -242,6 +249,7 @@ func webserviceForCompletedAdvanceTripSuccessfully(_ dictParams: AnyObject, comp
     postData(dictParams, nsURL: url, completion: completion)
 }
 
+
 //-------------------------------------------------------------
 // MARK: - Webservice For Submit Book Now By Dispatch Job
 //-------------------------------------------------------------
@@ -312,6 +320,17 @@ func webserviceForFutureBooking(_ dictParams: AnyObject, completion: @escaping(_
     getDataOfHistory("" as AnyObject, nsURL: url, completion: completion)
 }
 
+
+//-------------------------------------------------------------
+// MARK: - Webservice For Pending Booking
+//-------------------------------------------------------------
+
+func webserviceForPendingJobs(_ dictParams: AnyObject, completion: @escaping(_ result: AnyObject, _ success: Bool) -> Void)
+{
+    
+    let url = PendingJobs + (dictParams as! String)
+    getDataOfHistory("" as AnyObject, nsURL: url, completion: completion)
+}
 
 //-------------------------------------------------------------
 // MARK: - Webservice For My Dispatch Jobs List
@@ -598,7 +617,28 @@ func webserviceForTrackRunningTrip(_ dictParams: AnyObject, completion: @escapin
 }
 
 
+// MARK: - New
 
+//-------------------------------------------------------------
+// MARK: - Webservice For Show Driver Rating
+//-------------------------------------------------------------
 
+func webserviceForGetEstimateFate(_ dictParams: AnyObject, completion: @escaping(_ result: AnyObject, _ success: Bool) -> Void) {
+    let url = DriverRating
+    postData(dictParams, nsURL: url, completion: completion)
+}
 
+func webserviceNotificationList(_ dictParams: AnyObject, completion: @escaping (_ result: AnyObject, _ success: Bool) -> Void) {
+    let url = NotificationList + (dictParams as! String)
+    getData("" as AnyObject, nsURL: url, completion: completion)
+}
 
+func webserviceForUpdateSettings(_ dictParams: AnyObject, completion: @escaping(_ result: AnyObject, _ success: Bool) -> Void) {
+    let url = UpdateSettings
+    postData(dictParams, nsURL: url, completion: completion)
+}
+
+func webserviceForFAQList(_ dictParams: AnyObject, completion: @escaping (_ result: AnyObject, _ success: Bool) -> Void) {
+    let url = FaqList 
+    getData(dictParams, nsURL: url, completion: completion)
+}

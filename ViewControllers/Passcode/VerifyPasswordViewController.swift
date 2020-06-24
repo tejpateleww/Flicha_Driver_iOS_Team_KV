@@ -199,22 +199,22 @@ class VerifyPasswordViewController: UIViewController {
         let alert = UIAlertController(title: "App Name".localized, message: msg, preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTIOn in
             
-            let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
-            
-            socket.off(socketApiKeys.kReceiveBookingRequest)
-            socket.off(socketApiKeys.kBookLaterDriverNotify)
-            
-            socket.off(socketApiKeys.kGetBookingDetailsAfterBookingRequestAccepted)
-            socket.off(socketApiKeys.kAdvancedBookingInfo)
-            
-            socket.off(socketApiKeys.kReceiveMoneyNotify)
-            socket.off(socketApiKeys.kAriveAdvancedBookingRequest)
-            
-            socket.off(socketApiKeys.kDriverCancelTripNotification)
-            socket.off(socketApiKeys.kAdvancedBookingDriverCancelTripNotification)
-            
-            socket.disconnect()
-            
+            if let socket = (UIApplication.shared.delegate as! AppDelegate).Socket {
+                
+                socket.off(socketApiKeys.kReceiveBookingRequest)
+                socket.off(socketApiKeys.kBookLaterDriverNotify)
+                
+                socket.off(socketApiKeys.kGetBookingDetailsAfterBookingRequestAccepted)
+                socket.off(socketApiKeys.kAdvancedBookingInfo)
+                
+                socket.off(socketApiKeys.kReceiveMoneyNotify)
+                socket.off(socketApiKeys.kAriveAdvancedBookingRequest)
+                
+                socket.off(socketApiKeys.kDriverCancelTripNotification)
+                socket.off(socketApiKeys.kAdvancedBookingDriverCancelTripNotification)
+                
+                socket.disconnect()
+            }
             UserDefaults.standard.set(nil, forKey: "Passcode")
             
           

@@ -21,12 +21,12 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     var userDefault =  UserDefaults.standard
     
-     let datePicker = UIDatePicker()
+    let datePicker = UIDatePicker()
     var companyID = String()
-     var emailID = String()
+    var emailID = String()
     var aryCompanyIDS = [[String:AnyObject]]()
-//        let myDatePicker: UIDatePicker = UIDatePicker()
-
+    //        let myDatePicker: UIDatePicker = UIDatePicker()
+    
     //-------------------------------------------------------------
     // MARK: - Outlets
     //-------------------------------------------------------------
@@ -41,9 +41,9 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     @IBOutlet weak var txtDOB: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtPostCode: UITextField!
-   
+    
     @IBOutlet weak var txtInviteCode: UITextField!
-
+    
     @IBOutlet weak var constraintHeightOfAllTextFields: NSLayoutConstraint! // 45
     @IBOutlet weak var constraintHeightOfProfileImage: NSLayoutConstraint! // 75
     
@@ -61,7 +61,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     func SetLocalizable()
     {
         self.title = "App Name".localized
-
+        
         txtFullName.placeholder = "User Name".localized
         txtAddress.placeholder = "Address".localized
         lblMale.text = "Male".localized
@@ -69,8 +69,8 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         txtInviteCode.placeholder = "Invite Code (Optional)".localized
         btnNext.setTitle("Next".localized, for: .normal)
     }
-   
-
+    
+    
     
     //-------------------------------------------------------------
     // MARK: - Base Methods
@@ -97,8 +97,8 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         showDatePicker()
         txtDOB.delegate = self
         txtPostCode.delegate = self
-
-
+        
+        
         
         strLatitude = 0
         strLongitude = 0
@@ -150,7 +150,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         //dismiss date picker dialog
         self.view.endEditing(true)
     }
-
+    
     @objc func cancelDatePicker()
     {
         //cancel button dismiss datepicker dialog
@@ -165,36 +165,36 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     // MARK: - Actions
     //-------------------------------------------------------------
     
- 
+    
     @IBAction func btnMale(_ sender: UIButton) {
         selectedMale()
     }
     @IBAction func btnFemale(_ sender: UIButton) {
         selectedFemale()
     }
-//    @IBAction func btnOthers(_ sender: UIButton) {
-//        selectedOthers()
-//    }
+    //    @IBAction func btnOthers(_ sender: UIButton) {
+    //        selectedOthers()
+    //    }
     
     
     func selectedMale()
     {
         btnMale.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
         btnFemale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-//        btnOthers.setImage(UIImage(named: "iconCheckMarkUnSelected"), for: .normal)
+        //        btnOthers.setImage(UIImage(named: "iconCheckMarkUnSelected"), for: .normal)
     }
     func selectedFemale()
     {
         btnMale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
         btnFemale.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
-//        btnOthers.setImage(UIImage(named: "iconCheckMarkUnSelected"), for: .normal)
+        //        btnOthers.setImage(UIImage(named: "iconCheckMarkUnSelected"), for: .normal)
     }
-//    func selectedOthers()
-//    {
-//        btnMale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-//        btnFemale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-////        btnOthers.setImage(UIImage(named: "iconCheckMarkSelected"), for: .normal)
-//    }
+    //    func selectedOthers()
+    //    {
+    //        btnMale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+    //        btnFemale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+    ////        btnOthers.setImage(UIImage(named: "iconCheckMarkSelected"), for: .normal)
+    //    }
     
     @IBAction func btnNext(_ sender: Any)
     {
@@ -213,7 +213,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
         navigationController?.pushViewController(vc, animated: true)
-//        present(vc, animated: true, completion: nil)
+        //        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func TapToProfilePicture(_ sender: UITapGestureRecognizer) {
@@ -221,12 +221,12 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
-, style: .default, handler: { ACTION in
-            self.PickingImageFromGallery()
+            , style: .default, handler: { ACTION in
+                self.PickingImageFromGallery()
         })
         let Camera  = UIAlertAction(title: "Select photo from camera".localized
-, style: .default, handler: { ACTION in
-            self.PickingImageFromCamera()
+            , style: .default, handler: { ACTION in
+                self.PickingImageFromCamera()
         })
         let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
         
@@ -248,7 +248,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         
         // picker.stopVideoCapture()
         picker.mediaTypes = [kUTTypeImage as String]
-//            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        //            UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
     
@@ -286,18 +286,18 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let arrData = NSMutableArray()
         let dictData = NSMutableDictionary()
         
-            dictData.setObject(txtFullName.text!, forKey: RegistrationProfileKeys.kKeyFullName as NSCopying)
-            dictData.setObject(txtDOB.text!, forKey: RegistrationProfileKeys.kKeyDOB as NSCopying)
-            dictData.setObject(txtAddress.text!, forKey: RegistrationProfileKeys.kKeyAddress as NSCopying)
-            dictData.setObject(txtPostCode.text!, forKey: RegistrationProfileKeys.kKeyPostCode as NSCopying)
-            dictData.setObject(txtInviteCode.text!, forKey: RegistrationProfileKeys.kKeyInviteCode as NSCopying)
-           dictData.setObject(imgProfile.image!.pngData()! as NSData, forKey: RegistrationFinalKeys.kDriverImage as NSCopying)
-            
-            arrData.add(dictData)
+        dictData.setObject(txtFullName.text!, forKey: RegistrationProfileKeys.kKeyFullName as NSCopying)
+        dictData.setObject(txtDOB.text!, forKey: RegistrationProfileKeys.kKeyDOB as NSCopying)
+        dictData.setObject(txtAddress.text!, forKey: RegistrationProfileKeys.kKeyAddress as NSCopying)
+        dictData.setObject(txtPostCode.text!, forKey: RegistrationProfileKeys.kKeyPostCode as NSCopying)
+        dictData.setObject(txtInviteCode.text!, forKey: RegistrationProfileKeys.kKeyInviteCode as NSCopying)
+        dictData.setObject(imgProfile.image!.pngData()! as NSData, forKey: RegistrationFinalKeys.kDriverImage as NSCopying)
+        
+        arrData.add(dictData)
         
         
         return arrData
-  
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
@@ -315,55 +315,54 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         var isValidate:Bool = true
         var ValidatorMessage:String = ""
         
-//        let sb = Snackbar()
-//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "Dismiss".localized, action: { print("Button is push") })
-
+        //        let sb = Snackbar()
+        //        sb.createWithAction(text: "Upload Car Registration", actionTitle: "Dismiss".localized, action: { print("Button is push") })
+        
         if txtFullName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
             isValidate = false
             ValidatorMessage = "Please enter user name".localized
-//            sb.createWithAction(text: "Please enter user name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            //            sb.createWithAction(text: "Please enter user name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
-//        else if txtDOB.text == "" {
-//            sb.createWithAction(text: "Enter Date of Birth", actionTitle: "Dismiss".localized, action: { print("Button is push") })
-//        }
+            //        else if txtDOB.text == "" {
+            //            sb.createWithAction(text: "Enter Date of Birth", actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            //        }
         else if txtAddress.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
             isValidate = false
             ValidatorMessage = "Please enter address".localized
-//             sb.createWithAction(text: , actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            //             sb.createWithAction(text: , actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
-      
-//        else if txtPostCode.text == "" {
-//            sb.createWithAction(text: "Enter Post Code", actionTitle: "Dismiss".localized, action: { print("Button is push") })
-//        }
-      
+            
+            //        else if txtPostCode.text == "" {
+            //            sb.createWithAction(text: "Enter Post Code", actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            //        }
+            
         else if imgProfile.image == UIImage(named: "iconProfileLocation") {
             isValidate = false
             ValidatorMessage = "Choose Photo".localized
-//            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+            //            sb.createWithAction(text: "Choose Photo".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
         }
-       
         
-//        sb.show()
+        
+        //        sb.show()
         return (isValidate,ValidatorMessage)
     }
     
     func setDataForProfile()
     {
-//        txtEmail.text = userDefault.object(forKey: RegistrationFinalKeys.kEmail) as? String
-//        aryCompanyIDS = userDefault.object(forKey: OTPCodeStruct.kCompanyList) as! [[String : AnyObject]]
-//        thePicker.reloadAllComponents()
-//
-//
-//        txtCompanyId.text = aryCompanyIDS[0]["CompanyName"] as? String
-//        companyID = (aryCompanyIDS[0]["Id"] as? String)!
-//        txtCity.text = aryCompanyIDS[0]["City"] as? String
-//        txtState.text = aryCompanyIDS[0]["State"] as? String
-//        txtCountry.text = aryCompanyIDS[0]["Country"] as? String
+        //        txtEmail.text = userDefault.object(forKey: RegistrationFinalKeys.kEmail) as? String
+        //        aryCompanyIDS = userDefault.object(forKey: OTPCodeStruct.kCompanyList) as! [[String : AnyObject]]
+        //        thePicker.reloadAllComponents()
+        //
+        //
+        //        txtCompanyId.text = aryCompanyIDS[0]["CompanyName"] as? String
+        //        companyID = (aryCompanyIDS[0]["Id"] as? String)!
+        //        txtCity.text = aryCompanyIDS[0]["City"] as? String
+        //        txtState.text = aryCompanyIDS[0]["State"] as? String
+        //        txtCountry.text = aryCompanyIDS[0]["Country"] as? String
     }
     
-    func setData()
-    {
-       
+    func setData() {
+        
         
         let imageData: NSData = imgProfile.image!.pngData()! as NSData
         let myEncodedImageData: NSData = NSKeyedArchiver.archivedData(withRootObject: imageData) as NSData
@@ -379,7 +378,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         userDefault.set(strLatitude, forKey: RegistrationFinalKeys.kLat)
         userDefault.set(strLongitude, forKey: RegistrationFinalKeys.kLng)
         userDefault.set(txtPostCode.text, forKey: RegistrationFinalKeys.kZipcode)
-
+        
         
         if (btnMale.currentImage?.isEqual(UIImage(named: "iconRadioSelected")))! {
             userDefault.set("Male", forKey: RegistrationFinalKeys.kGender)
@@ -393,35 +392,35 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         else {
             userDefault.set("Male", forKey: RegistrationFinalKeys.kGender)
         }
-
-
+        
+        
         navigateToNext()
     }
-  
+    
     func navigateToNext()
     {
-         UserDefaults.standard.set(2, forKey: savedDataForRegistration.kPageNumber)
+        UserDefaults.standard.set(2, forKey: savedDataForRegistration.kPageNumber)
         let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
         let x = self.view.frame.size.width * 2
         driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
         driverVC.viewTwo.backgroundColor = ThemeYellowColor
-//        let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
+        //        let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
         driverVC.viewDidLayoutSubviews()
-//        driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
+        //        driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
         if (self.saveAllDataInArray().count != 0)
         {
             UserDefaults.standard.set(self.saveAllDataInArray(), forKey: savedDataForRegistration.kKeyAllUserDetails)
         }
-       
+        
     }
     
     // For Mobile Number
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-     
-         if textField == txtPostCode {
+        
+        if textField == txtPostCode {
             let resText: String? = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
-
+            
             if resText!.count >= 9 {
                 return false
             }
@@ -432,51 +431,51 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         
         return true
     }
-  
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     {
-//        if textField == txtDOB
-//        {
-//            self.view.endEditing(true)
-//            Calendar()
-//            return false
-//        }
+        //        if textField == txtDOB
+        //        {
+        //            self.view.endEditing(true)
+        //            Calendar()
+        //            return false
+        //        }
         
         return true
     }
     
-
+    
     func Calendar()
     {
         // make DatePicker
         
         
         // setting properties of the datePicker
-//        myDatePicker.frame = CGRect(x:0, y: 50,width: self.view.frame.width, height: 200)
-//        myDatePicker.timeZone = NSTimeZone.local
-//        myDatePicker.backgroundColor = UIColor.white
-//        myDatePicker.layer.cornerRadius = 5.0
-//        myDatePicker.layer.shadowOpacity = 0.5
-//        myDatePicker.datePickerMode = .date
-//        // add an event called when value is changed.
-//        myDatePicker.addTarget(self, action: #selector(self.onDidChangeDate(sender:)), for: .valueChanged)
-//
-//        // add DataPicker to the view
-//        self.view.addSubview(myDatePicker)
+        //        myDatePicker.frame = CGRect(x:0, y: 50,width: self.view.frame.width, height: 200)
+        //        myDatePicker.timeZone = NSTimeZone.local
+        //        myDatePicker.backgroundColor = UIColor.white
+        //        myDatePicker.layer.cornerRadius = 5.0
+        //        myDatePicker.layer.shadowOpacity = 0.5
+        //        myDatePicker.datePickerMode = .date
+        //        // add an event called when value is changed.
+        //        myDatePicker.addTarget(self, action: #selector(self.onDidChangeDate(sender:)), for: .valueChanged)
+        //
+        //        // add DataPicker to the view
+        //        self.view.addSubview(myDatePicker)
     }
     
     // called when the date picker called.
     internal func onDidChangeDate(sender: UIDatePicker){
         
         // date format
-//        let myDateFormatter: DateFormatter = DateFormatter()
-//        myDateFormatter.dateFormat = "yyyy/MM/dd"
-//        
-//        // get the date string applied date format
-//        let mySelectedDate: NSString = myDateFormatter.string(from: sender.date) as NSString
-//        txtDOB.text = mySelectedDate as String
-//        
-//        self.myDatePicker.removeFromSuperview()
+        //        let myDateFormatter: DateFormatter = DateFormatter()
+        //        myDateFormatter.dateFormat = "yyyy/MM/dd"
+        //
+        //        // get the date string applied date format
+        //        let mySelectedDate: NSString = myDateFormatter.string(from: sender.date) as NSString
+        //        txtDOB.text = mySelectedDate as String
+        //
+        //        self.myDatePicker.removeFromSuperview()
     }
     
 }

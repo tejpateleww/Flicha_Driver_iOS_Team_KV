@@ -185,7 +185,7 @@ class EditDriverProfileVC: ParentViewController {
             if (status) {
                 print(result)
                 
-                let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
+                guard let socket = (UIApplication.shared.delegate as! AppDelegate).Socket else { return }
                 
                 socket.off(socketApiKeys.kReceiveBookingRequest)
                 socket.off(socketApiKeys.kBookLaterDriverNotify)

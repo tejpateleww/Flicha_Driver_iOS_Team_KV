@@ -64,7 +64,6 @@ func postData(_ dictParams: AnyObject, nsURL: String, completion: @escaping (_ r
             else
             {
                 UtilityClass.hideACProgressHUD()
-
                 completion(response.error?.localizedDescription as AnyObject, false)
             }
 
@@ -204,7 +203,7 @@ func sendImage(_ dictParams: [String:AnyObject], image1: UIImage, image2: UIImag
 //    NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
     
     UtilityClass.showACProgressHUD()
-    
+ 
     Alamofire.upload(multipartFormData: { (multipartFormData) in
         if let imageData1 = image1.jpegData(compressionQuality: 0.6)
         {
@@ -217,18 +216,18 @@ func sendImage(_ dictParams: [String:AnyObject], image1: UIImage, image2: UIImag
         
         if let imageData3 = image3.jpegData(compressionQuality: 0.6) {
             
-            multipartFormData.append(imageData3, withName: RegistrationFinalKeys.kAccreditationCertificate, fileName: "image.jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(imageData3, withName: RegistrationFinalKeys.kVehicleInsuranceCertificate, fileName: "image.jpeg", mimeType: "image/jpeg")
         }
         
         if let imageData4 = image4.jpegData(compressionQuality: 0.6) {
             
-            multipartFormData.append(imageData4, withName: RegistrationFinalKeys.kVehicleInsuranceCertificate, fileName: "image.jpeg", mimeType: "image/jpeg")
+            multipartFormData.append(imageData4, withName: RegistrationFinalKeys.kProxy, fileName: "image.jpeg", mimeType: "image/jpeg")
         }
         
-        if let imageData5 = image5.jpegData(compressionQuality: 0.6) {
-            
-            multipartFormData.append(imageData5, withName: RegistrationFinalKeys.kDriverImage, fileName: "image.jpeg", mimeType: "image/jpeg")
-        }
+//        if let imageData5 = image5.jpegData(compressionQuality: 0.6) {
+//
+//            multipartFormData.append(imageData5, withName: RegistrationFinalKeys.kDriverImage, fileName: "image.jpeg", mimeType: "image/jpeg")
+//        }
         
         if let imageData6 = image6.jpegData(compressionQuality: 0.6) {
             

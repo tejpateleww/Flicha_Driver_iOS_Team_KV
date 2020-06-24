@@ -8,14 +8,14 @@
 
 import UIKit
 
-class HelpVC: UIViewController {
+class HelpVC: BaseViewController {
    
     // ----------------------------------------------------
     // MARK: - --------- Outlets ---------
     // ----------------------------------------------------
     
     @IBOutlet weak var tblHelp: UITableView!
-    
+    var arrData = [[String: Any]]()
     // ----------------------------------------------------
     // MARK: - --------- Global Variables ---------
     // ----------------------------------------------------
@@ -30,6 +30,17 @@ class HelpVC: UIViewController {
         super.viewDidLoad()
         tblHelp.delegate = self
         tblHelp.dataSource = self
+        self.setNavigationBarInViewController(controller: self, naviTitle: "Help".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
+        getFaqList()
+    }
+    func getFaqList(){
+        webserviceForFAQList("" as AnyObject) { (result, status) in
+            print(result)
+            if let data = result["data"] as? [[String: Any]] {
+                self.arrData = data
+                self.tblHelp.reloadData()
+            }
+        }
     }
 }
 
@@ -44,13 +55,19 @@ extension HelpVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return arrData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "HelpTableViewCell") as! HelpTableViewCell
-        cell.txt.text = "Lorem Ipsum is simply dummy"
+        let dict = arrData[indexPath.row]
+        cell.txt.text = dict["Question"] as? String ?? ""
         cell.selectionStyle = .none
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc:HelpDetailVC = UIViewController.viewControllerInstance(storyBoard: .Main)
+        vc.dict = arrData[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

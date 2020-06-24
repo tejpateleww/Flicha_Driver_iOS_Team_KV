@@ -44,6 +44,7 @@ struct WebserviceURLs {
     static let kSubmitBookNowByDispatchJob              = "SubmitBookNowByDispatchJob"
     static let kSubmitBookLaterByDispatchJob            = "SubmitBookLaterByDispatchJob"
     static let kFutureBooking                           = "FutureBooking/"
+    static let kPendingBooking                          = "PendingJobs/"
     static let kMyDispatchJob                           = "MyDispatchJob/"
     static let kGetDriverProfile                        = "GetDriverProfile/"
     static let kGetDistaceFromBackend                   = "FindDistance/"
@@ -73,9 +74,14 @@ struct WebserviceURLs {
     static let kShareRide                               = "ShareRide/"
     static let kTrackRunningTrip                        = "TrackRunningTrip/"
     static let kPrivateMeterBooking                     = "PrivateMeterBooking"
+    static let kShowUserRating                          = "ShowUserRating"
+    static let kNotificationList                        = "NotificationList/"
+    static let kUpdateSettings                          = "UpdateNotificationSetting"
+    static let kFaqList                                 = "FaqList"
+//    static let kGetEstimateFare                         = "GetEstimateFare"
     
 //    https://www.tantaxitanzania.com/Drvier_Api/FeedbackList/9
-    static let kFeedbackList                     = "FeedbackList/"
+    static let kFeedbackList                            = "FeedbackList/"
 }
 
 struct OTPEmail {
@@ -135,7 +141,7 @@ struct driverProfileKeys
 
 struct RegistrationFinalKeys {
     
-    
+    static let kPageNo = "1"
     static let kEmail = "Email"                          // Done
     
     static let kCompanyID = "CompanyId" // Done
@@ -172,6 +178,7 @@ struct RegistrationFinalKeys {
     static let kVehicleInsuranceCertificate = "VehicleInsuranceCertificate" //Done
     static let kCarRegistrationExpiryDate = "RegistrationCertificateExpire" //Done
     static let kVehicleInsuranceCertificateExpiryDate = "VehicleInsuranceCertificateExpire" //Done
+    static let kProxy = "Proxy"
     static let kReferralCode = "ReferralCode" //Done
     static let kLat = "Lat"//Done
     static let kLng = "Lng"//Done

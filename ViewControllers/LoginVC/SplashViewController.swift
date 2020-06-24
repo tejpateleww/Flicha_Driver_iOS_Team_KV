@@ -68,8 +68,11 @@ class SplashViewController: UIViewController {
                         
                         if(Singletons.sharedInstance.isDriverLoggedIN)
                         {
+                            App_Delegate.GoToHome()
+                            /* Raj381
                             let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
                             self.navigationController?.pushViewController(next, animated: true)
+                            */
                         } else {
                             let LoginPage = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                             let NavigationControl = UINavigationController(rootViewController: LoginPage)

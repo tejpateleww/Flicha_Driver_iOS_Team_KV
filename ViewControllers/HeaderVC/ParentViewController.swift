@@ -142,7 +142,8 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
     
     func SideMenuClicked()       //  Side Menu
     {
-        sideMenuController?.toggle()
+//        sideMenuController?.toggle() raj381
+        sideMenuController?.toggleLeftView()
     }
     func BackButtonClicked()     //  Back Button
     {
@@ -317,23 +318,22 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
                     print(result)
                     self.headerView?.btnSwitch.isEnabled = true
                     
-                    if ((result as! NSDictionary).object(forKey: "duty") as! String == "off")
-                    {
+                    if ((result as! NSDictionary).object(forKey: "duty") as! String == "off") {
                         self.headerView?.btnSwitch.setImage(UIImage(named: "iconSwitchOff"), for: .normal)
                         Singletons.sharedInstance.driverDuty = "0"
                          UtilityClass.showAlert("", message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                         UIApplication.shared.isIdleTimerDisabled = false
-                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
+                        guard let socket = (UIApplication.shared.delegate as! AppDelegate).Socket else { return }
                         socket.disconnect()
 
-                    }
-                    else
-                    {
+                    }else {
                         self.headerView?.btnSwitch.setImage(UIImage(named: "iconSwitchOn"), for: .normal)
                         Singletons.sharedInstance.driverDuty = "1"
                         
-                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
-                        socket.connect()
+                        if let socket = (UIApplication.shared.delegate as! AppDelegate).Socket {
+                            socket.connect()
+                        }
+                        
                         UIApplication.shared.isIdleTimerDisabled = true
 
                         UtilityClass.showAlert("", message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
@@ -343,9 +343,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
 
                     }
                     UserDefaults.standard.set(Singletons.sharedInstance.driverDuty, forKey: "DriverDuty")
-                }
-                else
-                {
+                }else {
                     print(result)
                 
                     

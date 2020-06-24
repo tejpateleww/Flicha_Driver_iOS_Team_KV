@@ -103,6 +103,11 @@ class Singletons: NSObject {
     /// isPickUPPasenger = true than Start Trip else only accepted
     var isPickUPPasenger: Bool!
     
+    /// Use for last customer rating
+    var customerRating = ""
+    
+    /// Use for settings
+    var isPushSettingsOn = false
 }
 
 

@@ -21,3 +21,20 @@ class LocalizLabel : UILabel {
 //        self.font = UIFont.regular(ofSize: 13)
     }
 }
+class ThemeLabel: UILabel {
+    
+    @IBInspectable public var TitleColor:UIColor = UIColor.white
+    @IBInspectable public var FontSize:CGFloat = 15.0
+    @IBInspectable public var isBold:Bool = false
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if self.isBold {
+            self.font = UIFont.bold(ofSize: FontSize)
+        } else {
+            self.font = UIFont.regular(ofSize:  FontSize)
+        }
+        self.textColor = TitleColor
+        
+        
+    }
+}

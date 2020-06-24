@@ -60,9 +60,9 @@ class UtilityClass: NSObject {
 
     class func setImage(url : String, imageView : UIImageView)
     {
-        imageView.sd_addActivityIndicator()
-        imageView.sd_setShowActivityIndicatorView(true)
-        imageView.sd_setIndicatorStyle(.gray)
+//        imageView.sd_addActivityIndicator()  Raj381
+//        imageView.sd_setShowActivityIndicatorView(true)
+//        imageView.sd_setIndicatorStyle(.gray)
         imageView.sd_setImage(with: URL(string: url)) { (image, error, cacheType, url) in
             imageView.layer.cornerRadius = imageView.frame.size.width/2
             imageView.layer.masksToBounds = true

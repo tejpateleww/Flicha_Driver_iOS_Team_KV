@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--My BookingVC-->
+        <scene sceneID="xte-95-wQ8">
+            <objects>
+                <viewController storyboardIdentifier="MyBookingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bxy-1u-CRZ" customClass="MyBookingVC" customModule="Flicha_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EMH-9z-8zx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-83-PZn" customClass="HeaderTableViewController" customModule="Flicha_Driver" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ry-HI-bz2" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                <rect key="frame" x="132" y="323.5" width="111" height="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Ry-HI-bz2" firstAttribute="centerY" secondItem="EMH-9z-8zx" secondAttribute="centerY" id="0m5-WY-7Mu"/>
+                            <constraint firstItem="CfH-rU-YBY" firstAttribute="trailing" secondItem="Wjq-83-PZn" secondAttribute="trailing" id="9bH-JS-bQf"/>
+                            <constraint firstItem="Wjq-83-PZn" firstAttribute="leading" secondItem="CfH-rU-YBY" secondAttribute="leading" id="Ce9-xI-Q4j"/>
+                            <constraint firstItem="Wjq-83-PZn" firstAttribute="top" secondItem="CfH-rU-YBY" secondAttribute="top" id="KdU-A2-eKa"/>
+                            <constraint firstItem="CfH-rU-YBY" firstAttribute="bottom" secondItem="Wjq-83-PZn" secondAttribute="bottom" id="YoS-4O-qPs"/>
+                            <constraint firstItem="1Ry-HI-bz2" firstAttribute="centerX" secondItem="EMH-9z-8zx" secondAttribute="centerX" id="uJU-55-a4C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CfH-rU-YBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rAa-i7-gLf"/>
+                    <connections>
+                        <outlet property="CollectionTableView" destination="Wjq-83-PZn" id="GN8-be-AqI"/>
+                        <outlet property="lblNoDataFound" destination="1Ry-HI-bz2" id="IOx-5Q-kX0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kae-SL-KQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993.75" y="148.94366197183098"/>
+        </scene>
+        <!--Booking Details View Controller-->
+        <scene sceneID="hp9-ZA-dBH">
+            <objects>
+                <viewController storyboardIdentifier="BookingDetailsViewController" id="zWb-dD-qD8" customClass="BookingDetailsViewController" customModule="Flicha_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jip-9v-wbH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-jF-gdO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="nxv-Ap-AbN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Id : 985745" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMN-83-xEn" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="9" width="359" height="30.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saudi Arabian Airline,opp clock tower. " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbt-ie-7Yg" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                            <rect key="frame" x="32" y="44" width="338" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="iTk-Lk-r0a"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ocq-8T-9bl">
+                                            <rect key="frame" x="32" y="74" width="343" height="1"/>
+                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="cgX-Bd-4OP"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Saudi German hospital Dubai" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-7g-7wY" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                            <rect key="frame" x="32" y="80" width="338" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="SM6-bF-CEj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickup-dropoff-icon" translatesAutoresizingMaskIntoConstraints="NO" id="avY-BA-pRu">
+                                            <rect key="frame" x="7" y="44" width="15" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="OAI-JJ-0Kt"/>
+                                                <constraint firstAttribute="width" constant="15" id="pYR-Ky-grR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="IMN-83-xEn" firstAttribute="top" secondItem="nxv-Ap-AbN" secondAttribute="top" constant="9" id="3Ym-Pn-Uoh"/>
+                                        <constraint firstAttribute="trailing" secondItem="CeS-7g-7wY" secondAttribute="trailing" constant="5" id="5bB-3A-ybj"/>
+                                        <constraint firstItem="Zbt-ie-7Yg" firstAttribute="top" secondItem="IMN-83-xEn" secondAttribute="bottom" constant="4.5" id="9N2-yE-dXC"/>
+                                        <constraint firstAttribute="trailing" secondItem="IMN-83-xEn" secondAttribute="trailing" constant="8" id="9Pr-5R-1Of"/>
+                                        <constraint firstItem="CeS-7g-7wY" firstAttribute="leading" secondItem="avY-BA-pRu" secondAttribute="trailing" constant="10" id="I0T-cI-dkl"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ocq-8T-9bl" secondAttribute="trailing" id="IcX-7H-osF"/>
+                                        <constraint firstItem="Zbt-ie-7Yg" firstAttribute="top" secondItem="avY-BA-pRu" secondAttribute="top" id="RI5-Rq-bOv"/>
+                                        <constraint firstAttribute="bottom" secondItem="CeS-7g-7wY" secondAttribute="bottom" constant="10" id="S3g-Fe-PCt"/>
+                                        <constraint firstItem="Zbt-ie-7Yg" firstAttribute="leading" secondItem="avY-BA-pRu" secondAttribute="trailing" constant="10" id="Sbj-Rx-Aph"/>
+                                        <constraint firstItem="avY-BA-pRu" firstAttribute="leading" secondItem="nxv-Ap-AbN" secondAttribute="leading" constant="7" id="Wgm-Fm-LjP"/>
+                                        <constraint firstItem="Ocq-8T-9bl" firstAttribute="leading" secondItem="avY-BA-pRu" secondAttribute="trailing" constant="10" id="cyL-YX-uhO"/>
+                                        <constraint firstItem="IMN-83-xEn" firstAttribute="leading" secondItem="nxv-Ap-AbN" secondAttribute="leading" constant="8" id="jPN-cW-1IY"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zbt-ie-7Yg" secondAttribute="trailing" constant="5" id="loJ-aI-mWt"/>
+                                        <constraint firstItem="Ocq-8T-9bl" firstAttribute="top" secondItem="Zbt-ie-7Yg" secondAttribute="bottom" constant="5" id="oRE-aQ-EbA"/>
+                                        <constraint firstItem="CeS-7g-7wY" firstAttribute="top" secondItem="Ocq-8T-9bl" secondAttribute="bottom" constant="5" id="vbO-5L-zPp"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="q6H-Kj-KpB">
+                                    <rect key="frame" x="0.0" y="191.5" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMq-f5-bHq" customClass="CustomButton" customModule="Flicha_Driver" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="15" width="335" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="XVZ-Fi-hbO"/>
+                                            </constraints>
+                                            <state key="normal" title="Close Trip"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="size">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="closeTripAction:" destination="zWb-dD-qD8" eventType="touchUpInside" id="6iU-i4-Jkt"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="HMq-f5-bHq" firstAttribute="leading" secondItem="q6H-Kj-KpB" secondAttribute="leading" constant="20" id="DaK-KF-7jB"/>
+                                        <constraint firstItem="HMq-f5-bHq" firstAttribute="centerY" secondItem="q6H-Kj-KpB" secondAttribute="centerY" id="Omy-kg-jfF"/>
+                                        <constraint firstAttribute="trailing" secondItem="HMq-f5-bHq" secondAttribute="trailing" constant="20" id="uea-8v-ZSG"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="gGx-oB-Qab" customClass="BookingDetailCell" customModule="Flicha_Driver" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="143" width="375" height="20.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gGx-oB-Qab" id="CaQ-Th-WWD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QMW-zi-P1J">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebO-UO-vug">
+                                                            <rect key="frame" x="0.0" y="0.0" width="177" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn8-JD-fnD">
+                                                            <rect key="frame" x="182" y="0.0" width="177" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QMW-zi-P1J" firstAttribute="leading" secondItem="CaQ-Th-WWD" secondAttribute="leading" constant="8" id="8Q3-s6-8s5"/>
+                                                <constraint firstAttribute="bottom" secondItem="QMW-zi-P1J" secondAttribute="bottom" id="Y8n-q8-4x3"/>
+                                                <constraint firstItem="QMW-zi-P1J" firstAttribute="top" secondItem="CaQ-Th-WWD" secondAttribute="top" id="lF4-VC-7Jp"/>
+                                                <constraint firstAttribute="trailing" secondItem="QMW-zi-P1J" secondAttribute="trailing" constant="8" id="o5F-PS-N6x"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblDetail" destination="gn8-JD-fnD" id="aTw-VQ-ODG"/>
+                                            <outlet property="lblTitle" destination="ebO-UO-vug" id="ggK-xM-BWs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zWb-dD-qD8" id="180-B8-KK9"/>
+                                    <outlet property="delegate" destination="zWb-dD-qD8" id="b3B-oE-mDp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Iq-0c-A89" firstAttribute="trailing" secondItem="Mqf-jF-gdO" secondAttribute="trailing" id="e5z-fB-EtW"/>
+                            <constraint firstItem="2Iq-0c-A89" firstAttribute="bottom" secondItem="Mqf-jF-gdO" secondAttribute="bottom" id="jBQ-hA-enU"/>
+                            <constraint firstItem="Mqf-jF-gdO" firstAttribute="top" secondItem="2Iq-0c-A89" secondAttribute="top" id="k3y-vP-duD"/>
+                            <constraint firstItem="Mqf-jF-gdO" firstAttribute="leading" secondItem="2Iq-0c-A89" secondAttribute="leading" id="tMg-X5-QOh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Iq-0c-A89"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnCloseTrip" destination="HMq-f5-bHq" id="6T6-L8-eyT"/>
+                        <outlet property="lblBookingId" destination="IMN-83-xEn" id="JaO-BF-hHB"/>
+                        <outlet property="lblDestinationLocation" destination="CeS-7g-7wY" id="iKX-kL-TSY"/>
+                        <outlet property="lblPickupLocation" destination="Zbt-ie-7Yg" id="pA3-ta-am9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="psQ-HL-LWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700.625" y="153.16901408450704"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mbj-7N-nfL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xAY-FH-fIV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wqi-gD-cMH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bxy-1u-CRZ" kind="relationship" relationship="rootViewController" id="xOn-t8-nZe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYJ-gN-xXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9.375" y="148.94366197183098"/>
+        </scene>
+        <!--Past Booking Details View Controller-->
+        <scene sceneID="Dgb-bS-Bm1">
+            <objects>
+                <viewController storyboardIdentifier="PastBookingDetailsViewController" id="eWQ-0j-GfV" customClass="PastBookingDetailsViewController" customModule="Flicha_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sr9-kG-t1G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fHB-xW-vNN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" hidden="YES" contentMode="scaleToFill" id="USz-ij-3fT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Id : 985745" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H8-WH-PI3" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="9" width="359" height="30.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saudi Arabian Airline,opp clock tower. " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzd-Qg-QFX" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                            <rect key="frame" x="32" y="44" width="338" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="oMo-Wp-pAC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-Cd-XSB">
+                                            <rect key="frame" x="32" y="74" width="343" height="1"/>
+                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="Are-Vm-aKL"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Saudi German hospital Dubai" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spx-lR-0qj" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                            <rect key="frame" x="32" y="80" width="338" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="clx-vG-aTN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <real key="value" value="14"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickup-dropoff-icon" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-30-g69">
+                                            <rect key="frame" x="7" y="44" width="15" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="PYv-uz-R5v"/>
+                                                <constraint firstAttribute="width" constant="15" id="oix-xQ-TOG"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fzd-Qg-QFX" secondAttribute="trailing" constant="5" id="5lm-Zv-f6Q"/>
+                                        <constraint firstItem="fzd-Qg-QFX" firstAttribute="top" secondItem="F7J-30-g69" secondAttribute="top" id="8fT-oK-KU5"/>
+                                        <constraint firstItem="F7J-30-g69" firstAttribute="leading" secondItem="USz-ij-3fT" secondAttribute="leading" constant="7" id="9YK-Dv-o2c"/>
+                                        <constraint firstItem="2H8-WH-PI3" firstAttribute="top" secondItem="USz-ij-3fT" secondAttribute="top" constant="9" id="KGj-4g-4rm"/>
+                                        <constraint firstAttribute="bottom" secondItem="spx-lR-0qj" secondAttribute="bottom" constant="10" id="MqS-1y-YCA"/>
+                                        <constraint firstAttribute="trailing" secondItem="spx-lR-0qj" secondAttribute="trailing" constant="5" id="N4z-4e-prw"/>
+                                        <constraint firstItem="2H8-WH-PI3" firstAttribute="leading" secondItem="USz-ij-3fT" secondAttribute="leading" constant="8" id="Ni8-MU-iDh"/>
+                                        <constraint firstItem="spx-lR-0qj" firstAttribute="top" secondItem="3ba-Cd-XSB" secondAttribute="bottom" constant="5" id="Pwe-nR-cMQ"/>
+                                        <constraint firstItem="3ba-Cd-XSB" firstAttribute="leading" secondItem="F7J-30-g69" secondAttribute="trailing" constant="10" id="RCU-IV-DzI"/>
+                                        <constraint firstItem="spx-lR-0qj" firstAttribute="leading" secondItem="F7J-30-g69" secondAttribute="trailing" constant="10" id="SaO-yT-qSp"/>
+                                        <constraint firstAttribute="trailing" secondItem="2H8-WH-PI3" secondAttribute="trailing" constant="8" id="eXw-mI-CUr"/>
+                                        <constraint firstItem="fzd-Qg-QFX" firstAttribute="leading" secondItem="F7J-30-g69" secondAttribute="trailing" constant="10" id="gAu-Rd-8Be"/>
+                                        <constraint firstAttribute="trailing" secondItem="3ba-Cd-XSB" secondAttribute="trailing" id="iHh-S9-Lzc"/>
+                                        <constraint firstItem="fzd-Qg-QFX" firstAttribute="top" secondItem="2H8-WH-PI3" secondAttribute="bottom" constant="4.5" id="jWV-L8-9Mg"/>
+                                        <constraint firstItem="3ba-Cd-XSB" firstAttribute="top" secondItem="fzd-Qg-QFX" secondAttribute="bottom" constant="5" id="qgb-Ml-Kgr"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Pkj-0G-kUo" customClass="BookingDetailCell" customModule="Flicha_Driver" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="143" width="375" height="20.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pkj-0G-kUo" id="IpW-0N-0Bc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QNo-Mw-wfm">
+                                                    <rect key="frame" x="15" y="0.0" width="352" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jC4-PU-Bhl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="173.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiC-II-1Gd">
+                                                            <rect key="frame" x="178.5" y="0.0" width="173.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QNo-Mw-wfm" firstAttribute="leading" secondItem="IpW-0N-0Bc" secondAttribute="leading" constant="15" id="54s-jn-xjF"/>
+                                                <constraint firstItem="QNo-Mw-wfm" firstAttribute="top" secondItem="IpW-0N-0Bc" secondAttribute="top" id="BYi-Hq-iiu"/>
+                                                <constraint firstAttribute="trailing" secondItem="QNo-Mw-wfm" secondAttribute="trailing" constant="8" id="toy-6a-Gos"/>
+                                                <constraint firstAttribute="bottom" secondItem="QNo-Mw-wfm" secondAttribute="bottom" id="xNc-Bz-gfw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblDetail" destination="oiC-II-1Gd" id="kxe-yb-r1X"/>
+                                            <outlet property="lblTitle" destination="jC4-PU-Bhl" id="ZHu-Vx-d7x"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationsCell" rowHeight="167" id="Zkz-Yk-1KE" customClass="LocationsCell" customModule="Flicha_Driver" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="163.5" width="375" height="167"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zkz-Yk-1KE" id="jkx-Md-Q1K">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kx3-px-LPq">
+                                                    <rect key="frame" x="8" y="0.0" width="367" height="167"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saudi Arabian Airline,opp clock tower. " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xp-UC-Aa4" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                                            <rect key="frame" x="32" y="8" width="330" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="qTe-Ty-qra"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                                    <real key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbi-vL-7UN">
+                                                            <rect key="frame" x="32" y="38" width="335" height="1"/>
+                                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="io0-68-Dno"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Saudi German hospital Dubai" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7p-mV-bdx" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                                            <rect key="frame" x="32" y="44" width="330" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="Bcr-px-JDX"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="TitleColor">
+                                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                                    <real key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickup-dropoff-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jue-ZV-tKb">
+                                                            <rect key="frame" x="7" y="8" width="15" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="Tu0-G7-zHG"/>
+                                                                <constraint firstAttribute="width" constant="15" id="i0i-yT-4vn"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MAj-JY-Ayy">
+                                                            <rect key="frame" x="7" y="69" width="355" height="30"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAO-Ov-ZHx">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-ZF-k6c">
+                                                                    <rect key="frame" x="180" y="0.0" width="175" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="HPf-WZ-JAc"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2ry-pZ-V0Y">
+                                                            <rect key="frame" x="7" y="99" width="355" height="30"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcL-ox-NxQ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C32-kX-Dp6">
+                                                                    <rect key="frame" x="180" y="0.0" width="175" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="OtO-NG-fNu"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Q6S-Pt-KZj">
+                                                            <rect key="frame" x="7" y="129" width="355" height="30"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFw-Ik-8y3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6B-hp-HLk">
+                                                                    <rect key="frame" x="180" y="0.0" width="175" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="HX1-Y5-qUq"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="MAj-JY-Ayy" secondAttribute="trailing" constant="5" id="2Rl-XK-GxQ"/>
+                                                        <constraint firstItem="Bbi-vL-7UN" firstAttribute="top" secondItem="5Xp-UC-Aa4" secondAttribute="bottom" constant="5" id="2Uf-ot-ILk"/>
+                                                        <constraint firstItem="Bbi-vL-7UN" firstAttribute="leading" secondItem="jue-ZV-tKb" secondAttribute="trailing" constant="10" id="3Rz-3J-kx9"/>
+                                                        <constraint firstItem="D7p-mV-bdx" firstAttribute="leading" secondItem="jue-ZV-tKb" secondAttribute="trailing" constant="10" id="6MU-oD-iDk"/>
+                                                        <constraint firstItem="D7p-mV-bdx" firstAttribute="top" secondItem="Bbi-vL-7UN" secondAttribute="bottom" constant="5" id="9Bu-ks-Sym"/>
+                                                        <constraint firstItem="5Xp-UC-Aa4" firstAttribute="top" secondItem="Kx3-px-LPq" secondAttribute="top" constant="8" id="HKZ-cw-o4p"/>
+                                                        <constraint firstItem="5Xp-UC-Aa4" firstAttribute="leading" secondItem="jue-ZV-tKb" secondAttribute="trailing" constant="10" id="Hfy-3M-gVs"/>
+                                                        <constraint firstItem="Q6S-Pt-KZj" firstAttribute="top" secondItem="2ry-pZ-V0Y" secondAttribute="bottom" id="II8-fd-9Tf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Q6S-Pt-KZj" secondAttribute="bottom" constant="8" id="Pnk-uB-WhU"/>
+                                                        <constraint firstItem="2ry-pZ-V0Y" firstAttribute="leading" secondItem="MAj-JY-Ayy" secondAttribute="leading" id="SGQ-dA-Fy8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="D7p-mV-bdx" secondAttribute="trailing" constant="5" id="USM-ar-wbb"/>
+                                                        <constraint firstItem="2ry-pZ-V0Y" firstAttribute="trailing" secondItem="MAj-JY-Ayy" secondAttribute="trailing" id="VNK-kq-Gs3"/>
+                                                        <constraint firstItem="jue-ZV-tKb" firstAttribute="leading" secondItem="Kx3-px-LPq" secondAttribute="leading" constant="7" id="cY2-S4-JzI"/>
+                                                        <constraint firstItem="Q6S-Pt-KZj" firstAttribute="trailing" secondItem="2ry-pZ-V0Y" secondAttribute="trailing" id="cvV-KO-CjT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5Xp-UC-Aa4" secondAttribute="trailing" constant="5" id="e1y-5t-9Fl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Bbi-vL-7UN" secondAttribute="trailing" id="e5W-rc-yUU"/>
+                                                        <constraint firstItem="MAj-JY-Ayy" firstAttribute="top" secondItem="D7p-mV-bdx" secondAttribute="bottom" id="iRl-Qb-oNu"/>
+                                                        <constraint firstItem="MAj-JY-Ayy" firstAttribute="leading" secondItem="jue-ZV-tKb" secondAttribute="leading" id="k1Z-Sp-MtF"/>
+                                                        <constraint firstItem="2ry-pZ-V0Y" firstAttribute="top" secondItem="MAj-JY-Ayy" secondAttribute="bottom" id="rcc-JV-sVh"/>
+                                                        <constraint firstItem="5Xp-UC-Aa4" firstAttribute="top" secondItem="jue-ZV-tKb" secondAttribute="top" id="voi-qf-9rq"/>
+                                                        <constraint firstItem="Q6S-Pt-KZj" firstAttribute="leading" secondItem="2ry-pZ-V0Y" secondAttribute="leading" id="vqS-78-NqX"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kx3-px-LPq" firstAttribute="leading" secondItem="jkx-Md-Q1K" secondAttribute="leading" constant="8" id="OEn-1X-OfW"/>
+                                                <constraint firstItem="Kx3-px-LPq" firstAttribute="top" secondItem="jkx-Md-Q1K" secondAttribute="top" id="PEf-ZX-eJg"/>
+                                                <constraint firstAttribute="bottom" secondItem="Kx3-px-LPq" secondAttribute="bottom" id="Y6h-Gw-EkF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kx3-px-LPq" secondAttribute="trailing" id="qJI-Dj-MhA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblDropoffLocation" destination="D7p-mV-bdx" id="lv1-AC-JHq"/>
+                                            <outlet property="lblEndTime" destination="hEd-ZF-k6c" id="slZ-Nu-gCf"/>
+                                            <outlet property="lblEndTimeTitle" destination="eAO-Ov-ZHx" id="HCv-cQ-vKy"/>
+                                            <outlet property="lblMobileNumber" destination="X6B-hp-HLk" id="bhf-rJ-UzH"/>
+                                            <outlet property="lblMobileNumberTitle" destination="bFw-Ik-8y3" id="usm-l4-GEZ"/>
+                                            <outlet property="lblPickupLocation" destination="5Xp-UC-Aa4" id="9pH-qh-3kE"/>
+                                            <outlet property="lblReceiverName" destination="C32-kX-Dp6" id="Yjc-WS-Ldo"/>
+                                            <outlet property="lblReceiverNameTitle" destination="VcL-ox-NxQ" id="8V1-Ir-5te"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentsList" rowHeight="90" id="l7X-sc-b15" customClass="DocumentsList" customModule="Flicha_Driver" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="330.5" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l7X-sc-b15" id="dR0-eB-DKh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KUZ-dL-IhX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i3i-FO-HYl">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="pTn-UW-Yih" customClass="Documents" customModule="Flicha_Driver" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="20" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpi-H9-LFo">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="fpi-H9-LFo" secondAttribute="trailing" id="CEQ-th-zBt"/>
+                                                                <constraint firstItem="fpi-H9-LFo" firstAttribute="top" secondItem="pTn-UW-Yih" secondAttribute="top" id="bTp-Un-egI"/>
+                                                                <constraint firstAttribute="bottom" secondItem="fpi-H9-LFo" secondAttribute="bottom" id="gJu-sQ-qpa"/>
+                                                                <constraint firstItem="fpi-H9-LFo" firstAttribute="leading" secondItem="pTn-UW-Yih" secondAttribute="leading" id="pXg-Hv-Xrh"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="imgVw" destination="fpi-H9-LFo" id="enB-N2-5a0"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="eWQ-0j-GfV" id="dWA-vR-Ztf"/>
+                                                        <outlet property="delegate" destination="eWQ-0j-GfV" id="Vzn-fk-jiN"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KUZ-dL-IhX" secondAttribute="trailing" id="QcR-Im-mSq"/>
+                                                <constraint firstItem="KUZ-dL-IhX" firstAttribute="leading" secondItem="dR0-eB-DKh" secondAttribute="leading" id="hj9-iV-LGv"/>
+                                                <constraint firstItem="KUZ-dL-IhX" firstAttribute="top" secondItem="dR0-eB-DKh" secondAttribute="top" id="xFX-ru-Evo"/>
+                                                <constraint firstAttribute="bottom" secondItem="KUZ-dL-IhX" secondAttribute="bottom" id="zA9-j8-F87"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectVw" destination="KUZ-dL-IhX" id="Hiq-GC-eu5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eWQ-0j-GfV" id="2oY-5S-DJO"/>
+                                    <outlet property="delegate" destination="eWQ-0j-GfV" id="Pyp-Rk-XQk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3G6-2U-ABs" firstAttribute="trailing" secondItem="fHB-xW-vNN" secondAttribute="trailing" id="AK3-yx-miC"/>
+                            <constraint firstItem="fHB-xW-vNN" firstAttribute="leading" secondItem="3G6-2U-ABs" secondAttribute="leading" id="XNy-MV-986"/>
+                            <constraint firstItem="fHB-xW-vNN" firstAttribute="top" secondItem="3G6-2U-ABs" secondAttribute="top" id="cu7-kW-OHV"/>
+                            <constraint firstItem="3G6-2U-ABs" firstAttribute="bottom" secondItem="fHB-xW-vNN" secondAttribute="bottom" id="ulN-Ta-4uR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3G6-2U-ABs"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblBookingId" destination="2H8-WH-PI3" id="7ep-GK-EfC"/>
+                        <outlet property="lblDestinationLocation" destination="spx-lR-0qj" id="rGd-c7-FtS"/>
+                        <outlet property="lblPickupLocation" destination="fzd-Qg-QFX" id="5OU-4c-56h"/>
+                        <outlet property="vwHeader" destination="USz-ij-3fT" id="zgE-u6-2LY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vl0-PG-RtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365" y="853.52112676056333"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pickup-dropoff-icon" width="13.5" height="60"/>
+    </resources>
+</document>

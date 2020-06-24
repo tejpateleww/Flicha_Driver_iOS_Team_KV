@@ -303,7 +303,7 @@ class MyJobsViewController: ParentViewController
         //        let socket = (((self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers)[0] as! ContentViewController).socket
         
         
-        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
+        let socket = (UIApplication.shared.delegate as! AppDelegate).Socket
         //
         //        var isAdvance = (((self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers)[0] as! HomeViewController).isAdvanceBooking
         //        isAdvance = true
@@ -319,7 +319,7 @@ class MyJobsViewController: ParentViewController
         
         isAdvance = true
         let myJSON = ["DriverId" : Singletons.sharedInstance.strDriverID, "BookingId" : Singletons.sharedInstance.strPendinfTripData] as [String : Any]
-        socket.emit("NotifyPassengerForAdvancedTrip", with: [myJSON])
+        socket!.emit("NotifyPassengerForAdvancedTrip", with: [myJSON])
         Singletons.sharedInstance.strBookingType = "BookLater"
         print("Start Trip : \(myJSON)")
         

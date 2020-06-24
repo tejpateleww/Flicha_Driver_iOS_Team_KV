@@ -10,15 +10,15 @@ import UIKit
 import SDWebImage
 import ACFloatingTextfield_Swift
 
-class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIPickerViewDelegate,UITextFieldDelegate {
+class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIPickerViewDelegate,UITextFieldDelegate {
     
     var aryCompanyIDS = [[String:AnyObject]]()
     var companyID = String()
     
-    @IBOutlet weak var lblmale: UILabel!
+    @IBOutlet weak var lblmale: UILabel?
     var dictData = [String:AnyObject]()
 
-    @IBOutlet weak var lblFemale: UILabel!
+    @IBOutlet weak var lblFemale: UILabel?
     let thePicker = UIPickerView()
     let datePicker = UIDatePicker()
     
@@ -26,45 +26,53 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     // MARK: - Outlets
     //-------------------------------------------------------------
     
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblTitle: UILabel?
     @IBOutlet var lblEmail: UILabel!
     @IBOutlet var lblName: UILabel!
     @IBOutlet weak var imgProfile: UIImageView!
-    @IBOutlet var btnMale: UIButton!
-    @IBOutlet var btnFemale: UIButton!
-    @IBOutlet var btnOthers: UIButton!
+    @IBOutlet var btnMale: UIButton?
+    @IBOutlet var btnFemale: UIButton?
+    @IBOutlet var btnOthers: UIButton?
     @IBOutlet weak var viewGenders: UIView!
     @IBOutlet weak var btnChangePass: ThemeButton!
     @IBOutlet weak var btnSave: ThemeButton!
-    @IBOutlet weak var txtCompanyID: UITextField!
-    @IBOutlet weak var txtMobile: ACFloatingTextfield!
-    @IBOutlet weak var txtFullName: ACFloatingTextfield!
-    @IBOutlet weak var txtDOB: UITextField!
-    @IBOutlet weak var txtAddress: ACFloatingTextfield!
-    @IBOutlet weak var txtPostCode: UITextField!
-    @IBOutlet weak var txtCity: UITextField!
-    @IBOutlet weak var txtState: UITextField!
-    @IBOutlet weak var txtCountry: UITextField!
-    @IBOutlet weak var txtSuburb: UITextField!
+    @IBOutlet weak var txtCompanyID: UITextField?
+    
+    @IBOutlet weak var txtFullName: UITextField?
+    @IBOutlet weak var txtDOB: UITextField?
+
+    @IBOutlet weak var txtPostCode: UITextField?
+    @IBOutlet weak var txtCity: UITextField?
+    @IBOutlet weak var txtState: UITextField?
+    @IBOutlet weak var txtCountry: UITextField?
+    @IBOutlet weak var txtSuburb: UITextField?
     
     @IBOutlet weak var btnEditProfileIPic: UIButton!
+    
+    //MARK: New Outlets
+    @IBOutlet weak var txtFirstName: UITextField!
+    @IBOutlet weak var txtLastName: UITextField!
+    @IBOutlet weak var txtEmailId: UITextField!
+    @IBOutlet weak var txtMobile: UITextField!
+    @IBOutlet weak var txtAddress: UITextField!
+    
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         thePicker.delegate = self
-        showDatePicker()
+//        showDatePicker()
 //        viewGenders.layer.borderWidth = 1
 //        viewGenders.layer.masksToBounds = true
 //        viewGenders.layer.borderColor = UIColor.gray.cgColor
         
         txtMobile.delegate = self
-        txtPostCode.delegate = self
+        //txtPostCode.delegate = self
         
         webserviceCallToGetCompanyList()
         setData()
-        
+        self.setNavigationBarInViewController(controller: self, naviTitle: "My Profile".localized, leftImage: iconBack, rightImages: ["editP"], isTranslucent: false)
     }
     func showDatePicker(){
         //Formate Date
@@ -81,16 +89,16 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
-        txtDOB.inputAccessoryView = toolbar
+       // txtDOB.inputAccessoryView = toolbar
         // add datepicker to textField
-        txtDOB.inputView = datePicker
+     //   txtDOB.inputView = datePicker
         
     }
     func donedatePicker(){
         //For date formate
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        txtDOB.text = formatter.string(from: datePicker.date)
+     //   txtDOB.text = formatter.string(from: datePicker.date)
         //dismiss date picker dialog
         self.view.endEditing(true)
     }
@@ -104,8 +112,8 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         super.viewWillLayoutSubviews()
         
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width / 2
-        btnEditProfileIPic.layer.cornerRadius = btnEditProfileIPic.frame.size.width / 2
-        btnEditProfileIPic.layer.masksToBounds = true
+//        btnEditProfileIPic.layer.cornerRadius = btnEditProfileIPic.frame.size.width / 2
+//        btnEditProfileIPic.layer.masksToBounds = true
         imgProfile.layer.borderWidth = 1.0
         imgProfile.layer.borderColor = ThemeYellowColor.cgColor
         imgProfile.layer.masksToBounds = true
@@ -126,22 +134,22 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     
     func setLocalizable()
     {
-        lblTitle.text = "Profile".localized
-        txtFullName.placeholder = "Full Name".localized
+        lblTitle?.text = "Profile".localized
+//        txtFullName.placeholder = "Full Name".localized
         txtAddress.placeholder = "Address".localized
         txtMobile.placeholder = "Mobile Number".localized
-        lblGender.text = "Gender".localized
-        lblmale.text = "Male".localized
-        lblFemale.text = "Female".localized
-        btnChangePass.setTitle("Change Password".localized, for: .normal)
-        btnSave.setTitle("Save".localized, for: .normal)
+        lblGender?.text = "Gender".localized
+        lblmale?.text = "Male".localized
+        lblFemale?.text = "Female".localized
+        btnChangePass?.setTitle("Change Password".localized, for: .normal)
+        btnSave?.setTitle("Save".localized, for: .normal)
         
         
     }
 
     
    
-    @IBOutlet weak var lblGender: UILabel!
+    @IBOutlet weak var lblGender: UILabel?
     
     //-------------------------------------------------------------
     // MARK: - Custom Methods
@@ -149,21 +157,21 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     
     func selectedMale()
     {
-        btnMale.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
-        btnFemale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-        btnOthers.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+        btnMale?.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
+        btnFemale?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+//        btnOthers?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
     }
     func selectedFemale()
     {
-        btnMale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-        btnFemale.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
-        btnOthers.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+        btnMale?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+        btnFemale?.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
+//        btnOthers?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
     }
     func selectedOthers()
     {
-        btnMale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-        btnFemale.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
-        btnOthers.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
+        btnMale?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+        btnFemale?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
+        btnOthers?.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
     }
 
     
@@ -197,10 +205,10 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
                                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let pickedImage  = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imgProfile.contentMode = .scaleToFill
+            imgProfile.contentMode = .scaleAspectFill
             imgProfile.image = pickedImage
             
-            btnEditProfileIPic.imageView?.image = pickedImage
+//            btnEditProfileIPic.imageView?.image = pickedImage
             
         }
         
@@ -276,6 +284,11 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         
     }
     
+    @IBAction func changePasswordClick(_ sender: UIButton) {
+        let changePassword:ChangePasswordViewController = UIViewController.viewControllerInstance(storyBoard: .Main)
+        self.present(changePassword, animated: true, completion: nil)
+        
+    }
     @IBAction func btnChangePasswordClicked(_ sender: Any)
     {
         self.performSegue(withIdentifier: "segueChangePassword", sender: nil)
@@ -339,12 +352,23 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
 
             
         txtMobile.text          = profile.object(forKey: "MobileNo") as? String
-        txtFullName.text        = profile.object(forKey: "Fullname") as? String
-        lblName.text  = profile.object(forKey: "Fullname") as? String
-        lblEmail.text  = profile.object(forKey: "Email") as? String
-        txtDOB.text             = profile.object(forKey: "DOB") as? String
+        txtFullName?.text        = profile.object(forKey: "Fullname") as? String
+        lblName.text  = "Hey ".localized + (profile.object(forKey: "Fullname") as? String ?? "") + "!"
+        txtEmailId.text  = profile.object(forKey: "Email") as? String
+        txtDOB?.text             = profile.object(forKey: "DOB") as? String
         txtAddress.text         = profile.object(forKey: "Address") as? String
-        txtPostCode.text        = profile.object(forKey: "ZipCode") as? String
+        txtPostCode?.text        = profile.object(forKey: "ZipCode") as? String
+        if let strFormatedName = profile.object(forKey: "FullnameFormat") as? String {
+            let arrFullName = strFormatedName.components(separatedBy: "||")
+            if let strFirstName = arrFullName.first {
+                txtFirstName.text = strFirstName
+            }
+            if let strLastName = arrFullName.last {
+                txtLastName.text = strLastName
+            }
+        }
+        txtEmailId.isUserInteractionEnabled = false
+        txtMobile.isUserInteractionEnabled = false
         //            txtCity.text            = profile.object(forKey: "City") as? String
 //            txtState.text           = profile.object(forKey: "State") as? String
 //            txtCountry.text         = profile.object(forKey: "Country") as? String
@@ -362,7 +386,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
 //        }
 
 //         txtCompanyID.text       = (self.aryCompanyIDS as NSArray).filtered(using: "") as? String
-        
+        imgProfile.contentMode = .scaleAspectFill
         imgProfile.sd_setImage(with: URL(string: profile.object(forKey: "Image") as! String))
         
         let strGender = profile.object(forKey: "Gender") as? String
@@ -389,32 +413,34 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         
         var genderSet = String()
         
-        if (btnMale.currentImage?.isEqual(UIImage(named: "iconRadioSelected")))! {
+        /*
+         if (btnMale?.currentImage?.isEqual(UIImage(named: "iconRadioSelected")))! {
             genderSet = "Male"
             
         }
-        else if (btnFemale.currentImage?.isEqual(UIImage(named: "iconRadioSelected")))! {
+        else if (btnFemale?.currentImage?.isEqual(UIImage(named: "iconRadioSelected")))! {
             genderSet = "Female"
             
         }
-        else if (btnOthers.currentImage?.isEqual(UIImage(named: "iconRadioSelected")))! {
+        else if (btnOthers?.currentImage?.isEqual(UIImage(named: "iconRadioSelected")))! {
             genderSet = "Other"
             
         }
         else {
             genderSet = "Male"
             
-        }
+        } */
         // DriverId,CompanyId,Fullname,Gender,Address,Suburb,Zipcode,City,State,Country,DriverImage
         
         dictData["DriverId"] = driverID as AnyObject
       //  dictData["CompanyId"] = companyID as AnyObject
-        dictData["Fullname"] = txtFullName.text as AnyObject
-        dictData["Gender"] = genderSet as AnyObject
+        let fullName = txtFirstName.text! + "||" + txtLastName.text!
+        dictData["Fullname"] = fullName as AnyObject
+        dictData["Gender"] = "Male" as AnyObject
         dictData["Address"] = txtAddress.text as AnyObject
-        dictData["DOB"] = txtDOB.text as AnyObject
+        dictData["DOB"] = "" as AnyObject
         dictData["MobileNo"] = txtMobile.text as AnyObject
-        dictData["Zipcode"] = txtPostCode.text as AnyObject
+        dictData["Zipcode"] = "" as AnyObject
 
         
         if imgProfile.image == nil {
@@ -470,7 +496,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
                 let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
-                
+                NotificationCenter.default.post(name: .setLoginData, object: nil)
                 self.setData()
                 //                Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") = (result as! NSMutableDictionary)
                 //
@@ -522,12 +548,12 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
             UtilityClass.showAlert("App Name".localized, message: "Please enter address".localized, vc: self)
             return false
         }
-        else if (txtDOB.text?.count == 0)
+        else if (txtDOB?.text?.count == 0)
         {
             UtilityClass.showAlert("App Name".localized, message: "Please enter date of birth".localized, vc: self)
             return false
         }
-        else if (txtFullName.text?.count == 0)
+        else if (txtFullName?.text?.count == 0)
         {
             UtilityClass.showAlert("App Name".localized, message: "Please enter user name".localized, vc: self)
             return false

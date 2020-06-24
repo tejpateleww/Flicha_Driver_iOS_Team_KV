@@ -34,21 +34,27 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
     var Speed  = ""
     
     var RoadPickupTimer = Timer()
-    let SocketManager = SocketIOClient(socketURL: URL(string: socketApiKeys.kSocketBaseURL)!, config: [.log(false), .compress])
-    
+    let managerSock = SocketManager(socketURL: URL(string: socketApiKeys.kSocketBaseURL)!, config:  [.log(false), .compress])
+    var Socket:SocketIOClient? = nil
+    //    let SocketManager = SocketIOClient(manager: URL(string: socketApiKeys.kSocketBaseURL)!, nsp: [.log(false), .compress])
+//      let SocketManager = SocketIOClient(socketURL: URL(string: socketApiKeys.kSocketBaseURL.rawValue)!, config: [.log(false), .compress])
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        IQKeyboardManager.sharedManager().enable = true
+        Socket = managerSock.defaultSocket
         UserDefaults.standard.set(false, forKey: kIsSocketEmited)
+        IQKeyboardManager.shared.enable = true
         UserDefaults.standard.synchronize()
         
         if UserDefaults.standard.value(forKey: "i18n_language") == nil {
             UserDefaults.standard.set("en", forKey: "i18n_language")
             UserDefaults.standard.synchronize()
         }
-        
+        Singletons.sharedInstance.isPushSettingsOn = userDefault.bool(forKey: "DefaultNotificationSetting")
         Fabric.with([Crashlytics.self])
+        UNUserNotificationCenter.current().delegate = self
+        // Push Notification Code
+        registerForPushNotification()
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "menu")
@@ -86,8 +92,7 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         }
         
         
-        // Push Notification Code
-        registerForPushNotification()
+     
         
         let remoteNotif = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? NSDictionary
         
@@ -109,7 +114,7 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             UserDefaults.standard.synchronize()
         }
 
-        UNUserNotificationCenter.current().delegate = self
+        
         
         return true
     }
@@ -155,7 +160,15 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         
         
     }
-    
+    func GoToLogin() {
+        
+        let Login:LoginViewController = UIViewController.viewControllerInstance(storyBoard: .Main)
+        //            SingletonClass.SharedInstance.GetLoginRegisterStoryBoard().instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        let NavHomeVC = UINavigationController(rootViewController: Login)
+        NavHomeVC.isNavigationBarHidden = true
+        UIApplication.shared.keyWindow?.rootViewController = NavHomeVC
+        
+    }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error:: \(error.localizedDescription)")
     }
@@ -196,8 +209,8 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         print("App is in Background mode")
-        SocketManager.connect()
-        SocketManager.on(clientEvent: .connect) {data, ack in
+        Socket?.connect()
+        Socket?.on(clientEvent: .connect) {data, ack in
             print ("socket connected")
             
         }
@@ -485,3 +498,15 @@ func setLayoutForenglishLanguage()
     UserDefaults.standard.synchronize()
 }
 
+extension AppDelegate {
+        // MARK:- Login & Logout Methods
+        
+       func GoToHome() {
+            let mainViewController:MainViewController = UIViewController.viewControllerInstance(storyBoard: AppStoryboards.Main)
+            
+    //        let NavHomeVC = UINavigationController(rootViewController: mainViewController)
+    //        NavHomeVC.isNavigationBarHidden = true
+            UIApplication.shared.keyWindow?.rootViewController = mainViewController
+        }
+    
+}

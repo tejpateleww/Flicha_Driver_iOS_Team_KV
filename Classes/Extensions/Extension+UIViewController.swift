@@ -8,7 +8,34 @@
 
 import Foundation
 
+enum AppStoryboards: String {
+    case Main = "Main"
+    case LoginRegistration = "Registration"
+    case Home = "Home"
+    case CustomPopup = "CustomPopups"
+    case MyBooking = "MyBooking"
+    case Help = "Help"
+    case DriverEarnings = "DriverEarnings"
+    case ChatShipper = "ChatShipper"
+    case Profile = "Profile"
+}
+
 extension UIViewController {
+    static var identifier: String {
+          return String(describing: self)
+      }
+      
+      //-------------------------------------
+      // MARK:- Instantiate VC by Storyboard Type
+      //-------------------------------------
+      
+      class func viewControllerInstance<T: UIViewController>(storyBoard type : AppStoryboards) -> T {
+          return UIStoryboard(name: type.rawValue, bundle: nil).instantiateViewController(withIdentifier: T.identifier) as! T
+      }
+      
+      class func navigationControllerInstance(storyBoard type : AppStoryboards, identifier: String) -> UINavigationController {
+          return UINavigationController(rootViewController: UIStoryboard(name: type.rawValue, bundle: nil).instantiateViewController(withIdentifier: identifier))
+      }
     
     /// Convert Any data to String From Dictionary
     func convertAnyToStringFromDictionary(dictData: [String:AnyObject], shouldConvert paramString: String) -> String {

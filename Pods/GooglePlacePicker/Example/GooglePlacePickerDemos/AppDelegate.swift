@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       fatalError(msg)
     }
 
-    // Provide the Places API with your API key.
+    // Provide the Places SDK with your API key.
     GMSPlacesClient.provideAPIKey(kPlacesAPIKey)
     // Provide the Maps API with your API key. We need to provide this as well because the Place
     // Picker displays a Google Map.

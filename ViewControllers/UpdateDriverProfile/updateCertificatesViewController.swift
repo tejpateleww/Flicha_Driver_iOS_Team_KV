@@ -8,7 +8,7 @@
 
 import UIKit
 
-class updateCertificatesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, WWCalendarTimeSelectorProtocol {
+class updateCertificatesViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, WWCalendarTimeSelectorProtocol {
 
     
     let datePicker: UIDatePicker = UIDatePicker()
@@ -22,7 +22,9 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     //-------------------------------------------------------------
     
   
-    
+    @IBOutlet weak var txtDriverLicence: UITextField!
+    @IBOutlet weak var txtVehicleRegistration: UITextField!
+    @IBOutlet weak var txtVehicleInsurance: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,8 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         imgCarRegistration.image = UIImage.init(named: "iconEditProfile")
         imgVehicleInsurance.image = UIImage.init(named: "iconEditProfile")
         imgAccreditationCerti.image = UIImage.init(named: "iconEditProfile")
+        
+        self.setNavigationBarInViewController(controller: self, naviTitle: "Document".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
         // Do any additional setup after loading the view.
     }
     
@@ -53,14 +57,18 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     {
         lblTitle.text = "Documents".localized
         lblDriverLicence.text = "Driver Licence (Front only)".localized
+        txtDriverLicence.placeholder = "Driver Licence (Front only)".localized
         lblDriverLicenceExpiryDate.text = "Select driver licence expiry date".localized
         lblAccreditationCerti.text = "TIN Certificate".localized
         lblAccreditationCertiExpiryDate.text = "Select TIN Certificate expiry date".localized
         lblCarRegistration.text = "Vehicle Registration Document".localized
+        txtVehicleRegistration.placeholder = "Car Registration".localized
+        txtVehicleInsurance.placeholder = "Vehicle Insurance Policy".localized
 //        lblCarRegistrationExpiryDate.text = "Select car registration expiry date".localized
         lblVehicleInsurance.text = "Vehicle Insurance Policy/Certificate".localized
         lblVehicleInsuranceExpiryDate.text = "Select vehicle insurance/policy expiry date".localized
 //        btnSave.setTitle("Save".localized, for: .normal)
+        txtProxy.placeholder = "Proxy".localized
     }
 
 //    @IBOutlet weak var btnSave: ThemeButton!
@@ -98,6 +106,8 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     @IBOutlet weak var lblVehicleInsurance: UILabel!
     @IBOutlet weak var lblVehicleInsuranceExpiryDate: UILabel!
 
+    @IBOutlet weak var imgVwProxy: UIImageView!
+    @IBOutlet weak var txtProxy: ThemeTextField!
     @IBOutlet weak var lblTitle: UILabel!
     
     // MARK:- Driver Licence Expire
@@ -214,7 +224,41 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         self.present(alert, animated: true, completion: nil)
         
     }
-    
+    @IBAction func proxyImageClick(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Choose Photo".localized ,message: nil, preferredStyle: .alert)
+        
+        let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
+            
+            self.imagePicker.allowsEditing = false
+            self.imagePicker.sourceType = .photoLibrary
+            self.imagePicker.mediaTypes = [kUTTypeImage as String]
+            //                UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            
+            self.imagePicked = sender.tag
+            self.present(self.imagePicker, animated: true)
+            
+        })
+        let Camera  = UIAlertAction(title: "Select photo from camera".localized, style: .default, handler: { ACTION in
+            //            DispatchQueue.main.async {
+            
+            self.imagePicked = sender.tag
+            self.imagePicker.allowsEditing = false
+            self.imagePicker.sourceType = .camera
+            self.imagePicker.cameraCaptureMode = .photo
+            //            }
+            self.present(self.imagePicker, animated: true)
+            
+            
+        })
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
+        
+        alert.addAction(Gallery)
+        alert.addAction(Camera)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     func setData()
     {
         let vehicleImage = ((Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! NSDictionary).object(forKey: "Vehicle") as! NSDictionary).object(forKey: "VehicleImage") as! String
@@ -236,6 +280,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         
         let VehicleInsuranceCertificateImage = ((Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! NSDictionary).object(forKey: "Vehicle") as! NSDictionary).object(forKey: "VehicleInsuranceCertificate") as! String
 
+       let proxyImage =  ((Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! NSDictionary).object(forKey: "Vehicle") as! NSDictionary).object(forKey: "Proxy") as! String
         setImage(url: vehicleImage, imageView: self.imgVehicleImage)
 
         setImage(url: driverLicenceImage, imageView: self.imgDriverLicence)
@@ -245,6 +290,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         setImage(url: RegistrationCertificateImage, imageView: self.imgCarRegistration)
         
         setImage(url: VehicleInsuranceCertificateImage, imageView: self.imgVehicleInsurance)
+        setImage(url: proxyImage, imageView: self.imgVwProxy)
         
         lblDriverLicenceExpiryDate.text = strDriverLicenceExpireDate
 //        lblAccreditationCertiExpiryDate.text = strAccreditationCertificateExpireDate
@@ -254,9 +300,9 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
     
     func setImage(url : String, imageView : UIImageView)
     {
-        imageView.sd_addActivityIndicator()
-        imageView.sd_setShowActivityIndicatorView(true)
-        imageView.sd_setIndicatorStyle(.gray)
+//        imageView.sd_addActivityIndicator() Raj381
+//        imageView.sd_setShowActivityIndicatorView(true)
+//        imageView.sd_setIndicatorStyle(.gray)
         imageView.sd_setImage(with: URL(string: url)) { (image, error, cacheType, url) in
 //        imageView.layer.cornerRadius = imageView.frame.size.width/2
 //        imageView.layer.masksToBounds = true
@@ -399,6 +445,10 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
                 self.imgVehicleInsurance.contentMode = .scaleToFill
                 self.imgVehicleInsurance.image = pickedImage
                 self.SelectedDocImage = pickedImage!
+            }else if self.imagePicked == 5 {
+                self.imgVwProxy.contentMode = .scaleToFill
+                self.imgVwProxy.image = pickedImage
+                self.SelectedDocImage = pickedImage!
             }
 //        }
         dismiss(animated: true, completion: nil)
@@ -419,22 +469,24 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
             //            dismiss(animated: true)
             if self.imagePicked == 3 {
                   webserviceCallToUploaDocs(imageToUpload: self.SelectedDocImage, strParam: "CarRegistrationCertificate", expireDate: "", expireDateKey: "")
+            }else if self.imagePicked == 5 {
+                  webserviceCallToUploaDocs(imageToUpload: self.SelectedDocImage, strParam: "Proxy", expireDate: "", expireDateKey: "")
             } else {
                 self.perform(#selector(self.OpenDateTimePicker), with: nil, afterDelay: 0.5)
                 /*
-                let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
-                DispatchQueue.main.asyncAfter(deadline: when) {
-                    // Your code with delays
-                    let selector = WWCalendarTimeSelector.instantiate()
-                    // 2. You can then set delegate, and any customization options
-                    //        selector.delegate = self
-                    selector.optionTopPanelTitle = "Please add expiry date".localized
-                    
-                    // 3. Then you simply present it from your view controller when necessary!
-                    self.present(selector, animated: true, completion: nil)
-                    selector.delegate = self
-                    
-                }
+                 let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+                 DispatchQueue.main.asyncAfter(deadline: when) {
+                 // Your code with delays
+                 let selector = WWCalendarTimeSelector.instantiate()
+                 // 2. You can then set delegate, and any customization options
+                 //        selector.delegate = self
+                 selector.optionTopPanelTitle = "Please add expiry date".localized
+                 
+                 // 3. Then you simply present it from your view controller when necessary!
+                 self.present(selector, animated: true, completion: nil)
+                 selector.delegate = self
+                 
+                 }
                  */
             }
         }

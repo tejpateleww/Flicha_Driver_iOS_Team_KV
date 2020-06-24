@@ -24,7 +24,12 @@
 /**
  * Called on each raw message.
  */
-typedef void(^FIRMessagingRmqMessageHandler)(NSDictionary<NSString *, GPBMessage *> *messages);
+typedef void(^FIRMessagingRmqMessageHandler)(int64_t rmqId, int8_t tag, NSData *data);
+
+/**
+ * Called on each DataMessageStanza.
+ */
+typedef void(^FIRMessagingDataMessageHandler)(int64_t rmqId, GtalkDataMessageStanza *stanza);
 
 /**
  *  Used to scan through the rmq and perform actions on messages as required.
@@ -34,7 +39,8 @@ typedef void(^FIRMessagingRmqMessageHandler)(NSDictionary<NSString *, GPBMessage
 /**
  *  Scan the RMQ for outgoing messages and process them as required.
  */
-- (void)scanWithRmqMessageHandler:(FIRMessagingRmqMessageHandler)rmqMessageHandler;
+- (void)scanWithRmqMessageHandler:(FIRMessagingRmqMessageHandler)rmqMessageHandler
+               dataMessageHandler:(FIRMessagingDataMessageHandler)dataMessageHandler;
 
 @end
 
@@ -62,18 +68,20 @@ typedef void(^FIRMessagingRmqMessageHandler)(NSDictionary<NSString *, GPBMessage
  *  lose the message since it would be saved in the RMQ.
  *
  *  @param message The upstream message to be saved.
- *  @param handler   The handler to invoke when the database operation completes with response.
+ *  @param error   The error if any while saving the message else nil.
  *
+ *  @return YES if the message was successfully saved to RMQ else NO.
  */
-- (void)saveRmqMessage:(GPBMessage *)message withCompletionHandler:(void(^)(BOOL success))handler;
+- (BOOL)saveRmqMessage:(GPBMessage *)message error:(NSError **)error;
 
 /**
  *  Save Server to device message with the given RMQ-ID.
  *
  *  @param rmqID The rmqID of the s2d message to save.
  *
+ *  @return YES if the save was successfull else NO.
  */
-- (void)saveS2dMessageWithRmqId:(NSString *)rmqID;
+- (BOOL)saveS2dMessageWithRmqId:(NSString *)rmqID;
 
 /**
  *  A list of all unacked Server to device RMQ IDs.
@@ -87,8 +95,9 @@ typedef void(^FIRMessagingRmqMessageHandler)(NSDictionary<NSString *, GPBMessage
  *
  *  @param rmqIds The lsit of rmqID's to remove from the store.
  *
+ *  @return The number of messages deleted successfully.
  */
-- (void)removeRmqMessagesWithRmqIds:(NSArray *)rmqIds;
+- (int)removeRmqMessagesWithRmqIds:(NSArray *)rmqIds;
 
 /**
  *  Removes a list of downstream messages from the RMQ.
@@ -114,15 +123,19 @@ typedef void(^FIRMessagingRmqMessageHandler)(NSDictionary<NSString *, GPBMessage
  *
  *  @param rmqID The rmqID of the persisted sync message.
  *
+ *  @return YES if the message was successfully deleted else NO.
  */
-- (void)deleteSyncMessageWithRmqID:(NSString *)rmqID;
+- (BOOL)deleteSyncMessageWithRmqID:(NSString *)rmqID;
 
 /**
  *  Delete the expired sync messages from persisten store. Also deletes messages that have been
  *  delivered both via APNS and MCS.
  *
+ *  @param error The error if any while deleting the messages.
+ *
+ *  @return The total number of messages that were deleted from the persistent store.
  */
-- (void)deleteExpiredOrFinishedSyncMessages;
+- (int)deleteExpiredOrFinishedSyncMessages:(NSError **)error;
 
 /**
  *  Save sync message received by the device.
@@ -131,27 +144,34 @@ typedef void(^FIRMessagingRmqMessageHandler)(NSDictionary<NSString *, GPBMessage
  *  @param expirationTime The expiration time of the sync message received.
  *  @param apnsReceived   YES if the message was received via APNS else NO.
  *  @param mcsReceived    YES if the message was received via MCS else NO.
+ *  @param error          The error if any while saving the sync message to persistent store.
  *
+ *  @return YES if the message save was successful else NO.
  */
-- (void)saveSyncMessageWithRmqID:(NSString *)rmqID
+- (BOOL)saveSyncMessageWithRmqID:(NSString *)rmqID
                   expirationTime:(int64_t)expirationTime
                     apnsReceived:(BOOL)apnsReceived
-                     mcsReceived:(BOOL)mcsReceived;
+                     mcsReceived:(BOOL)mcsReceived
+                           error:(NSError **)error;
 
 /**
  *  Update sync message received via APNS.
  *
  *  @param rmqID The rmqID of the received message.
+ *  @param error The error if any while updating the sync message.
  *
+ *  @return YES if the persistent sync message was successfully updated else NO.
  */
-- (void)updateSyncMessageViaAPNSWithRmqID:(NSString *)rmqID;
+- (BOOL)updateSyncMessageViaAPNSWithRmqID:(NSString *)rmqID error:(NSError **)error;
 
 /**
  *  Update sync message received via MCS.
  *
  *  @param rmqID The rmqID of the received message.
+ *  @param error The error if any while updating the sync message.
  *
+ *  @return YES if the persistent sync message was successfully updated else NO.
  */
-- (void)updateSyncMessageViaMCSWithRmqID:(NSString *)rmqID;
+- (BOOL)updateSyncMessageViaMCSWithRmqID:(NSString *)rmqID error:(NSError **)error;
 
 @end

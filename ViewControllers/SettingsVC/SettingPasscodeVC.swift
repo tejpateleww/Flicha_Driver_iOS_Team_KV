@@ -31,8 +31,7 @@ class SettingPasscodeVC: ParentViewController {
         viewChangePasscode.isHidden = true
         
         
-        if(Singletons.sharedInstance.isPasscodeON)
-        {
+        if(Singletons.sharedInstance.isPasscodeON) {
             self.switchPasscode.isOn = true
             viewChangePasscode.isHidden = false
 
@@ -86,9 +85,7 @@ class SettingPasscodeVC: ParentViewController {
                 Singletons.sharedInstance.isPasscodeON = true
                 UserDefaults.standard.set(Singletons.sharedInstance.isPasscodeON, forKey: "isPasscodeON")
             }
-            
-          
-            
+                        
         }
         else {
             viewChangePasscode.isHidden = true

@@ -9,7 +9,7 @@
 import UIKit
 import IQDropDownTextField
 
-class updateDriverSelectVehicleTypesViewControllerViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate,IQDropDownTextFieldDelegate
+class updateDriverSelectVehicleTypesViewControllerViewController: BaseViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate,IQDropDownTextFieldDelegate
 {
     
     
@@ -40,7 +40,11 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         getData()
         txtNoOfPassenger.isOptionalDropDown = true
         txtNoOfPassenger.itemList = ["1","2","3","4","5","6","7","8","9","10"]
-
+        self.setNavigationBarInViewController(controller: self, naviTitle: "Vehicle Info".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
+        
+        let rightButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(btnSave(_:)))
+        
+        self.navigationItem.rightBarButtonItem = rightButton
 //        viewbtnCarsAndTexis.layer.borderWidth = 1
 //        viewbtnDeliveryService.layer.borderWidth = 1
         
@@ -99,7 +103,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     
     func setLocalizable()
     {
-        txtVehicleRegistrationNumber.placeholder = "Vehicle Plate Number".localized
+        txtVehicleRegistrationNumber.placeholder = "Vehicle Register No".localized
         txtVehicleModel.placeholder = "Vehicle Model".localized
         txtCompany.placeholder = "Vehicle Make".localized
         
@@ -119,8 +123,8 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        imgVehicle.layer.cornerRadius = imgVehicle.frame.width / 2
-        imgVehicle.clipsToBounds = true
+//        imgVehicle.layer.cornerRadius = imgVehicle.frame.width / 2
+//        imgVehicle.clipsToBounds = true
     }
     
     //-------------------------------------------------------------
@@ -414,10 +418,10 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
                 
                 dictData["DriverId"] = profile.object(forKey: "Id") as? String as AnyObject
                 dictData["VehicleClass"] = strVehicleClass as AnyObject
-                dictData["CompanyModel"] = txtCompany.text as AnyObject
+                dictData["CompanyModel"] = txtVehicleModel.text as AnyObject
                 dictData["VehicleRegistrationNo"] = txtVehicleRegistrationNumber.text as AnyObject
                 dictData["NoOfPassenger"] = txtNoOfPassenger.selectedItem as AnyObject
-                dictData["VehicleModelName"] = txtVehicleModel.text as AnyObject
+//                dictData["VehicleModelName"] = txtVehicleModel.text as AnyObject
                 // DriverId,VehicleClass,VehicleColor,CompanyModel,VehicleRegistrationNo
                 
                 
@@ -427,7 +431,10 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         }
         
     }
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.view.endEditing(true)
+        self.view.layoutIfNeeded()
+    }
     func Validations() -> Bool {
         
 //        if (txtVehicleRegistrationNumber.text!.count == 0) {
@@ -447,11 +454,11 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
             UtilityClass.showAlert("App Name".localized, message: "Vehicle Plate Number".localized, vc: self)
             return false
         }
-        else if txtCompany.text == "" {
+     //   else if txtCompany.text == "" {
             
-            UtilityClass.showAlert("App Name".localized, message: "Vehicle Model".localized, vc: self)
-            return false
-        }
+      //      UtilityClass.showAlert("App Name".localized, message: "Vehicle Model".localized, vc: self)
+           // return false
+        //}
         else if txtVehicleModel.text == "" {
             
             UtilityClass.showAlert("App Name".localized, message: "Vehicle Model".localized, vc: self)
@@ -462,12 +469,12 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
             UtilityClass.showAlert("App Name".localized, message: "Vehicle Type".localized, vc: self)
             return false
         }
-        else if txtNoOfPassenger.selectedItem == nil ||  txtNoOfPassenger.selectedItem == "" || txtNoOfPassenger.selectedItem == "Number of Passenger"
-        {
-
-            UtilityClass.showAlert("App Name".localized, message: "Number Of Passenger".localized, vc: self)
-            return false
-        }
+//        else if txtNoOfPassenger.selectedItem == nil ||  txtNoOfPassenger.selectedItem == "" || txtNoOfPassenger.selectedItem == "Number of Passenger"
+//        {
+//
+//            UtilityClass.showAlert("App Name".localized, message: "Number Of Passenger".localized, vc: self)
+//            return false
+//        }
         
         return true
     }
@@ -595,3 +602,4 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
     }
     
 }
+

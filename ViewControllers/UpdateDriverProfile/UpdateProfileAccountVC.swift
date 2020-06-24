@@ -9,7 +9,7 @@
 import UIKit
 
 
-class UpdateProfileAccountVC: UIViewController {
+class UpdateProfileAccountVC: BaseViewController {
     
     
     @IBOutlet weak var btnSave: ThemeButton!
@@ -30,7 +30,11 @@ class UpdateProfileAccountVC: UIViewController {
         let profile = dictData.object(forKey: "profile") as! NSDictionary
         strDriverID = profile.object(forKey: "Id") as! String
         setData()
+        self.setNavigationBarInViewController(controller: self, naviTitle: "Account Info".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
         
+        let rightButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(saveClick))
+        
+        self.navigationItem.rightBarButtonItem = rightButton
         // ABN, BANK name, BSB,BANK account
         // Do any additional setup after loading the view.
     }
@@ -39,13 +43,27 @@ class UpdateProfileAccountVC: UIViewController {
         super.viewWillAppear(true)
         setLocalizable()
     }
-    
+    @objc func saveClick() {
+        if (validationForAccount()) {
+            
+            sendData[profileKeys.kDriverId] = strDriverID as AnyObject
+            sendData[RegistrationFinalKeys.kbankHolderName] = txtAccountHolderName.text as AnyObject
+            sendData[RegistrationFinalKeys.kBankName] = txtBankName.text as AnyObject
+            sendData[RegistrationFinalKeys.kBankAccountNo] = txtBankAcNo.text as AnyObject
+            sendData[RegistrationFinalKeys.kABN] = txtABN.text as AnyObject
+            sendData["BSB"] = txtBSB.text as AnyObject
+            //            sendData[RegistrationFinalKeys.kBSB] = txtBSB.text as AnyObject
+            sendData[RegistrationFinalKeys.kServiceDescription] = txtServiceDescription.text as AnyObject
+            
+            webservieMethods()
+        }
+    }
     func setLocalizable() {
         self.lblTitle.text = "Account".localized
-        txtAccountHolderName.placeholder = "Name".localized
+        txtAccountHolderName.placeholder = "Holder Name".localized
         txtBankName.placeholder = "Bank Name".localized
-        txtBSB.placeholder = "Branch Code".localized
-        txtBankAcNo.placeholder = "Bank Account No.".localized
+        txtBSB.placeholder = "Bank Branch Name".localized
+        txtBankAcNo.placeholder = "Account Number".localized
         btnSave.setTitle("Save".localized, for: .normal)
     }
     
@@ -134,7 +152,7 @@ class UpdateProfileAccountVC: UIViewController {
                 //                UserDefaults.standard.set(Singletons.sharedInstance.dictDriverProfile, forKey: driverProfileKeys.kKeyDriverProfile)
                 
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
-                
+                self.view.endEditing(true)
                 let alert = UIAlertController(title: "App Name".localized, message: "Account Updated successfully.".localized, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "Dismiss".localized, style: .default, handler: nil)
                 alert.addAction(ok)

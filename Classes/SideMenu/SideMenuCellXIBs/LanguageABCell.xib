@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LanguageABCell" customModule="HJM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kk4-Xp-j1h">
+                        <rect key="frame" x="0.0" y="5.5" width="320" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdT-IK-BpY">
+                                <rect key="frame" x="115" y="14" width="155" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imglang-unselect" translatesAutoresizingMaskIntoConstraints="NO" id="m98-AW-lIs">
+                                <rect key="frame" x="280" y="10" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="CXk-F6-sE3"/>
+                                    <constraint firstAttribute="width" secondItem="m98-AW-lIs" secondAttribute="height" multiplier="1:1" id="wKP-yp-pUJ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2y0-QP-abG">
+                                <rect key="frame" x="5" y="7.5" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="FLb-if-o2C"/>
+                                    <constraint firstAttribute="height" constant="35" id="oOe-Pl-q4p"/>
+                                </constraints>
+                                <state key="normal" image="img_ENSelected"/>
+                                <state key="selected" image="img_ABSelected"/>
+                                <connections>
+                                    <action selector="btnLangChange:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kDB-7w-DGw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IdT-IK-BpY" firstAttribute="leading" secondItem="2y0-QP-abG" secondAttribute="trailing" constant="10" id="3Wi-D5-Rin"/>
+                            <constraint firstAttribute="height" constant="50" id="5ZO-6d-FrQ"/>
+                            <constraint firstItem="IdT-IK-BpY" firstAttribute="centerY" secondItem="m98-AW-lIs" secondAttribute="centerY" id="9qh-yg-d2p"/>
+                            <constraint firstItem="m98-AW-lIs" firstAttribute="leading" secondItem="IdT-IK-BpY" secondAttribute="trailing" constant="10" id="iaW-HE-lfz"/>
+                            <constraint firstItem="2y0-QP-abG" firstAttribute="centerY" secondItem="kk4-Xp-j1h" secondAttribute="centerY" id="nTu-2p-yX0"/>
+                            <constraint firstItem="m98-AW-lIs" firstAttribute="top" secondItem="kk4-Xp-j1h" secondAttribute="top" constant="10" id="pJO-he-fmT"/>
+                            <constraint firstItem="2y0-QP-abG" firstAttribute="leading" secondItem="kk4-Xp-j1h" secondAttribute="leading" constant="5" id="qhu-bx-VMH"/>
+                            <constraint firstAttribute="trailing" secondItem="m98-AW-lIs" secondAttribute="trailing" constant="10" id="sAz-DV-pGJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="kk4-Xp-j1h" secondAttribute="bottom" constant="5" id="bdb-1p-XfQ"/>
+                    <constraint firstAttribute="trailing" secondItem="kk4-Xp-j1h" secondAttribute="trailing" id="erZ-oe-iUP"/>
+                    <constraint firstItem="kk4-Xp-j1h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oMf-6h-jj9"/>
+                    <constraint firstItem="kk4-Xp-j1h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="pIP-0y-r7F"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnLanguage" destination="2y0-QP-abG" id="PUX-m8-tiW"/>
+                <outlet property="imgMenu" destination="m98-AW-lIs" id="Mzb-uW-si9"/>
+                <outlet property="lblMenuItem" destination="IdT-IK-BpY" id="tYt-tP-b3e"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_ABSelected" width="91.5" height="35"/>
+        <image name="img_ENSelected" width="92" height="35"/>
+        <image name="imglang-unselect" width="85" height="85"/>
+    </resources>
+</document>

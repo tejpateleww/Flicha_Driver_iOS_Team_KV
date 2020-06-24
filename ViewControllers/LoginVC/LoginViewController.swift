@@ -137,7 +137,7 @@
         
         
         
-        Utilities.setStatusBarColor(color: UIColor.clear)
+//        Utilities.setStatusBarColor(color: UIColor.clear) 
        
         //
         
@@ -344,8 +344,21 @@
                     {
                         Singletons.sharedInstance.strCurrentBalance = currentBalance
                     }
-                    let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
-                    self.navigationController?.pushViewController(next, animated: true)
+                    if let driver = result["driver"] as? [String: Any] {
+                        if let profile = driver["profile"] as? [String: Any] {
+                            if let notification = profile["Notification"] as? NSString {
+                                Singletons.sharedInstance.isPushSettingsOn = notification.boolValue
+                                userDefault.set(notification.boolValue, forKey: "DefaultNotificationSetting")
+                            }
+                        }
+                    }
+                 
+                    App_Delegate.GoToHome()
+                    /*
+                     let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
+                     self.navigationController?.pushViewController(next, animated: true)
+                     */
+                    
                     
                 }
                 
@@ -437,8 +450,11 @@
                         
                         if(Singletons.sharedInstance.isDriverLoggedIN)
                         {
-                            let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
+                            App_Delegate.GoToHome()
+                            /* Raj381
+                             let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
                             self.navigationController?.pushViewController(next, animated: true)
+                            */
                         }
                     })
                     alert.addAction(UPDATE)
@@ -450,8 +466,10 @@
                    
                     if(Singletons.sharedInstance.isDriverLoggedIN)
                     {
+                        App_Delegate.GoToHome()
+                        /* Raj381
                         let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
-                        self.navigationController?.pushViewController(next, animated: false)
+                        self.navigationController?.pushViewController(next, animated: false) */
                     }
 //                    if(Singletons.sharedInstance.isDriverLoggedIN)
 //                    {

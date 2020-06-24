@@ -17,12 +17,12 @@ public struct Validation {
         var valid = true
 
         if complete {
-            valid = (string.characters.count >= minimumLength)
+            valid = (string.count >= minimumLength)
         }
 
         if valid {
             if let maximumLength = self.maximumLength {
-                valid = (string.characters.count <= maximumLength)
+                valid = (string.count <= maximumLength)
             }
         }
 
@@ -45,26 +45,18 @@ public struct Validation {
         if valid {
             if let characterSet = self.characterSet {
                 let stringCharacterSet = CharacterSet(charactersIn: string)
-                valid = characterSet.superSetOf(other: stringCharacterSet)
+                valid = characterSet.isSuperset(of: stringCharacterSet)
             }
         }
 
         if valid && complete {
             if let format = self.format {
                 let regex = try! NSRegularExpression(pattern: format, options: .caseInsensitive)
-                let range = regex.rangeOfFirstMatch(in: string, options: .reportProgress, range: NSRange(location: 0, length: string.characters.count))
-                valid = (range.location == 0 && range.length == string.characters.count)
+                let range = regex.rangeOfFirstMatch(in: string, options: .reportProgress, range: NSRange(location: 0, length: string.count))
+                valid = (range.location == 0 && range.length == string.count)
             }
         }
 
         return valid
-    }
-}
-
-extension CharacterSet {
-    // Workaround for crash in Swift:
-    // https://github.com/apple/swift/pull/4162
-    func superSetOf(other: CharacterSet) -> Bool {
-        return CFCharacterSetIsSupersetOfSet(self as CFCharacterSet, (other as NSCharacterSet).copy() as! CFCharacterSet)
     }
 }

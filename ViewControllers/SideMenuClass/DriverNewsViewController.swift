@@ -78,8 +78,8 @@ class DriverNewsViewController: ParentViewController, UITableViewDelegate, UITab
         cell.viewNews.layer.masksToBounds = true
         
         cell.lblNewsTitle.text = News["title"] as? String
-        cell.imgNews.sd_setShowActivityIndicatorView(true)
-         cell.imgNews.sd_setIndicatorStyle(.gray)
+//        cell.imgNews.sd_setShowActivityIndicatorView(true) Raj381
+//         cell.imgNews.sd_setIndicatorStyle(.gray)
         
         if let imgURL = News["urlToImage"] as? String {
              cell.imgNews.sd_setImage(with: URL(string: imgURL), completed: nil)

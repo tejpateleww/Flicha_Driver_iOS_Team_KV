@@ -14,9 +14,9 @@ class TabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBar.tintColor = ThemeYellowColor
-        self.tabBar.backgroundColor = UIColor.init(hex: "303030")
-        
+//        self.tabBar.tintColor = ThemeYellowColor
+//        self.tabBar.backgroundColor = UIColor.init(hex: "303030")
+//        
         UIApplication.shared.statusBarStyle = .lightContent
         // Do any additional setup after loading the view.
     }

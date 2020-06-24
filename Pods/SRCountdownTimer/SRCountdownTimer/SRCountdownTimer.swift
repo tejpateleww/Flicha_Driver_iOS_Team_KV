@@ -52,7 +52,7 @@ public class SRCountdownTimer: UIView {
     private var totalTime: TimeInterval = 1
     private var elapsedTime: TimeInterval = 0
     private var interval: TimeInterval = 1 // Interval which is set by a user
-    private let fireInterval: TimeInterval = 1 // ~60 FPS // default Value 0.01
+    private let fireInterval: TimeInterval = 0.01 // ~60 FPS
 
     private lazy var counterLabel: UILabel = {
         let label = UILabel()
@@ -153,7 +153,7 @@ public class SRCountdownTimer: UIView {
         timer?.invalidate()
         timer = Timer(timeInterval: fireInterval, target: self, selector: #selector(SRCountdownTimer.timerFired(_:)), userInfo: nil, repeats: true)
 
-        RunLoop.main.add(timer!, forMode: .commonModes)
+        RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
 
         delegate?.timerDidStart?()
     }

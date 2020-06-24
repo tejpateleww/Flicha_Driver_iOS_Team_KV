@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageTVCell" id="KGk-i7-Jjw" customClass="LanguageTVCell" customModule="HJM_Carrier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="395" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cx8-l8-R1n">
+                        <rect key="frame" x="0.0" y="5.5" width="395" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kx-4a-wTn" customClass="ThemeLabel" customModule="HJM_Carrier" customModuleProvider="target">
+                                <rect key="frame" x="55" y="14" width="225" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imglang-unselect" translatesAutoresizingMaskIntoConstraints="NO" id="cIO-NF-T0o">
+                                <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="WaL-u9-JPR"/>
+                                    <constraint firstAttribute="width" secondItem="cIO-NF-T0o" secondAttribute="height" multiplier="1:1" id="lcJ-n7-zh0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0o-A9-QkL">
+                                <rect key="frame" x="290" y="7.5" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4Uf-Tr-1pu"/>
+                                    <constraint firstAttribute="width" constant="100" id="P2K-zK-A4v"/>
+                                </constraints>
+                                <state key="normal" image="img_ENSelected"/>
+                                <state key="selected" image="img_ABSelected"/>
+                                <connections>
+                                    <action selector="btnLangChange:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Dht-nO-AL7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="0ZW-rv-g8v"/>
+                            <constraint firstItem="l0o-A9-QkL" firstAttribute="leading" secondItem="5kx-4a-wTn" secondAttribute="trailing" constant="10" id="7K6-Ta-KWq"/>
+                            <constraint firstItem="l0o-A9-QkL" firstAttribute="centerY" secondItem="cx8-l8-R1n" secondAttribute="centerY" id="7x1-vY-v8I"/>
+                            <constraint firstItem="5kx-4a-wTn" firstAttribute="leading" secondItem="cIO-NF-T0o" secondAttribute="trailing" constant="15" id="ABI-fS-wFw"/>
+                            <constraint firstItem="cIO-NF-T0o" firstAttribute="top" secondItem="cx8-l8-R1n" secondAttribute="top" constant="10" id="BdD-Pp-ZiP"/>
+                            <constraint firstItem="5kx-4a-wTn" firstAttribute="centerY" secondItem="cIO-NF-T0o" secondAttribute="centerY" id="I5o-w2-Q65"/>
+                            <constraint firstItem="cIO-NF-T0o" firstAttribute="leading" secondItem="cx8-l8-R1n" secondAttribute="leading" constant="10" id="T02-GG-r49"/>
+                            <constraint firstAttribute="trailing" secondItem="l0o-A9-QkL" secondAttribute="trailing" constant="5" id="T82-5a-BvT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cx8-l8-R1n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HbR-hh-WLZ"/>
+                    <constraint firstItem="cx8-l8-R1n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Mvi-qb-nH1"/>
+                    <constraint firstAttribute="trailing" secondItem="cx8-l8-R1n" secondAttribute="trailing" id="laI-ue-RhO"/>
+                    <constraint firstAttribute="bottom" secondItem="cx8-l8-R1n" secondAttribute="bottom" constant="5" id="mua-Mi-aK9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnLanguage" destination="l0o-A9-QkL" id="xUV-dU-Fwe"/>
+                <outlet property="imgMenu" destination="cIO-NF-T0o" id="Mh4-q1-6XP"/>
+                <outlet property="lblMenuItem" destination="5kx-4a-wTn" id="Olq-ku-Smx"/>
+            </connections>
+            <point key="canvasLocation" x="186.23188405797103" y="136.60714285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_ABSelected" width="91.5" height="35"/>
+        <image name="img_ENSelected" width="92" height="35"/>
+        <image name="imglang-unselect" width="85" height="85"/>
+    </resources>
+</document>

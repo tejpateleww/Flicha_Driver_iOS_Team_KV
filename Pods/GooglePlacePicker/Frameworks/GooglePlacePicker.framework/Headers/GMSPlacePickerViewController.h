@@ -1,6 +1,6 @@
 //
 //  GMSPlacePickerViewController.h
-//  Google Places API for iOS
+//  Google Places SDK for iOS
 //
 //  Copyright 2017 Google Inc.
 //
@@ -19,7 +19,7 @@
 
 @class GMSPlacePickerViewController;
 
-NS_ASSUME_NONNULL_BEGIN;
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Protocol used by |GMSPlacePickerViewController|, to communicate the user's interaction with the
@@ -89,4 +89,4 @@ NS_ASSUME_NONNULL_BEGIN;
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

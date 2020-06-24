@@ -11,7 +11,7 @@ import UIKit
 class ThemeButton: UIButton {
     
     @IBInspectable public var isSubmitButton: Bool = false
-    @IBInspectable public var isShadowNeeded: Bool = true
+    @IBInspectable public var isShadowNeeded: Bool = false
     
     override func awakeFromNib() {
         self.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 18)
@@ -25,7 +25,8 @@ class ThemeButton: UIButton {
         }
         else
         {
-            self.backgroundColor = UIColor(red: 114.0/255.0, green: 114.0/255.0, blue: 114.0/255.0, alpha: 1.0)
+//            self.backgroundColor = UIColor(red: 114.0/255.0, green: 114.0/255.0, blue: 114.0/255.0, alpha: 1.0)
+             self.backgroundColor = UIColor(red: 199.0/255.0, green: 199.0/255.0, blue: 199.0/255.0, alpha: 1.0)
             setTitleColor(UIColor.black, for: .normal)
         }
         

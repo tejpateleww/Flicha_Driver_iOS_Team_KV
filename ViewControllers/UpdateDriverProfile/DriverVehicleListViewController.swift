@@ -34,12 +34,12 @@ class DriverVehicleListViewController: UIViewController {
         let strImageURL =  ((Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! NSDictionary).object(forKey: "Vehicle") as! NSDictionary).object(forKey: "VehicleImage") as! String
         
 //        UtilityClass.setImage(url: strImageURL, imageView: imgCarRegistration)
-        imgCarRegistration.sd_setShowActivityIndicatorView(true)
+//        imgCarRegistration.sd_setShowActivityIndicatorView(true) Raj381
         
         
 
         imgCarRegistration.sd_setImage(with: URL(string: strImageURL), placeholderImage: nil, options: []) { (image, error, cacheType, url) in
-            self.imgCarRegistration.sd_removeActivityIndicator()
+//            self.imgCarRegistration.sd_removeActivityIndicator() Raj381
         }
 
     }

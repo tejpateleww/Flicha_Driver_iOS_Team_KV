@@ -36,8 +36,31 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     
     //    @IBOutlet weak var stackViewNotes: UIStackView!
     
-    @IBOutlet weak var btnReject: UIButton!
-    @IBOutlet weak var btnAccepted: UIButton!
+    @IBOutlet weak var btnReject: UIButton!{
+        didSet {
+            btnReject.setTitle("Reject".localized, for: .normal)
+            btnReject.titleLabel?.font = UIFont.bold(ofSize: 17)
+        }
+    }
+    @IBOutlet weak var btnAccepted: UIButton!{
+        didSet {
+            btnAccepted.setTitle("Accept".localized, for: .normal)
+            
+            btnAccepted.titleLabel?.font = UIFont.bold(ofSize: 17)
+        }
+    }
+    @IBOutlet weak var lblTitleRecieve: UILabel! {
+        didSet {
+            lblTitleRecieve.text = "Receive Request".localized
+            lblTitleRecieve.font = UIFont.regular(ofSize: 25)
+        }
+    }
+    @IBOutlet weak var lblTitleBookingArrive: UILabel! {
+        didSet {
+                   lblTitleBookingArrive.text = "New Booking Request Arrived".localized
+                   lblTitleBookingArrive.font = UIFont.regular(ofSize: 15)
+               }
+    }
     
     @IBOutlet weak var viewDetails: UIView!
     
@@ -66,14 +89,14 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
 
         CountDownView()
         
-        btnReject.layer.cornerRadius = 5
-        btnReject.layer.masksToBounds = true
-        
-        btnAccepted.layer.cornerRadius = 5
-        btnAccepted.layer.masksToBounds = true
-        
-        btnAccepted.layer.borderWidth = 1
-        btnAccepted.layer.borderColor = ThemeYellowColor.cgColor
+//        btnReject.layer.cornerRadius = 5
+//        btnReject.layer.masksToBounds = true
+//
+//        btnAccepted.layer.cornerRadius = 5
+//        btnAccepted.layer.masksToBounds = true
+//
+//        btnAccepted.layer.borderWidth = 1
+//        btnAccepted.layer.borderColor = ThemeYellowColor.cgColor
         
         boolTimeEnd = false
         isAccept = false
@@ -108,12 +131,13 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     
     func CountDownView() {
         
-        viewCountdownTimer.labelFont = UIFont(name: "HelveticaNeue-Light", size: 30.0)
+//        viewCountdownTimer.labelFont = UIFont(name: "HelveticaNeue-Light", size: 30.0)
         //                    self.timerView.timerFinishingText = "End"
         viewCountdownTimer.lineWidth = 4
-        viewCountdownTimer.lineColor = UIColor.black
+        viewCountdownTimer.lineColor = themeLineColor
         viewCountdownTimer.trailLineColor = ThemeYellowColor
-        viewCountdownTimer.labelTextColor = UIColor.black
+        viewCountdownTimer.labelTextColor = ThemeYellowColor
+        viewCountdownTimer.labelFont = UIFont.bold(ofSize: 20)
         viewCountdownTimer.delegate = self
         viewCountdownTimer.start(beginingValue: 30, interval: 1)
 //        lblMessage.text = "New booking request arrived from \(appName.kAPPName)"

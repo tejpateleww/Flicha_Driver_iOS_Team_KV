@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 //import BFKit
-
+var userDefault = UserDefaults.standard
 let App_Delegate = UIApplication.shared.delegate as! AppDelegate
 let ThemeYellowColor : UIColor = UIColor.init(hex: "FBBE28")
 let ThemeBlackColor : UIColor = UIColor.init(hex: "231f20")
@@ -17,6 +17,12 @@ let ThemeGrayColor : UIColor = UIColor.init(hex:  "8e8c80")
 let ThemeStatusBarColor : UIColor = UIColor.init(hex:  "cccccc")
 let themeGrayBGColor : UIColor = UIColor.init(hex: "DDDDDD")
 let themeGrayTextColor : UIColor = UIColor.init(hex: "7A7A7C")
+
+//NEW
+//let themeOrangeColor : UIColor = UIColor.init(hex: "FBBE28")
+let themeBlueColor : UIColor = UIColor.init(hex: "222B45")
+let themeLineColor : UIColor = UIColor.init(red: 229/255, green: 232/255, blue: 241/255, alpha: 1.0)
+//
 let Appdelegate = UIApplication.shared.delegate as! AppDelegate
 let AppNAME : String = "Flichab-Driver"
 
@@ -24,7 +30,7 @@ let navigationBarHeightIphoneX = 84
 var utility = Utilities()
 
 let kHtmlReplaceString   :   String  =   "<[^>]+>"
-let currency : String = "TZS"
+let currency : String = "DA"
 let dictanceType : String = "km"
 
 let kIsSocketEmited : String = "IsEmited"
@@ -54,10 +60,11 @@ let kNavIcon : String = "nav_icon"
 
 let iconCheck : String = "check_icon"
 let iconUncheck : String = "uncheck_icon"
-
+let dutyOn = "on"
+let dutyOff = "off"
 let iconRadioSelect : String = "radio_select_icon"
 let iconRadioUnselect : String = "radio_unselect_icon"
-
+let iconBack = "back-arrow"
 
 let iconMailSelect : String = "iconSegMailSelected"
 let iconDriverSelect : String = "iconSegUserProfileSelected"
@@ -79,8 +86,8 @@ let iconAttachmentUnselect : String = "iconSegAttachmentUnSelected"
 //let CustomeFontProximaNovaSThin : String = "ProximaNovaS-Thin"
 //let CustomeFontProximaNovaTThin : String = "ProximaNovaT-Thin"
 
-let kGooglePlaceClientAPIKey : String = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" //"AIzaSyAW9o_4ULlYZ9AF_Cxuqn2mPav4XKJJwGI"
-let kGoogleServiceAPIKey : String = "AIzaSyClUkKxzVBjw1wb4h9AfbsHGenepqcYwUA"
+let kGooglePlaceClientAPIKey : String = "AIzaSyDj7oXX3Mhcd-ZAML6dWCvZ5D52P9eiS6U" //"AIzaSyAW9o_4ULlYZ9AF_Cxuqn2mPav4XKJJwGI"
+let kGoogleServiceAPIKey : String = "AIzaSyDj7oXX3Mhcd-ZAML6dWCvZ5D52P9eiS6U" //AIzaSyClUkKxzVBjw1wb4h9AfbsHGenepqcYwUA
 
 let kGoogleClientID : String = "47834603870-2q7f5911uemff0t4rfv4mvl8g22jc1ef.apps.googleusercontent.com"
 let kGoogleReversedClientID : String = "com.googleusercontent.apps.47834603870-2q7f5911uemff0t4rfv4mvl8g22jc1ef"
