@@ -1761,7 +1761,7 @@
 				TargetAttributes = {
 					00E5CEA21F8B402C004409A4 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = LNR2265795;
+						DevelopmentTeam = K68A4B5TS6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -2381,11 +2381,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = LNR2265795;
+				DEVELOPMENT_TEAM = K68A4B5TS6;
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Flicha-driver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Flicha.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2404,12 +2404,16 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 1.1.4;
 				DEVELOPMENT_TEAM = LNR2265795;
+=======
+				DEVELOPMENT_TEAM = K68A4B5TS6;
+>>>>>>> 4deae0cbf64e7f9a0113411850e178d182de3952
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Flicha-driver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Flicha.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
