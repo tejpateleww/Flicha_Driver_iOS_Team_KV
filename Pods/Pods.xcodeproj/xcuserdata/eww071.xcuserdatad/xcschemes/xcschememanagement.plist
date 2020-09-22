@@ -207,16 +207,6 @@
 			<key>orderHint</key>
 			<integer>28</integer>
 		</dict>
-		<key>Kingfisher.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>40</integer>
-		</dict>
-		<key>LGSideMenuController.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>42</integer>
-		</dict>
 		<key>M13Checkbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -280,22 +270,12 @@
 			<key>orderHint</key>
 			<integer>37</integer>
 		</dict>
-		<key>Starscream.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>43</integer>
-		</dict>
 		<key>StarscreamSocketIO.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>39</integer>
-		</dict>
-		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>44</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
