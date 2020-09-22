@@ -218,7 +218,7 @@
     @IBAction func btnForgotPassword(_ sender: UIButton) {
         
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Forgot Password?".localized, message: "Please enter email".localized, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Forgot password?".localized, message: "Please enter email".localized, preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in

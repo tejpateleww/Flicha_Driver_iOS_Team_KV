@@ -166,8 +166,7 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
                 print(result)
                 //needToCheck
                 self.ratingToDriver = 0
-                    UtilityClass.showAlertWithCompletion("App Name".localized, message: "Thanks for feedback.".localized, vc: self) { (status) in
-                }
+                    UtilityClass.showAlertWithCompletion("App Name".localized, message: "Thanks for feedback.".localized, vc: self) { (status) in }
                 
                 self.delegate?.didRatingIsSubmitSuccessfully()
                 

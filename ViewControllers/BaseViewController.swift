@@ -44,7 +44,7 @@ class BaseViewController: UIViewController {
         LanguageUpdate()
         if leftImage != "" {
             
-            let btnLeft = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            let btnLeft = UIButton(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
             btnLeft.setImage(UIImage.init(named: leftImage), for: .normal)
             btnLeft.layer.setValue(controller, forKey: "controller")
             
@@ -62,7 +62,7 @@ class BaseViewController: UIViewController {
 //                }
             }
             
-            let LeftView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            let LeftView = UIView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
             LeftView.addSubview(btnLeft)
             
             let btnLeftBar : UIBarButtonItem = UIBarButtonItem.init(customView: LeftView)
@@ -75,8 +75,9 @@ class BaseViewController: UIViewController {
             var arrButtons = [UIBarButtonItem]()
             rightImages.forEach { (title) in
                 let btnRight = UIButton.init()
-                btnRight.setImage(UIImage.init(named: title), for: .normal)
                 btnRight.frame =  CGRect(x: 0, y: 0, width: 40, height: 40)
+                btnRight.setImage(UIImage.init(named: title), for: .normal)
+                
                 btnRight.layer.setValue(controller, forKey: "controller")
                 btnRight.clipsToBounds = true
                 btnRight.adjustsImageWhenHighlighted = false
@@ -87,6 +88,8 @@ class BaseViewController: UIViewController {
                 default :
                     break
                 }
+                
+                
                /*
                 switch title {
                 case sos:
@@ -109,6 +112,7 @@ class BaseViewController: UIViewController {
         }
         if isDutyButton {
 //            controller.navigationItem.rightBarButtonItems?.insert(btnDuty, at: 0)
+            
             controller.navigationItem.rightBarButtonItems = [btnDuty]
         }
         

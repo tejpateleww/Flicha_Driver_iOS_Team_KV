@@ -22,6 +22,11 @@ class TripInfoCompletedTripVC: BaseViewController {
     
     @IBOutlet var lblBookingID: UILabel!
     
+    @IBOutlet weak var btnOk: ThemeButton! {
+        didSet {
+            btnOk.setTitle("OK".localized, for: .normal)
+        }
+    }
     
     //    @IBOutlet weak var lblDropOffLocationInFo: UILabel!
     //    @IBOutlet weak var lblPickUPLocationInFo: UILabel!
@@ -53,9 +58,39 @@ class TripInfoCompletedTripVC: BaseViewController {
             lblDropOffLocation.font = UIFont.regular(ofSize: 13)
         }
     }
+    /////////
+    @IBOutlet var lblPickupTimeTitle: UILabel! {
+        didSet {
+            lblPickupTimeTitle.font = UIFont.regular(ofSize: 13)
+        }
+    }
+    @IBOutlet var lblDropoffTimeTitle: UILabel! {
+        didSet {
+            lblDropoffTimeTitle.font = UIFont.regular(ofSize: 13)
+        }
+    }
+    @IBOutlet var lblWaitingTimeTitle: UILabel! {
+        didSet {
+            lblWaitingTimeTitle.font = UIFont.regular(ofSize: 13)
+        }
+    }
     
-    @IBOutlet var lblPickupTimeTitle: UILabel!
-    @IBOutlet var lblDropoffTimeTitle: UILabel!
+    @IBOutlet var lblPickupTime: UILabel! {
+        didSet {
+            lblPickupTime.font = UIFont.semiBold(ofSize: 13)
+        }
+    }
+    @IBOutlet var lblDropoffTime: UILabel! {
+        didSet {
+            lblDropoffTime.font = UIFont.semiBold(ofSize: 13)
+        }
+    }
+    @IBOutlet var lblWaitingTime: UILabel! {
+        didSet {
+            lblWaitingTime.font = UIFont.semiBold(ofSize: 13)
+        }
+    }
+    ////////////
     @IBOutlet var lblDistanceTravelledTitle: UILabel!
     @IBOutlet var lblPaymentTypeTitle: UILabel!
     @IBOutlet var lblBookingFeeTitle: UILabel!
@@ -69,18 +104,18 @@ class TripInfoCompletedTripVC: BaseViewController {
             lblDistanceFareTitle.font = UIFont.regular(ofSize: 13)
         }
     }
-    @IBOutlet var lblWaitingCostTitle: UILabel!{
+    @IBOutlet var lblWaitingCostTitle: UILabel! {
         didSet {
             lblWaitingCostTitle.font = UIFont.regular(ofSize: 13)
         }
     }
-    @IBOutlet var lblWaitingTimeTitle: UILabel!
+    
     @IBOutlet var lblLessTitle: UILabel!
     @IBOutlet var lblPromoCodeTitle: UILabel!
     
     @IBOutlet var lblTripStatusTitle: UILabel!
     @IBOutlet weak var lblTipAmountTitle: UILabel!
-    @IBOutlet weak var lblTaxTitle: UILabel!{
+    @IBOutlet weak var lblTaxTitle: UILabel! {
         didSet {
             lblTaxTitle.font = UIFont.regular(ofSize: 13)
         }
@@ -102,8 +137,7 @@ class TripInfoCompletedTripVC: BaseViewController {
         }
     }
     
-    @IBOutlet var lblPickupTime: UILabel!
-    @IBOutlet var lblDropoffTime: UILabel!
+  
     @IBOutlet var lblDistanceTravelled: UILabel!
     @IBOutlet var lblPaymentType: UILabel!
     @IBOutlet var lblBookingFee: UILabel!
@@ -127,19 +161,17 @@ class TripInfoCompletedTripVC: BaseViewController {
             lblTax.font = UIFont.semiBold(ofSize: 13)
         }
     }
-    @IBOutlet var lblTotlaAmount: UILabel!{
+    @IBOutlet var lblTotlaAmount: UILabel! {
         didSet {
             lblTotlaAmount.font = UIFont.semiBold(ofSize: 13)
         }
     }
-    @IBOutlet var lblWaitingTime: UILabel!
+  
     @IBOutlet var lblPromoCode: UILabel!
     
     
     @IBOutlet var lblTripStatus: UILabel!
     @IBOutlet weak var lblTipAmount: UILabel!
-    
-    
     
     
     @IBOutlet weak var PickupTimeStack: UIStackView!
@@ -244,16 +276,20 @@ class TripInfoCompletedTripVC: BaseViewController {
         lblTripFareTitle.text = "Base Fare".localized
         lblDistanceTravelledTitle.text = "Trip Distance".localized
         lblDistanceFareTitle.text  = "Distance Fare".localized
-        lblWaitingCostTitle.text  = "Waiting Cost :".localized
-        lblWaitingTimeTitle.text  = "Waiting Time :".localized
+        lblWaitingCostTitle.text  = "Waiting Cost".localized
+        
         lblTipAmountTitle.text  = "Tip by Passenger".localized
         lblBookingFeeTitle.text  = "Booking Charge".localized
-        lblPromoCodeTitle.text  = "Discount :".localized
-        lblTaxTitle.text  = "Tax" .localized
-        lblTotlaAmountTitle.text  = "Grand Total :".localized
+        lblPromoCodeTitle.text  = "Discount".localized
+        lblTaxTitle.text  = "Tax (incl)".localized
+        lblTotlaAmountTitle.text  = "Grand Total".localized
         lblLessTitle.text  = "(incl tax)".localized
         btnOK.setTitle("OK".localized, for: .normal) 
         lblTollTitle.text = "Toll Fee".localized
+        
+        lblPickupTimeTitle.text = "Pickup Time".localized
+        lblDropoffTimeTitle.text = "Dropoff Time".localized
+        lblWaitingTimeTitle.text  = "Waiting Time".localized
     }
     
     override func viewDidLayoutSubviews() {
@@ -285,6 +321,17 @@ class TripInfoCompletedTripVC: BaseViewController {
         lblPickupLocation.text = dictData.object(forKey: "PickupLocation") as? String
         lblDropOffLocation.text = dictData.object(forKey: "DropoffLocation") as? String
         
+//        lblPickupTime.text = dictData.object(forKey: "PickupDateTime") as? String
+//
+//        lblDropoffTime.text = dictData.object(forKey: "DropoffDateTime") as? String
+        
+        if let timeStamp = Double(dictData["PickupTime"] as! String) {
+            lblPickupTime.text = ": " + timeStamp.getDateStringFromUTC()
+        }
+               
+        if let dropTimeStamp = Double(dictData["DropTime"] as! String) {
+            lblDropoffTime.text = ": " + dropTimeStamp.getDateStringFromUTC()
+        }
         /*
          let PickTime = Double(dictData.object(forKey: "PickupTime") as! String)
          let dropoffTime = Double(dictData.object(forKey: "DropTime") as! String)
@@ -346,45 +393,48 @@ class TripInfoCompletedTripVC: BaseViewController {
          */
         
         if let TripFare = dictData.object(forKey: "TripFare") as? String {
-            lblTripFare.text = "\(currency)\(String(format: "%.2f", Double(TripFare)!))"
+            lblTripFare.text = ": " + "\(currency)\(String(format: "%.2f", Double(TripFare)!))"
         }
         
         if let TripDistance = dictData.object(forKey: "TripDistance") as? String {
-            lblDistanceTravelled.text = "\(String(format: "%.2f", Double(TripDistance)!)) km"
+            lblDistanceTravelled.text = ": " + "\(String(format: "%.2f", Double(TripDistance)!)) km"
         }
         
         if let DistanceFare = dictData.object(forKey: "DistanceFare") as? String {
-            lblDistanceFare.text = " \(currency)\(String(format: "%.2f", Double(DistanceFare)!))"
+            lblDistanceFare.text = ": " + "\(currency)\(String(format: "%.2f", Double(DistanceFare)!))"
         }
         
-        if let WaitingTime = dictData.object(forKey: "WaitingTime") as? String {
-            let (h,m,s) = secondsToHoursMinutesSeconds(seconds: Int(WaitingTime) ?? 0)
-            lblWaitingTime.text = "\(getStringFrom(seconds: h)):\(getStringFrom(seconds: m)):\(getStringFrom(seconds: s))"
+        if let WaitingTime = dictData.object(forKey: "WaitingTime") as? Int, WaitingTime != 0 {
+            let (h,m,s) = secondsToHoursMinutesSeconds(seconds: Int(WaitingTime))
+            lblWaitingTime.text = ": " + "\(getStringFrom(seconds: h)):\(getStringFrom(seconds: m)):\(getStringFrom(seconds: s))"
+        }else {
+            lblWaitingTimeTitle.isHidden = true
+            lblWaitingTime.isHidden = true
         }
         
         if let WaitingCost = dictData.object(forKey: "WaitingTimeCost") as? String {
-            lblWaitingCost.text = "\(currency)\(WaitingCost)"
+            lblWaitingCost.text = ": " + "\(currency)\(String(format: "%.2f", Double(WaitingCost)!))"
             //            "\(String(format: "%.2f", Double(WaitingCost)!)) \(currency)"
         }
         
         if let Tip = dictData.object(forKey: "TollFee") as? String {
-            lblTollFee.text = (Tip != "" && Tip != "0") ? "\(currency)\(String(format: "%.2f", Double(Tip)!))" : " \(currency)0"
+            lblTollFee.text = ": " + ((Tip != "" && Tip != "0") ? "\(currency)\(String(format: "%.2f", Double(Tip)!))" : " \(currency)0.00")
         }
         
         if let BookingFee = dictData.object(forKey: "BookingCharge") as? String {
-            lblBookingFee.text = (BookingFee != "" && BookingFee != "0") ? "\(currency)\(String(format: "%.2f", Double(BookingFee)!))" : "\(currency)0"
+            lblBookingFee.text = ": " + ((BookingFee != "" && BookingFee != "0") ? "\(currency)\(String(format: "%.2f", Double(BookingFee)!))" : "\(currency)0.00")
         }
         
         if let discount = dictData.object(forKey: "Discount") as? String {
-            lblPromoCode.text = (discount != "" && discount != "0") ? "\(currency)\(String(format: "%.2f", Double(discount)!))" : "\(currency)0"
+            lblPromoCode.text = ": " + ((discount != "" && discount != "0") ? "\(currency)\(String(format: "%.2f", Double(discount)!))" : "\(currency)0.00")
         }
         
         if let Tax = dictData.object(forKey: "Tax") as? String {
-            lblTax.text = (Tax != "" && Tax != "0") ? "\(currency)\(Tax)" : "\(currency)0"
+            lblTax.text = ": " + ((Tax != "" && Tax != "0") ? "\(currency)\(String(format: "%.2f", Double(Tax)!))" : "\(currency)0.00")
         }
         
         if let GrandTotal = dictData.object(forKey: "GrandTotal") as? String {
-            lblTotlaAmount.text = (GrandTotal != "" && GrandTotal != "0") ? "\(currency)\(GrandTotal)" : "\(currency)0"
+            lblTotlaAmount.text = ": " +  ((GrandTotal != "" && GrandTotal != "0") ? "\(currency)\(String(format: "%.2f", Double(GrandTotal)!))" : "\(currency)0.00")
         }
         
     }
@@ -395,48 +445,60 @@ class TripInfoCompletedTripVC: BaseViewController {
         lblPickupLocation.text = dictDataPastJobs["PickupLocation"] as? String
         lblDropOffLocation.text = dictDataPastJobs["DropoffLocation"] as? String
         
+//        lblPickupTime.text = dictDataPastJobs["PickupTime"] as? String
+//        lblDropoffTime.text = dictDataPastJobs["DropTime"] as? String
         
+        if let timeStamp = Double(dictDataPastJobs["PickupTime"] as! String) {
+            lblPickupTime.text = ": " +  timeStamp.getDateStringFromUTC()
+        }
+        
+        if let dropTimeStamp = Double(dictDataPastJobs["DropTime"] as! String) {
+            lblDropoffTime.text = ": " +  dropTimeStamp.getDateStringFromUTC()
+        }
         
         if let TripFare = dictDataPastJobs["TripFare"] as? String,!TripFare.isEmpty {
-            lblTripFare.text = "\(currency)\(String(format: "%.2f", Double(TripFare)!))"
+            lblTripFare.text = ": " + "\(currency)\(String(format: "%.2f", Double(TripFare)!))"
         }
         
         if let TripDistance = dictDataPastJobs["TripDistance"] as? String,!TripDistance.isEmpty {
-            lblDistanceTravelled.text = "\(String(format: "%.2f", Double(TripDistance)!)) km"
+            lblDistanceTravelled.text = ": " + "\(String(format: "%.2f", Double(TripDistance)!)) km"
         }
         
         if let DistanceFare = dictDataPastJobs["DistanceFare"] as? String,!DistanceFare.isEmpty {
-            lblDistanceFare.text = " \(currency)\(String(format: "%.2f", Double(DistanceFare)!))"
+            lblDistanceFare.text = ": " + "\(currency)\(String(format: "%.2f", Double(DistanceFare)!))"
         }
         
-        if let WaitingTime = dictDataPastJobs["WaitingTime"] as? String {
-            let (h,m,s) = secondsToHoursMinutesSeconds(seconds: Int(WaitingTime) ?? 0)
-            lblWaitingTime.text = "\(getStringFrom(seconds: h)):\(getStringFrom(seconds: m)):\(getStringFrom(seconds: s))"
+        if let WaitingTime = dictDataPastJobs["WaitingTime"] as? Int , WaitingTime != 0 {
+            let (h,m,s) = secondsToHoursMinutesSeconds(seconds: Int(WaitingTime))
+            lblWaitingTime.text = ": " + "\(getStringFrom(seconds: h)):\(getStringFrom(seconds: m)):\(getStringFrom(seconds: s))"
+        }else {
+            lblWaitingTimeTitle.isHidden = true
+            lblWaitingTime.isHidden = true
         }
         
         if let WaitingCost = dictDataPastJobs["WaitingTimeCost"] as? String {
-            lblWaitingCost.text = "\(currency)\(WaitingCost)"
+            lblWaitingCost.text = ": " + "\(currency)\(String(format: "%.2f", Double(WaitingCost)!))"
             //            "\(String(format: "%.2f", Double(WaitingCost)!)) \(currency)"
         }
         
         if let Tip = dictDataPastJobs["TollFee"] as? String {
-            lblTollFee.text = (Tip != "" && Tip != "0") ? "\(currency)\(String(format: "%.2f", Double(Tip)!))" : " \(currency)0"
+            lblTollFee.text = ": " + ((Tip != "" && Tip != "0") ? "\(currency)\(String(format: "%.2f", Double(Tip)!))" : " \(currency)0")
         }
         
         if let BookingFee = dictDataPastJobs["BookingCharge"] as? String {
-            lblBookingFee.text = (BookingFee != "" && BookingFee != "0") ? "\(currency)\(String(format: "%.2f", Double(BookingFee)!))" : "\(currency)0"
+            lblBookingFee.text = ": " + ((BookingFee != "" && BookingFee != "0") ? "\(currency)\(String(format: "%.2f", Double(BookingFee)!))" : "\(currency)0")
         }
         
         if let discount = dictDataPastJobs["Discount"] as? String {
-            lblPromoCode.text = (discount != "" && discount != "0") ? "\(currency)\(String(format: "%.2f", Double(discount)!))" : "\(currency)0"
+            lblPromoCode.text = ": " + ((discount != "" && discount != "0") ? "\(currency)\(String(format: "%.2f", Double(discount)!))" : "\(currency)0")
         }
         
         if let Tax = dictDataPastJobs["Tax"] as? String {
-            lblTax.text = (Tax != "" && Tax != "0") ? "\(currency)\(Tax)" : "\(currency)0"
+            lblTax.text = ": " + ((Tax != "" && Tax != "0") ? "\(currency)\(String(format: "%.2f", Double(Tax)!))" : "\(currency)0.00")
         }
         
         if let GrandTotal = dictDataPastJobs["GrandTotal"] as? String {
-            lblTotlaAmount.text = (GrandTotal != "" && GrandTotal != "0") ? "\(currency)\(GrandTotal)" : "\(currency)0"
+            lblTotlaAmount.text = ": " + ((GrandTotal != "" && GrandTotal != "0") ? "\(currency)\(String(format: "%.2f", Double(GrandTotal)!))" : "\(currency)0.00")
         }
         
     }
@@ -467,4 +529,15 @@ class TripInfoCompletedTripVC: BaseViewController {
      
     }
     
+}
+extension Double {
+    func getDateStringFromUTC() -> String {
+        let date = Date(timeIntervalSince1970: self)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+//        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        return dateFormatter.string(from: date)
+    }
 }

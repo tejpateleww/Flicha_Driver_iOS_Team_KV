@@ -218,7 +218,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     @IBAction func TapToProfilePicture(_ sender: UITapGestureRecognizer) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
             , style: .default, handler: { ACTION in

@@ -1741,7 +1741,10 @@
                         <outlet property="btnFemale" destination="wPZ-oQ-xov" id="4uh-RJ-nUJ"/>
                         <outlet property="btnMale" destination="dqg-8n-jh3" id="zzj-EK-ytu"/>
                         <outlet property="imgProfile" destination="RZz-uh-834" id="CLB-oR-4ID"/>
+                        <outlet property="lblAccountInfoEdit" destination="R2S-n1-7XR" id="aKp-jk-aWR"/>
+                        <outlet property="lblDocumentEdit" destination="nnP-u4-cPu" id="xVp-uN-zJw"/>
                         <outlet property="lblName" destination="CBs-lg-5Wj" id="emv-kv-0Ic"/>
+                        <outlet property="lblVehicleInfoEdit" destination="kgH-3D-yan" id="CrE-hk-Kf3"/>
                         <outlet property="txtAddress" destination="xbQ-Zu-pnb" id="oYE-q0-ljr"/>
                         <outlet property="txtEmailId" destination="2ZN-vh-fbY" id="gLB-fW-vhj"/>
                         <outlet property="txtFirstName" destination="2ov-vg-smc" id="Cpa-Oh-dkU"/>
@@ -3846,7 +3849,7 @@ You must be 21 years of age or over.</string>
         <image name="FakeDP" width="283.5" height="290"/>
         <image name="car" width="49" height="36"/>
         <image name="iconAccount" width="85" height="85"/>
-        <image name="iconBack" width="85" height="85"/>
+        <image name="iconBack" width="26" height="26"/>
         <image name="iconCARPlaceholder" width="85" height="85"/>
         <image name="iconCall" width="26" height="26"/>
         <image name="iconCarPlaceholder" width="225" height="104"/>

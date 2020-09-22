@@ -41,7 +41,7 @@ class MyTripTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCancel: ThemeLabel!
     
     @IBOutlet weak var conVwAcceptHeight: NSLayoutConstraint!
-    
+    @IBOutlet weak var conVwAcceptWidth: NSLayoutConstraint!
     override func draw(_ rect: CGRect) {
         setup()
     }
@@ -52,7 +52,7 @@ class MyTripTableViewCell: UITableViewCell {
         btnSendReceipt.layer.cornerRadius = 5
         btnSendReceipt.backgroundColor = ThemeYellowColor
         btnSendReceipt.titleLabel?.font = UIFont.bold(ofSize: 15)
-      
+        lblPickupTitle.text = "Pick up".localized
 //        btnSendReceipt.layer.borderColor = UIColor.white.cgColor
 //        btnSendReceipt.layer.borderWidth = 1.5
 //        btnSendReceipt.clipsToBounds = true

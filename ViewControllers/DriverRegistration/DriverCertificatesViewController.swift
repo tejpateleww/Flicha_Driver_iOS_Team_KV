@@ -145,7 +145,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         //        self.PickingImageFromGallery()
         //        self.selectDate()
         
-        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
             , style: .default, handler: { ACTION in
@@ -182,7 +182,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     
     @IBAction func btnAccreditationCertiView(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized
+        let alert = UIAlertController(title: "Choose photo".localized
             , message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
@@ -227,7 +227,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     @IBAction func btnCarRegisView(_ sender: UIButton) {
         //        alert()
         
-        let alert = UIAlertController(title: "Choose Photo".localized
+        let alert = UIAlertController(title: "Choose photo".localized
             , message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized
@@ -266,7 +266,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     @IBAction func btnVehicleInsuView(_ sender: UIButton) {
         //        alert()
         
-        let alert = UIAlertController(title: "Choose Photo".localized
+        let alert = UIAlertController(title: "Choose photo".localized
             , message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized

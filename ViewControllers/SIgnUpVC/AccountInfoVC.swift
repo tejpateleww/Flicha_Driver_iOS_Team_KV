@@ -95,33 +95,25 @@ class AccountInfoVC: UIViewController {
         var isValidate:Bool = true
         var ValidationMessage:String = ""
         
-        
         //        sb.createWithAction(text: "Upload Car Registration", actionTitle: "Dismiss".localized, action: { print("Button is push") })
-        
-        if txtAccountHolderName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
-            //            sb.createWithAction(text: "Please enter account holder name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+        if txtAccountNumber.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            //            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             isValidate = false
-            ValidationMessage = "Please enter account holder name".localized
-        }
-        else if txtBankName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            ValidationMessage = "Please enter account number".localized
+        }else if txtBankName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
             //            sb.createWithAction(text: "Please enter bank name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             isValidate = false
             ValidationMessage = "Please enter bank name".localized
             
-        }
-            
-            
-        else if txtBankBranch.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+        }else if txtBankBranch.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
             //            sb.createWithAction(text:"Please enter bank branch".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             isValidate = false
             ValidationMessage = "Please enter bank branch".localized
             
-        }
-            
-        else if txtAccountNumber.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
-            //            sb.createWithAction(text: "Please enter account number".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
+        }else if txtAccountHolderName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            //            sb.createWithAction(text: "Please enter account holder name".localized, actionTitle: "Dismiss".localized, action: { print("Button is push") })
             isValidate = false
-            ValidationMessage = "Please enter account number".localized
+            ValidationMessage = "Please enter account holder name".localized
         }
         
         //        sb.show()

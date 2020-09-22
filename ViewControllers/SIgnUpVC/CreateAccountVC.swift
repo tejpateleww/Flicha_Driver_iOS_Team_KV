@@ -51,6 +51,8 @@ class CreateAccountVC: UIViewController {
         let accountInfo: AccountInfoVC = UIViewController.viewControllerInstance(storyBoard: .LoginRegistration)
         let vehicleAddVC: VehicleAddVC = UIViewController.viewControllerInstance(storyBoard: .LoginRegistration)
         let documentAddVC: DocumentAddVC = UIViewController.viewControllerInstance(storyBoard: .LoginRegistration)
+        self.navigationController?.viewControllers.append(accountInfo)
+                    self.navigationController?.pushViewController(vehicleAddVC, animated: true)
                 delay(0.1) {
             if let currentPage = userDefault.object(forKey: RegistrationFinalKeys.kPageNo) as? String {
                 switch currentPage {

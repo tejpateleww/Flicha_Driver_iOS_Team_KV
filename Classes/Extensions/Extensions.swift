@@ -74,7 +74,9 @@ extension UIFont {
     private class func manageFont(font : CGFloat) -> CGFloat {
         let cal  = windowHeight * font
         print(CGFloat(cal / CGFloat(screenHeightDeveloper)))
-        return CGFloat(cal / CGFloat(screenHeightDeveloper))
+//        return CGFloat(cal / CGFloat(screenHeightDeveloper))
+        
+        return font
     }
 
 }

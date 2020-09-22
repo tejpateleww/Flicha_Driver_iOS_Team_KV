@@ -1018,8 +1018,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         //            }
         //        }
         
-        if driverID == Singletons.sharedInstance.strDriverID
-        {
+        if driverID == Singletons.sharedInstance.strDriverID {
             let myJSON = [profileKeys.kDriverId : driverID, socketApiKeys.kLat: defaultLocation.coordinate.latitude, socketApiKeys.kLong: defaultLocation.coordinate.longitude, "Token": Singletons.sharedInstance.deviceToken] as [String : Any]
             
             socket?.emit(socketApiKeys.kUpdateDriverLocation, with: [myJSON])
@@ -1070,6 +1069,9 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 
                 if viewCount == 3
                 {
+                    let MyBookingPage:MyBookingVC = UIViewController.viewControllerInstance(storyBoard: AppStoryboards.MyBooking)
+                    self.navigationController?.pushViewController(MyBookingPage, animated: false)
+                    /*
                     if let VC = self.parent?.children[2] as? MyJobsViewController
                     {
                         print("called it after book later offline to online on the same page")
@@ -1084,12 +1086,15 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                         print("called it after book later offline to online from home page")
                         let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyJobsViewController") as? MyJobsViewController
                         self.navigationController?.pushViewController(ViewController!, animated: true)
-                    }
+                    } */
+                    
                 }
                     
                 else if viewCount == nil
                 {
-                    if UIApplication.shared.windows[0].rootViewController?.children[1].children.count == 1
+                    let MyBookingPage:MyBookingVC = UIViewController.viewControllerInstance(storyBoard: AppStoryboards.MyBooking)
+                    self.navigationController?.pushViewController(MyBookingPage, animated: false)
+                   /* if UIApplication.shared.windows[0].rootViewController?.children[1].children.count == 1
                     {
                         print("called it after book later offline to online from Sidemenu")
                         let VC = (UIApplication.shared.windows[0].rootViewController?.children[1].children[0] as? MyJobsViewController)
@@ -1107,17 +1112,19 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                         //                            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MyJobsViewController") as? MyJobsViewController
                         //                            navController.pushViewController(viewController!, animated: true)
                         //                        }
-                    }
+                    } */
                 }
                 else
                 {
                     
+                    let MyBookingPage:MyBookingVC = UIViewController.viewControllerInstance(storyBoard: AppStoryboards.MyBooking)
+                    self.navigationController?.pushViewController(MyBookingPage, animated: false)
                     //                    print("called it after book later offline to online undefinite also")
                     //                    if let ViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyJobsViewController") as? MyJobsViewController
                     //                    {
                     //                        self.navigationController?.pushViewController(ViewController, animated: true)
                     //                    }
-                    if viewCount == 2
+                  /*  if viewCount == 2
                     {
                         if let VC = self.parent?.children[1] as? MyJobsViewController
                         {
@@ -1141,7 +1148,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                             //                            }
                             //                            ViewController.btnFutureBookingClicked(ViewController.btnFutureBooking)
                         }
-                    }
+                    } */
                 }
                 
             })
@@ -4379,17 +4386,13 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 else {
                     Singletons.sharedInstance.passengerType = PassengerType!
                 }
-                if(self.dictCurrentBookingInfoData.object(forKey: "PaymentType") as! String == "cash")
-                {
+                if(self.dictCurrentBookingInfoData.object(forKey: "PaymentType") as! String == "cash") {
                     Singletons.sharedInstance.passengerPaymentType = self.dictCurrentBookingInfoData.object(forKey: "PaymentType") as! String
                 }
                 
-                
                 DispatchQueue.main.async {
                     UtilityClass.showHUD()
-                    
                 }
-                
                 
                 if bookingType != "" {
                     Singletons.sharedInstance.isBookNowOrBookLater = true

@@ -101,7 +101,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
         boolTimeEnd = false
         isAccept = false
         
-//        self.playSound()
+        self.playSound()
         
         fillAllFields()
         
@@ -215,36 +215,36 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     
     func playSound() {
         
-//        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
-//
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-//            try AVAudioSession.sharedInstance().setActive(true)
-//
-//            //            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-//            audioPlayer = try AVAudioPlayer(contentsOf: url)
-//            audioPlayer.numberOfLoops = 4
-//            audioPlayer.play()
-//        }
-//        catch let error {
-//            print(error.localizedDescription)
-//        }
+        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+            //            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.numberOfLoops = 4
+            audioPlayer.play()
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     func stopSound() {
         
-//        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
-//        
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-//            try AVAudioSession.sharedInstance().setActive(true)
-//            
-//            audioPlayer = try AVAudioPlayer(contentsOf: url)
-//            audioPlayer.stop()
-//        }
-//        catch let error {
-//            print(error.localizedDescription)
-//        }
+        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.stop()
+        }
+        catch let error {
+            print(error.localizedDescription)
+        }
     }
     
 
@@ -266,7 +266,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
         boolTimeEnd = true
         delegate.didRejectedRequest()
         self.viewCountdownTimer.end()
-//        self.stopSound()
+        self.stopSound()
         self.dismiss(animated: true, completion: nil)
         
     }

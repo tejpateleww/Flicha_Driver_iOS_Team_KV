@@ -398,10 +398,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1266"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHO-mn-jZU" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="0.0" y="5" width="414" height="1475"/>
+                                                        <rect key="frame" x="0.0" y="5" width="414" height="1254"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jxi-d6-L3N">
-                                                                <rect key="frame" x="25" y="68" width="230" height="216"/>
+                                                                <rect key="frame" x="25" y="68" width="115" height="108"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 to 5 Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3S-03-m6Z" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                                 <rect key="frame" x="314" y="68" width="90" height="18"/>
@@ -414,19 +414,19 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uz-GD-nhu" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="304" width="195" height="33"/>
+                                                                <rect key="frame" x="25" y="196" width="205.5" height="31.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="28"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up to get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovh-rS-46a" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="341.5" width="194.5" height="23.5"/>
+                                                                <rect key="frame" x="25" y="232" width="197" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="16w-i4-QkL">
-                                                                <rect key="frame" x="20" y="445" width="374" height="585"/>
+                                                                <rect key="frame" x="20" y="334.5" width="374" height="585"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8Y-pT-mUc" customClass="TetxFiledWhiteView" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -618,7 +618,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eMn-Qg-xmL">
-                                                                <rect key="frame" x="20" y="1070" width="374" height="96"/>
+                                                                <rect key="frame" x="20" y="959.5" width="374" height="95"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNd-6T-TdF" customClass="ThemeButton" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -643,16 +643,16 @@
                                                                         </connections>
                                                                     </button>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5pH-mg-h53">
-                                                                        <rect key="frame" x="63" y="65" width="248.5" height="31"/>
+                                                                        <rect key="frame" x="63" y="65" width="248.5" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpE-Ex-rxO">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="31"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7V-RV-Fii">
-                                                                                <rect key="frame" x="189.5" y="0.0" width="59" height="31"/>
+                                                                                <rect key="frame" x="189.5" y="0.0" width="59" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="16"/>
                                                                                 <state key="normal" title="SIGN IN">
                                                                                     <color key="titleColor" red="0.98431372549999996" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -781,13 +781,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvV-bb-vAl" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="0.0" y="5" width="414" height="1175"/>
+                                                        <rect key="frame" x="0.0" y="5" width="414" height="954"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sfq-be-aEc">
-                                                                <rect key="frame" x="25" y="68" width="230" height="216"/>
+                                                                <rect key="frame" x="25" y="68" width="115" height="108"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayG-fB-kSu">
-                                                                <rect key="frame" x="15" y="23" width="88" height="88"/>
+                                                                <rect key="frame" x="15" y="23" width="44" height="44"/>
                                                                 <state key="normal" image="back-arrow"/>
                                                                 <connections>
                                                                     <action selector="btnBackTapped:" destination="t7z-eF-p15" eventType="touchUpInside" id="f96-hZ-k57"/>
@@ -804,19 +804,19 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3j-xD-SV8" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="304" width="159.5" height="33"/>
+                                                                <rect key="frame" x="25" y="196" width="170" height="31.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="28"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add account information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya1-nx-2ze" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="341.5" width="221" height="23.5"/>
+                                                                <rect key="frame" x="25" y="232" width="225.5" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="H2W-x8-Ifg">
-                                                                <rect key="frame" x="20" y="445" width="374" height="285"/>
+                                                                <rect key="frame" x="20" y="334.5" width="374" height="285"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pb-rg-2DH" customClass="TetxFiledWhiteView" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -899,7 +899,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ljc-vG-Qrc">
-                                                                <rect key="frame" x="20" y="770" width="374" height="45"/>
+                                                                <rect key="frame" x="20" y="659.5" width="374" height="45"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICA-nc-9tI" customClass="ThemeButton" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -1039,10 +1039,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pW-bb-Cb4" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="0.0" y="5" width="414" height="1350"/>
+                                                        <rect key="frame" x="0.0" y="5" width="414" height="979"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="zEX-EH-SKS">
-                                                                <rect key="frame" x="25" y="68" width="230" height="216"/>
+                                                                <rect key="frame" x="25" y="68" width="115" height="108"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 to 5 Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2T-HA-G1R" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                                 <rect key="frame" x="314" y="68" width="90" height="18"/>
@@ -1055,19 +1055,19 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgh-Lr-meZ" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="304" width="148" height="33"/>
+                                                                <rect key="frame" x="25" y="196" width="159.5" height="31.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="28"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add vehicle information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-cB-lsr" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="341.5" width="211" height="23.5"/>
+                                                                <rect key="frame" x="25" y="232" width="217" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCARPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-ji-5C4">
-                                                                <rect key="frame" x="169.5" y="445" width="75" height="75"/>
+                                                                <rect key="frame" x="169.5" y="294.5" width="75" height="75"/>
                                                                 <gestureRecognizers/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="75" id="scM-aA-P5D"/>
@@ -1080,13 +1080,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-z1-JA9">
-                                                                <rect key="frame" x="169.5" y="445" width="75" height="75"/>
+                                                                <rect key="frame" x="169.5" y="294.5" width="75" height="75"/>
                                                                 <connections>
                                                                     <action selector="btnChoosePicture:" destination="fM7-8R-drn" eventType="touchUpInside" id="ZUw-MF-YfK"/>
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="T1o-AI-a8V">
-                                                                <rect key="frame" x="20" y="570" width="374" height="210"/>
+                                                                <rect key="frame" x="20" y="384.5" width="374" height="210"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT4-gk-ejl" customClass="TetxFiledWhiteView" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -1174,7 +1174,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mO2-G2-Glb">
-                                                                <rect key="frame" x="20" y="820" width="374" height="45"/>
+                                                                <rect key="frame" x="20" y="634.5" width="374" height="45"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM7-0a-z6X" customClass="ThemeButton" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -1205,7 +1205,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zq8-Kk-db2">
-                                                                <rect key="frame" x="15" y="23" width="88" height="88"/>
+                                                                <rect key="frame" x="15" y="23" width="44" height="44"/>
                                                                 <state key="normal" image="back-arrow"/>
                                                                 <connections>
                                                                     <action selector="btnBackTapped:" destination="fM7-8R-drn" eventType="touchUpInside" id="X3M-zF-nUE"/>
@@ -1215,7 +1215,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="Vgh-Lr-meZ" firstAttribute="top" secondItem="zEX-EH-SKS" secondAttribute="bottom" constant="20" id="2S0-Zt-rvN"/>
-                                                            <constraint firstItem="Ca7-ji-5C4" firstAttribute="top" secondItem="kHe-cB-lsr" secondAttribute="bottom" constant="80" id="3uB-XT-FVU"/>
+                                                            <constraint firstItem="Ca7-ji-5C4" firstAttribute="top" secondItem="kHe-cB-lsr" secondAttribute="bottom" constant="40" id="3uB-XT-FVU"/>
                                                             <constraint firstItem="Plb-z1-JA9" firstAttribute="top" secondItem="Ca7-ji-5C4" secondAttribute="top" id="47S-vj-g3K"/>
                                                             <constraint firstItem="Plb-z1-JA9" firstAttribute="bottom" secondItem="Ca7-ji-5C4" secondAttribute="bottom" id="7Xu-Ia-f23"/>
                                                             <constraint firstItem="zEX-EH-SKS" firstAttribute="top" secondItem="0pW-bb-Cb4" secondAttribute="topMargin" constant="60" id="88K-nF-OlT">
@@ -1228,7 +1228,7 @@
                                                             <constraint firstItem="kHe-cB-lsr" firstAttribute="leading" secondItem="Vgh-Lr-meZ" secondAttribute="leading" id="DrN-n3-gQY"/>
                                                             <constraint firstItem="mO2-G2-Glb" firstAttribute="top" secondItem="T1o-AI-a8V" secondAttribute="bottom" constant="40" id="Fgm-Cr-TDT"/>
                                                             <constraint firstItem="kHe-cB-lsr" firstAttribute="top" secondItem="Vgh-Lr-meZ" secondAttribute="bottom" constant="4.5" id="Irj-Bc-Pxf"/>
-                                                            <constraint firstItem="T1o-AI-a8V" firstAttribute="top" secondItem="Ca7-ji-5C4" secondAttribute="bottom" constant="50" id="L6C-Wq-JxZ"/>
+                                                            <constraint firstItem="T1o-AI-a8V" firstAttribute="top" secondItem="Ca7-ji-5C4" secondAttribute="bottom" constant="15" id="L6C-Wq-JxZ"/>
                                                             <constraint firstItem="Plb-z1-JA9" firstAttribute="leading" secondItem="Ca7-ji-5C4" secondAttribute="leading" id="LZ2-AH-Rr4"/>
                                                             <constraint firstItem="F2T-HA-G1R" firstAttribute="top" secondItem="zEX-EH-SKS" secondAttribute="top" id="Mgq-VL-NH1"/>
                                                             <constraint firstItem="T1o-AI-a8V" firstAttribute="centerY" secondItem="0pW-bb-Cb4" secondAttribute="centerY" id="Mmd-Rk-0th"/>
@@ -1327,7 +1327,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEb-YT-KSQ" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="0.0" y="5" width="414" height="1119"/>
+                                                        <rect key="frame" x="0.0" y="5" width="414" height="1114"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="9dy-jb-NKn">
                                                                 <rect key="frame" x="25" y="68" width="115" height="108"/>
@@ -1343,19 +1343,19 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document Add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPt-8Y-KQ5" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="196" width="189" height="33"/>
+                                                                <rect key="frame" x="25" y="196" width="198" height="31.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="28"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit your document" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-Eg-aFx" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="233.5" width="205" height="23.5"/>
+                                                                <rect key="frame" x="25" y="232" width="207" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IfM-MV-9ei">
-                                                                <rect key="frame" x="20" y="337" width="374" height="445"/>
+                                                                <rect key="frame" x="20" y="334.5" width="374" height="445"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLO-JI-z6l" customClass="TetxFiledWhiteView" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
@@ -1540,7 +1540,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vR0-o5-ACb">
-                                                                <rect key="frame" x="10" y="337" width="394" height="390"/>
+                                                                <rect key="frame" x="10" y="334.5" width="394" height="390"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-Z2-D6b">
                                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
@@ -1749,7 +1749,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dec-b3-nqi">
-                                                                <rect key="frame" x="20" y="822" width="374" height="45"/>
+                                                                <rect key="frame" x="20" y="819.5" width="374" height="45"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiB-i7-eth" customClass="ThemeButton" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -1787,25 +1787,25 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y30-pQ-MlS">
-                                                                <rect key="frame" x="10" y="337" width="394" height="90"/>
+                                                                <rect key="frame" x="10" y="334.5" width="394" height="90"/>
                                                                 <connections>
                                                                     <action selector="btnDriverLicenceExpiryDate:" destination="t0G-xi-ZJT" eventType="touchUpInside" id="s0g-8M-a5Q"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MJ-4q-h09">
-                                                                <rect key="frame" x="10" y="437" width="394" height="90"/>
+                                                                <rect key="frame" x="10" y="434.5" width="394" height="90"/>
                                                                 <connections>
                                                                     <action selector="btnCarRegistration:" destination="t0G-xi-ZJT" eventType="touchUpInside" id="hJ4-Oy-2Py"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X04-rh-dHO">
-                                                                <rect key="frame" x="10" y="537" width="394" height="90"/>
+                                                                <rect key="frame" x="10" y="534.5" width="394" height="90"/>
                                                                 <connections>
                                                                     <action selector="btnVehicleInsurance:" destination="t0G-xi-ZJT" eventType="touchUpInside" id="Nfp-R2-NvU"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nI-H6-rWH">
-                                                                <rect key="frame" x="10" y="637" width="394" height="90"/>
+                                                                <rect key="frame" x="10" y="634.5" width="394" height="90"/>
                                                                 <connections>
                                                                     <action selector="btnProxyClick:" destination="t0G-xi-ZJT" eventType="touchUpInside" id="3R7-xc-H1w"/>
                                                                 </connections>
@@ -4422,20 +4422,20 @@ You must be 21 years of age or over.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q18-cl-5QI" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="0.0" y="5" width="414" height="950"/>
+                                                        <rect key="frame" x="0.0" y="5" width="414" height="807"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="g2b-Ni-SwI">
-                                                                <rect key="frame" x="25" y="68" width="230" height="216"/>
+                                                                <rect key="frame" x="25" y="107" width="115" height="108"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmD-3q-zcC">
-                                                                <rect key="frame" x="15" y="8" width="88" height="88"/>
+                                                                <rect key="frame" x="15" y="47" width="44" height="44"/>
                                                                 <state key="normal" image="back-arrow"/>
                                                                 <connections>
                                                                     <action selector="btnBackTapped:" destination="cxO-Jk-OZ5" eventType="touchUpInside" id="xbJ-ea-VZ5"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 to 5 Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0E-Mp-BZ4" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="314" y="68" width="90" height="18"/>
+                                                                <rect key="frame" x="314" y="107" width="90" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="FGr-gd-SZh"/>
                                                                     <constraint firstAttribute="width" constant="90" id="zMs-uy-PQs"/>
@@ -4445,19 +4445,19 @@ You must be 21 years of age or over.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-6Y-BQm" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="304" width="180.5" height="33"/>
+                                                                <rect key="frame" x="25" y="235" width="198.5" height="31.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="28"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaM-go-JgQ" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="341.5" width="192.5" height="23.5"/>
+                                                                <rect key="frame" x="25" y="271" width="200.5" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ndb-bk-JsI">
-                                                                <rect key="frame" x="20" y="445" width="374" height="60"/>
+                                                                <rect key="frame" x="20" y="373.5" width="374" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bv3-fr-Ntd" customClass="TetxFiledWhiteView" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -4481,7 +4481,7 @@ You must be 21 years of age or over.</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0v1-kd-1ym">
-                                                                <rect key="frame" x="306" y="513" width="83" height="29"/>
+                                                                <rect key="frame" x="306" y="441.5" width="83" height="29"/>
                                                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                                                 <state key="normal" title="Resend OTP">
                                                                     <color key="titleColor" red="0.1333333333" green="0.1647058824" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4491,7 +4491,7 @@ You must be 21 years of age or over.</string>
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="G8M-8R-av7">
-                                                                <rect key="frame" x="20" y="580" width="374" height="45"/>
+                                                                <rect key="frame" x="20" y="508.5" width="374" height="45"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYc-rW-TPO" customClass="ThemeButton" customModule="Flicha_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>

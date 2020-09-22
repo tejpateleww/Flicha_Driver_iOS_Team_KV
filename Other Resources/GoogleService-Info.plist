@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:102051690068:ios:7d499633473f538224dfc1</string>
+	<string>1:102051690068:ios:67ca332eab05d9ed24dfc1</string>
 	<key>DATABASE_URL</key>
 	<string>https://flicha.firebaseio.com</string>
 </dict>

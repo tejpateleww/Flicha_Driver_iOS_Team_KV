@@ -253,8 +253,8 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="IsthisBold" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick UP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7G-cn-Yn7" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                            <rect key="frame" x="8" y="177" width="59.5" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7G-cn-Yn7" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                            <rect key="frame" x="8" y="177" width="56.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KZT-ge-TLR">
                             <rect key="frame" x="296.5" y="205.5" width="66.5" height="20.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DA25.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R32-qI-b8Q" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DA25.50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R32-qI-b8Q" customClass="ThemeLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="66.5" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="66.5" id="53m-sc-1KZ"/>
@@ -380,6 +380,7 @@
                 <outlet property="btnSendReceipt" destination="faz-YB-aCJ" id="wl7-sp-fjS"/>
                 <outlet property="cellContainerView" destination="IGa-BP-2Uv" id="8pG-X8-wBt"/>
                 <outlet property="conVwAcceptHeight" destination="vfC-89-f6g" id="HVj-uU-bPF"/>
+                <outlet property="conVwAcceptWidth" destination="zbE-Xb-Uak" id="pai-Up-zp8"/>
                 <outlet property="imgVW" destination="7DC-hV-Ige" id="1Wr-RZ-x6T"/>
                 <outlet property="lblBookingDate" destination="3a2-NA-YJf" id="Sdn-jB-Eq5"/>
                 <outlet property="lblBookingId" destination="Z8Z-3K-AXl" id="rwx-2b-4fS"/>

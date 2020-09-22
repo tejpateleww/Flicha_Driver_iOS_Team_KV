@@ -118,7 +118,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
     
     @IBAction func btnDriverLicenceExpiryDate(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
@@ -157,7 +157,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
     
     @IBAction func btnAccreditationCerti(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
@@ -195,7 +195,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
     
     @IBAction func btnCarRegistration(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized ,message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized ,message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
@@ -424,7 +424,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
     }
     @IBAction func btnProxyClick(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized ,message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized ,message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
@@ -476,7 +476,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
     
     @IBAction func btnVehicleInsurance(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             
@@ -527,7 +527,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
     
     @IBAction func btnUploadVehicleImage(_ sender: Any) {
         
-        let alert = UIAlertController(title:  "Choose Photo".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title:  "Choose photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
            

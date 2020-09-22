@@ -181,6 +181,9 @@ extension MyBookingVC {
     }
     @objc func strtTrip(sender: UIButton)
     {
+        if self.tripType.rawValue == "Future Jobs" {
+            return
+        }
         //        if (Singletons.sharedInstance.isRequestAccepted == true)
         //        {
         //            UtilityClass.showAlert(appName.kAPPName, message: "Please complete your current trip first", vc: self)
@@ -259,6 +262,9 @@ extension MyBookingVC {
             
     }
     @objc func btnActionForSelectRecord(sender: UIButton) {
+        if self.tripType.rawValue == "Pending Jobs" {
+            return
+        }
         if Connectivity.isConnectedToInternet() == false {
             UtilityClass.showAlert("App Name".localized, message: "Sorry! Not connected to internet".localized, vc: self)
             return
@@ -310,11 +316,9 @@ extension MyBookingVC {
                 
                 if let res = result as? String {
                     UtilityClass.showAlert("App Name".localized, message: res, vc: self)
-                }
-                else if let resDict = result as? NSDictionary {
+                }else if let resDict = result as? NSDictionary {
                     UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: self)
-                }
-                else if let resAry = result as? NSArray {
+                }else if let resAry = result as? NSArray {
                     UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                 }
             }
@@ -386,7 +390,7 @@ extension MyBookingVC: UITableViewDelegate, UITableViewDataSource{
             //            cell.lblPickup.text = CurrentData.3
             //            cell.lblDropoff.text = CurrentData.4
             //            cell.lblDriverName.text =  "Passenger Name : " +  CurrentData.5
-            
+            cell.conVwAcceptWidth.constant = 100
             cell.btnSendReceipt.isHidden = true
             
             if self.tripType.rawValue == "Future Jobs" {
@@ -397,6 +401,8 @@ extension MyBookingVC: UITableViewDelegate, UITableViewDataSource{
                 cell.lblCancel.isHidden = true
                 
                 cell.btnSendReceipt.addTarget(self, action: #selector(btnActionForSelectRecord(sender:)), for: .touchUpInside)
+                cell.lblPrice.isHidden = true
+                cell.lblPriceTitle.isHidden = true
                 //                cell.btnSendReceipt.addTarget(self, action: #selector(self.cancelTrip(_:)), for: .touchUpInside)
                 //
                 //                UtilityClass.viewCornerRadius(view: cell.btnSendReceipt, borderWidth: 1, borderColor: .white)
@@ -407,10 +413,12 @@ extension MyBookingVC: UITableViewDelegate, UITableViewDataSource{
                 //                cell.btnSendReceipt.layer.borderColor = borderColor.cgColor
                 
             }else if self.tripType.rawValue == "Pending Jobs" {
+                cell.lblPrice.isHidden = true
+                cell.lblPriceTitle.isHidden = true
                 cell.btnSendReceipt.isHidden = false
-                cell.btnSendReceipt.setTitle("Start Trip".localized, for: .normal)
+                cell.btnSendReceipt.setTitle("On The Way".localized, for: .normal)
                 cell.btnSendReceipt.tag = indexPath.section
-                
+                cell.conVwAcceptWidth.constant = 120
                 cell.lblCancel.isHidden = true
                 cell.hideAcceptRequestButton(isHide: false)
                 cell.btnSendReceipt.addTarget(self, action: #selector(strtTrip(sender:)), for: .touchUpInside)

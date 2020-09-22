@@ -21,10 +21,26 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
     @IBOutlet weak var lblFemale: UILabel?
     let thePicker = UIPickerView()
     let datePicker = UIDatePicker()
-    
+    var isMaleSelected = false
     //-------------------------------------------------------------
     // MARK: - Outlets
     //-------------------------------------------------------------
+    @IBOutlet weak var lblAccountInfoEdit: UILabel! {
+        didSet {
+            lblAccountInfoEdit.text = "Edit Account Info".localized
+        }
+    }
+    @IBOutlet weak var lblVehicleInfoEdit: UILabel! {
+        didSet {
+            lblVehicleInfoEdit.text = "Edit Vehicle Info".localized
+        }
+    }
+    @IBOutlet weak var lblDocumentEdit: UILabel! {
+        didSet {
+            lblDocumentEdit.text = "Edit Document".localized
+        }
+    }
+   
     
     @IBOutlet weak var lblTitle: UILabel?
     @IBOutlet var lblEmail: UILabel!
@@ -72,7 +88,13 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
         
         webserviceCallToGetCompanyList()
         setData()
-        self.setNavigationBarInViewController(controller: self, naviTitle: "My Profile".localized, leftImage: iconBack, rightImages: ["editP"], isTranslucent: false)
+        self.setNavigationBarInViewController(controller: self, naviTitle: "My Profile".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
+        let rightButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(saveClick))
+              
+              self.navigationItem.rightBarButtonItem = rightButton
+    }
+    @objc func saveClick(){
+        getData()
     }
     func showDatePicker(){
         //Formate Date
@@ -114,8 +136,8 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width / 2
 //        btnEditProfileIPic.layer.cornerRadius = btnEditProfileIPic.frame.size.width / 2
 //        btnEditProfileIPic.layer.masksToBounds = true
-        imgProfile.layer.borderWidth = 1.0
-        imgProfile.layer.borderColor = ThemeYellowColor.cgColor
+//        imgProfile.layer.borderWidth = 1.0
+//        imgProfile.layer.borderColor = ThemeYellowColor.cgColor
         imgProfile.layer.masksToBounds = true
     }
     
@@ -157,12 +179,14 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
     
     func selectedMale()
     {
+        isMaleSelected = true
         btnMale?.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
         btnFemale?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
 //        btnOthers?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
     }
     func selectedFemale()
     {
+        isMaleSelected = false
         btnMale?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
         btnFemale?.setImage(UIImage(named: "iconRadioSelected"), for: .normal)
 //        btnOthers?.setImage(UIImage(named: "iconRadioUnSelected"), for: .normal)
@@ -296,7 +320,7 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
     
     @IBAction func btnEditProfileIPic(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Choose Photo".localized, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose photo".localized, message: nil, preferredStyle: .alert)
         
         let Gallery = UIAlertAction(title: "Select photo from gallery".localized, style: .default, handler: { ACTION in
             self.PickingImageFromGallery()
@@ -387,8 +411,10 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
 
 //         txtCompanyID.text       = (self.aryCompanyIDS as NSArray).filtered(using: "") as? String
         imgProfile.contentMode = .scaleAspectFill
-        imgProfile.sd_setImage(with: URL(string: profile.object(forKey: "Image") as! String))
-        
+//        imgProfile.sd_setImage(with: URL(string: profile.object(forKey: "Image") as! String))
+        imgProfile.sd_setImage(with: URL(string: profile.object(forKey: "") as? String ?? ""), placeholderImage: UIImage.init(named: "iconUsers"), options: []) { (image, error, cacheType, url) in
+            //            self.imgCarRegistration.sd_removeActivityIndicator() Raj381
+        }
         let strGender = profile.object(forKey: "Gender") as? String
         thePicker.reloadAllComponents()
 
@@ -436,7 +462,7 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
       //  dictData["CompanyId"] = companyID as AnyObject
         let fullName = txtFirstName.text! + "||" + txtLastName.text!
         dictData["Fullname"] = fullName as AnyObject
-        dictData["Gender"] = "Male" as AnyObject
+        dictData["Gender"] = isMaleSelected ? "Male" as AnyObject : "Female" as AnyObject
         dictData["Address"] = txtAddress.text as AnyObject
         dictData["DOB"] = "" as AnyObject
         dictData["MobileNo"] = txtMobile.text as AnyObject
@@ -492,7 +518,7 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
                 Utilities.encodeDatafromDictionary(KEY: driverProfileKeys.kKeyDriverProfile, Param: Singletons.sharedInstance.dictDriverProfile)
                 UserDefaults.standard.set(true, forKey: driverProfileKeys.kKeyIsDriverLoggedIN)
                 
-                let alert = UIAlertController(title: "App Name".localized, message: "Profile Updated Successfully".localized, preferredStyle: .alert)
+                let alert = UIAlertController(title: "App Name".localized, message: "Profile updated successfully".localized, preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)

@@ -63,13 +63,13 @@ extension NotificationVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        lblNoDataFound.isHidden = (arrayDict.count != 0)
         return arrayDict.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell") as! NotificationTableViewCell
         cell.selectionStyle = .none
-      
         let dict = arrayDict[indexPath.row]
         cell.lblTitle.text = dict["NotificationName"] as? String ?? ""
         cell.lblDescription.text = dict["Description"] as? String ?? ""
