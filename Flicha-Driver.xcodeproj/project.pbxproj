@@ -574,6 +574,12 @@
 		68DC59E4244582C300A0AB2D /* LocalizButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizButton.swift; sourceTree = "<group>"; };
 		68DC59E72445841900A0AB2D /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		68DC59E92445E73A00A0AB2D /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		6E231358251A227D00244054 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6E231359251A227D00244054 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		6E23135A251A227E00244054 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/TripToDestination.strings; sourceTree = "<group>"; };
+		6E23135B251A227E00244054 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Profile.strings; sourceTree = "<group>"; };
+		6E23135C251A227F00244054 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Registration.strings; sourceTree = "<group>"; };
+		6E23135D251A227F00244054 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Storyboard/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E9D4A02241A0AEB005422B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71709713182604892762B874 /* Pods-Flicha-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicha-Driver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flicha-Driver/Pods-Flicha-Driver.debug.xcconfig"; sourceTree = "<group>"; };
 		71E830EFF7C980BA0858A2D1 /* Pods_TenTexi_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenTexi_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1761,7 +1767,7 @@
 				TargetAttributes = {
 					00E5CEA21F8B402C004409A4 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = LNR2265795;
+						DevelopmentTeam = K68A4B5TS6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1783,6 +1789,7 @@
 				en,
 				Base,
 				sw,
+				fr,
 			);
 			mainGroup = 00E5CE9A1F8B402C004409A4;
 			productRefGroup = 00E5CEA41F8B402C004409A4 /* Products */;
@@ -2200,6 +2207,7 @@
 				EEFEA5952211839600D88655 /* Base */,
 				EEFEA598221183B600D88655 /* en */,
 				EEFEA5B32211A16900D88655 /* sw */,
+				6E231359251A227D00244054 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -2210,6 +2218,7 @@
 				EEFEA59A221183DB00D88655 /* Base */,
 				EEFEA59D221183DE00D88655 /* en */,
 				EEFEA5B42211A16A00D88655 /* sw */,
+				6E23135A251A227E00244054 /* fr */,
 			);
 			name = TripToDestination.storyboard;
 			sourceTree = "<group>";
@@ -2220,6 +2229,7 @@
 				EEFEA59F221183F700D88655 /* Base */,
 				EEFEA5A2221183FD00D88655 /* en */,
 				EEFEA5B52211A16A00D88655 /* sw */,
+				6E23135B251A227E00244054 /* fr */,
 			);
 			name = Profile.storyboard;
 			sourceTree = "<group>";
@@ -2230,6 +2240,7 @@
 				EEFEA5A42211840700D88655 /* Base */,
 				EEFEA5A72211840900D88655 /* en */,
 				EEFEA5B22211A16900D88655 /* sw */,
+				6E231358251A227D00244054 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2240,6 +2251,7 @@
 				EEFEA5A92211841000D88655 /* Base */,
 				EEFEA5AC2211841500D88655 /* en */,
 				EEFEA5B62211A16B00D88655 /* sw */,
+				6E23135C251A227F00244054 /* fr */,
 			);
 			name = Registration.storyboard;
 			sourceTree = "<group>";
@@ -2249,6 +2261,7 @@
 			children = (
 				EEFEA5B0221184F900D88655 /* en */,
 				EEFEA5B72211A16B00D88655 /* sw */,
+				6E23135D251A227F00244054 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2381,11 +2394,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = LNR2265795;
+				DEVELOPMENT_TEAM = K68A4B5TS6;
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Flicha-driver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Flicha.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2405,11 +2418,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1.4;
-				DEVELOPMENT_TEAM = LNR2265795;
+				DEVELOPMENT_TEAM = K68A4B5TS6;
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Flicha-driver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Flicha.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

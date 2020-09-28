@@ -1,0 +1,363 @@
+
+/* Class = "UILabel"; text = "Have an account"; ObjectID = "0PK-7W-D42"; */
+"0PK-7W-D42.text" = "Have an account";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0kd-nW-aKn"; */
+"0kd-nW-aKn.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Resend OTP"; ObjectID = "0v1-kd-1ym"; */
+"0v1-kd-1ym.normalTitle" = "Resend OTP";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1AQ-21-Nje"; */
+"1AQ-21-Nje.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "2tB-1S-flk"; */
+"2tB-1S-flk.text" = "3";
+
+/* Class = "UILabel"; text = "First Class"; ObjectID = "3aT-zx-Yu9"; */
+"3aT-zx-Yu9.text" = "First Class";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6bZ-XL-OzN"; */
+"6bZ-XL-OzN.text" = "Label";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "78P-tb-TZv"; */
+"78P-tb-TZv.text" = "1";
+
+/* Class = "UILabel"; text = "Create Account"; ObjectID = "7Uz-GD-nhu"; */
+"7Uz-GD-nhu.text" = "Create Account";
+
+/* Class = "UITextField"; placeholder = "Vehicle Model"; ObjectID = "7fX-8O-UhY"; */
+"7fX-8O-UhY.placeholder" = "Vehicle Model";
+
+/* Class = "UILabel"; text = "Female  "; ObjectID = "88X-71-0HJ"; */
+"88X-71-0HJ.text" = "Female  ";
+
+/* Class = "UITextField"; placeholder = "  One Time Password"; ObjectID = "8Ki-Ff-5EG"; */
+"8Ki-Ff-5EG.placeholder" = "  One Time Password";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8Yb-71-g2v"; */
+"8Yb-71-g2v.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Cars and Taxis"; ObjectID = "8tf-Mk-uDT"; */
+"8tf-Mk-uDT.text" = "Cars and Taxis";
+
+/* Class = "UILabel"; text = "Account Info"; ObjectID = "A3j-xD-SV8"; */
+"A3j-xD-SV8.text" = "Account Info";
+
+/* Class = "UITextField"; placeholder = "Bank Name"; ObjectID = "AT7-x7-Dgr"; */
+"AT7-x7-Dgr.placeholder" = "Bank Name";
+
+/* Class = "UILabel"; text = "3 to 5 Steps"; ObjectID = "BTM-ah-fOW"; */
+"BTM-ah-fOW.text" = "3 to 5 Steps";
+
+/* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "C8l-ct-O86"; */
+"C8l-ct-O86.normalTitle" = "DONE";
+
+/* Class = "UITextField"; placeholder = "Vehicle Make"; ObjectID = "CFS-1C-K6a"; */
+"CFS-1C-K6a.placeholder" = "Vehicle Make";
+
+/* Class = "UIButton"; normalTitle = "   NEXT"; ObjectID = "CGC-BN-dlR"; */
+"CGC-BN-dlR.normalTitle" = "   NEXT";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "Dw7-cI-BkM"; */
+"Dw7-cI-BkM.placeholder" = "Name";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "EE2-Ox-OWA"; */
+"EE2-Ox-OWA.placeholder" = "Last Name";
+
+/* Class = "UILabel"; text = "4 to 5 Steps"; ObjectID = "F2T-HA-G1R"; */
+"F2T-HA-G1R.text" = "4 to 5 Steps";
+
+/* Class = "UILabel"; text = "REGISTRATION"; ObjectID = "FPh-HP-dqa"; */
+"FPh-HP-dqa.text" = "REGISTRATION";
+
+/* Class = "UILabel"; text = "(All First Class Cars can be a part of Business Class) Mercedes S series, BMW 7 series, Audi A8 & S, Tesla S, X, Porsche Cayenne, Jaguar, All luxury SUV’s."; ObjectID = "GLL-4I-wQ6"; */
+"GLL-4I-wQ6.text" = "(All First Class Cars can be a part of Business Class) Mercedes S series, BMW 7 series, Audi A8 & S, Tesla S, X, Porsche Cayenne, Jaguar, All luxury SUV’s.";
+
+/* Class = "UILabel"; text = "Select up to 3 vehicles."; ObjectID = "HJb-3i-sEm"; */
+"HJb-3i-sEm.text" = "Select up to 3 vehicles.";
+
+/* Class = "UITextField"; placeholder = "Car Type"; ObjectID = "Hed-I2-hZH"; */
+"Hed-I2-hZH.placeholder" = "Car Type";
+
+/* Class = "UITextField"; placeholder = "Holder Name"; ObjectID = "I6Q-ne-skm"; */
+"I6Q-ne-skm.placeholder" = "Holder Name";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "ICA-nc-9tI"; */
+"ICA-nc-9tI.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Document Add"; ObjectID = "IPt-8Y-KQ5"; */
+"IPt-8Y-KQ5.text" = "Document Add";
+
+/* Class = "UITextField"; placeholder = "Car registration"; ObjectID = "Ihd-fl-9mH"; */
+"Ihd-fl-9mH.placeholder" = "Car registration";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "Jks-Ru-7np"; */
+"Jks-Ru-7np.placeholder" = "Phone Number";
+
+/* Class = "UITextField"; placeholder = "Account Holder Name"; ObjectID = "KMq-oc-SBu"; */
+"KMq-oc-SBu.placeholder" = "Account Holder Name";
+
+/* Class = "UITextField"; placeholder = "  One Time Password"; ObjectID = "KPX-Om-zLt"; */
+"KPX-Om-zLt.placeholder" = "  One Time Password";
+
+/* Class = "UITextField"; placeholder = "Bank Name"; ObjectID = "Kpg-nl-yvR"; */
+"Kpg-nl-yvR.placeholder" = "Bank Name";
+
+/* Class = "UITextField"; placeholder = "Proxy"; ObjectID = "MIh-Mn-Rwm"; */
+"MIh-Mn-Rwm.placeholder" = "Proxy";
+
+/* Class = "UITextField"; placeholder = "Email Id"; ObjectID = "Mvz-Ku-cpu"; */
+"Mvz-Ku-cpu.placeholder" = "Email Id";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "N68-zw-LOG"; */
+"N68-zw-LOG.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "NTL-r1-Edy"; */
+"NTL-r1-Edy.placeholder" = "Address";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NqB-dZ-PUP"; */
+"NqB-dZ-PUP.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "   NEXT"; ObjectID = "Nw4-Px-JVZ"; */
+"Nw4-Px-JVZ.normalTitle" = "   NEXT";
+
+/* Class = "UILabel"; text = "2 to 5 Steps"; ObjectID = "O0E-Mp-BZ4"; */
+"O0E-Mp-BZ4.text" = "2 to 5 Steps";
+
+/* Class = "UILabel"; text = "Delivery Service"; ObjectID = "OAr-hA-tlX"; */
+"OAr-hA-tlX.text" = "Delivery Service";
+
+/* Class = "UIButton"; normalTitle = "Resend OTP"; ObjectID = "OYG-tZ-JvY"; */
+"OYG-tZ-JvY.normalTitle" = "Resend OTP";
+
+/* Class = "UILabel"; text = "Verify Account"; ObjectID = "Oaz-6Y-BQm"; */
+"Oaz-6Y-BQm.text" = "Verify Account";
+
+/* Class = "UILabel"; text = "Bicycle"; ObjectID = "Orz-GH-Jyz"; */
+"Orz-GH-Jyz.text" = "Bicycle";
+
+/* Class = "UIButton"; normalTitle = "   DONE"; ObjectID = "RXE-UN-TOk"; */
+"RXE-UN-TOk.normalTitle" = "   DONE";
+
+/* Class = "UITextField"; placeholder = "Driving License (Front)"; ObjectID = "SFO-fu-CoM"; */
+"SFO-fu-CoM.placeholder" = "Driving License (Front)";
+
+/* Class = "UILabel"; text = "Submit your document"; ObjectID = "SUW-Eg-aFx"; */
+"SUW-Eg-aFx.text" = "Submit your document";
+
+/* Class = "UITextField"; placeholder = "Enter Mobile OTP"; ObjectID = "SqH-ye-8hF"; */
+"SqH-ye-8hF.placeholder" = "Enter Mobile OTP";
+
+/* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "SsH-va-7Tk"; */
+"SsH-va-7Tk.placeholder" = "Mobile Number";
+
+/* Class = "UITextField"; placeholder = "  One Time Password"; ObjectID = "SuB-gh-2Wd"; */
+"SuB-gh-2Wd.placeholder" = "  One Time Password";
+
+/* Class = "UILabel"; text = "First Class"; ObjectID = "SvI-tl-LUO"; */
+"SvI-tl-LUO.text" = "First Class";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "UAC-tN-BBh"; */
+"UAC-tN-BBh.placeholder" = "First Name";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "UiB-i7-eth"; */
+"UiB-i7-eth.normalTitle" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "UqQ-mv-HkM"; */
+"UqQ-mv-HkM.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "Vehicle Add"; ObjectID = "Vgh-Lr-meZ"; */
+"Vgh-Lr-meZ.text" = "Vehicle Add";
+
+/* Class = "UILabel"; text = "4"; ObjectID = "VhS-Wb-k89"; */
+"VhS-Wb-k89.text" = "4";
+
+/* Class = "UILabel"; text = "Certificate"; ObjectID = "WeW-7U-eK4"; */
+"WeW-7U-eK4.text" = "Certificate";
+
+/* Class = "UITextField"; placeholder = "Vehicle Register No"; ObjectID = "Wxu-2D-aeQ"; */
+"Wxu-2D-aeQ.placeholder" = "Vehicle Register No";
+
+/* Class = "UIButton"; normalTitle = "True"; ObjectID = "XW2-Su-6qJ"; */
+"XW2-Su-6qJ.normalTitle" = "True";
+
+/* Class = "UIButton"; normalTitle = "Log In "; ObjectID = "XY7-1I-Y3g"; */
+"XY7-1I-Y3g.normalTitle" = "Log In ";
+
+/* Class = "UITextField"; placeholder = "Account Number"; ObjectID = "XyD-e8-SNq"; */
+"XyD-e8-SNq.placeholder" = "Account Number";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "YRr-Oz-s0D"; */
+"YRr-Oz-s0D.placeholder" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Log In "; ObjectID = "Yuh-f6-iTX"; */
+"Yuh-f6-iTX.normalTitle" = "Log In ";
+
+/* Class = "UITextField"; placeholder = "Vehicle Type"; ObjectID = "ZXK-gF-63u"; */
+"ZXK-gF-63u.placeholder" = "Vehicle Type";
+
+/* Class = "UILabel"; text = "Vehicle Insurance Policy/certificate "; ObjectID = "Ztb-jb-vfK"; */
+"Ztb-jb-vfK.text" = "Vehicle Insurance Policy/certificate ";
+
+/* Class = "UITextField"; placeholder = "Account Number"; ObjectID = "anZ-fC-w5G"; */
+"anZ-fC-w5G.placeholder" = "Account Number";
+
+/* Class = "UITextField"; placeholder = "Post code"; ObjectID = "b95-9Q-hSq"; */
+"b95-9Q-hSq.placeholder" = "Post code";
+
+/* Class = "UIButton"; normalTitle = "True"; ObjectID = "bRP-eK-hzo"; */
+"bRP-eK-hzo.normalTitle" = "True";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "cNd-6T-TdF"; */
+"cNd-6T-TdF.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Already have an account?"; ObjectID = "dpE-Ex-rxO"; */
+"dpE-Ex-rxO.text" = "Already have an account?";
+
+/* Class = "UIButton"; normalTitle = "   NEXT"; ObjectID = "fGb-AL-JhV"; */
+"fGb-AL-JhV.normalTitle" = "   NEXT";
+
+/* Class = "UILabel"; text = "Please select which delivery classes you are a part of. You must be 18 years of age or over as per"; ObjectID = "fnu-yL-0id"; */
+"fnu-yL-0id.text" = "Please select which delivery classes you are a part of. You must be 18 years of age or over as per";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "fv0-8C-vtF"; */
+"fv0-8C-vtF.placeholder" = "Confirm Password";
+
+/* Class = "UIButton"; normalTitle = "Log In "; ObjectID = "gHr-wR-agl"; */
+"gHr-wR-agl.normalTitle" = "Log In ";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "gxr-Ef-Q6d"; */
+"gxr-Ef-Q6d.placeholder" = "Name";
+
+/* Class = "UITextField"; placeholder = "Vehicle Insurance Policy"; ObjectID = "hJl-Yk-deY"; */
+"hJl-Yk-deY.placeholder" = "Vehicle Insurance Policy";
+
+/* Class = "UITextField"; placeholder = "Number Of Passenger"; ObjectID = "hVh-sd-lep"; */
+"hVh-sd-lep.placeholder" = "Number Of Passenger";
+
+/* Class = "UITextField"; placeholder = "Vehicle Plate Number"; ObjectID = "iQS-hZ-ShZ"; */
+"iQS-hZ-ShZ.placeholder" = "Vehicle Plate Number";
+
+/* Class = "UITextField"; placeholder = "Type your OTP here...."; ObjectID = "jNc-80-HiG"; */
+"jNc-80-HiG.placeholder" = "Type your OTP here....";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "jgC-aj-FDt"; */
+"jgC-aj-FDt.placeholder" = "Address";
+
+/* Class = "UILabel"; text = "Add vehicle information"; ObjectID = "kHe-cB-lsr"; */
+"kHe-cB-lsr.text" = "Add vehicle information";
+
+/* Class = "UILabel"; text = "Verify Mobile Number"; ObjectID = "kaM-go-JgQ"; */
+"kaM-go-JgQ.text" = "Verify Mobile Number";
+
+/* Class = "UITextField"; placeholder = "Invite Code (Optional)"; ObjectID = "kam-PF-2IK"; */
+"kam-PF-2IK.placeholder" = "Invite Code (Optional)";
+
+/* Class = "UILabel"; text = "1 to 5 Steps"; ObjectID = "l3S-03-m6Z"; */
+"l3S-03-m6Z.text" = "1 to 5 Steps";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lSj-rd-4ex"; */
+"lSj-rd-4ex.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "lVI-hn-ySh"; */
+"lVI-hn-ySh.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "lij-DB-raE"; */
+"lij-DB-raE.placeholder" = "User Name";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "mYy-yq-DzR"; */
+"mYy-yq-DzR.text" = "2";
+
+/* Class = "UIButton"; normalTitle = "Log In "; ObjectID = "nGP-HA-xpB"; */
+"nGP-HA-xpB.normalTitle" = "Log In ";
+
+/* Class = "UIButton"; normalTitle = "   NEXT"; ObjectID = "nN4-t0-2Zd"; */
+"nN4-t0-2Zd.normalTitle" = "   NEXT";
+
+/* Class = "UILabel"; text = "Driver Licence (Front Only)"; ObjectID = "nj1-K0-iWR"; */
+"nj1-K0-iWR.text" = "Driver Licence (Front Only)";
+
+/* Class = "UILabel"; text = "Vehicle Registration Document"; ObjectID = "noP-2G-faB"; */
+"noP-2G-faB.text" = "Vehicle Registration Document";
+
+/* Class = "UILabel"; text = "Please check your email for verification"; ObjectID = "oNz-ad-M0j"; */
+"oNz-ad-M0j.text" = "Please check your email for verification";
+
+/* Class = "UITextField"; placeholder = "Gender"; ObjectID = "oP6-0q-cV2"; */
+"oP6-0q-cV2.placeholder" = "Gender";
+
+/* Class = "UILabel"; text = "Sign up to get started"; ObjectID = "ovh-rS-46a"; */
+"ovh-rS-46a.text" = "Sign up to get started";
+
+/* Class = "UILabel"; text = "5 to 5 Steps"; ObjectID = "pVT-nl-3ls"; */
+"pVT-nl-3ls.text" = "5 to 5 Steps";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qAF-FT-dbx"; */
+"qAF-FT-dbx.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Bank Branch Name"; ObjectID = "qYk-XX-Qmy"; */
+"qYk-XX-Qmy.placeholder" = "Bank Branch Name";
+
+/* Class = "UILabel"; text = "Vehicle Type"; ObjectID = "qfc-th-g7p"; */
+"qfc-th-g7p.text" = "Vehicle Type";
+
+/* Class = "UILabel"; text = "Please select which vehicle classes you are a part of.\nSelect up to 3 classes of 4-door vehicles.\nYou must be 21 years of age or over."; ObjectID = "qxf-bH-Sw2"; */
+"qxf-bH-Sw2.text" = "Please select which vehicle classes you are a part of.\nSelect up to 3 classes of 4-door vehicles.\nYou must be 21 years of age or over.";
+
+/* Class = "UIButton"; normalTitle = "   NEXT"; ObjectID = "rLs-vR-dZd"; */
+"rLs-vR-dZd.normalTitle" = "   NEXT";
+
+/* Class = "UILabel"; text = "Have an account"; ObjectID = "rU0-5Y-Xup"; */
+"rU0-5Y-Xup.text" = "Have an account";
+
+/* Class = "UIButton"; normalTitle = "   NEXT"; ObjectID = "rpR-Io-dBf"; */
+"rpR-Io-dBf.normalTitle" = "   NEXT";
+
+/* Class = "UIButton"; normalTitle = "Log In "; ObjectID = "sA6-Nv-0rz"; */
+"sA6-Nv-0rz.normalTitle" = "Log In ";
+
+/* Class = "UITextField"; placeholder = "Bank Branch"; ObjectID = "tcC-fN-R9g"; */
+"tcC-fN-R9g.placeholder" = "Bank Branch";
+
+/* Class = "UILabel"; text = "Male"; ObjectID = "u2i-BJ-gP5"; */
+"u2i-BJ-gP5.text" = "Male";
+
+/* Class = "UITextField"; placeholder = "  One Time Password"; ObjectID = "uYv-hh-ZmC"; */
+"uYv-hh-ZmC.placeholder" = "  One Time Password";
+
+/* Class = "UITextField"; placeholder = "Car Model"; ObjectID = "ugC-AM-BZr"; */
+"ugC-AM-BZr.placeholder" = "Car Model";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "vM7-0a-z6X"; */
+"vM7-0a-z6X.normalTitle" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Driver Terms and Conditions."; ObjectID = "vNn-la-lTh"; */
+"vNn-la-lTh.normalTitle" = "Driver Terms and Conditions.";
+
+/* Class = "UITextField"; placeholder = "Date Of Birth"; ObjectID = "vRX-dc-mgo"; */
+"vRX-dc-mgo.placeholder" = "Date Of Birth";
+
+/* Class = "UILabel"; text = "Have an account?"; ObjectID = "vvg-TX-hsF"; */
+"vvg-TX-hsF.text" = "Have an account?";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "wYc-rW-TPO"; */
+"wYc-rW-TPO.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "05"; ObjectID = "y9r-0d-Whc"; */
+"y9r-0d-Whc.text" = "05";
+
+/* Class = "UILabel"; text = "Add account information"; ObjectID = "ya1-nx-2ze"; */
+"ya1-nx-2ze.text" = "Add account information";
+
+/* Class = "UIButton"; normalTitle = "SIGN IN"; ObjectID = "z7V-RV-Fii"; */
+"z7V-RV-Fii.normalTitle" = "SIGN IN";
+
+/* Class = "UILabel"; text = "Have an account"; ObjectID = "zMg-VH-hVF"; */
+"zMg-VH-hVF.text" = "Have an account";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "zfe-nO-EXg"; */
+"zfe-nO-EXg.placeholder" = "Confirm Password";
+
+/* Class = "UILabel"; text = "Have an account"; ObjectID = "zvs-xj-xLf"; */
+"zvs-xj-xLf.text" = "Have an account";
