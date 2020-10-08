@@ -67,7 +67,6 @@ extension HelpVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc:HelpDetailVC = UIViewController.viewControllerInstance(storyBoard: .Main)
-        vc.dict = arrData[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }

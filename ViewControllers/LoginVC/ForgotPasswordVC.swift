@@ -17,6 +17,9 @@ class ForgotPasswordVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        txtEmail.placeholder = "Email Address".localized
+    }
     
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

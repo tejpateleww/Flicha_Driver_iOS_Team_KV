@@ -53,8 +53,8 @@
     func setLocalization() {
         
         if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-            if SelectedLanguage == "en" {
-                lblLaungageName.text = "SW"
+            if SelectedLanguage == "fr" {
+                lblLaungageName.text = "fr"
             } else if SelectedLanguage == "sw" {
                 lblLaungageName.text = "EN"
             }
@@ -62,8 +62,8 @@
         self.txtMobile.placeholder = "Mobile Number".localized
         self.txtPassword.placeholder = "Password".localized
         self.btnForgotPassWord.setTitle("Forgot Password?".localized, for: .normal)
-//        self.btnSignIn.setTitle("Sign In".localized, for: .normal)
-//        self.btnSignUp.setTitle("Sign Up".localized, for: .normal)
+        self.btnSignIn.setTitle("Sign In".localized, for: .normal)
+        self.btnSignUp.setTitle("Sign Up".localized, for: .normal)
         self.lblDonTHaveAnyAccount.text = "Don't have an account?".localized
         
     }
@@ -123,7 +123,8 @@
         lblLaungageName.layer.borderWidth = 0.5
         
         if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-            if SelectedLanguage == "en" {
+            //SJ_Change:
+            if SelectedLanguage == "fr" {
                 lblLaungageName.text = "EN"
             } else if SelectedLanguage == "sw" {
                     lblLaungageName.text = "SW"
@@ -196,9 +197,9 @@
     {
         
         if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-            if SelectedLanguage == "en" {
+            if SelectedLanguage == "fr" {
                 setLayoutForswahilLanguage()
-                lblLaungageName.text = "EN"
+                lblLaungageName.text = "FR"
             } else if SelectedLanguage == "sw" {
                 setLayoutForenglishLanguage()
                 lblLaungageName.text = "SW"

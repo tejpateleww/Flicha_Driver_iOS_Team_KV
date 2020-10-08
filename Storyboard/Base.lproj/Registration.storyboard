@@ -645,7 +645,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5pH-mg-h53">
                                                                         <rect key="frame" x="63" y="65" width="248.5" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpE-Ex-rxO">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpE-Ex-rxO" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="185.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="16"/>
                                                                                 <nil key="textColor"/>
@@ -1907,6 +1907,7 @@
                         <outlet property="lblDriverLicenceExpiryDate" destination="qAF-FT-dbx" id="MZi-7r-A9M"/>
                         <outlet property="lblVehicleInsuranceExpiryDate" destination="0kd-nW-aKn" id="l5a-4X-ij2"/>
                         <outlet property="txtDriverLicence" destination="gxr-Ef-Q6d" id="T7a-gh-kUd"/>
+                        <outlet property="txtDrivingLicense" destination="SFO-fu-CoM" id="J50-qf-4GJ"/>
                         <outlet property="txtProxy" destination="Dw7-cI-BkM" id="46o-9g-JZE"/>
                         <outlet property="txtVehicleInsurance" destination="UqQ-mv-HkM" id="QLW-Lb-rL1"/>
                         <outlet property="txtVehicleRegistration" destination="YRr-Oz-s0D" id="DWX-cu-KJb"/>

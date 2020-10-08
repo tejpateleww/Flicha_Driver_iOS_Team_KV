@@ -171,7 +171,7 @@ class CreateAccountVC: UIViewController {
             return false
         } else if (txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count)! < 8
         {
-            UtilityClass.showAlert("App Name".localized, message: "Password must contain at least 8 characters.".localized, vc: self)
+            UtilityClass.showAlert("App Name".localized, message: "Password must contain at least 8 characters".localized, vc: self)
             return false
         }
         else if txtConfirmPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0

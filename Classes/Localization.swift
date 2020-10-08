@@ -24,6 +24,7 @@ public let LCLLanguageChangeNotification = "LCLLanguageChangeNotification"
 enum Languages : String {
     case English = "en"
     case Arabic = "ar-AE"
+    case French = "fr"
 }
 
 
@@ -78,14 +79,18 @@ open class Localize: NSObject {
     open class func defaultLanguage() -> String {
         var defaultLanguage: String = String()
         guard let preferredLanguage = Bundle.main.preferredLocalizations.first else {
-            return Languages.English.rawValue
+            //SJ_Change:
+            return Languages.French.rawValue
+//            return Languages.English.rawValue
         }
         let availableLanguages: [String] = self.availableLanguages()
         if (availableLanguages.contains(preferredLanguage)) {
             defaultLanguage = preferredLanguage
         }
         else {
-            defaultLanguage = Languages.English.rawValue
+            //SJ_Change:
+//            defaultLanguage = Languages.English.rawValue
+            defaultLanguage = Languages.French.rawValue
         }
         return defaultLanguage
     }
@@ -160,10 +165,18 @@ func localizeUI(parentView:UIView)
 
 extension String {
     var localized: String {
-
-        let lang = UserDefaults.standard.string(forKey: LCLCurrentLanguageKey)
+        
+        let lang = UserDefaults.standard.string(forKey: "i18n_language")
+        print(lang)
         let path = Bundle.main.path(forResource: lang, ofType: "lproj")
         let bundle = Bundle(path: path!)
+        print(path ?? "")
+        print(bundle ?? "")
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+
+//        let lang = UserDefaults.standard.string(forKey: LCLCurrentLanguageKey)
+//        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+//        let bundle = Bundle(path: path!)
+//        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
     }
 }

@@ -125,6 +125,8 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
     func setLocalization() {
         self.txtFeedback.placeholder = "Write a comment".localized
         btnSubmit.setTitle("Submit".localized, for: .normal)
+        
+        self.howsTrip.text = "how is your trip?".localized
     }
     
     @IBAction func btnGiveRating(_ sender: Any)

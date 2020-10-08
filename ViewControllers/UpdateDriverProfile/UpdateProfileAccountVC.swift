@@ -32,7 +32,7 @@ class UpdateProfileAccountVC: BaseViewController {
         setData()
         self.setNavigationBarInViewController(controller: self, naviTitle: "Account Info".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
         
-        let rightButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(saveClick))
+        let rightButton = UIBarButtonItem.init(title: "Save".localized, style: .done, target: self, action: #selector(saveClick))
         
         self.navigationItem.rightBarButtonItem = rightButton
         // ABN, BANK name, BSB,BANK account
@@ -80,6 +80,9 @@ class UpdateProfileAccountVC: BaseViewController {
     @IBOutlet weak var txtABN: UITextField!
     @IBOutlet weak var txtBSB: UITextField!
     @IBOutlet weak var txtServiceDescription: UITextField!
+    
+    
+    
 
     //-------------------------------------------------------------
     // MARK: - Actions

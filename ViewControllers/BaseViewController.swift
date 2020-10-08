@@ -15,7 +15,6 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
     }
     
     
@@ -245,7 +244,8 @@ class BaseViewController: UIViewController {
     func LanguageUpdate() {
         
         if let lang = userDefault.value(forKey: "language") as? String {
-            if lang == "en" {
+            //SJ_Change: 
+            if lang == "fr" {
                 self.navigationController?.navigationBar.semanticContentAttribute = .forceLeftToRight
                 if let NavController = self.navigationController?.children {
                     NavController.last?.view.semanticContentAttribute = .forceLeftToRight

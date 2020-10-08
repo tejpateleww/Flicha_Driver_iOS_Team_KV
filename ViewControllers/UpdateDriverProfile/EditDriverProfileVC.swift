@@ -55,9 +55,6 @@ class EditDriverProfileVC: ParentViewController {
     {
         self.headerView?.lblTitle.text =   "Profile Update".localized
         
-        
-
-      
         lblEditProfile.text = "Edit Profile".localized
         lblAccount.text = "Account".localized
         lblVehicleOption.text = "Vehicle Option".localized

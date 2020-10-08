@@ -64,6 +64,7 @@ class ThemeTextField: UITextField {
     {
         self.font = UIFont.regular(ofSize: 13.0)
         self.text = ""
+        self.placeholder = self.placeholder?.localized
         self.textColor = UIColor.black
         self.borderStyle = .none
         self.background = UIImage(named: "bgRoundCorner")

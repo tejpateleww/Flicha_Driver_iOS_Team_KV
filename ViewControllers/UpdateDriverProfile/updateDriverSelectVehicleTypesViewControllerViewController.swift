@@ -42,7 +42,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: BaseViewContro
         txtNoOfPassenger.itemList = ["1","2","3","4","5","6","7","8","9","10"]
         self.setNavigationBarInViewController(controller: self, naviTitle: "Vehicle Info".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
         
-        let rightButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(btnSave(_:)))
+        let rightButton = UIBarButtonItem.init(title: "Save".localized, style: .done, target: self, action: #selector(btnSave(_:)))
         
         self.navigationItem.rightBarButtonItem = rightButton
 //        viewbtnCarsAndTexis.layer.borderWidth = 1
@@ -104,11 +104,11 @@ class updateDriverSelectVehicleTypesViewControllerViewController: BaseViewContro
     func setLocalizable()
     {
         txtVehicleRegistrationNumber.placeholder = "Vehicle Register No".localized
-        txtVehicleModel.placeholder = "Vehicle Model".localized
+        txtVehicleModel.placeholder = "Car Model".localized
         txtCompany.placeholder = "Vehicle Make".localized
         
 //        txtCompany.placeholder = "".localized
-        txtCarType.placeholder = "Vehicle Type".localized
+        txtCarType.placeholder = "Car Type".localized
         txtNoOfPassenger.placeholder = "Number Of Passenger".localized
         btnSave.setTitle("Save".localized, for: .normal)
         self.lblTitle.text = "Vehicle Option".localized
@@ -222,7 +222,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: BaseViewContro
         }
         else if txtVehicleRegistrationNumber.text == "" {
             isValidate = false
-            ValidatorMessage = "Enter Vehicle Registration No."
+            ValidatorMessage = "Enter Vehicle Registration Number".localized
 //            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
 //            sb.show()
         }
@@ -251,7 +251,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: BaseViewContro
         }
         else if txtVehicleRegistrationNumber.text == "" {
             isValidate = false
-            ValidatorMessage = "Enter Vehicle Registration No."
+            ValidatorMessage = "Enter Vehicle Registration Number".localized
 //            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK".localized, action: { print("Button is push") })
 //            sb.show()
         }

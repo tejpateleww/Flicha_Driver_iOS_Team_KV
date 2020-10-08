@@ -111,13 +111,13 @@ class ChangePasswordViewController: UIViewController {
         var ValidatorMessage:String = ""
         if txtOldPassword.text!.isEmpty {
             isValid = false
-            ValidatorMessage = "Please enter ".localized + txtOldPassword.placeholder!
+            ValidatorMessage = "Please enter new password.".localized
         } else if (self.txtOldPassword.text?.count)! < 8 {
             isValid = false
             ValidatorMessage = "Password must contain at least 8 characters.".localized
         }else if txtNewPassword.text!.isEmpty {
             isValid = false
-            ValidatorMessage = "Please enter ".localized + txtNewPassword.placeholder!
+            ValidatorMessage = "Please enter new password.".localized
         } else if (self.txtNewPassword.text?.count)! < 8 {
             isValid = false
             ValidatorMessage = "Password must contain at least 8 characters.".localized

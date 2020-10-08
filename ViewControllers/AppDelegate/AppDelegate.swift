@@ -46,10 +46,12 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
         IQKeyboardManager.shared.enable = true
         UserDefaults.standard.synchronize()
         
-        if UserDefaults.standard.value(forKey: "i18n_language") == nil {
-            UserDefaults.standard.set("en", forKey: "i18n_language")
-            UserDefaults.standard.synchronize()
-        }
+            //SJ_Change:
+             if UserDefaults.standard.value(forKey: "i18n_language") == nil {
+                       UserDefaults.standard.set("fr", forKey: "i18n_language")
+                       UserDefaults.standard.synchronize()
+                   }
+        
         Singletons.sharedInstance.isPushSettingsOn = userDefault.bool(forKey: "DefaultNotificationSetting")
         Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().delegate = self
@@ -108,13 +110,11 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             //            self.pushAfterReceiveNotification(typeKey: "")
             
         }
-        //Default English set
-        if UserDefaults.standard.value(forKey: "i18n_language") == nil {
-            UserDefaults.standard.set("en", forKey: "i18n_language")
-            UserDefaults.standard.synchronize()
-        }
-
-        
+        //Default french set
+//        if UserDefaults.standard.value(forKey: "i18n_language") == nil {
+//            UserDefaults.standard.set("fr", forKey: "i18n_language")
+//            UserDefaults.standard.synchronize()
+//        }
         
         return true
     }
@@ -494,7 +494,8 @@ func setLayoutForswahilLanguage()
 }
 func setLayoutForenglishLanguage()
 {
-    UserDefaults.standard.set("en", forKey: "i18n_language")
+    //SJ_Change: 
+    UserDefaults.standard.set("fr", forKey: "i18n_language")
     UserDefaults.standard.synchronize()
 }
 

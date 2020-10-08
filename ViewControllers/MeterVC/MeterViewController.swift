@@ -388,7 +388,7 @@ class MeterViewController: UIViewController {
                     
                 })
                 
-                let Cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { ACTION in
+                let Cancel = UIAlertAction(title: "Cancel".localized, style: .destructive, handler: { ACTION in
                     
                     self.startTrip()
                 })

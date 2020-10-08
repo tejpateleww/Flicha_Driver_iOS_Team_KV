@@ -28,6 +28,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var txtVehicleRegistration: UITextField!
     @IBOutlet weak var txtVehicleInsurance: UITextField!
     @IBOutlet weak var txtProxy: UITextField!
+    @IBOutlet weak var txtDrivingLicense: ThemeTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,7 @@ class DocumentAddVC: UIViewController , UIImagePickerControllerDelegate, UINavig
 //        lblVehicleInsurance.text = "Vehicle Insurance Policy/Certificate".localized
         lblVehicleInsuranceExpiryDate.text = "Select date".localized
         txtProxy.placeholder = "Proxy".localized
+        txtDrivingLicense.placeholder = "Driving License (Front)".localized
 //        btnSave.setTitle("Save".localized, for: .normal)
     }
 

@@ -57,7 +57,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     }
     @IBOutlet weak var lblTitleBookingArrive: UILabel! {
         didSet {
-                   lblTitleBookingArrive.text = "New Booking Request Arrived".localized
+                   lblTitleBookingArrive.text = "New booking request arrived".localized
                    lblTitleBookingArrive.font = UIFont.regular(ofSize: 15)
                }
     }

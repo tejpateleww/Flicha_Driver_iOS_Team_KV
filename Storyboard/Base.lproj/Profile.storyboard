@@ -291,7 +291,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdK-nX-8fU">
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxB-hf-Cu0">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxB-hf-Cu0" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="245" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="fbl-Ie-ALr"/>
@@ -338,7 +338,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kjg-rJ-P8N">
                                                     <rect key="frame" x="0.0" y="116" width="290" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKK-6N-asZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKK-6N-asZ" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="245" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="jGa-Zy-30A"/>
@@ -384,7 +384,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVv-Gq-u8R">
                                                     <rect key="frame" x="0.0" y="232" width="290" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Branch Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b6-kF-fw3">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Branch Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b6-kF-fw3" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="245" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Ai1-Sf-K6n"/>
@@ -430,7 +430,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-9D-Xa5">
                                                     <rect key="frame" x="0.0" y="348" width="290" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holder Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b97-HV-f2R">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holder Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b97-HV-f2R" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="245" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="JGs-fp-vbh"/>
@@ -1299,7 +1299,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhb-gK-8Gq">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9r-sh-fMg">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9r-sh-fMg" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="275" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="JiQ-AF-50f"/>
@@ -1331,7 +1331,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-os-pM8">
                                                     <rect key="frame" x="0.0" y="106" width="320" height="106.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcT-Cl-Pcw">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcT-Cl-Pcw" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="275" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="rcd-F5-AHh"/>
@@ -1362,7 +1362,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dj-Ob-Vkp">
                                                     <rect key="frame" x="0.0" y="212.5" width="320" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znc-TZ-GmQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znc-TZ-GmQ" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="275" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="xnB-tN-RFF"/>
@@ -1393,7 +1393,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dab-Fi-31x">
                                                     <rect key="frame" x="0.0" y="318.5" width="320" height="106.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MU-Sw-CEk">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MU-Sw-CEk" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="275" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="phf-N6-Y2w"/>
@@ -1424,7 +1424,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Mk-Wh-LzK">
                                                     <rect key="frame" x="0.0" y="425" width="320" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvW-fZ-LpD">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvW-fZ-LpD" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="275" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="uIo-aI-YVJ"/>
@@ -1455,7 +1455,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXC-gl-5kz">
                                                     <rect key="frame" x="0.0" y="531" width="320" height="70"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5N-av-VHC">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5N-av-VHC" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="5" width="275" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="7a3-SY-kfu"/>
@@ -1532,7 +1532,7 @@
                                                                 <segue destination="ajE-iZ-fGK" kind="show" id="16P-vd-SsB"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Info Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2S-n1-7XR">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Info Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2S-n1-7XR" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="25" width="136" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="8Zv-09-YuF"/>
@@ -1585,7 +1585,7 @@
                                                                 <segue destination="hC5-5v-puM" kind="show" id="EIe-Ac-t1f"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Info Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgH-3D-yan">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Info Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgH-3D-yan" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="25" width="129.5" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="pdq-wg-lYI"/>
@@ -1637,7 +1637,7 @@
                                                                 <segue destination="R89-Dr-0Kg" kind="show" id="t3N-lB-KkS"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnP-u4-cPu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnP-u4-cPu" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="25" width="118" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="bcl-f7-XY4"/>
@@ -1738,6 +1738,7 @@
                     </view>
                     <size key="freeformSize" width="320" height="1020"/>
                     <connections>
+                        <outlet property="btnChangePassword" destination="eR9-wt-Hho" id="eY7-Si-fs7"/>
                         <outlet property="btnFemale" destination="wPZ-oQ-xov" id="4uh-RJ-nUJ"/>
                         <outlet property="btnMale" destination="dqg-8n-jh3" id="zzj-EK-ytu"/>
                         <outlet property="imgProfile" destination="RZz-uh-834" id="CLB-oR-4ID"/>
@@ -3635,7 +3636,7 @@ You must be 21 years of age or over.</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBk-sv-HnL">
                                                     <rect key="frame" x="0.0" y="0.0" width="280" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Register No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJm-Er-7Ld">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Register No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJm-Er-7Ld" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="235" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="RYa-QM-ecC"/>
@@ -3685,7 +3686,7 @@ You must be 21 years of age or over.</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-bP-Bwh">
                                                     <rect key="frame" x="0.0" y="116" width="280" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-wA-w4e">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-wA-w4e" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="235" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="rrW-LU-AaE"/>
@@ -3734,7 +3735,7 @@ You must be 21 years of age or over.</string>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fn-WP-VzW">
                                                     <rect key="frame" x="0.0" y="232" width="280" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dY-6B-nv9">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dY-6B-nv9" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
                                                             <rect key="frame" x="35" y="8" width="235" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="o1m-9r-tji"/>

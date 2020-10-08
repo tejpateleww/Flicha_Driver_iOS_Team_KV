@@ -238,7 +238,7 @@ extension SideMenuViewController {
     
     func setLanguage(Language: String) {
         
-        if Language == "en" {
+        if Language == "fr" {
             sideMenuController?.isRightViewSwipeGestureEnabled = false
             sideMenuController?.isLeftViewSwipeGestureEnabled = true
         }else {
@@ -314,9 +314,9 @@ extension SideMenuViewController {
             HomePage.navigationController?.pushViewController(vc, animated: false)
             break
         case "Help":
-            let bankDetail:HelpVC = UIViewController.viewControllerInstance(storyBoard: .Main)
-            
+            let bankDetail : HelpDetailVC = UIViewController.viewControllerInstance(storyBoard: .Main)
             HomePage.navigationController?.pushViewController(bankDetail, animated: false)
+            
         case "Logout":
             let LogoutConfirmation = UIAlertController(title: "App Name".localized, message: "Are you sure you want to logout?".localized, preferredStyle: .alert)
                   LogoutConfirmation.addAction(UIAlertAction(title: "Logout".localized, style: .destructive, handler: { (UIAlertAction) in

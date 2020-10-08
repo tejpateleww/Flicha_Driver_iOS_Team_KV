@@ -272,6 +272,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), camera: camera)
         
         mapView.isHidden = true
+        mapView.isTrafficEnabled = true
         subMapView.addSubview(mapView)
         
         getCurrentPlace()
@@ -2677,7 +2678,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 }
                 
                 // 3. Grab the value from the text field, and print it when the user clicks OK.
-                alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { [weak alert] (_) in
+                alert.addAction(UIAlertAction(title: "Yes".localized, style: .default, handler: { [weak alert] (_) in
                     let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
                     self.tollFee = (textField?.text)!
                     print("Text field: \(String(describing: textField?.text))")

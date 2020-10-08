@@ -6,12 +6,14 @@
   Copyright © 2019 Excellent Webworld. All rights reserved.
 */
 
+
 "Gender" = "sexe";
 "Change Password" = "changer le mot de passe";
 "Sign in to Continue!" = "s'inscrire pour continuer";
 "Forgot Password?" = "mot de passe oublié ?";
 "OR" = "ou";
 "Sign Up" = "s'inscrire";
+"SIGN UP" = "s'inscrire";
 "Welcome" = "Bienvenue";
 "Don't have an account?" = "vous n'avez pas de compte ?";
 "Forgot Password" = "mot de passe oublié ";
@@ -24,6 +26,7 @@
 "Next" = "suivant";
 "Already have an account?" = "vous avez déjà un compte ? ";
 "Sign In" = "se connecter";
+"SIGN IN" = "se connecter";
 "2 to 4 Step" = "2 à 4 étapes ";
 "Account Info" = "information du compte";
 "Add account information" = "ajouter des informations de compte";
@@ -34,22 +37,29 @@
 "Document Add" = "documents";
 "Submit your document" = "soumettre votre document";
 "Car registration" = "immatriculation du véhicule";
+"Car Registration" = "immatriculation du véhicule";
 "Proxy" = "Proxy";
 "Vehicle Insurance Policy/Certificate" = "assurance automobile";
+"Vehicle Insurance Policy" = "assurance automobile";
 "Question : " = "Question :";
 "Answer : " = "Réponse : ";
 "Push Notification" = "notification push";
 "Future Booking" = "future réservation";
+"Future Jobs" = "future réservation";
 "Pending Jobs" = "taches en attente";
-"Past Jobs" = "anciens emplois";
+"Past Jobs" = "anciennes tâches";
 "No data found." = "aucune donnée trouvée";
+"No data found" = "aucune donnée trouvée";
 "Pickup" = "départ";
+"Pick up" = "départ";
 "On The Way" = "en route";
 "DA" = "DA";
 "Cancelled" = "Cancelled";
-"Hey" = "Salut!";
+"Hey " = "Salut! ";
 "Female" = "femelle";
-"Male" = "Male";
+"Male" = "Homme";
+"FEMALE" = "femelle";
+"MALE" = "Homme";
 "Account Info Edit" = "modifier les informations du compte";
 "Vehicle Info Edit" = "modifier les informations du véhicule";
 "Document Edit" = "modifier document";
@@ -97,6 +107,8 @@
 "Receive Request" = "recevoir la demande";
 "New booking request arrived" = "nouvelle demande de réservation arrivée";
 "Reject" = "rejeter";
+
+
 "Accept" = "accepter";
 "Vehicle Type" = "type de véhicule";
 "Booking Confirmed" = "type de véhicule";
@@ -122,7 +134,9 @@
 "Waiting Cost:" = "cout d'attente";
 "Toll Fee" = "taxes de péage";
 "Grand Total (Tax Included) :" = "grand total ( taxes iclut ) :";
+"Tax (incl)" = "taxes iclut";
 "Trip Details" = "details de  la course";
+"Trip Detail" = "details de  la course";
 "Update" = "mise à jour";
 "OK" = "OK";
 "Email ID/Phone Number" = "email ID/ numéro portable ";
@@ -136,6 +150,7 @@
 "Confirm Password" = "confirmer le mot de passe";
 "Bank Name" = "nom de la banque";
 "Bank Branch Name" = "nom de l'agence bancaire";
+"Bank Branch" = "nom de l'agence bancaire";
 "Holder Name" = "nom du titulaire";
 "Vehicle Registration Number" = "numéro d'immatriculation du véhicule";
 "Car Model" = "modèle de voiture";
@@ -145,6 +160,7 @@
 "Logout" = "déconnexion";
 "Account Number" = "numéro de compte";
 "Current password" = "mot de passe actuel";
+
 "New Password" = "nouveau mot de passe";
 "Additional comments…" = "commentaires supplémentaires";
 "Please enter valid email" = "veuillez saisir une adresse email valide";
@@ -152,24 +168,32 @@
 "Please enter email or mobile number" = "veuillez saisir l'email ou le numéro de téléphone";
 "Please enter valid phone number." = "veuillez saisir un numéro de téléphone valide";
 "Please enter email" = "veuillez saisir l'email ";
-"Please enter first name." = "veuillez saisir votre prénom";
-"Please enter last name." = "veuillez saisir votre nom de famille";
-"Please enter email id." = "veuillez saisir l'adresse email";
-"Please enter valid email." = "veuillez saisir une adresse email valide";
-"Please enter phone number." = "veuillez saisir votre numéro de téléphone";
-"Please select gender." = "veuillez sélectionner le sexe";
-"Please enter address." = "veuillez entrer l'adresse";
-"Please enter password." = "veuillez entrer le mot de passe";
+"Please enter first name" = "veuillez saisir votre prénom";
+"Please enter last name" = "veuillez saisir votre nom de famille";
+"Please enter email id" = "veuillez saisir l'adresse email";
+"Please enter valid email" = "veuillez saisir une adresse email valide";
+"Please Enter Valid Email ID" = "veuillez saisir une adresse email valide";
+"Please enter phone number" = "veuillez saisir votre numéro de téléphone";
+"Please select gender" = "veuillez sélectionner le sexe";
+"Please enter address" = "veuillez entrer l'adresse";
 "Password must contain at least 6 characters." = "le mot de passe doit contenir au moin 6 caractères";
+"Password must contain at least 6 characters" = "le mot de passe doit contenir au moin 6 caractères";
+"Password must contain at least 8 characters." = "le mot de passe doit contenir au moin 8 caractères";
+"Password must contain at least 8 characters" = "le mot de passe doit contenir au moin 8 caractères";
 "Please enter confirm password." = "veuillez saisir le mot de passe de confirmation";
+
 "Password and confirm password does not match." = "la confirmation du mot de passe ne correspond pas";
-"Please enter account number." = "veuillez saisir le numéro de compte ";
-"Please enter bank name." = "veuillez saisir le nom de la banque";
-"Please enter bank branch name." == "veuillez saisir le nom de l'agence bancaire";
-"Please enter holder name." = "veuillez saisir le nom du titulaire";
+"Password and confirm password must be same" = "le mot de passe et le mot de passe de confirmation doivent etre identiques";
+
+"Please enter account number" = "veuillez saisir le numéro de compte ";
+"Please enter bank name" = "veuillez saisir le nom de la banque";
+"Please enter bank branch name" = "veuillez saisir le nom de l'agence bancaire";
+"Please enter holder name" = "veuillez saisir le nom du titulaire";
 "Please select vehicle image" = "veuillez sélectionner l'image du véhicule ";
 "Please enter vehicle registration number." = "veuillez indiquer l'immatriculation  de la voiture ";
+"Please enter vehicle registration number" = "veuillez indiquer l'immatriculation  de la voiture ";
 "Please enter car model." = "veuillez indiquer le modèle de véhicule";
+"Please enter car model" = "veuillez indiquer le modèle de véhicule";
 "Please select vehicle type" = "veuillez sélectionner le type de véhicule ";
 "Please select driving license image." = "veuillez sélectionner l'image du permis de conduire";
 "Please select car registration image." = "veuillez sélectionner l'image d'immatriculation de la voiture";
@@ -187,9 +211,12 @@
 "Please enter current password." = "veuillez saisir le mot de passe actuel";
 "Please enter new password." = "veuillez saisir le nouveau mot de passe";
 "New password must contain at least 6 characters." = "le nouveau mot de passe doit contenir au moin 6 caractères";
+"New password must contain at least 6 characters" = "le nouveau mot de passe doit contenir au moin 6 caractères";
+
 "upcoming" = "à venir";
 "Today" = "Aujourd'hui";
 "complete" = "terminé";
+
 "Description" = "description";
 "Internet Error" = "erreur connexion";
 "Sorry! Not connected to internet" = "désolé ! Pas de connexion internet";
@@ -202,12 +229,13 @@
 "You can only select three types" = "vous ne pouvez sélectionner que trois types";
 "Error Message" = "message d'erreur";
 "Something is wrong, try again later" = "quelque chose ne va pas , réessayez plus tard";
-"My Jobs" = "mes emplois";
+"My Jobs" = "Historique";
 "Success Message" = "message de confirmation";
 "Get online First." = "connectez-vous d'abord";
 "Info Message!" = "message info!";
 "You are already on Your trip, first finished your trip" = "vous etes déjà sur votre parcours, veuillez le finir en premier";
 "Are you sure you want to cancel this trip?" = "etes-vous sur de vouloir annuler ce voyage ?";
+"Are you sure you want to cancel the trip?" = "etes-vous sur de vouloir annuler ce voyage ?";
 "Please stop trip waiting time first." = "veuillez arreter le temps d'attente du voyage en premier";
 "Please set your Location Mode to High accuracy." = "veuillez régler votre mode de localisation sur une précision élevée";
 "Session Expire" = "la session a expiré";
@@ -218,45 +246,202 @@
 "Please add expiry date" = "veuillez ajouter la date d'expiration";
 "New Picture" = "nouvelle photo";
 
+"sorry, this promo code is invalid" = "Désolé, ce code promo n’est pas valide";
 
+"Invalid login credentials" = "Identifiants non valide.";
+"Save" = "sauvegarder";
+
+"Cancel" = "annuler";
+"Cancle" = "annuler";
+
+"Please enter email address" = "";
+
+"Please enter mobile number" = "Veuillez entrer le numéro de téléphone";
+
+"Please select car type" = "Veuillez choisir le type de véhicule ";
+
+"Please enter a valid email" = "veuillez entrer une adresse email valide";
+
+"Please enter confirm password" = "veuillez saisir le mot de passe de confirmation ";
+
+"Incorrect verification code" = "code de vérification incorrect";
+
+"Enter Mobile OTP" = "entrez votre mot de passe à usage unique mobile";
+
+"Verify Mobile Number" = "Vérifiez le numéro mobile ";
+
+"Resend OTP" = "renvoyez le mot de passe à usage unique";
+
+"Please enter bank branch" = "veuillez saisir le nom de l'agence bancaire";
+
+// new ones, to search in app and apply localized
+
+"driver away time" = "Temps de conduite";
+
+"driver away km" = "Kilométrage de conduite ";
+
+"Estimated fare" = "Tarif estimé";
+
+"Book Now" = "Réserver maintenant ";
+
+"Your booking request Timeout" = "Votre demande de réservation a expiré";
+
+"your trip will start in few minutes" = "Votre course commencera dans quelques minutes ";
+
+"your booking has been canceled" = "Votre réservation a était annulé ";
+
+"Please enter valid OTP" = "Veuillez entrer un OTP valide";
+
+"signup to get started" = "Inscrivez-vous pour commencer ";
+
+"incorrect varification code" = "Code de vérification incorrecte ";
+
+"Booking canceled" = "Réservation annulée ";
+
+"your trip cancelled successfully" = "Votre course a était annulée avec succès ";
+
+"your request status is pending" = "votre statut de demande est en attente";
+
+"your booking has been cancelled by driver" = "Votre réservation a été annulée par le chauffeur ";
+
+"Profile Update" = "Mise à jour du profil ";
+
+"Edit Profile" = "Modifier le profil";
+
+"Mobile Number" = "Numéro de téléphone";
+
+"Pickup Time" = "L’heure de départ";
+
+"Drop-off Time" = "L’heure d’arrivée ";
+"Dropoff Time" = "L’heure d’arrivée ";
+
+
+"Push notifications" = "Notification Push";
+
+"Edit Account Info" = "Modifier les informations du compte";
+
+"Edit Vehicle Info" = "Modifier les informations du véhicule";
+
+"Edit Document" = "Modifier le document";
+
+"Vehicle Model" = "Modèle de véhicule ";
+
+"Vehicle Make" = "Marque de véhicule ";
+
+"Car License" = "Plaque d’immatriculation";
+
+"Car Type" = "Type de voiture";
+
+"Driver License (Front only)" = "Permis de conduire ( recto seulement )";
+
+"Future Jobs" = "Futurs tâches ";
+
+"Select driver license expiry date" = "Selectionnez la date d’expiration du permis de conduire ";
+
+"Vehicle Registration Document" = "Document d’immatriculation du véhicule ";
+
+"Are you sure you want to logout?" = "Êtes-vous sûr de vouloir vous déconnecter ? ";
+
+"Yesterday" = "Hier";
+
+"Enter your email address you use to sign to." = "entrez votre adresse e-mail que vous utilisez pour vous connecter";
+
+"Account Holder Name" = "Nom du titulaire du compte ";
+
+"the request timed out" = "La demande a expiré";
+
+"Dismiss" = "Rejeter";
+
+"Verify account" = "Vérifier le compte ";
+
+"Please enter mobile OTP" = "Veuillez entrer l’OTP mobile";
+
+"Please enter account holder name" = "Veuillez entret le nom du titulaire du compte";
+
+"Please enter Customer Name." = "Veuillez saisir le nom du client";
+
+"Please enter description" = "Veuillez saisir une description";
+
+
+
+"1 to 5 Steps" = "1 de 5 étapes ";
+
+"2 to 5 Steps" = "2 de 5 étapes ";
+
+"3 to 5 Steps" = "3 de 5 étapes ";
+
+"4 to 5 Steps" = "4 de 5 étapes ";
+
+"5 to 5 Steps" = "5 de 5 étapes ";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Old :
 "App Name" = "Flicha Driver";
 "Currency" = "TZS";
 "Location" = "Location";
-"Dismiss" = "Dismiss";
 "System Alert" = "System Alert";
 
-"Mobile Number" = "Mobile Number";
-//"Login" = "Login";
 
-"Sign Up" = "Sign Up";
-
-
-"Please enter mobile number" = "Please enter mobile number";
 "Please enter valid mobile number" = "Please enter valid mobile number";
-"Please enter a valid email" = "Please enter a valid email";
-"Please enter password" = "Please enter password";
-"Password must contain at least 8 characters." = "Password must contain at least 8 characters.";
-"Please enter confirm password" = "Please enter confirm password";
-"Password and confirm password must be same" = "Password and confirm password must be same";
+
+
 "Please enter OTP" = "Please enter OTP";
-"Resend OTP" = "Resend OTP";
 "Please enter correct OTP" = "Please enter correct OTP";
 "Please try to login again" = "Please try to login again";
 "User Name" = "User Name";
 "Please enter user name" = "Please enter user name";
 "Select date of birth" = "Select date of birth";
 "Please enter date of birth" = "Please enter date of birth";
-"Please enter address" = "Please enter address";
 
 "Post Code (Optional)" = "Post Code (Optional)";
 "Invite Code (Optional)" = "Invite Code (Optional)";
 
-"Please enter account holder name" = "Please enter account holder name";
-"Please enter bank name" = "Please enter bank name";
-"Please enter bank branch" = "Please enter bank branch";
-"Please enter account number" = "Please enter account number";
-"Account Holder Name" = "Account Holder Name";
-"Bank Branch" = "Bank Branch";
+
+
 "Please enter vehicle plate number" = "Please enter vehicle plate number";
 "Please enter vehicle model" = "Please enter vehicle model";
 "Please enter vehicle make" = "Please enter vehicle make";
@@ -290,22 +475,18 @@
 "We can not detect your current location. Please check your location services." = "We can not detect your current location. Please check your location services.";
 "Please stay connected to app, until finish the trip! may be you can loose your data." = "Please stay connected to app, until finish the trip!\n may be you can loose your data.";
 
-"Drop off location" = "Drop off location";
 
 "Booking Charge" = "Booking Charge:";
-"Grand Total" = "Grand Total";
 "You" = "You";
 "Passenger" = "Passenger";
 "Destination Location" = "Destination Location";
-"Are you sure you want to cancel the trip?" = "Are you sure you want to cancel the trip?";
-"Profile Update" = "Profile Update";
+
 "Full Name" = "Full Name";
 "Profile" = "Profile";
 "Updated successfully." = "Updated successfully.";
 "Account Updated successfully." = "Account Updated successfully.";
 "Profile Updated Successfully" = "Profile Updated Successfully";
 
-"Save" = "Save";
 "Vehicle Option" = "Vehicle Option";
 "picker" = "picker";
 "Number Of Passenger" = "Number Of Passenger";
@@ -370,22 +551,18 @@
 "Email" = "Email";
 "Send Otp" = "Send Otp";
 "Send OTP" = "Send OTP";
-"Enter Mobile OTP" = "Enter Mobile OTP";
 "Date Of Birth" = "Date Of Birth";
 "Bsb" = "Bsb";
 "Branch Code" = "Branch Code";
 "Vehicle Plate Number" = "Vehicle Plate Number";
-"Vehicle Model" = "Vehicle Model";
-"Vehicle Make" = "Vehicle Make";
 "Number Of Passenger" = "Number Of Passenger";
 "TIN Certificate" = "TIN Certificate";
 "Driver Licence (Front only)" = "Driver Licence (Front only)";
 "Revenue Licence" = "Revenue Licence";
-"Vehicle Registration Document" = "Vehicle Registration Document";
 
 "Bank Account No." = "Bank Account No.";
 "Please try again later." = "Please try again later.";
-"Cancel" = "Cancel";
+
 "Dispatch" = "Dispatch";
 "My Job" = "My Job";
 "Hailed Fare" = "Hailed Fare";
@@ -398,7 +575,6 @@
 "Driver term and condition." = "Driver term and condition.";
 "Select up to three vehicles." = "Select up to three vehicles.";
 
-"Edit Profile" = "Edit Profile";
 "Current Balance" = "Current Balance";
 "Add a Card" = "Add a Card";
 "Add Card" = "Add Card";
@@ -413,7 +589,7 @@
 "Something went wrong!" = "Something went wrong!";
 "Please select Profile pic" = "Please select Profile pic";
 "Set Amount" = "Set Amount";
-"Please enter Customer Name." = "Please enter Customer Name.";
+
 "Please enter Customer Mobile No." = "Please enter Customer Mobile No.";
 "Please enter Pick Up Location." = "Please enter Pick Up Location.";
 "Please enter a Destination." = "Please enter a Destination.";
@@ -427,4 +603,5 @@
 "Want to ask about Tips?" = "Want to ask about Tips?";
 "Thanks for feedback." = "Thanks for feedback.";
 "Please install Google Maps." = "Please install Google Maps.";
-"Are you sure you want to logout?" = "Are you sure you want to logout?";
+
+

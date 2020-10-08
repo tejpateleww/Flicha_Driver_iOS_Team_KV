@@ -72,6 +72,7 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
     @IBOutlet weak var txtMobile: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     
+    @IBOutlet weak var btnChangePassword: ThemeButton!
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
@@ -89,7 +90,7 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
         webserviceCallToGetCompanyList()
         setData()
         self.setNavigationBarInViewController(controller: self, naviTitle: "My Profile".localized, leftImage: iconBack, rightImages: [], isTranslucent: false)
-        let rightButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(saveClick))
+        let rightButton = UIBarButtonItem.init(title: "Save".localized, style: .done, target: self, action: #selector(saveClick))
               
               self.navigationItem.rightBarButtonItem = rightButton
     }
@@ -105,9 +106,9 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.bordered, target: self, action: "donedatePicker")
+        let doneButton = UIBarButtonItem(title: "Done".localized, style: UIBarButtonItem.Style.bordered, target: self, action: "donedatePicker")
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.bordered, target: self, action: "cancelDatePicker")
+        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: UIBarButtonItem.Style.bordered, target: self, action: "cancelDatePicker")
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
@@ -166,6 +167,10 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
         btnChangePass?.setTitle("Change Password".localized, for: .normal)
         btnSave?.setTitle("Save".localized, for: .normal)
         
+        btnMale?.setTitle("Male".localized, for: .normal)
+        btnFemale?.setTitle("Female".localized, for: .normal)
+        
+        btnChangePassword.setTitle("Change Password".localized, for: .normal)
         
     }
 
@@ -462,7 +467,7 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
       //  dictData["CompanyId"] = companyID as AnyObject
         let fullName = txtFirstName.text! + "||" + txtLastName.text!
         dictData["Fullname"] = fullName as AnyObject
-        dictData["Gender"] = isMaleSelected ? "Male" as AnyObject : "Female" as AnyObject
+        dictData["Gender"] = isMaleSelected ? "Male".localized as AnyObject : "Female".localized as AnyObject
         dictData["Address"] = txtAddress.text as AnyObject
         dictData["DOB"] = "" as AnyObject
         dictData["MobileNo"] = txtMobile.text as AnyObject

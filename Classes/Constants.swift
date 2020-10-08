@@ -149,7 +149,8 @@ let NotificationChangeLanguage = NSNotification.Name("ChangeLanguageNotification
 func GetPaymentTypeKey() -> String {
     var PaymentKey:String = ""
     if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-        PaymentKey = (SelectedLanguage == "en") ? "PaymentType" : "swahili_PaymentType"
+        //SJ_Change:
+        PaymentKey = (SelectedLanguage == "fr") ? "PaymentType" : "swahili_PaymentType"
     }
     return PaymentKey
 }
@@ -157,7 +158,8 @@ func GetPaymentTypeKey() -> String {
 func GetTripStatusKey() -> String {
     var StatusKey:String = ""
     if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-        StatusKey = (SelectedLanguage == "en") ? "Status" : "swahili_BookingStatus"
+        //SJ_Change:
+        StatusKey = (SelectedLanguage == "fr") ? "Status" : "swahili_BookingStatus"
     }
     return StatusKey
 }
@@ -165,7 +167,8 @@ func GetTripStatusKey() -> String {
 func GetResponseMessageKey() -> String {
     var MessageKey:String = ""
     if let SelectedLanguage = UserDefaults.standard.value(forKey: "i18n_language") as? String {
-        MessageKey = (SelectedLanguage == "en") ? "message" : "swahili_message"
+        //SJ_Change: 
+        MessageKey = (SelectedLanguage == "fr") ? "message" : "swahili_message"
     }
     return MessageKey
 }

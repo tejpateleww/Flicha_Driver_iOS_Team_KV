@@ -56,8 +56,8 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SettingCell
         cell.selectionStyle = .none
-        cell.lblTitle.text = "Push Notification"
-        cell.lblDesc.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        cell.lblTitle.text = "Push Notification".localized
+        cell.lblDesc.text = "Allow Push Notifications?".localized
         cell.lblTitle.font = UIFont.bold(ofSize: 20)
         cell.lblDesc.font = UIFont.regular(ofSize: 12)
         cell.btnSwitch.isSelected = Singletons.sharedInstance.isPushSettingsOn
