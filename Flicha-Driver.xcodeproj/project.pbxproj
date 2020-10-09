@@ -246,7 +246,6 @@
 		63209117218AD80600A1241C /* MyRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63209116218AD80600A1241C /* MyRatingViewController.swift */; };
 		63209119218ADA7E00A1241C /* MyFeedbackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63209118218ADA7E00A1241C /* MyFeedbackViewCell.swift */; };
 		63F23F752188690400FB629F /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F23F742188690400FB629F /* LegalViewController.swift */; };
-		63F23F77218890D300FB629F /* LegalWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F23F76218890D300FB629F /* LegalWebView.swift */; };
 		6892A7762448266B003801EA /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892A7752448266B003801EA /* HelpVC.swift */; };
 		6892A7782448268B003801EA /* HelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892A7772448268B003801EA /* HelpTableViewCell.swift */; };
 		6892A77A244899E6003801EA /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892A779244899E6003801EA /* NotificationTableViewCell.swift */; };
@@ -561,7 +560,6 @@
 		63209116218AD80600A1241C /* MyRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRatingViewController.swift; sourceTree = "<group>"; };
 		63209118218ADA7E00A1241C /* MyFeedbackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedbackViewCell.swift; sourceTree = "<group>"; };
 		63F23F742188690400FB629F /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
-		63F23F76218890D300FB629F /* LegalWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalWebView.swift; sourceTree = "<group>"; };
 		6892A7752448266B003801EA /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		6892A7772448268B003801EA /* HelpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTableViewCell.swift; sourceTree = "<group>"; };
 		6892A779244899E6003801EA /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -1620,7 +1618,6 @@
 			isa = PBXGroup;
 			children = (
 				63F23F742188690400FB629F /* LegalViewController.swift */,
-				63F23F76218890D300FB629F /* LegalWebView.swift */,
 			);
 			path = Legal;
 			sourceTree = "<group>";
@@ -1990,7 +1987,6 @@
 				3AFADCF9219E98CC0009E3D2 /* SVProgressHUD.m in Sources */,
 				00E92A74202AE2C100A399E2 /* WebserviceMethods.swift in Sources */,
 				3AFADCDA219E98CC0009E3D2 /* HCSStarRatingView.m in Sources */,
-				63F23F77218890D300FB629F /* LegalWebView.swift in Sources */,
 				3AF9136721C919A000E2C08A /* MyRatingViewCell.swift in Sources */,
 				00E92A6C202AE2C100A399E2 /* CustomMethods.swift in Sources */,
 				3AFADCF2219E98CC0009E3D2 /* UIImage+WebP.m in Sources */,

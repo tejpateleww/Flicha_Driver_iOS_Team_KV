@@ -7,24 +7,31 @@
 //
 
 import UIKit
+import WebKit
 
-class webViewVC: ParentViewController, UIWebViewDelegate {
-
-    var headerName = String()
+class webViewVC: ParentViewController, WKNavigationDelegate {
+    
     var strURL = String()
+    var WebView:WKWebView!
+    var headerName = String()
+    
+    // MARK: - Outlets
+    @IBOutlet weak var webView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-         UtilityClass.showACProgressHUD()
-//
-//         strURL = "https://www.tantaxitanzania.com/web/front/privacypolicy"
-
-        let requestURL = URL(string: strURL)!
-        let request = URLRequest(url: requestURL as URL)
-        webView.loadRequest(request)
+        
+        UtilityClass.showACProgressHUD()
+        
+        
+        WebView = WKWebView()
+        WebView.navigationDelegate = self
+        webView = WebView
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -41,23 +48,17 @@ class webViewVC: ParentViewController, UIWebViewDelegate {
         
         let requestURL = URL(string: url)
         let request = URLRequest(url: requestURL! as URL)
-        webView.loadRequest(request)
+        WebView.load(request)
         
     }
     
-    // MARK: - Outlets
-    @IBOutlet weak var webView: UIWebView!
     
-    // MARK: - web view delegate method
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        
-    }
-    
-    // MARK: - web view delegate method
-    func webViewDidFinishLoad(_ webView: UIWebView)
-    {
+    /* Start the network activity indicator when the web view is loading */
+    func webView(_ webView: WKWebView,didStartProvisionalNavigation navigation: WKNavigation){
         UtilityClass.hideACProgressHUD()
+        
     }
+  
     
-
+    
 }
