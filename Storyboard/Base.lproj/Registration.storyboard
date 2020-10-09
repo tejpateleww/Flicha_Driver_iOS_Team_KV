@@ -809,8 +809,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add account information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya1-nx-2ze" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="232" width="225.5" height="22.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add account information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="ya1-nx-2ze" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                                                <rect key="frame" x="25" y="232" width="373" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -932,6 +932,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="ya1-nx-2ze" secondAttribute="trailing" constant="16" id="1GK-Ly-rTw"/>
                                                             <constraint firstItem="A3j-xD-SV8" firstAttribute="leading" secondItem="sfq-be-aEc" secondAttribute="leading" id="9pD-DS-8Hu"/>
                                                             <constraint firstAttribute="trailing" secondItem="H2W-x8-Ifg" secondAttribute="trailing" constant="20" id="A3Z-mU-Hb9"/>
                                                             <constraint firstItem="H2W-x8-Ifg" firstAttribute="leading" secondItem="nvV-bb-vAl" secondAttribute="leading" constant="20" id="BxN-fI-3PM"/>
@@ -1060,8 +1061,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add vehicle information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-cB-lsr" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="232" width="217" height="22.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add vehicle information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-cB-lsr" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                                                <rect key="frame" x="25" y="232" width="381" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1234,6 +1235,7 @@
                                                             <constraint firstItem="T1o-AI-a8V" firstAttribute="centerY" secondItem="0pW-bb-Cb4" secondAttribute="centerY" id="Mmd-Rk-0th"/>
                                                             <constraint firstItem="mO2-G2-Glb" firstAttribute="leading" secondItem="0pW-bb-Cb4" secondAttribute="leading" constant="20" id="P5D-YN-h1h"/>
                                                             <constraint firstItem="Plb-z1-JA9" firstAttribute="trailing" secondItem="Ca7-ji-5C4" secondAttribute="trailing" id="SBJ-Um-NDH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="kHe-cB-lsr" secondAttribute="trailing" constant="8" id="TN0-Ng-15f"/>
                                                             <constraint firstItem="Zq8-Kk-db2" firstAttribute="leading" secondItem="0pW-bb-Cb4" secondAttribute="leading" constant="15" id="VCs-7c-a35"/>
                                                             <constraint firstAttribute="trailing" secondItem="F2T-HA-G1R" secondAttribute="trailing" constant="10" id="X84-ic-YAV"/>
                                                             <constraint firstItem="Vgh-Lr-meZ" firstAttribute="leading" secondItem="zEX-EH-SKS" secondAttribute="leading" id="bLS-aE-Yqr"/>
@@ -1348,8 +1350,8 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit your document" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-Eg-aFx" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
-                                                                <rect key="frame" x="25" y="232" width="207" height="22.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submit your document" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-Eg-aFx" customClass="LocalizLabel" customModule="Flicha_Driver" customModuleProvider="target">
+                                                                <rect key="frame" x="25" y="232" width="373" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1827,6 +1829,7 @@
                                                             <constraint firstItem="IPt-8Y-KQ5" firstAttribute="top" secondItem="9dy-jb-NKn" secondAttribute="bottom" constant="20" id="Fgx-B2-aQh"/>
                                                             <constraint firstItem="X04-rh-dHO" firstAttribute="leading" secondItem="ptp-KP-ZjS" secondAttribute="leading" id="HSI-Fv-z2E"/>
                                                             <constraint firstItem="3MJ-4q-h09" firstAttribute="leading" secondItem="eF2-aZ-MlL" secondAttribute="leading" id="IOq-SP-L1C"/>
+                                                            <constraint firstAttribute="trailing" secondItem="SUW-Eg-aFx" secondAttribute="trailing" constant="16" id="JNs-Ar-lJ8"/>
                                                             <constraint firstItem="3MJ-4q-h09" firstAttribute="bottom" secondItem="eF2-aZ-MlL" secondAttribute="bottom" id="LIm-GL-iOk"/>
                                                             <constraint firstItem="X04-rh-dHO" firstAttribute="bottom" secondItem="ptp-KP-ZjS" secondAttribute="bottom" id="MI9-Oy-N14"/>
                                                             <constraint firstItem="0nI-H6-rWH" firstAttribute="trailing" secondItem="BhE-YX-rnS" secondAttribute="trailing" id="P3f-dP-NgV"/>
@@ -2722,7 +2725,7 @@
                                                                                                     <action selector="btnMale:" destination="JTk-re-dVi" eventType="touchUpInside" id="wwO-zN-Udc"/>
                                                                                                 </connections>
                                                                                             </button>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-BJ-gP5">
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-BJ-gP5">
                                                                                                 <rect key="frame" x="48.5" y="0.0" width="33" height="30"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -2761,7 +2764,7 @@
                                                                                                     <action selector="btnFemale:" destination="JTk-re-dVi" eventType="touchUpInside" id="X4j-Oo-AD2"/>
                                                                                                 </connections>
                                                                                             </button>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88X-71-0HJ">
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="88X-71-0HJ">
                                                                                                 <rect key="frame" x="55.5" y="5" width="57.5" height="18"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                                 <nil key="highlightedColor"/>
