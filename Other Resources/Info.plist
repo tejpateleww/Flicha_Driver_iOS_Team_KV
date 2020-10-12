@@ -74,8 +74,6 @@
 		<string>Ubuntu-MediumItalic.ttf</string>
 		<string>Ubuntu-Regular.ttf</string>
 	</array>
-	<key>UIApplicationExitsOnSuspend</key>
-	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -98,9 +96,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
