@@ -27,10 +27,31 @@ class ForgotPasswordVC: UIViewController {
     @IBAction func sendClick(_ sender: UIButton) {
         if txtEmail.text!.trimmingCharacters(in: .whitespaces).isEmpty {
             UtilityClass.showAlert("App Name".localized, message: "Please enter email address".localized, vc: self)
+        }else if !isValidEmailAddress(emailID: txtEmail.text!) {
+            UtilityClass.showAlert("App Name".localized, message: "Please enter a valid email".localized, vc: self)
         }else {
             webserviceForgotPassword()
         }
 
+    }
+    func isValidEmailAddress(emailID: String) -> Bool {
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z)-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailID as NSString
+            let results = regex.matches(in: emailID, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0 {
+                returnValue = false
+            }
+        }
+        catch _ as NSError {
+            returnValue = false
+        }
+        
+        return returnValue
     }
     func webserviceForgotPassword()
     {
@@ -43,7 +64,10 @@ class ForgotPasswordVC: UIViewController {
                 
                 print(result)
                 let alert = UIAlertController(title: "App Name".localized, message: result.object(forKey: GetResponseMessageKey()) as? String, preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
+                
+                let ok = UIAlertAction(title: "OK".localized, style: .default){ (alert) in
+                    self.navigationController?.popViewController(animated: true)
+                }
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 

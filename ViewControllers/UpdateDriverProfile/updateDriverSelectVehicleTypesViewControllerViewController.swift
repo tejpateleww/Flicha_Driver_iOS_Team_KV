@@ -26,8 +26,7 @@ class updateDriverSelectVehicleTypesViewControllerViewController: BaseViewContro
     // MARK: - Base Methods
     //-------------------------------------------------------------
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
     
         super.viewDidLoad()
  

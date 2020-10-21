@@ -54,7 +54,7 @@
 "Pick up" = "départ";
 "On The Way" = "en route";
 "DA" = "DA";
-"Cancelled" = "Cancelled";
+"Cancelled" = "Annulé";
 "Hey " = "Salut! ";
 "Female" = "femelle";
 "Male" = "Homme";
@@ -557,7 +557,7 @@
 "Vehicle Plate Number" = "Vehicle Plate Number";
 "Number Of Passenger" = "Number Of Passenger";
 "TIN Certificate" = "TIN Certificate";
-"Driver Licence (Front only)" = "Driver Licence (Front only)";
+"Driver Licence (Front only)" = "Permis de conduire (recto seulement)";
 "Revenue Licence" = "Revenue Licence";
 
 "Bank Account No." = "Bank Account No.";

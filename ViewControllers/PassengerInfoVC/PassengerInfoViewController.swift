@@ -127,6 +127,7 @@ class PassengerInfoViewController: UIViewController,MFMessageComposeViewControll
         
         setDataToAllFileds()
         webserviceOFEstimateFare()
+        btnCancelTrip.isHidden = true
 //        showUserRatings()
         // Do any additional setup after loading the view.
     }

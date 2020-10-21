@@ -50,9 +50,17 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
     // MARK: - Outlets
     //-------------------------------------------------------------
     //button
-    @IBOutlet weak var btnDirection: UIButton!
+    @IBOutlet weak var btnDirection: UIButton! {
+        didSet {
+            
+        }
+    }
     @IBOutlet weak var btnCurrentlocation: UIButton!
-    @IBOutlet weak var btnStartTrip: UIButton!
+    @IBOutlet weak var btnStartTrip: UIButton! {
+        didSet {
+            
+        }
+    }
     //view
     @IBOutlet weak var BottomButtonView: UIView!
     @IBOutlet var subMapView: UIView!
@@ -111,10 +119,18 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
     }()
     
     @IBOutlet weak var conMyLocationTop: NSLayoutConstraint!
-    @IBOutlet var btnPassengerInfo: UIButton!
+    @IBOutlet var btnPassengerInfo: ThemeButton!
     
-    @IBOutlet var btnDirectionFourBTN: UIButton!
-    @IBOutlet var btnCancelTrip: UIButton!
+    @IBOutlet var btnDirectionFourBTN: UIButton!{
+        didSet {
+           
+        }
+    }
+    @IBOutlet var btnCancelTrip: UIButton! {
+        didSet {
+            
+        }
+    }
     @IBOutlet var constrainLocationViewBottom: NSLayoutConstraint? //Rj chnage
     let socket = (UIApplication.shared.delegate as! AppDelegate).Socket
     
@@ -178,8 +194,11 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         super.viewDidLoad()
         
         //       self.title = "Home"
-        
-        
+        btnPassengerInfo.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 14)
+        btnDirectionFourBTN.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 14)
+        btnCancelTrip.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 14)
+        btnStartTrip.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 14)
+        //
         btnMyJob.layer.cornerRadius = btnHome.frame.size.height - 30
         btnMyJob.clipsToBounds = true
         btnHome.layer.cornerRadius = btnHome.frame.size.height - 30
@@ -193,6 +212,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         BottomButtonView.isHidden = true
         StartTripView.isHidden = true
         btnStartTrip.isHidden = true
+        
         viewHomeMyJobsBTN.isHidden = false
         self.constrainLocationViewBottom?.constant = 0//self.viewHomeMyJobsBTN.frame.height
         isAdvanceBooking = false

@@ -417,7 +417,8 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
 //         txtCompanyID.text       = (self.aryCompanyIDS as NSArray).filtered(using: "") as? String
         imgProfile.contentMode = .scaleAspectFill
 //        imgProfile.sd_setImage(with: URL(string: profile.object(forKey: "Image") as! String))
-        imgProfile.sd_setImage(with: URL(string: profile.object(forKey: "") as? String ?? ""), placeholderImage: UIImage.init(named: "iconUsers"), options: []) { (image, error, cacheType, url) in
+    
+        imgProfile.sd_setImage(with: URL(string: profile.object(forKey: "Image") as! String), placeholderImage: UIImage.init(named: "iconUsers"), options: []) { (image, error, cacheType, url) in
             //            self.imgCarRegistration.sd_removeActivityIndicator() Raj381
         }
         let strGender = profile.object(forKey: "Gender") as? String

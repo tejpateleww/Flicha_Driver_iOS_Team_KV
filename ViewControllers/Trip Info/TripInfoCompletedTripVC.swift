@@ -276,7 +276,10 @@ class TripInfoCompletedTripVC: BaseViewController {
         lblTripFareTitle.text = "Base Fare".localized
         lblDistanceTravelledTitle.text = "Trip Distance".localized
         lblDistanceFareTitle.text  = "Distance Fare".localized
+        
+        #warning("Change RJ")
         lblWaitingCostTitle.text  = "Waiting Cost".localized
+        lblWaitingCostTitle.isHidden = true
         
         lblTipAmountTitle.text  = "Tip by Passenger".localized
         lblBookingFeeTitle.text  = "Booking Charge".localized
@@ -411,7 +414,10 @@ class TripInfoCompletedTripVC: BaseViewController {
             lblWaitingTimeTitle.isHidden = true
             lblWaitingTime.isHidden = true
         }
-        
+        #warning("Remove waiting title")
+        lblWaitingTimeTitle.isHidden = true
+        lblWaitingTime.isHidden = true
+        lblWaitingCost.isHidden = true
         if let WaitingCost = dictData.object(forKey: "WaitingTimeCost") as? String {
             lblWaitingCost.text = ": " + "\(currency)\(String(format: "%.2f", Double(WaitingCost)!))"
             //            "\(String(format: "%.2f", Double(WaitingCost)!)) \(currency)"
@@ -475,7 +481,10 @@ class TripInfoCompletedTripVC: BaseViewController {
             lblWaitingTimeTitle.isHidden = true
             lblWaitingTime.isHidden = true
         }
-        
+       #warning("Remove waiting title")
+        lblWaitingTimeTitle.isHidden = true
+        lblWaitingTime.isHidden = true
+        lblWaitingCost.isHidden = true
         if let WaitingCost = dictDataPastJobs["WaitingTimeCost"] as? String {
             lblWaitingCost.text = ": " + "\(currency)\(String(format: "%.2f", Double(WaitingCost)!))"
             //            "\(String(format: "%.2f", Double(WaitingCost)!)) \(currency)"

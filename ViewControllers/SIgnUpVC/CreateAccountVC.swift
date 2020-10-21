@@ -53,32 +53,34 @@ class CreateAccountVC: UIViewController {
         let documentAddVC: DocumentAddVC = UIViewController.viewControllerInstance(storyBoard: .LoginRegistration)
         
         
-        self.navigationController?.viewControllers.append(accountInfo)
-                    self.navigationController?.pushViewController(vehicleAddVC, animated: true)
+//        self.navigationController?.viewControllers.append(accountInfo)
+//                    self.navigationController?.pushViewController(vehicleAddVC, animated: true)
         
+//        self.navigationController?.viewControllers.append(accountInfo)
+//        self.navigationController?.viewControllers.append(vehicleAddVC)
+//        self.navigationController?.pushViewController(documentAddVC, animated: true)
         
-                delay(0.1) {
+        delay(0.1) {
             if let currentPage = userDefault.object(forKey: RegistrationFinalKeys.kPageNo) as? String {
                 switch currentPage {
                 case "2":
-//                    self.performSegue(withIdentifier: "firstComplete", sender: self)
+                    //                    self.performSegue(withIdentifier: "firstComplete", sender: self)
                     break
                 case "3":
-//                    self.navigationController?.viewControllers.append(verifyOtpVC)
+                    //                    self.navigationController?.viewControllers.append(verifyOtpVC)
                     self.navigationController?.pushViewController(accountInfo, animated: true)
                     break
                 case "4":
-//                    self.navigationController?.viewControllers.append(verifyOtpVC)
+                    //                    self.navigationController?.viewControllers.append(verifyOtpVC)
                     self.navigationController?.viewControllers.append(accountInfo)
                     self.navigationController?.pushViewController(vehicleAddVC, animated: true)
-                 
+                    
                     break
                 case "5":
-//                    self.navigationController?.viewControllers.append(verifyOtpVC)
+                    //                    self.navigationController?.viewControllers.append(verifyOtpVC)
                     self.navigationController?.viewControllers.append(accountInfo)
                     self.navigationController?.viewControllers.append(vehicleAddVC)
                     self.navigationController?.pushViewController(documentAddVC, animated: true)
-                    
                     
                     
                     break

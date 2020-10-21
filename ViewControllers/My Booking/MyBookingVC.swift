@@ -476,14 +476,19 @@ extension MyBookingVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tripType == MyTrips.past  {
-            let bookingDetailVC:TripInfoCompletedTripVC = UIViewController.viewControllerInstance(storyBoard: .Main)
+           
 //            bookingDetailVC.dictData
             let data = self.arrPastJobs[indexPath.section]
-            bookingDetailVC.dictDataPastJobs = data
-            bookingDetailVC.isFromPastJobs = true
-            print(data)
-            self.present(bookingDetailVC, animated: true, completion:nil)
-            
+            if let status = data["Status"] as? String {
+                if status != "canceled" {
+                    print(data)
+                    let bookingDetailVC:TripInfoCompletedTripVC = UIViewController.viewControllerInstance(storyBoard: .Main)
+                    bookingDetailVC.dictDataPastJobs = data
+                    bookingDetailVC.isFromPastJobs = true
+                    print(data)
+                    self.present(bookingDetailVC, animated: true, completion:nil)
+                }
+            }
         }
         
     }
