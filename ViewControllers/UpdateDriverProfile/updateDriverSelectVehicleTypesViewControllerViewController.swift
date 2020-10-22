@@ -269,7 +269,11 @@ class updateDriverSelectVehicleTypesViewControllerViewController: BaseViewContro
 //        viewCarsAndTexis.isHidden = false
 //        viewDeliveryService.isHidden = true
         
-        self.performSegue(withIdentifier: "segueCarsAndTaxi", sender: nil)
+        if Singletons.sharedInstance.driverDuty == "1" {
+            UtilityClass.showAlert("Flicha", message: "Please turn off the duty first".localized, vc: self)
+        } else {
+            self.performSegue(withIdentifier: "segueCarsAndTaxi", sender: nil)
+        }
         
     }
     

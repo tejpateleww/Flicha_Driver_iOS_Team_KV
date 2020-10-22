@@ -221,15 +221,85 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var btnOK: UIButton!
     @IBAction func btnOK(_ sender: UIButton) {
+        
+//        if (presentingViewController?.isKind(of: VehicleAddVC.self))! {
+//
+//            let joined = aryChooseCareModel.joined(separator: ",")
+//            UserDefaults.standard.set(joined, forKey: RegistrationFinalKeys.kVehicleClass)
+//
+//            Singletons.sharedInstance.vehicleClass = joined
+//
+//            let joinedName = aryChooseCarName.joined(separator: ",")
+//            UserDefaults.standard.set(joinedName, forKey: RegistrationFinalKeys.kCarThreeTypeName)
+//
+//            if strId != nil
+//            {
+//                delegate?.didgetIdAndName(id: strId, Name: strType)
+//            }
+//            if Singletons.sharedInstance.isFromRegistration == true
+//            {
+//                NotificationCenter.default.post(name: Notification.Name("setCarType"), object: nil)
+//            }
+//            else
+//            {
+//                NotificationCenter.default.post(name: Notification.Name("setCarTypeUpdate"), object: nil)
+//            }
+//
+//            //            delegateForBookLater.didgetIdAndName(id: strId, Name: strType)
+//            //            delegateForEstimateNow?.didSelectVehicleModelNow()
+//            delegateForEstimate?.didSelectVehicleModel()
+//            self.dismiss(animated: true, completion: nil)
+//
+//
+//        } else {
+//
+//            //         1 driver duty is on.. then just dismiss
+//            if Singletons.sharedInstance.driverDuty == "1" {
+//                self.dismiss(animated: true) {
+//                    UtilityClass.showAlert("Flicha", message: "Please turn off the duty first".localized, vc: self.presentingViewController!)
+//                }
+//            } else {
+//
+//                let joined = aryChooseCareModel.joined(separator: ",")
+//                UserDefaults.standard.set(joined, forKey: RegistrationFinalKeys.kVehicleClass)
+//
+//                Singletons.sharedInstance.vehicleClass = joined
+//
+//                let joinedName = aryChooseCarName.joined(separator: ",")
+//                UserDefaults.standard.set(joinedName, forKey: RegistrationFinalKeys.kCarThreeTypeName)
+//
+//                if strId != nil
+//                {
+//                    delegate?.didgetIdAndName(id: strId, Name: strType)
+//                }
+//                if Singletons.sharedInstance.isFromRegistration == true
+//                {
+//                    NotificationCenter.default.post(name: Notification.Name("setCarType"), object: nil)
+//                }
+//                else
+//                {
+//                    NotificationCenter.default.post(name: Notification.Name("setCarTypeUpdate"), object: nil)
+//                }
+//
+//                //            delegateForBookLater.didgetIdAndName(id: strId, Name: strType)
+//                //            delegateForEstimateNow?.didSelectVehicleModelNow()
+//                delegateForEstimate?.didSelectVehicleModel()
+//                self.dismiss(animated: true, completion: nil)
+//            }
+//
+//        }
+        
+
+        
  
         let joined = aryChooseCareModel.joined(separator: ",")
         UserDefaults.standard.set(joined, forKey: RegistrationFinalKeys.kVehicleClass)
-        
+
         Singletons.sharedInstance.vehicleClass = joined
-        
+
         let joinedName = aryChooseCarName.joined(separator: ",")
         UserDefaults.standard.set(joinedName, forKey: RegistrationFinalKeys.kCarThreeTypeName)
-        
+
         if strId != nil
         {
             delegate?.didgetIdAndName(id: strId, Name: strType)
@@ -242,7 +312,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         {
             NotificationCenter.default.post(name: Notification.Name("setCarTypeUpdate"), object: nil)
         }
-        
+
 //            delegateForBookLater.didgetIdAndName(id: strId, Name: strType)
 //            delegateForEstimateNow?.didSelectVehicleModelNow()
             delegateForEstimate?.didSelectVehicleModel()
@@ -250,4 +320,34 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
   
     }
     
+}
+
+extension UIViewController {
+
+    func topMostViewController() -> UIViewController {
+
+        if let presented = self.presentedViewController {
+            return presented.topMostViewController()
+        }
+
+        if let navigation = self as? UINavigationController {
+            return navigation.visibleViewController?.topMostViewController() ?? navigation
+        }
+
+        if let tab = self as? UITabBarController {
+            return tab.selectedViewController?.topMostViewController() ?? tab
+        }
+
+        return self
+    }
+}
+
+
+extension UIViewController {
+  func alert(message: String, title: String = "") {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK".localized, style: .default, handler: nil)
+    alertController.addAction(OKAction)
+    self.present(alertController, animated: true, completion: nil)
+  }
 }

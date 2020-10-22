@@ -133,6 +133,8 @@
 "Distance Fare" = "frais de distance";
 "Waiting Cost:" = "cout d'attente";
 "Toll Fee" = "taxes de péage";
+"Enter toll fee if any" = "Entrez les frais de péage";
+
 "Grand Total (Tax Included) :" = "grand total ( taxes iclut ) :";
 "Tax (incl)" = "taxes iclut";
 "Trip Details" = "details de  la course";
@@ -162,6 +164,7 @@
 "Current password" = "mot de passe actuel";
 
 "New Password" = "nouveau mot de passe";
+"New password" = "nouveau mot de passe";
 "Additional comments…" = "commentaires supplémentaires";
 "Please enter valid email" = "veuillez saisir une adresse email valide";
 "Please enter password" = "veuillez saisir le mot de passe";
@@ -374,12 +377,15 @@
 
 "5 to 5 Steps" = "5 de 5 étapes ";
 
+"Contact number  is not available" = "Le numéro de contact n'est pas disponible";
 
+"Old password" = "ancien mot de passe";
 
+"Updated successfully." = "Mis à jour avec succés.";
 
+"You cannot go off duty while a trip is active" = "Vous ne pouvez pas vous absenter pendant qu'un voyage est en cours";
 
-
-
+"Please turn off the duty first" = "Veuillez d'abord désactiver le service";
 
 
 
@@ -483,7 +489,7 @@
 
 "Full Name" = "Full Name";
 "Profile" = "Profile";
-"Updated successfully." = "Updated successfully.";
+
 "Account Updated successfully." = "Account Updated successfully.";
 "Profile Updated Successfully" = "Profile Updated Successfully";
 

@@ -2687,7 +2687,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
              if(Singletons.sharedInstance.strBookingType != "") {
                 
                 //1. Create the alert controller.
-                let alert = UIAlertController(title: "Toll Fee", message: "Enter toll fee if any", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Toll Fee".localized, message: "Enter toll fee if any".localized, preferredStyle: .alert)
                 
                 //2. Add the text field. You can configure it however you need.
                 alert.addTextField { (textField) in
@@ -2716,7 +2716,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 
                 
                 // 3. Grab the value from the text field, and print it when the user clicks OK.
-                alert.addAction(UIAlertAction(title: "NO", style: .destructive, handler: { [] (_) in
+                alert.addAction(UIAlertAction(title: "No".localized, style: .destructive, handler: { [] (_) in
                     if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
                         
                         self.completeTripButtonAction()

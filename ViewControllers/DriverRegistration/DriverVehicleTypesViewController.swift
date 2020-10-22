@@ -103,8 +103,6 @@ class DriverVehicleTypesViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        
         let cellTop = tableView.dequeueReusableCell(withIdentifier: "DriverVehicleTypesTOP") as! DriverVehicleTypesTableViewCell
         let cellDetails = tableView.dequeueReusableCell(withIdentifier: "DriverVehicleTypesData") as! DriverVehicleTypesTableViewCell
         let cellBottom = tableView.dequeueReusableCell(withIdentifier: "DriverVehicleTypesTableViewCellNext") as! DriverVehicleTypesTableViewCell

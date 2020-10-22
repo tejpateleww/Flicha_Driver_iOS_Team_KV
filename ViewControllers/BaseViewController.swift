@@ -347,6 +347,8 @@ class BaseViewController: UIViewController {
         } */
     }
     @IBAction func dutyChangeClick(_ sender: UIButton) {
+        
+        
         let profile = NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile as NSDictionary).object(forKey: "profile") as! NSDictionary)
         let vehicle = profile.object(forKey: "Vehicle") as! NSDictionary
         
@@ -359,7 +361,6 @@ class BaseViewController: UIViewController {
         }
         else
         {
-            
             dictData[RegistrationFinalKeys.kLat] = Singletons.sharedInstance.latitude as AnyObject
             dictData[RegistrationFinalKeys.kLng] = Singletons.sharedInstance.longitude as AnyObject
             
@@ -374,7 +375,7 @@ class BaseViewController: UIViewController {
                         //                        self.headerView?.btnSwitch.setImage(UIImage(named: "iconSwitchOff"), for: .normal)
                         sender.isSelected = false
                         Singletons.sharedInstance.driverDuty = "0"
-                        UtilityClass.showAlert("", message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
+                        UtilityClass.showAlert("Flicha", message: (result as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: self)
                         UIApplication.shared.isIdleTimerDisabled = false
                         guard let socket = (UIApplication.shared.delegate as! AppDelegate).Socket else { return }
                         socket.disconnect()

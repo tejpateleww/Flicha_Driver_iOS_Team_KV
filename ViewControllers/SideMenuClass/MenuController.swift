@@ -11,6 +11,7 @@ import SDWebImage
 
 let KEnglish : String = "EN"
 let KSwiley : String = "SW"
+
 class  MenuController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     
@@ -283,7 +284,6 @@ class  MenuController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let viewController = storyboard.instantiateViewController(withIdentifier: "TripToDestinationViewController") as! TripToDestinationViewController
 
         self.navigationController?.pushViewController(viewController, animated: true)
-        
     }
     
     @objc func Legal(){

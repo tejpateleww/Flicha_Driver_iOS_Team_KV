@@ -321,7 +321,7 @@ extension SideMenuViewController {
             let LogoutConfirmation = UIAlertController(title: "App Name".localized, message: "Are you sure you want to logout?".localized, preferredStyle: .alert)
                   LogoutConfirmation.addAction(UIAlertAction(title: "Logout".localized, style: .destructive, handler: { (UIAlertAction) in
                       self.webserviceOFSignOut()
-                    App_Delegate.GoToLogin()
+                    
                   }))
                   LogoutConfirmation.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
                   self.present(LogoutConfirmation, animated: true, completion: nil)
@@ -480,6 +480,7 @@ extension SideMenuViewController {
                 //  UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
                 Singletons.sharedInstance.isDriverLoggedIN = false
 //                self.performSegue(withIdentifier: "SignOutFromSideMenu", sender: (Any).self)
+                App_Delegate.GoToLogin()
                 
             }
             else {
