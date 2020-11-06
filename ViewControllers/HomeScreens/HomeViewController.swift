@@ -198,6 +198,20 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         btnDirectionFourBTN.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 14)
         btnCancelTrip.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 14)
         btnStartTrip.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 14)
+        
+        
+        btnStartTrip?.titleLabel?.numberOfLines = 2
+        btnStartTrip?.titleLabel?.lineBreakMode = .byWordWrapping
+        
+        btnPassengerInfo?.titleLabel?.numberOfLines = 2
+        btnPassengerInfo?.titleLabel?.lineBreakMode = .byWordWrapping
+        
+        btnDirectionFourBTN?.titleLabel?.numberOfLines = 2
+        btnDirectionFourBTN?.titleLabel?.lineBreakMode = .byWordWrapping
+        
+        btnCancelTrip?.titleLabel?.numberOfLines = 2
+        btnCancelTrip?.titleLabel?.lineBreakMode = .byWordWrapping
+        
         //
         btnMyJob.layer.cornerRadius = btnHome.frame.size.height - 30
         btnMyJob.clipsToBounds = true
@@ -321,6 +335,8 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         }
         
         runTimer()
+        
+        
     }
     override func viewDidLayoutSubviews() {
         //        self.headerView?.lblTitle.text = "Home".localized
@@ -401,6 +417,9 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         //        btnHome.setTitle("Home".localized, for: .normal)
         //        btnMyJob.setTitle("My Job".localized, for: .normal)
         btnStartTrip.setTitle("Start Trip".localized, for: .normal)
+//                btnStartTrip.titleLabel?.font = UIFont.init(name: CustomeFontUbuntuMedium, size: 18)
+   
+
         btnPassengerInfo.setTitle("Passenger Info".localized, for: .normal)
         btnCancelTrip.setTitle("Cancel Trip".localized, for: .normal)
         btnDirectionFourBTN.setTitle("Direction".localized, for: .normal)
