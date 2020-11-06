@@ -132,8 +132,8 @@
 "Base Fare :" = "frais de base :";
 "Distance Fare" = "frais de distance";
 "Waiting Cost:" = "cout d'attente";
-"Toll Fee" = "taxes de péage";
-"Enter toll fee if any" = "Entrez les frais de péage";
+"Toll Fee" = "Frais de péage";
+"Enter toll fee if any" = "Entrez les frais de péage s’il y en a";
 
 "Grand Total (Tax Included) :" = "grand total ( taxes iclut ) :";
 "Tax (incl)" = "taxes iclut";
@@ -607,7 +607,7 @@
 "Car Company" = "Car Company";
 "Destination Trip" = "Destination Trip";
 "Want to ask about Tips?" = "Want to ask about Tips?";
-"Thanks for feedback." = "Thanks for feedback.";
+"Thanks for feedback." = "Merci pour vos commentaires";
 "Please install Google Maps." = "Please install Google Maps.";
 
 
