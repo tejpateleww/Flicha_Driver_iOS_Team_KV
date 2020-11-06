@@ -602,7 +602,7 @@
 "Please enter Fare Amount." = "Please enter Fare Amount.";
 "Please select Model Type." = "Please select Model Type.";
 "Please select Date and Time." = "Please select Date and Time.";
-"Estimate Fare" = "Estimate Fare";
+//"Estimate Fare" = "Estimate Fare";
 "Tip by Passenger" = "Tip by Passenger:";
 "Car Company" = "Car Company";
 "Destination Trip" = "Destination Trip";

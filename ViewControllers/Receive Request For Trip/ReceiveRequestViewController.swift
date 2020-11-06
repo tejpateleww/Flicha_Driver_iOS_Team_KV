@@ -24,10 +24,12 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     @IBOutlet weak var lblMessage: UILabel!
     
     @IBOutlet weak var lblGrandTotal: UILabel!
+    @IBOutlet weak var lblGrandTotalInfo: UILabel!
+
     @IBOutlet weak var lblPickUpLocationInfo: UILabel!
-    @IBOutlet weak var lblPickupLocation: MarqueeLabel!
+    @IBOutlet weak var lblPickupLocation: UILabel!
     @IBOutlet weak var lblDropoffLocationInfo: UILabel!
-    @IBOutlet weak var lblDropoffLocation: MarqueeLabel!
+    @IBOutlet weak var lblDropoffLocation: UILabel!
     
     //    @IBOutlet weak var lblFlightNumber: UILabel!
     //    @IBOutlet weak var lblNotes: UILabel!
@@ -165,7 +167,8 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
 //            if strGrandTotal != "0" {
 //                lblGrandTotal.text = "Grand Total : \(strGrandTotal) \(currency)"
 //            } else if strEstimateFare != "0" {
-                lblGrandTotal.text = "\("Estimate Fare".localized) : \(strEstimateFare) \(currency)"
+                lblGrandTotal.text = "\("Estimated fare".localized)" + ":"
+                lblGrandTotalInfo.text = "\(strEstimateFare) \(currency)"
 //            }
         
             lblMessage.text = strRequestMessage

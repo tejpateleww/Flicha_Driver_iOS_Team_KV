@@ -106,9 +106,9 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
         toolbar.sizeToFit()
         
         //done button & cancel button
-        let doneButton = UIBarButtonItem(title: "Done".localized, style: UIBarButtonItem.Style.bordered, target: self, action: "donedatePicker")
+        let doneButton = UIBarButtonItem(title: "Done".localized, style: .done, target: self, action: #selector(donedatePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: UIBarButtonItem.Style.bordered, target: self, action: "cancelDatePicker")
+        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: .done, target: self, action: "cancelDatePicker")
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
@@ -117,7 +117,7 @@ class UpdateProfilePersonelDetailsVC: BaseViewController,UIImagePickerController
      //   txtDOB.inputView = datePicker
         
     }
-    func donedatePicker(){
+    @objc func donedatePicker(){
         //For date formate
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
