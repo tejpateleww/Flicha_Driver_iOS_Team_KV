@@ -194,7 +194,7 @@ class PassengerInfoViewController: UIViewController,MFMessageComposeViewControll
             if (status) {
                 print(result)
                 if let dict = result["estimate_fare"] as? [String : Any] {
-                    self.lblDistance.text = JSON(dict["km"] as Any).stringValue + " km"
+                    self.lblDistance.text = String(format: "%.2f", JSON(dict["km"] as Any).doubleValue) + " km"
                     self.lblTime.text = JSON(dict["duration"] as Any).stringValue + " min"
                     self.lblPrice.text = "DA" + JSON(dict["total"] as Any).stringValue
                     self.lblRating.text = self.dictPassengerInfo["passenger_rating"] as? String ?? ""

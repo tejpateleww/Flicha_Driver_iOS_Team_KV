@@ -967,7 +967,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 if let RequestMessage = ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as? String {
                     next.strRequestMessage = RequestMessage
                 }
-                self.addLocalNotification()
+//                self.addLocalNotification()
                 (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(next, animated: true, completion: nil)
                 
                 return
@@ -1028,7 +1028,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
             self.playSound(strName: "\(RingToneSound)")
             
             
-            self.addLocalNotification()
+//            self.addLocalNotification()
             
             
             
@@ -4605,12 +4605,12 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
                     
                     
-                    self.playSound(strName: "\(RingToneSound)")
-                    UtilityClass.showAlertWithCompletion("Alert! This is a cash job".localized, message: "Please Collect Money From Passenger".localized, vc: self, completionHandler: { ACTION in
+//                    self.playSound(strName: "\(RingToneSound)")
+//                    UtilityClass.showAlertWithCompletion("Alert! This is a cash job".localized, message: "Please Collect Money From Passenger".localized, vc: self, completionHandler: { ACTION in
                         
-                        DispatchQueue.main.async {
-                            self.stopSound()
-                        }
+//                        DispatchQueue.main.async {
+//                            self.stopSound()
+//                        }
                         //  self.completeTripButtonAction()
                         
                         UserDefaults.standard.set(Singletons.sharedInstance.isRequestAccepted, forKey: tripStatus.kisRequestAccepted)
@@ -4632,7 +4632,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                             self.setCarAfterTrip()
                             self.completeTripInfo()
                         }
-                    })
+//                    })
                 }
                 else
                 {
@@ -4866,9 +4866,10 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 
                 Singletons.sharedInstance.isDriverLoggedIN = false
                 UserDefaults.standard.set(false, forKey: kIsSocketEmited)
-                
+               App_Delegate.Logout()
                 Utilities.showAlertWithCompletion(AppNAME, message: "Your session has been expired, please try to login again.".localized, vc: ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController)!, completionHandler: { (status) in
-                    self.performSegue(withIdentifier: "SignOutFromHome", sender: (Any).self)
+//                    self.performSegue(withIdentifier: "SignOutFromHome", sender: (Any).self)
+                    
                 })
                 
             }

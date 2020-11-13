@@ -265,9 +265,9 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
     // Push Notification Methods
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        _ = deviceToken.map({ (data)-> String in
-            return String(format: "%0.2.2hhx", data)
-        })
+//        _ = deviceToken.map({ (data)-> String in
+//            return String(format: "%0.2.2hhx", data)
+//        })
         //        let token = toketParts.joined()
         Messaging.messaging().apnsToken = deviceToken as Data
         
@@ -276,7 +276,8 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             Singletons.sharedInstance.deviceToken = fcmToken
         }
         UserDefaults.standard.set(Singletons.sharedInstance.deviceToken, forKey: "Token")
-        
+        print("SingletonClass.sharedInstance.deviceToken : \(Singletons.sharedInstance.deviceToken)")
+
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -315,24 +316,80 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
             }
             else if ((userInfo as! [String:AnyObject])["gcm.notification.type"]! as! String == "Logout")
             {
-                let navigationController = application.windows[0].rootViewController as! UINavigationController
-                let viewControllers: [UIViewController] = navigationController.viewControllers
-                for aViewController in viewControllers {
-                    if aViewController is CustomSideMenuViewController {
-                        
-                        //                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        let homeVC = aViewController.children[0].children[0] as? HomeViewController
-                        homeVC?.webserviceOFSignOut()
-                        //                        }))
-                        //                        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
-                    }
-                }
+                
+                webserviceOFSignOut()
+//                let navigationController = application.windows[0].rootViewController as! UINavigationController
+//                let viewControllers: [UIViewController] = navigationController.viewControllers
+//                for aViewController in viewControllers {
+//                    if aViewController is CustomSideMenuViewController {
+//
+//                        //                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+//                        let homeVC = aViewController.children[0].children[0] as? HomeViewController
+//                        homeVC?.webserviceOFSignOut()
+//                        //                        }))
+//                        //                        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+//                    }
+//                }
             }
         }
         //        let data = ((userInfo["aps"]! as! [String : AnyObject])["alert"]!) as! [String : AnyObject]
         //  UtilityClass.showAlert(data["title"] as! String, message: data["body"] as! String, vc: (self.window?.rootViewController)!)
         print(userInfo)
     }
+    
+    
+    func webserviceOFSignOut()
+        {
+            let srtDriverID = Singletons.sharedInstance.strDriverID
+            
+            let param = srtDriverID + "/" + Singletons.sharedInstance.deviceToken
+            
+            webserviceForSignOut(param as AnyObject) { (result, status) in
+                
+                if (status) {
+                    print(result)
+                    
+                    if let socket = (UIApplication.shared.delegate as! AppDelegate).Socket {
+                        Utilities.removeUserDefaultsValue()
+                        socket.off(socketApiKeys.kReceiveBookingRequest)
+                        socket.off(socketApiKeys.kBookLaterDriverNotify)
+                        
+                        socket.off(socketApiKeys.kGetBookingDetailsAfterBookingRequestAccepted)
+                        socket.off(socketApiKeys.kAdvancedBookingInfo)
+                        
+                        socket.off(socketApiKeys.kReceiveMoneyNotify)
+                        socket.off(socketApiKeys.kAriveAdvancedBookingRequest)
+                        
+                        socket.off(socketApiKeys.kDriverCancelTripNotification)
+                        socket.off(socketApiKeys.kAdvancedBookingDriverCancelTripNotification)
+                        
+                        socket.disconnect()
+                    }
+                    
+                    
+                    Singletons.sharedInstance.isDriverLoggedIN = false
+                    UserDefaults.standard.set(false, forKey: kIsSocketEmited)
+                    App_Delegate.Logout()
+                    Utilities.showAlertWithCompletion(AppNAME, message: "Your session has been expired, please try to login again.".localized, vc: ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController)!, completionHandler: { (status) in
+    //                    self.performSegue(withIdentifier: "SignOutFromHome", sender: (Any).self)
+                        
+                    })
+                    
+                }
+                else {
+                    print(result)
+                    if let res = result as? String {
+                        UtilityClass.showAlert("App Name".localized, message: res, vc: (UIApplication.shared.windows.first?.topMostController())!)
+                    }
+                    else if let resDict = result as? NSDictionary {
+                        UtilityClass.showAlert("App Name".localized, message: resDict.object(forKey: GetResponseMessageKey()) as! String, vc: (UIApplication.shared.windows.first?.topMostController())!)
+                    }
+                    else if let resAry = result as? NSArray {
+                        UtilityClass.showAlert("App Name".localized, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: GetResponseMessageKey()) as! String, vc: (UIApplication.shared.windows.first?.topMostController())!)
+                    }
+                }
+            }
+        }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void) {
         completionHandler()
@@ -374,6 +431,8 @@ let googlPlacesApiKey = "AIzaSyCSwJSvFn2je-EXNxjUEUrU06_L7flz4qw" // "AIzaSyCKEP
     //-------------------------------------------------------------
     // MARK: - FireBase Methods
     //-------------------------------------------------------------
+    
+    
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
@@ -509,5 +568,14 @@ extension AppDelegate {
     //        NavHomeVC.isNavigationBarHidden = true
             UIApplication.shared.keyWindow?.rootViewController = mainViewController
         }
+    
+    
+    func Logout() {
+             let mainViewController:LoginViewController = UIViewController.viewControllerInstance(storyBoard: AppStoryboards.Main)
+             
+     //        let NavHomeVC = UINavigationController(rootViewController: mainViewController)
+     //        NavHomeVC.isNavigationBarHidden = true
+             UIApplication.shared.keyWindow?.rootViewController = mainViewController
+         }
     
 }

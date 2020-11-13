@@ -16,19 +16,19 @@ protocol delegateRatingIsSubmitSuccessfully {
 }
 
 class RatingViewController: UIViewController,FloatRatingViewDelegate {
-
+    
     @IBOutlet var btnSubmit: UIButton!
     @IBOutlet var txtFeedback: UITextField!
     @IBOutlet var viewRating: UIView!
     @IBOutlet var lblDetail: UILabel!
-
+    
     @IBOutlet var viewStarsRating: HCSStarRatingView!
     @IBOutlet weak var lblNavTitle: UILabel! {
-           didSet {
-               lblNavTitle.text = "Rating & Review".localized
-               lblNavTitle.font = UIFont.bold(ofSize: 18)
-           }
-       }
+        didSet {
+            lblNavTitle.text = "Rating & Review".localized
+            lblNavTitle.font = UIFont.bold(ofSize: 18)
+        }
+    }
     @IBOutlet weak var vwComment: UIView! {
         didSet {
             vwComment.layer.cornerRadius = 8
@@ -47,15 +47,15 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
     }
     
     @IBOutlet var lblPickUpTitle: UILabel! {
-           didSet {
-               lblPickUpTitle.font = UIFont.semiBold(ofSize: 13)
-           }
-       }
-       @IBOutlet var lblDestinationTitle: UILabel! {
-           didSet {
-               lblDestinationTitle.font = UIFont.semiBold(ofSize: 13)
-           }
-       }
+        didSet {
+            lblPickUpTitle.font = UIFont.semiBold(ofSize: 13)
+        }
+    }
+    @IBOutlet var lblDestinationTitle: UILabel! {
+        didSet {
+            lblDestinationTitle.font = UIFont.semiBold(ofSize: 13)
+        }
+    }
     @IBOutlet weak var lblPickupLocation: MarqueeLabel!{
         didSet {
             lblPickupLocation.font = UIFont.regular(ofSize: 13)
@@ -91,10 +91,10 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
     var dictAllPassengerInfo: [String: Any]!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewStarsRating.rating = 0.0
+        //        viewStarsRating.rating = 0.0
         
         viewStarsRating.value = 0.0
-//        viewStarsRating.delegate = self
+        //        viewStarsRating.delegate = self
         strBookingID = (dictData["details"]! as! [String : AnyObject])["Id"] as! String
         lblDetail.text = "\("How was your Ride with".localized) \((dictPassengerInfo!.object(forKey: "Fullname") as! String))?"// (dictPassengerInfo!.object(forKey: "Fullname") as! String)
         lblPassengerName.text = (dictPassengerInfo["Fullname"] as? String) ?? ""
@@ -106,22 +106,22 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
         let strImage = dictPassengerInfo["Image"] as? String ?? ""
         imgvwProfile.sd_setImage(with: URL.init(string: WebserviceURLs.kImageBaseURL + strImage), completed: nil)
         vwPassengerRating.value = CGFloat((self.dictPassengerInfo["passenger_rating"] as? NSString)?.doubleValue ?? 0.0)
-      
+        
         // Do any additional setup after loading the view.
-//
-//        btnSubmit.layer.cornerRadius = 5
-//        btnSubmit.layer.masksToBounds = true
+        //
+        //        btnSubmit.layer.cornerRadius = 5
+        //        btnSubmit.layer.masksToBounds = true
         
         Utilities.setCornerRadiusButton(button: btnSubmit, borderColor: ThemeYellowColor, bgColor: ThemeYellowColor, textColor: UIColor.white)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        lblDetail.text = "".localized
-//        txtFeedback.placeholder = "".localized
-          self.setLocalization()
+        //        lblDetail.text = "".localized
+        //        txtFeedback.placeholder = "".localized
+        self.setLocalization()
     }
- 
+    
     func setLocalization() {
         self.txtFeedback.placeholder = "Write a comment".localized
         btnSubmit.setTitle("Submit".localized, for: .normal)
@@ -138,16 +138,16 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
     // MARK: - Custom Methods
     //-------------------------------------------------------------
     
-//    func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating: Double){
-//
-//        viewStarsRating.rating = Double(rating)
-//        ratingToDriver = Float(viewStarsRating.rating)
-//
-//    }
+    //    func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating: Double){
+    //
+    //        viewStarsRating.rating = Double(rating)
+    //        ratingToDriver = Float(viewStarsRating.rating)
+    //
+    //    }
     
     @IBAction func backClick(_ sender: Any) {
         self.delegate?.didRatingIsSubmitSuccessfully()
-                      
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -168,7 +168,7 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
                 print(result)
                 //needToCheck
                 self.ratingToDriver = 0
-//                    UtilityClass.showAlertWithCompletion("App Name".localized, message: "Thanks for feedback.".localized, vc: self) { (status) in }
+                UtilityClass.showAlertWithCompletion("App Name".localized, message: "Thanks for feedback.".localized, vc: self) { (status) in }
                 
                 self.delegate?.didRatingIsSubmitSuccessfully()
                 
@@ -196,15 +196,15 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
