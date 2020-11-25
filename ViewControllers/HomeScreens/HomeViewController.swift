@@ -431,7 +431,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
     @IBAction func btnSidemenuClicked(_ sender: Any)
     {
         //        sideMenuController?.toggle()
-        sideMenuController?.toggleLeftView()
+        sideMenuController?.toggleLeftView(sender)
     }
     
     @objc func btnRightSideClicked(_ sender:Any)
