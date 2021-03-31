@@ -93,8 +93,8 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(nullable NSURL *)url
-                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+//- (void)sd_setImageWithURL:(nullable NSURL *)url
+//                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder.
@@ -109,9 +109,9 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(nullable NSURL *)url
-          placeholderImage:(nullable UIImage *)placeholder
-                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+//- (void)sd_setImageWithURL:(nullable NSURL *)url
+//          placeholderImage:(nullable UIImage *)placeholder
+//                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
@@ -127,10 +127,10 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(nullable NSURL *)url
-          placeholderImage:(nullable UIImage *)placeholder
-                   options:(SDWebImageOptions)options
-                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+//- (void)sd_setImageWithURL:(nullable NSURL *)url
+//          placeholderImage:(nullable UIImage *)placeholder
+//                   options:(SDWebImageOptions)options
+//                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
@@ -148,11 +148,11 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(nullable NSURL *)url
-          placeholderImage:(nullable UIImage *)placeholder
-                   options:(SDWebImageOptions)options
-                  progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
-                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+//- (void)sd_setImageWithURL:(nullable NSURL *)url
+//          placeholderImage:(nullable UIImage *)placeholder
+//                   options:(SDWebImageOptions)options
+//                  progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
+//                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url` and optionally a placeholder image.
@@ -170,11 +170,11 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithPreviousCachedImageWithURL:(nullable NSURL *)url
-                                 placeholderImage:(nullable UIImage *)placeholder
-                                          options:(SDWebImageOptions)options
-                                         progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
-                                        completed:(nullable SDExternalCompletionBlock)completedBlock;
+//- (void)sd_setImageWithPreviousCachedImageWithURL:(nullable NSURL *)url
+//                                 placeholderImage:(nullable UIImage *)placeholder
+//                                          options:(SDWebImageOptions)options
+//                                         progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
+//                                        completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 #if SD_UIKIT
 
@@ -185,12 +185,12 @@
  *
  * @param arrayOfURLs An array of NSURL
  */
-- (void)sd_setAnimationImagesWithURLs:(nonnull NSArray<NSURL *> *)arrayOfURLs;
+//- (void)sd_setAnimationImagesWithURLs:(nonnull NSArray<NSURL *> *)arrayOfURLs;
 
-- (void)sd_cancelCurrentAnimationImagesLoad;
+//- (void)sd_cancelCurrentAnimationImagesLoad;
 
 #endif
 
-@end
+//@end
 
 #endif

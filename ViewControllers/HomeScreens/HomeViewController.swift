@@ -2213,7 +2213,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
             //
             //                }
             
-            if !(Singletons.sharedInstance.isBookNowOrBookLater) {
+//            if !(Singletons.sharedInstance.isBookNowOrBookLater) {
                 
                 UtilityClass.showAlert("App Name".localized, message: (((data as NSArray).object(at: 0) as! NSDictionary)).object(forKey: GetResponseMessageKey()) as! String, vc: self )//((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController)!)
                 self.resetMapView()
@@ -2228,7 +2228,7 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
                 UserDefaults.standard.set(Singletons.sharedInstance.isTripContinue, forKey: tripStatus.kisTripContinue)
                 UserDefaults.standard.set(Singletons.sharedInstance.isRequestAccepted, forKey: tripStatus.kisRequestAccepted)
                 self.setCarAfterTrip()
-            }
+//            }
             
         })
     }
@@ -2703,59 +2703,59 @@ class HomeViewController: BaseViewController, CLLocationManagerDelegate,ARCarMov
         tollFee = "0.00"
         if (Singletons.sharedInstance.isTripHolding == false) {
 //            if(Singletons.sharedInstance.strBookingType == "")
-             if(Singletons.sharedInstance.strBookingType != "") {
-                
-                //1. Create the alert controller.
-                let alert = UIAlertController(title: "Toll Fee".localized, message: "Enter toll fee if any".localized, preferredStyle: .alert)
-                
-                //2. Add the text field. You can configure it however you need.
-                alert.addTextField { (textField) in
-                    textField.placeholder = "0.00"
-                    textField.keyboardType = .decimalPad
-                    self.setPaddingView(txtField: textField)
-                    
-                }
-                
-                // 3. Grab the value from the text field, and print it when the user clicks OK.
-                alert.addAction(UIAlertAction(title: "Yes".localized, style: .default, handler: { [weak alert] (_) in
-                    let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
-                    self.tollFee = (textField?.text)!
-                    print("Text field: \(String(describing: textField?.text))")
-                    
-                    if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
-                        
-                        self.completeTripButtonAction()
-                        
-                    }
-                    else {
-                        
-                        self.completeTripButtonAction()
-                    }
-                }))
-                
-                
-                // 3. Grab the value from the text field, and print it when the user clicks OK.
-                alert.addAction(UIAlertAction(title: "No".localized, style: .destructive, handler: { [] (_) in
-                    if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
-                        
-                        self.completeTripButtonAction()
-                        
-                    }
-                    else {
-                        
-                        self.completeTripButtonAction()
-                    }
-                }))
-                
-                // 4. Present the alert.
-                self.present(alert, animated: true, completion: nil)
-                
-            }
-            else
-            {
+//             if(Singletons.sharedInstance.strBookingType != "") {
+//
+//                //1. Create the alert controller.
+//                let alert = UIAlertController(title: "Toll Fee".localized, message: "Enter toll fee if any".localized, preferredStyle: .alert)
+//
+//                //2. Add the text field. You can configure it however you need.
+//                alert.addTextField { (textField) in
+//                    textField.placeholder = "0.00"
+//                    textField.keyboardType = .decimalPad
+//                    self.setPaddingView(txtField: textField)
+//
+//                }
+//
+//                // 3. Grab the value from the text field, and print it when the user clicks OK.
+//                alert.addAction(UIAlertAction(title: "Yes".localized, style: .default, handler: { [weak alert] (_) in
+//                    let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+//                    self.tollFee = (textField?.text)!
+//                    print("Text field: \(String(describing: textField?.text))")
+//
+//                    if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
+//
+//                        self.completeTripButtonAction()
+//
+//                    }
+//                    else {
+//
+//                        self.completeTripButtonAction()
+//                    }
+//                }))
+//
+//
+//                // 3. Grab the value from the text field, and print it when the user clicks OK.
+//                alert.addAction(UIAlertAction(title: "No".localized, style: .destructive, handler: { [] (_) in
+//                    if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
+//
+//                        self.completeTripButtonAction()
+//
+//                    }
+//                    else {
+//
+//                        self.completeTripButtonAction()
+//                    }
+//                }))
+//
+//                // 4. Present the alert.
+//                self.present(alert, animated: true, completion: nil)
+//
+//            }
+//            else
+//            {
                 self.completeTripButtonAction()
                 
-            }
+//            }
             
             
             

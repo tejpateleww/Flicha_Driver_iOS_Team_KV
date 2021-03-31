@@ -19,8 +19,8 @@ struct WebSupport {
 
 struct WebserviceURLs {
     
-    static let kBaseURL                                 = "http://3.6.224.0/Drvier_Api/" //"https://www.tantaxitanzania.com/Drvier_Api/"//"https://pickngolk.info/web/Drvier_Api/" // "http://54.169.67.226/web/Drvier_Api/" //
-    static let kImageBaseURL                            = "http://3.6.224.0/" //"https://www.tantaxitanzania.com/" // "http://54.169.67.226/web/" //
+    static let kBaseURL                                 = "https://flicha.com/web/Drvier_Api/"
+    static let kImageBaseURL                            = "https://flicha.com/web/"
     static let kOTPForDriverRegister                    = "OtpForRegister"
     static let kVehicalModelList                        = "TaxiModel/"
     static let kDriverRegister                          = "Register"
@@ -78,9 +78,9 @@ struct WebserviceURLs {
     static let kNotificationList                        = "NotificationList/"
     static let kUpdateSettings                          = "UpdateNotificationSetting"
     static let kFaqList                                 = "FaqList"
-//    static let kGetEstimateFare                         = "GetEstimateFare"
+    //    static let kGetEstimateFare                         = "GetEstimateFare"
     
-//    https://www.tantaxitanzania.com/Drvier_Api/FeedbackList/9
+    //    https://www.tantaxitanzania.com/Drvier_Api/FeedbackList/9
     static let kFeedbackList                            = "FeedbackList/"
 }
 
@@ -107,7 +107,7 @@ struct profileKeys {
     static let kCarModel = "CarModel"
     static let kCarCompany = "CarCompany"
     static let kCompanyID = "CompanyId"
-
+    
 }
 
 struct RegistrationProfileKeys {
@@ -128,7 +128,7 @@ struct driverProfileKeys
     static let kKeyDriverProfile = "driverProfile"
     static let kKeyIsDriverLoggedIN = "isDriverLoggedIN"
     static let kKeyShowTickPayRegistrationScreen = "showTickPayRegistrationKey"
-
+    
 }
 //struct driverTripToDestinationKeys
 //{
@@ -147,7 +147,7 @@ struct RegistrationFinalKeys {
     static let kCompanyID = "CompanyId" // Done
     // ------------------------------------------------------------
     static let kKeyDOB = "DOB"
-
+    
     static let kMobileNo = "MobileNo"// Done
     static let kFullname = "Fullname"// Done
     static let kSMSKey = "SMSKey"
@@ -155,7 +155,7 @@ struct RegistrationFinalKeys {
     static let kPassword = "Password"// Done
     static let kAddress = "Address"// Done
     
-     static let kSuburb = "Suburb"// Done
+    static let kSuburb = "Suburb"// Done
     
     static let kBankBranch = "BankBranch"// Done
     static let kCity = "City"// Done
@@ -183,7 +183,7 @@ struct RegistrationFinalKeys {
     static let kLat = "Lat"//Done
     static let kLng = "Lng"//Done
     static let kCarThreeTypeName = "CarTypeName"
-
+    
     
     //         String DRIVER_REGISTER_PARAM_VEHICLE_IMAGE = "VehicleImage";
     //        String DRIVER_REGISTER_PARAM_VEHICLE_RIGISTRATION_NO = "VehicleRegistrationNo";
@@ -199,14 +199,13 @@ struct RegistrationFinalKeys {
     static let kVehicleModelName = "VehicleModelName" //Done
     static let kNumberOfPasssenger = "NoOfPassenger" //Done
     static let kVehicleClass = "VehicleClass" //Done
-
+    
     
 }
 
 struct socketApiKeys {
     
-    static let kSocketBaseURL = "http://3.6.224.0:8080" // "https://www.tantaxitanzania.com:8081"//"http://3.120.161.225:8080" //"http://13.237.0.107:8080/" //http://3.120.161.225:8080"//"https://pickngolk.info:8081" // "https://pickngolk.info:8081"   // "http://54.169.67.226:8080"  //
-    
+    static let kSocketBaseURL = "https://flicha.com:8080"
     static let kUpdateDriverLocation = "UpdateDriverLatLong"
     static let kReceiveBookingRequest = "AriveBookingRequest"
     static let kRejectBookingRequest = "ForwardBookingRequestToAnother"
@@ -226,7 +225,7 @@ struct socketApiKeys {
     
     static let kDriverCancelTripNotification = "DriverCancelTripNotification"
     static let kSendDriverLocationRequestByPassenger        = "DriverLocation"
-
+    
     static let kAriveAdvancedBookingRequest = "AriveAdvancedBookingRequest"
     static let kForwardAdvancedBookingRequestToAnother = "ForwardAdvancedBookingRequestToAnother"
     static let kAcceptAdvancedBookingRequest = "AcceptAdvancedBookingRequest"
@@ -240,7 +239,7 @@ struct socketApiKeys {
     
     static let kBookLaterDriverNotify = "BookLaterDriverNotify"
     static let kReceiveMoneyNotify = "ReceiveMoneyNotify"
-   
+    
     static let kStartTripTimeError = "StartTripTimeError"
     
     static let kAskForTips = "AskForTips"
@@ -253,7 +252,7 @@ struct socketApiKeys {
 
 struct appName {
     static let kAPPName = "App Name".localized
-//    "TanTaxi Driver"
+    //    "TanTaxi Driver"
     static let kAPPUrl = "itms-apps://itunes.apple.com/app/id1445179587"
     
 }
@@ -291,7 +290,7 @@ struct walletAddCards {
     static let kCVV = "Cvv"
     static let kExpiry = "Expiry"
     static let kAlias = "Alias"
-
+    
 }
 
 struct walletAddMoney {

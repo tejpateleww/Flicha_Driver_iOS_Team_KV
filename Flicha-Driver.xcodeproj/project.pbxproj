@@ -236,7 +236,6 @@
 		3AFADCF1219E98CC0009E3D2 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCC6219E98CC0009E3D2 /* UIImage+MultiFormat.m */; };
 		3AFADCF2219E98CC0009E3D2 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCC8219E98CC0009E3D2 /* UIImage+WebP.m */; };
 		3AFADCF3219E98CC0009E3D2 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCCA219E98CC0009E3D2 /* UIImageView+HighlightedWebCache.m */; };
-		3AFADCF4219E98CC0009E3D2 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCCC219E98CC0009E3D2 /* UIImageView+WebCache.m */; };
 		3AFADCF5219E98CC0009E3D2 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCCE219E98CC0009E3D2 /* UIView+WebCache.m */; };
 		3AFADCF6219E98CC0009E3D2 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCD0219E98CC0009E3D2 /* UIView+WebCacheOperation.m */; };
 		3AFADCF7219E98CC0009E3D2 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFADCD3219E98CC0009E3D2 /* SVIndefiniteAnimatedView.m */; };
@@ -541,8 +540,6 @@
 		3AFADCC8219E98CC0009E3D2 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		3AFADCC9219E98CC0009E3D2 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		3AFADCCA219E98CC0009E3D2 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		3AFADCCB219E98CC0009E3D2 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
-		3AFADCCC219E98CC0009E3D2 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3AFADCCD219E98CC0009E3D2 /* UIView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCache.h"; sourceTree = "<group>"; };
 		3AFADCCE219E98CC0009E3D2 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		3AFADCCF219E98CC0009E3D2 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
@@ -1581,8 +1578,6 @@
 				3AFADCC8219E98CC0009E3D2 /* UIImage+WebP.m */,
 				3AFADCC9219E98CC0009E3D2 /* UIImageView+HighlightedWebCache.h */,
 				3AFADCCA219E98CC0009E3D2 /* UIImageView+HighlightedWebCache.m */,
-				3AFADCCB219E98CC0009E3D2 /* UIImageView+WebCache.h */,
-				3AFADCCC219E98CC0009E3D2 /* UIImageView+WebCache.m */,
 				3AFADCCD219E98CC0009E3D2 /* UIView+WebCache.h */,
 				3AFADCCE219E98CC0009E3D2 /* UIView+WebCache.m */,
 				3AFADCCF219E98CC0009E3D2 /* UIView+WebCacheOperation.h */,
@@ -1992,7 +1987,6 @@
 				3AFADCF2219E98CC0009E3D2 /* UIImage+WebP.m in Sources */,
 				00E92A35202AE2C100A399E2 /* SPPageItemsScallingViewController.swift in Sources */,
 				3AFADCF3219E98CC0009E3D2 /* UIImageView+HighlightedWebCache.m in Sources */,
-				3AFADCF4219E98CC0009E3D2 /* UIImageView+WebCache.m in Sources */,
 				00E92A44202AE2C100A399E2 /* SPUILabelExtenshion.swift in Sources */,
 				00E92A52202AE2C100A399E2 /* NSCalendar+Timepiece.swift in Sources */,
 				3AFADCE5219E98CC0009E3D2 /* NSData+ImageContentType.m in Sources */,
@@ -2392,12 +2386,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.8;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K68A4B5TS6;
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Flicha.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2417,11 +2412,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.8;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEVELOPMENT_TEAM = K68A4B5TS6;
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Flicha.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
